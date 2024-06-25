@@ -100,7 +100,7 @@ install_lou_ipk() {
     chmod +x /usr/bin/oscam_bin
   else
     echo "install dummy ipk for softcam"
-    curl -sk -o /tmp/softcam-lou.ipk ${_url}/os_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815_all.ipk
+    curl -sk -o /tmp/softcam-lou.ipk ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815_all.ipk
     $_exec_cmd install --force-reinstall /tmp/softcam-lou.ipk  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
   fi
