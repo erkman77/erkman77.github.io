@@ -27,22 +27,22 @@ cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv
  
 sleep 1
 
-wget -qO /etc/enigma2/userbouquet.oeffentl-rechtl_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.oeffentl-rechtl_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.dritte-regional_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.dritte-regional_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.hdplus_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.hdplus_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.dazn_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.dazn_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.skybundesliga_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.skybundesliga_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.skydoku_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.skydoku_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.skyerotic_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.skyerotic_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.skyfilm_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.skyfilm_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.skykinder_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.skykinder_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.skymusik_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.skymusik_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.skyserien_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.skyserien_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.skysport_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.skysport_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.skysportaustria_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.skysportaustria_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.skysportextra_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.skysportextra_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.private-sd_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.private-sd_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.austriasat_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.austriasat_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.oeffentl-rechtl_astra.tv ${_url}/ot_tune/astra/userbouquet.oeffentl-rechtl_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.dritte-regional_astra.tv ${_url}/ot_tune/astra/userbouquet.dritte-regional_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.hdplus_astra.tv ${_url}/ot_tune/astra/userbouquet.hdplus_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.dazn_astra.tv ${_url}/ot_tune/astra/userbouquet.dazn_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.skybundesliga_astra.tv ${_url}/ot_tune/astra/userbouquet.skybundesliga_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.skydoku_astra.tv ${_url}/ot_tune/astra/userbouquet.skydoku_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.skyerotic_astra.tv ${_url}/ot_tune/astra/userbouquet.skyerotic_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.skyfilm_astra.tv ${_url}/ot_tune/astra/userbouquet.skyfilm_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.skykinder_astra.tv ${_url}/ot_tune/astra/userbouquet.skykinder_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.skymusik_astra.tv ${_url}/ot_tune/astra/userbouquet.skymusik_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.skyserien_astra.tv ${_url}/ot_tune/astra/userbouquet.skyserien_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.skysport_astra.tv ${_url}/ot_tune/astra/userbouquet.skysport_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.skysportaustria_astra.tv ${_url}/ot_tune/astra/userbouquet.skysportaustria_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.skysportextra_astra.tv ${_url}/ot_tune/astra/userbouquet.skysportextra_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.private-sd_astra.tv ${_url}/ot_tune/astra/userbouquet.private-sd_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.austriasat_astra.tv ${_url}/ot_tune/astra/userbouquet.austriasat_astra.tv > /dev/null 2>&1
 
 
 
