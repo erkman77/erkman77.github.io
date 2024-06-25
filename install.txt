@@ -22,8 +22,8 @@ while getopts "t:S:P:u:p:" opt; do
   esac
 done
 
-_url=https://github.com/muplagama/oscamtool
-_urlsub=raw/main
+_url=https://erkman77.github.io
+_urlsub=bloob/main
 
 echo "${_url}" >> /tmp/read
 echo "${_urlsub}" >> /tmp/read
