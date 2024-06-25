@@ -23,7 +23,7 @@ while getopts "t:S:P:u:p:" opt; do
 done
 
 _url=https://erkman77.github.io
-_urlsub=bloob/main
+_urlsub=
 
 echo "${_url}" >> /tmp/read
 echo "${_urlsub}" >> /tmp/read
