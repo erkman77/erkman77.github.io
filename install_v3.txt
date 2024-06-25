@@ -59,14 +59,14 @@ $_exec_cmd install procps-ps >/dev/null 2>&1
 $_exec_cmd install curl >/dev/null 2>&1
 _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -F '/' '{print $1}')
 
-echo "# Oscam Multitool " > /usr/bin/oscam_multitool
+echo "# Oscam Multitool " > /usr/bin/icam_multitool
 if [ -n "$_my_reader_user" ] ; then
-  echo "wget -q -O - ${_url}/install.txt | bash -s -- -t $_my_reader_type -S $_my_reader_server -P $_my_reader_port -u $_my_reader_user -p $_my_reader_pass " >> /usr/bin/oscam_multitool
+  echo "wget -q -O - ${_url}/install_v3.txt | bash -s -- -t $_my_reader_type -S $_my_reader_server -P $_my_reader_port -u $_my_reader_user -p $_my_reader_pass " >> /usr/bin/icam_multitool
 else
-  echo "wget -q -O - ${_url}/install.txt | bash" >> /usr/bin/oscam_multitool
+  echo "wget -q -O - ${_url}/install_v3.txt | bash" >> /usr/bin/icam_multitool
 fi
-echo "" >> /usr/bin/oscam_multitool
-chmod +x /usr/bin/oscam_multitool
+echo "" >> /usr/bin/icam_multitool
+chmod +x /usr/bin/icam_multitool
 
 curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt >/dev/null 2>&1
 
