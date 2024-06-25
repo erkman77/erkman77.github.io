@@ -14,7 +14,7 @@ rm /tmp/bouquets.tv
 cat >> /etc/enigma2/bouquets.tv << EOF
 #SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skyicam_single_astra.tv" ORDER BY bouquet
 EOF
-wget -qO /etc/enigma2/userbouquet.oeffentl-rechtl_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.oeffentl-rechtl_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.hdplus_astra.tv ${_url}/${_urlsub}/ot_tune/astra/userbouquet.hdplus_astra.tv > /dev/null 2>&1
-wget -qO /etc/enigma2/userbouquet.skyicam_single_astra.tv ${_url}/${_urlsub}/ot_tune/astra/single/userbouquet.skyicam_single_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.oeffentl-rechtl_astra.tv ${_url}/ot_tune/astra/userbouquet.oeffentl-rechtl_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.hdplus_astra.tv ${_url}/ot_tune/astra/userbouquet.hdplus_astra.tv > /dev/null 2>&1
+wget -qO /etc/enigma2/userbouquet.skyicam_single_astra.tv ${_url}/ot_tune/astra/single/userbouquet.skyicam_single_astra.tv > /dev/null 2>&1
 rm /tmp/bouquets.tv
