@@ -464,7 +464,7 @@ install_picons() {
 my_header() {
   clear
   echo "for autoinstall use:"
-  echo " wget -q -O - ${_url}install_v3.txt | bash -s -- -t PROTO -S SERVER -P PORT -u USER -p PASS"
+  echo " wget -q -O - ${_url}/install_v3.txt | bash -s -- -t PROTO -S SERVER -P PORT -u USER -p PASS"
   echo "  _______    __      __                                                     "
   echo " /_  __/ |  / /     / /   ____  __  ______  ____  ___        ___  __  __    "
   echo "  / /  | | / /_____/ /   / __ \/ / / / __ \/ __ \/ _ \      / _ \/ / / /    "
