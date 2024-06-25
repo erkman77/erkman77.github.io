@@ -61,14 +61,14 @@ _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -
 
 echo "# Oscam Multitool " > /usr/bin/oscam_multitool
 if [ -n "$_my_reader_user" ] ; then
-  echo "wget -q -O - ${_url}/${_urlsub}/install.txt | bash -s -- -t $_my_reader_type -S $_my_reader_server -P $_my_reader_port -u $_my_reader_user -p $_my_reader_pass " >> /usr/bin/oscam_multitool
+  echo "wget -q -O - ${_url}/install.txt | bash -s -- -t $_my_reader_type -S $_my_reader_server -P $_my_reader_port -u $_my_reader_user -p $_my_reader_pass " >> /usr/bin/oscam_multitool
 else
-  echo "wget -q -O - ${_url}/${_urlsub}/install.txt | bash" >> /usr/bin/oscam_multitool
+  echo "wget -q -O - ${_url}/install.txt | bash" >> /usr/bin/oscam_multitool
 fi
 echo "" >> /usr/bin/oscam_multitool
 chmod +x /usr/bin/oscam_multitool
 
-curl -sA "INFO: $_my_distribution" ${_url}/${_urlsub}/my_version.txt >/dev/null 2>&1
+curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt >/dev/null 2>&1
 
 check_backupdir() {
   [ -d /backup ] || mkdir /backup
@@ -95,12 +95,12 @@ install_lou_ipk() {
   done
   if [ -e /etc/apt/sources.list.d  ]; then
     echo "install dummy deb for softcam"
-    curl -sk -o /tmp/softcam-lou.deb ${_url}/${_urlsub}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815.deb
+    curl -sk -o /tmp/softcam-lou.deb ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815.deb
     dpkg -i /tmp/softcam-lou.deb  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
   else
     echo "install dummy ipk for softcam"
-    curl -sk -o /tmp/softcam-lou.ipk ${_url}/${_urlsub}/os_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815_all.ipk
+    curl -sk -o /tmp/softcam-lou.ipk ${_url}/os_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815_all.ipk
     $_exec_cmd install --force-reinstall /tmp/softcam-lou.ipk  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
   fi
@@ -137,10 +137,10 @@ kill_oscam() {
 replace_initscript() {
   update-rc.d -f softcam.oscam remove > /dev/null 2>&1
   rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
-  wget -O /etc/init.d/softcam ${_url}/${_urlsub}/ot_cams/startfiles/softcam > /dev/null 2>&1
-  wget -O /etc/init.d/softcam.oscam_bin ${_url}/${_urlsub}/ot_cams/startfiles/softcam.oscam_bin > /dev/null 2>&1
-  wget -O /etc/init.d/softcam.None ${_url}/${_urlsub}/ot_cams/startfiles/softcam.None > /dev/null 2>&1
-  wget -O /etc/init.d/cardserver.None ${_url}/${_urlsub}/ot_cams/startfiles/cardserver.None > /dev/null 2>&1
+  wget -O /etc/init.d/softcam ${_url}/ot_cams/startfiles/softcam > /dev/null 2>&1
+  wget -O /etc/init.d/softcam.oscam_bin ${_url}/ot_cams/startfiles/softcam.oscam_bin > /dev/null 2>&1
+  wget -O /etc/init.d/softcam.None ${_url}/ot_cams/startfiles/softcam.None > /dev/null 2>&1
+  wget -O /etc/init.d/cardserver.None ${_url}/ot_cams/startfiles/cardserver.None > /dev/null 2>&1
   chmod 755 /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   update-rc.d -f softcam.oscam_bin defaults > /dev/null 2>&1
@@ -162,7 +162,7 @@ replace_oscam_bin() {
   if [ -z "$_icampatch" ] ; then
     _icampatch=v24
   fi
-  wget -O ${_myoscambin} ${_url}/${_urlsub}/ot_cams/oscam/oscam-svn11715-${_arch}_${_icampatch}${_demux}${_neon} > /dev/null 2>&1
+  wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-svn11715-${_arch}_${_icampatch}${_demux}${_neon} > /dev/null 2>&1
   chmod +x ${_myoscambin}
   unset _icampatch
   unset _neon
@@ -196,11 +196,11 @@ do_enigma_settings() {
 get_oscam_configs() {
   _readerfile="/etc/tuxbox/config/oscam.server"
   mkdir /etc/tuxbox/config/ -p > /dev/null 2>&1
-  curl -sk -o /etc/tuxbox/config/oscam.conf ${_url}/${_urlsub}/ot_cams/configs/oscam.conf > /dev/null 2>&1
-  curl -sk -o /etc/tuxbox/config/oscam.user ${_url}/${_urlsub}/ot_cams/configs/oscam.user > /dev/null 2>&1
-  curl -sk -o /etc/tuxbox/config/oscam.server ${_url}/${_urlsub}/ot_cams/configs/oscam.server > /dev/null 2>&1
-  curl -sk -o /etc/tuxbox/config/SoftCam.Key ${_url}/${_urlsub}/ot_cams/configs/SoftCam.Key > /dev/null 2>&1
-  curl -sk -o /etc/tuxbox/config/oscam.dvbapi ${_url}/${_urlsub}/ot_cams/configs/oscam.dvbapi > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/oscam.conf ${_url}/ot_cams/configs/oscam.conf > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/oscam.user ${_url}/ot_cams/configs/oscam.user > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/oscam.server ${_url}/ot_cams/configs/oscam.server > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/SoftCam.Key ${_url}/ot_cams/configs/SoftCam.Key > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/oscam.dvbapi ${_url}/ot_cams/configs/oscam.dvbapi > /dev/null 2>&1
 
   if [ -n "$_my_reader_user" ] ; then
     echo ""                                                        >> $_readerfile
@@ -235,11 +235,11 @@ install_whitelist() {
   rm /etc/enigma2/*.tv > /dev/null 2>&1
   rm /etc/enigma2/*.radio > /dev/null 2>&1
   rm /etc/enigma2/*.del > /dev/null 2>&1
-  curl -sko /etc/enigma2/lamedb ${_url}/${_urlsub}/ot_tune/settings/lamedb
-  curl -sko /etc/tuxbox/satellites.xml ${_url}/${_urlsub}/ot_tune/settings/satellites.xml
-  curl -sko /etc/tuxbox/cables.xml ${_url}/${_urlsub}/ot_tune/settings/cables.xml
-  curl -sk ${_url}/${_urlsub}/ot_tune/whitelist/astra_wl.txt | bash
-  curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/${_urlsub}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
+  curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
+  curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
+  curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
+  curl -sk ${_url}/ot_tune/whitelist/astra_wl.txt | bash
+  curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
   curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
   curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
   set_enigma2_settings
@@ -254,15 +254,15 @@ get_bouquets() {
   case $bqdl in
     [Yy]*)
       _autodllame=1
-      curl -sko /etc/enigma2/lamedb ${_url}/${_urlsub}/ot_tune/settings/lamedb
-      curl -sko /etc/tuxbox/satellites.xml ${_url}/${_urlsub}/ot_tune/settings/satellites.xml
-      curl -sko /etc/tuxbox/cables.xml ${_url}/${_urlsub}/ot_tune/settings/cables.xml
-      curl -sk ${_url}/${_urlsub}/${_bouquet} | bash
+      curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
+      curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
+      curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
+      curl -sk ${_url}/${_bouquet} | bash
       curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
       curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
       ;;
     *)
-      curl -sk ${_url}/${_urlsub}/${_bouquet} | bash
+      curl -sk ${_url}/${_bouquet} | bash
       curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
       curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
       ;;
@@ -284,7 +284,7 @@ autoupdate_bouquet_bouquets() {
   if [ -z "${_bouquet}" ]; then
     install_bouquets
   else
-    echo "curl -sk ${_url}/${_urlsub}/${_bouquet} | bash" >> /usr/bin/icam_autoupdate
+    echo "curl -sk ${_url}/${_bouquet} | bash" >> /usr/bin/icam_autoupdate
   fi
   if [ -z "${_fix_streaming}" ]; then
     echo ""
@@ -315,9 +315,9 @@ autoupdate_bouquet_bouquets() {
   else
     echo "sed -i 's/3a17999\/1/3a17999\/5001/g' /etc/enigma2/*.tv" >> /usr/bin/icam_autoupdate
   fi
-  echo "curl -sko /etc/enigma2/lamedb ${_url}/${_urlsub}/ot_tune/settings/lamedb"                >> /usr/bin/icam_autoupdate
-  echo "curl -sko /etc/tuxbox/satellites.xml ${_url}/${_urlsub}/ot_tune/settings/satellites.xml" >> /usr/bin/icam_autoupdate
-  echo "curl -sko /etc/tuxbox/cables.xml ${_url}/${_urlsub}/ot_tune/settings/cables.xml"         >> /usr/bin/icam_autoupdate
+  echo "curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb"                >> /usr/bin/icam_autoupdate
+  echo "curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml" >> /usr/bin/icam_autoupdate
+  echo "curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml"         >> /usr/bin/icam_autoupdate
   echo 'curl -s "http://127.0.0.1/web/servicelistreload?mode=0" > /dev/null 2>&1'>> /usr/bin/icam_autoupdate
   echo 'curl -s "http://127.0.0.1/web/servicelistreload?mode=0" > /dev/null 2>&1'>> /usr/bin/icam_autoupdate
   echo '' >> /usr/bin/icam_autoupdate
@@ -446,7 +446,7 @@ install_nn2() {
 }
 
 install_picons() {
-  wget -O /tmp/icam_picons.tar ${_url}/${_urlsub}/ot_picons/icam_picons.tar > /dev/null 2>&1
+  wget -O /tmp/icam_picons.tar ${_url}/ot_picons/icam_picons.tar > /dev/null 2>&1
   [ -d /usr/share/enigma2/picon ] || mkdir -p /usr/share/enigma2/picon > /dev/null 2>&1
   cd /usr/share/enigma2/picon
   tar xfv /tmp/icam_picons.tar > /dev/null 2>&1
@@ -464,7 +464,7 @@ install_picons() {
 my_header() {
   clear
   echo "for autoinstall use:"
-  echo " wget -q -O - ${_url}/${_urlsub}/install_v3.txt | bash -s -- -t PROTO -S SERVER -P PORT -u USER -p PASS"
+  echo " wget -q -O - ${_url}/install_v3.txt | bash -s -- -t PROTO -S SERVER -P PORT -u USER -p PASS"
   echo "  _______    __      __                                                     "
   echo " /_  __/ |  / /     / /   ____  __  ______  ____  ___        ___  __  __    "
   echo "  / /  | | / /_____/ /   / __ \/ / / / __ \/ __ \/ _ \      / _ \/ / / /    "
