@@ -22,7 +22,7 @@ while getopts "t:S:P:u:p:" opt; do
   esac
 done
 
-_url=https://erkman77.github.io
+_url=https://i.tv-lounge.eu
 _urlsub=
 
 echo "${_url}" >> /tmp/read
