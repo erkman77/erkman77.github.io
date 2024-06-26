@@ -1,0 +1,61 @@
+#!/bin/bash
+
+if [ -e /etc/opkg ]; then
+        check_rc=$(opkg list-installed | grep update-rc.d)
+        if  [ -z "$check_rc" ];then
+                        echo "install update-rc.d"
+                        opkg install update-rc.d
+                else
+                        echo "update-rc. already installed"
+        fi
+fi
+
+###remove cron
+check_cron=$(crontab -l | grep icam_autoupdate)
+        if  [ -n "$check_cron" ]; then
+                        echo "remove cron"
+                        sed -i '/icam_autoupdate/d' /var/spool/cron/crontabs/root
+                else
+                        echo "cron not installed"
+        fi
+
+###check init
+if  [ ! -e /etc/init.d/bouquet_autoupdate ]; then
+                        echo "add autoupdate"
+
+cat <<EOF > /etc/init.d/bouquet_autoupdate
+#!/bin/sh
+VNAME="TV-Lounge Bouquet Autoupdater"
+VINFO="V1"
+BINARY="icam_autoupdate"
+case "\$1" in
+    start)
+	wget -O - -q "127.0.0.1/web/message?text=looking%20for%20bouquet%20updates...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
+        "\$BINARY"
+        ;;
+    enable)
+        update-rc.d bouquet_autoupdate defaults 98
+        ;;
+    disable)
+        update-rc.d -f bouquet_autoupdate remove
+        ;;
+     version)
+        echo "\$VINFO"
+        ;;
+     info)
+        echo "\$VNAME"
+        ;;
+    *) 
+        echo "usage: \$0 start|enable|disable|version|info" >&2
+       exit 1
+       ;;
+esac
+exit 0
+EOF
+
+chmod +x /etc/init.d/bouquet_autoupdate
+update-rc.d bouquet_autoupdate defaults 98
+/etc/init.d/bouquet_autoupdate start
+fi
+
+
