@@ -331,6 +331,7 @@ autoupdate_bouquet_bouquets() {
   echo "curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb"                >> /usr/bin/icam_autoupdate
   echo "curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml" >> /usr/bin/icam_autoupdate
   echo "curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml"         >> /usr/bin/icam_autoupdate
+  echo "curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt" >> /usr/bin/icam_autoupdate
   echo 'curl -s "http://127.0.0.1/web/servicelistreload?mode=0" > /dev/null 2>&1'>> /usr/bin/icam_autoupdate
   echo 'curl -s "http://127.0.0.1/web/servicelistreload?mode=0" > /dev/null 2>&1'>> /usr/bin/icam_autoupdate
   echo '' >> /usr/bin/icam_autoupdate
