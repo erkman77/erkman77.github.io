@@ -278,7 +278,7 @@ replace_bouquet_bouquets_ip() {
   curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
 }
 
-autoupdate_bouquets() {
+autoupdate_bouquet_bouquets() {
   _autoupdate_switch=true
   echo "#  Oscam Multitool " > /usr/bin/icam_autoupdate
   if [ -z "${_bouquet}" ]; then
@@ -764,7 +764,7 @@ autoupdate_menu() {
   case $autoupdate_menu in
     1)
       install_bouquets
-      autoupdate_bouquets
+	  autoupdate_bouquet_bouquets
       sleep 2
       mainmenu
       ;;
