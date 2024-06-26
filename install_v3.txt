@@ -62,6 +62,7 @@ new="ot_tune/settings"
 if cat /usr/bin/icam_autoupdate | grep $old >/dev/null 2>&1
 then  
 sed "s#$old#$new#g" /usr/bin/icam_autoupdate > /usr/bin/icam-update
+echo "curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt" >> /usr/bin/icam_autoupdate
 mv /usr/bin/icam-update /usr/bin/icam_autoupdate
 chmod +x /usr/bin/icam_autoupdate
 
