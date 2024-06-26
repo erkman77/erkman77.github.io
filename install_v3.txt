@@ -299,8 +299,8 @@ autoupdate_bouquet_bouquets() {
     install_bouquets
   else
     echo "curl -sk ${_url}/${_bouquet} | bash" >> /usr/bin/icam_autoupdate
-	echo "sleep 5" >> /usr/bin/icam_autoupdate
   fi
+    echo "sleep 5" >> /usr/bin/icam_autoupdate
   if [ -z "${_fix_streaming}" ]; then
     echo ""
     echo "---------------------------------------------------"
