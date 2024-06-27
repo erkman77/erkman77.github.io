@@ -302,12 +302,13 @@ replace_bouquet_bouquets_ip() {
 autoupdate_bouquet_bouquets() {
   _autoupdate_switch=true
   echo "#  Oscam Multitool " > /usr/bin/icam_autoupdate
+  echo "_url=https://i.tv-lounge.eu" > /usr/bin/icam_autoupdate
+  echo "echo "${_url}" >> /tmp/read" > /usr/bin/icam_autoupdate
   if [ -z "${_bouquet}" ]; then
     install_bouquets
   else
     echo "curl -sk ${_url}/${_bouquet} | bash" >> /usr/bin/icam_autoupdate
   fi
-    echo "sleep 5" >> /usr/bin/icam_autoupdate
   if [ -z "${_fix_streaming}" ]; then
     echo ""
     echo "---------------------------------------------------"
