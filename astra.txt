@@ -1,5 +1,5 @@
 #!/bin/sh
-_url=https://i.tv-lounge.eu /tmp
+_url=https://i.tv-lounge.eu
 #_urlsub=$(sed -n '2p' /tmp/read)
  
 cat /etc/enigma2/bouquets.tv | grep -v 'userbouquet.*_astra' > /tmp/bouquets.tv 
