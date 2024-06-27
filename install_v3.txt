@@ -59,13 +59,19 @@ fi
 old="oscam/install/sender"
 new="ot_tune/settings"
 
-if cat /usr/bin/icam_autoupdate | grep $old >/dev/null 2>&1
-then  
-echo "One moment, autoupdate will be fixed..."
-sed "s#$old#$new#g" /usr/bin/icam_autoupdate > /usr/bin/icam-update
-echo "curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt" >> /usr/bin/icam_autoupdate
-mv /usr/bin/icam-update /usr/bin/icam_autoupdate
-chmod +x /usr/bin/icam_autoupdate
+if cat /usr/bin/icam_autoupdate | grep $old
+then
+echo -e "\e[33m ... Fixing autoupdate...\e[0m"
+sed -i "s#$old#$new#g" /usr/bin/icam_autoupdate 
+
+echo -e "\e[32m all done ...\e[0m"
+  #echo -e "\e[33m ... doing restart \e[0m"
+  #sleep 5
+  #reboot
+
+else
+
+echo "Nothing to do, autoupdate seems to be ok"
 
 fi
 
