@@ -509,6 +509,7 @@ mainmenu() {
   echo -e "6) Fix Settings                      // rewrite ICam settings to enigma"
   echo -e "7) Fix Streaming-IP                  // changes 127.0.0.1 to $_myip for home streaming"
   echo -e "8) Bouquet Autoupdate                // updates bouquets @ reboot"
+  echo -e "9) Install whitelist					// install whitelist_streamrelay"
   echo -e "0) Exit"
   read  -p "choose an Option: " main </dev/tty
   case $main in
@@ -545,7 +546,7 @@ mainmenu() {
       autoupdate_menu
       mainmenu
       ;;
-    t)
+    9)
       install_whitelist
       mainmenu
       ;;
