@@ -107,7 +107,7 @@ install_lou_ipk() {
     echo "exit 0" > /var/lib/opkg/info/$_current_install.prerm
     echo "removing $_current_install"
     $_exec_cmd remove $_current_install #>/dev/null 2>&1
-	sleep 20
+	sleep 5
   done
   for _current_runscript in `ls /etc/init.d/ | grep -i softcam` ; do
     rm /etc/init.d/$_current_runscript
@@ -399,13 +399,13 @@ install_oatv() {
 
 install_opli() {
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
-  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
-  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
-  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
-  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
+  $_exec_cmd install $_libusbvers #> /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  #> /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers # > /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  #> /dev/null 2>&1
   install_lou_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
-  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 #> /dev/null 2>&1
   get_old_oscam
   kill_oscam
   get_oscam_configs
