@@ -1,5 +1,5 @@
 #!/bin/bash +x
-echo "remove auto update an replace satellites.xml....
+echo "remove auto update an replace satellites.xml...."
 rm -f /usr/bin/icam_autoupdate
 rm -f /etc/init.d/bouquet_autoupdate
 curl -sko /etc/enigma2/lamedb https://i.tv-lounge.eu/ot_tune/settings/lamedb
