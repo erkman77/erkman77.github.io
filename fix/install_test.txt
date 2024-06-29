@@ -489,6 +489,7 @@ my_header() {
   clear
   echo "for autoinstall use:"
   echo " wget -q -O - ${_url}/install_v3.txt | bash -s -- -t PROTO -S SERVER -P PORT -u USER -p PASS"
+  echo ""
   echo "   ____                               ____           __        ____             "
   echo "  / __ \______________ _____ ___     /  _/___  _____/ /_____ _/ / /__  _____    "
   echo " / / / / ___/ ___/ __ \/ __ \__ \    / // __ \/ ___/ __/ __ \/ / / _ \/ ___/    "
@@ -496,6 +497,7 @@ my_header() {
   echo "\____/____/\___/\__,_/_/ /_/ /_/  /___/_/ /_/____/\__/\__,_/_/_/\___/_/         "
   echo "                                                                                "
   echo "                                                            in memory off...    "
+  echo ""
  
 }
 
