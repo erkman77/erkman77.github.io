@@ -514,6 +514,9 @@ mainmenu() {
   echo -e "0) Exit"
   echo -e "k) Bootloop fix				// fixes bootlop on Vti"
   echo -e "b) Bouquet Autoupdate Vti	// change auto update on vti"
+  echo -e ""
+  echo -e "Run first k, then 8 and then b..."
+  echo -e ""
   read  -p "choose an Option: " main </dev/tty
   case $main in
     1)
