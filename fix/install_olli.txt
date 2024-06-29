@@ -561,10 +561,6 @@ mainmenu() {
 	  bouquet_autoupdate
 	  mainmenu
 	  ;;
-	w)
-	  test_test
-	  mainmenu
-	  ;;  
     0)
       echo "Bye bye."
       wget -O - -q "127.0.0.1/web/message?text=oscam%20Multitool%20is%20%20now%20stopped...%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
