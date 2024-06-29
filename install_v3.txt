@@ -75,6 +75,16 @@ echo "Nothing to do, autoupdate seems to be ok"
 
 fi
 
+ins="echo ${_url} >> /tmp/read"
+tere="/tmp/read"
+
+if cat /usr/bin/icam_autoupdate | grep $tere
+then
+echo "" 
+else  
+sed -i "1i$ins" /usr/bin/icam_autoupdate
+fi
+
 $_exec_cmd install procps >/dev/null 2>&1
 $_exec_cmd install procps-ps >/dev/null 2>&1
 $_exec_cmd install curl >/dev/null 2>&1
