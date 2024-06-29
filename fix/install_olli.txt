@@ -512,8 +512,8 @@ mainmenu() {
   echo -e "7) Fix Streaming-IP                  // changes 127.0.0.1 to $_myip for home streaming"
   echo -e "8) Bouquet Autoupdate                // updates bouquets @ reboot"
   echo -e "0) Exit"
-  echo -e "k) Bootloop fix			// fixes bootlop on Vti"
-  echo -e "b) Bouquet Autoupdate Vti		// change auto update on vti"
+  echo -e "k) Bootloop fix				// fixes bootlop on Vti"
+  echo -e "b) Bouquet Autoupdate Vti	// change auto update on vti"
   read  -p "choose an Option: " main </dev/tty
   case $main in
     1)
