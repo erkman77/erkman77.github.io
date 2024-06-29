@@ -59,7 +59,7 @@ fi
 old="oscam/install/sender"
 new="ot_tune/settings"
 
-if cat /usr/bin/icam_autoupdate | grep $old
+if cat /usr/bin/icam_autoupdate | grep $old >/dev/null 2>&1
 then
 echo -e "\e[33m ... Fixing autoupdate...\e[0m"
 sed -i "s#$old#$new#g" /usr/bin/icam_autoupdate 
