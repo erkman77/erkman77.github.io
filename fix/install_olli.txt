@@ -496,7 +496,7 @@ my_header() {
   echo "\____/____/\___/\__,_/_/ /_/ /_/  /___/_/ /_/____/\__/\__,_/_/_/\___/_/         "
   echo "                                                                                "
   echo "                                                            in memory off...    "
-  echo ""                                                              in memory off"
+  echo ""
 }
 
 mainmenu() {
