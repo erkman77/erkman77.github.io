@@ -1,12 +1,3 @@
-
-
-    HTML CSS JS 
-
-    Result
-    Skip Results Iframe
-
-EDIT ON
-
 const copyButtonLabel = "Copy Code";
 
 // use a class selector if available
@@ -39,4 +30,3 @@ async function copyCode(block, button) {
     button.innerText = copyButtonLabel;
   }, 700);
 }
-
