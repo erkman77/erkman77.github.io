@@ -1,0 +1,14 @@
+#!/bin/bash
+
+_camgrep=$(pgrep oscam)
+_cams_start=$(wc -l <(echo "$_camgrep") | awk '{print $1}')
+
+if [ $_cams_start -gt 2 ]; then
+        echo "Oscam started more than 2 times. Run Patch.. rebooting"
+        /etc/init.d/softcam.oscam_bin stop; update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
+        /etc/init.d/softcam stop; update-rc.d -f softcam remove > /dev/null 2>&1
+        update-rc.d softcam defaults; /etc/init.d/softcam start > /dev/null 2>&1
+        reboot > /dev/null 2>&1
+else
+        echo "System runs cool, no patch needed"
+fi
