@@ -153,7 +153,7 @@ get_old_oscam() {
     fi
 
   case $_my_configpath in
-    config-dir*)
+    onfig-dir*)
        _my_configpath=$(ps axuww | grep oscam | awk -F 'config-dir ' '{print $2}'|grep '\S' |uniq|awk '{print $1}'|sed -e 's/ //g')
       ;;
   esac
