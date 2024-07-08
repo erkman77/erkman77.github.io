@@ -3,22 +3,37 @@
 <head>
   <title>In memorys</title>
   <link rel="stylesheet" href="/assets/main.css">
-  <script src="/assets/clipboard.js"></script>
+  
+<script src="/assets/clipboard.min.js"></script>
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
 </head>
 
 <p><br></p>
 <p><br></p>
+ <script>
+      var clipboard = new ClipboardJS('.btn');
+
+
+    </script>
 <div style="text-align: center;"><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 24px;'>We all know who created this...</span></strong></div>
 <p style="text-align: center;"><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 24px;'>in memory off...</span></strong></p>
 <p style="text-align: center;"><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 16px;'>but it goes on</span></strong></p>
 <p style="text-align: center;"><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 16px;'>still available at</span></strong></p>
 <br>
+<body>
+</div>
 <center>
-<pre><code class="language-css">wget -qO- i.tv-lounge.eu/install_v3.txt | bash</code></pre>
-
+<div class="input-group">
+<input id="foo" type="text" value="wget -qO- i.tv-lounge.eu/install_v3.txt | bash" readonly size="31">
+<span class="input-group-button">
+<button class="btn" type="button" data-clipboard-action="copy" data-clipboard-target="#foo">
+<img class="clippy" src="/assets/clippy.svg" width="13" alt="Copy to clipboard">
+</button>
+</span>
+</div>
 </center>
 <p><br></p>
+</body>
 </html>
 
 
