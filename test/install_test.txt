@@ -24,9 +24,26 @@ done
 
 _url=https://i.tv-lounge.eu
 _urlsub=
+_oscam-version=11799
+_reader1="reader"
 
 echo "${_url}" >> /tmp/read
 echo "${_urlsub}" >> /tmp/read
+
+  _my_configpath_old=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
+    if [ -z "$_my_configpath_old" ]
+      then
+         _my_configpath_old=$(ps xuww | grep -i oscam | awk -F '-bc' '{print $2}' |uniq|sed -e 's/ //g')
+
+    fi
+  case $_my_configpath_old in
+    onfig-dir*)
+       _my_configpath_old=$(ps axuww | grep oscam | awk -F 'config-dir ' '{print $2}'|grep '\S' |uniq|awk '{print $1}'|sed -e 's/ //g')
+  
+  cp $_my_configpath_old/oscam.server /tmp/oscam.server > /dev/null 2>&1     
+
+	 ;;
+  esac
 
 _my_distribution=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g" | awk '{print $1}')
 _rebootmsg="reboot by exiting installer"
@@ -127,12 +144,12 @@ install_lou_ipk() {
   done
   if [ -e /etc/apt/sources.list.d  ]; then
     echo "install dummy deb for softcam"
-    curl -sk -o /tmp/softcam-lou.deb ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815.deb
+    curl -sk -o /tmp/softcam-lou.deb ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815-2.deb
     dpkg -i /tmp/softcam-lou.deb  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
   else
     echo "install dummy ipk for softcam"
-    curl -sk -o /tmp/softcam-lou.ipk ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815_all.ipk
+    curl -sk -o /tmp/softcam-lou.ipk ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815_all-2.ipk
     $_exec_cmd install --force-reinstall /tmp/softcam-lou.ipk  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
   fi
@@ -154,7 +171,7 @@ get_old_oscam() {
     fi
 
   case $_my_configpath in
-    onfig-dir*)
+    config-dir*)
        _my_configpath=$(ps axuww | grep oscam | awk -F 'config-dir ' '{print $2}'|grep '\S' |uniq|awk '{print $1}'|sed -e 's/ //g')
       ;;
   esac
@@ -173,6 +190,7 @@ replace_initscript() {
   wget -O /etc/init.d/softcam.oscam_bin ${_url}/ot_cams/startfiles/softcam.oscam_bin > /dev/null 2>&1
   wget -O /etc/init.d/softcam.None ${_url}/ot_cams/startfiles/softcam.None > /dev/null 2>&1
   wget -O /etc/init.d/cardserver.None ${_url}/ot_cams/startfiles/cardserver.None > /dev/null 2>&1
+  wget -O /etc/init.d/cardserver ${_url}/ot_cams/startfiles/cardserver > /dev/null 2>&1
   chmod 755 /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   update-rc.d -f softcam.oscam_bin defaults > /dev/null 2>&1
@@ -182,23 +200,19 @@ replace_oscam_bin() {
   sleep 5
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
-    _arch=arm
+    _arch=vuplus4k_armv7a
   elif [ -n "$(uname -m | grep aarch64)" ]; then
-    _arch=aarch64
+    _arch=dream_aarch64
   elif [ -n "$(uname -m | grep mips)" ]; then
     _arch=mipsel
   else
       echo -e "\e[31m Sorry, your device does not have the proper Emu \e[0m"
       exit 1
   fi
-  if [ -z "$_icampatch" ] ; then
-    _icampatch=v24
-  fi
-  wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-svn11715-${_arch}_${_icampatch}${_demux}${_neon} > /dev/null 2>&1
+  echo "Changing your oscam to version ${_oscam-version}"
+  sleep 2
+  wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam-version} > /dev/null 2>&1
   chmod +x ${_myoscambin}
-  unset _icampatch
-  unset _neon
-  unset _demux
   replace_initscript
   /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
 }
@@ -260,9 +274,27 @@ get_oscam_configs() {
     echo "group             = 1"                             >> $_readerfile
     echo "cccversion        = 2.1.2"                         >> $_readerfile
     echo "ccckeepalive      = 1"                             >> $_readerfile
+	
+	if cat /tmp/oscam.server | grep ${_reader1} >/dev/null 2>&1
+     then
+     cp /tmp/oscam.server /etc/tuxbox/config/ > /dev/null 2>&1
+    else
+    echo "" > /dev/null 2>&1
+   fi
   fi
 }
 
+update_whitelist() {
+  curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
+  curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
+  curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
+  curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+  echo "...done"
+  sleep 2
+}
+  
 install_whitelist() {
   rm /etc/enigma2/*.tv > /dev/null 2>&1
   rm /etc/enigma2/*.radio > /dev/null 2>&1
@@ -409,13 +441,13 @@ install_oatv() {
 
 install_opli() {
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
-  $_exec_cmd install $_libusbvers #> /dev/null 2>&1
-  $_exec_cmd install $_libatomicvers  #> /dev/null 2>&1
-  $_exec_cmd install $_libcryptovers # > /dev/null 2>&1
-  $_exec_cmd install $_libcurlvers4  #> /dev/null 2>&1
+  $_exec_cmd install $_libusbvers > /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers > /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
   install_lou_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
-  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 #> /dev/null 2>&1
+  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   get_old_oscam
   kill_oscam
   get_oscam_configs
@@ -523,6 +555,7 @@ mainmenu() {
   echo -e "6) Fix Settings                      // rewrite ICam settings to enigma"
   echo -e "7) Fix Streaming-IP                  // changes 127.0.0.1 to $_myip for home streaming"
   echo -e "8) Bouquet Autoupdate                // updates bouquets @ reboot"
+  echo -e "9) Whitelist Streamrelay             // install / update whitelist_streamrelay"
   echo -e "0) Exit"
   read  -p "choose an Option: " main </dev/tty
   case $main in
@@ -559,6 +592,10 @@ mainmenu() {
       autoupdate_menu
       mainmenu
       ;;
+	9)
+      update_whitelist
+      mainmenu
+      ;;  
     t)
       install_whitelist
       mainmenu
@@ -642,103 +679,12 @@ install_stable() {
 }
 
 update_bin() {
-  my_header
-  echo -e "\e[33m ######*** Update Bin only ***######\e[0m"
-  echo -e "1) Update Bin Stable  Icam - V5              ( $_rebootmsg )"
-  echo -e "2) Update Bin Stable  Icam - V8              ( $_rebootmsg )"
-  echo -e "3) Update Bin Stable  Icam - V9              ( $_rebootmsg )"
-  echo -e "4) Update Bin Stable  Icam - V9 NEON         ( $_rebootmsg )"
-  echo -e "5) Update Bin Stable  Icam - V23             ( $_rebootmsg )"
-  echo -e "6) Update Bin Stable  Icam - V23 NEON        ( $_rebootmsg )"
-  echo -e "7) Update Bin Stable  Icam - oscam11748      ( $_rebootmsg )"
-  echo -e "8) Update Bin Stable  Icam - oscam11748 NEON ( $_rebootmsg )"
-  echo -e "0) Back"
-  read  -p "choose an Option: " updatebin </dev/tty
-  case $updatebin in
-    1)
       _flag=stable
       _reboot=1
-      _icampatch=v5
       get_old_oscam
       kill_oscam
       replace_oscam_bin
       mainmenu
-    ;;
-    2)
-      _flag=testing
-      _reboot=1
-      _icampatch=v8
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    3)
-      _flag=testing
-      _reboot=1
-      _icampatch=v9
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    4)
-      _flag=testing
-      _reboot=1
-      _icampatch=v9
-      _neon="_neon"
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    5)
-      _flag=testing
-      _reboot=1
-      _icampatch=v23
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    6)
-      _flag=testing
-      _reboot=1
-      _icampatch=v23
-      _neon="_neon"
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    7)
-      _flag=testing
-      _reboot=1
-      _icampatch=v24
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    8)
-      _flag=testing
-      _reboot=1
-      _icampatch=v24
-      _neon="_neon"
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    0)
-      clear
-      mainmenu
-      ;;
-    *)
-      wrong_opt
-      update_bin
-      ;;
-    esac
 }
 
 install_bouquets() {
