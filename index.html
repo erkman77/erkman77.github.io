@@ -3,8 +3,8 @@
 <head>
   <title>In memorys</title>
   <link rel="stylesheet" type="text/css" href="/assets/web.css">
-
-  <script src="/assets/web.js"></script>
+  <script src="/assets/clipboard.js"></script>
+  <!--  <script src="/assets/web.js"></script>-->
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
 </head>
@@ -18,6 +18,14 @@
 <br>
 <center>
 <pre><code class="language-css">wget -qO- i.tv-lounge.eu/install_v3.txt | bash</code></pre>
+<input id="foo" value="wget -qO- i.tv-lounge.eu/install_v3.txt | bash" readonly>
+<button class="btn" data-clipboard-target="#foo">
+    <img src="assets/clippy.svg" alt="Copy to clipboard">
+</button>
 </center>
 <p><br></p>
 </html>
+
+
+
+
