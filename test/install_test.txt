@@ -463,7 +463,7 @@ install_oatv75() {
   fi
   echo "Changing your oscam to version ${_oscam_version}"
   sleep 2
-  wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch1}-${_oscam_version} > /dev/null 2>&1
+  wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta7.5-${_arch1}-${_oscam_version} > /dev/null 2>&1
   chmod +x ${_myoscambin}
   replace_initscript
   /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
