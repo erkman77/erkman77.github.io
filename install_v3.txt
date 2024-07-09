@@ -524,7 +524,10 @@ mainmenu() {
   echo -e "6) Fix Settings                      // rewrite ICam settings to enigma"
   echo -e "7) Fix Streaming-IP                  // changes 127.0.0.1 to $_myip for home streaming"
   echo -e "8) Bouquet Autoupdate                // updates bouquets @ reboot"
-  echo -e "0) Exit"
+  echo -e "0) Exit
+  echo -e ""
+  echo -e "\e[31m At this Moment not for Oatv 7.5!!!!\e[0m"
+  echo -e ""
   read  -p "choose an Option: " main </dev/tty
   case $main in
     1)
