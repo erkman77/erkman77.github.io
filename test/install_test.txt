@@ -75,6 +75,8 @@ fi
 
 old="oscam/install/sender"
 new="ot_tune/settings"
+ins="echo ${_url} >> /tmp/read"
+tere="/tmp/read"
 
 if cat /usr/bin/icam_autoupdate | grep $old >/dev/null 2>&1
 then
@@ -92,8 +94,7 @@ echo "Nothing to do, autoupdate seems to be ok"
 
 fi
 
-ins="echo ${_url} >> /tmp/read"
-tere="/tmp/read"
+
 
 if cat /usr/bin/icam_autoupdate | grep $tere >/dev/null 2>&1
 then
