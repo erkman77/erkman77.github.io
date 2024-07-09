@@ -24,7 +24,7 @@ done
 
 _url=https://i.tv-lounge.eu
 _urlsub=
-_oscam-version=11799
+_oscam-version=11802
 _reader1="reader"
 
 echo "${_url}" >> /tmp/read
