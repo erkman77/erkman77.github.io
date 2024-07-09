@@ -26,7 +26,9 @@ _url=https://i.tv-lounge.eu
 _urlsub=
 _oscam_version="11803"
 _reader1="reader"
-
+_oatv75="openatv 7.5"
+_my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
+echo "${_my_distribution2}" >> /tmp/version
 
 echo "${_url}" >> /tmp/read
 echo "${_urlsub}" >> /tmp/read
@@ -203,9 +205,10 @@ replace_oscam_bin() {
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
     _arch=open_arm
-  elif [ -n "$(uname -m | grep aarch64)" ]; then
+    _arch1=arm 
+ elif [ -n "$(uname -m | grep aarch64)" ]; then
     _arch=dream_aarch64
-  elif [ -n "$(uname -m | grep mips)" ]; then
+   elif [ -n "$(uname -m | grep mips)" ]; then
     _arch=mipsel
   else
       echo -e "\e[31m Sorry, your device does not have the proper Emu \e[0m"
@@ -213,8 +216,14 @@ replace_oscam_bin() {
   fi
   echo "Changing your oscam to version ${_oscam_version}"
   sleep 2
+  if cat /tmp/version | grep "${_oatv75}"
+  then
+  wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta7.5-${_arch}-${_oscam_version} > /dev/null 2>&1
+  chmod +x ${_myoscambin}
+  else
   wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} > /dev/null 2>&1
   chmod +x ${_myoscambin}
+  fi
   replace_initscript
   /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
 }
