@@ -24,8 +24,12 @@ done
 
 _url=https://i.tv-lounge.eu
 _urlsub=
-_oscam-version=11802
+_oscam-version=11803
 _reader1="reader"
+NORMAL='3[0;39m'
+BLUE='3[1;34m'
+GREEN='3[1;32m'
+RED='3[1;31m'
 
 echo "${_url}" >> /tmp/read
 echo "${_urlsub}" >> /tmp/read
@@ -558,6 +562,8 @@ mainmenu() {
   echo -e "8) Bouquet Autoupdate                // updates bouquets @ reboot"
   echo -e "9) Whitelist Streamrelay             // install / update whitelist_streamrelay"
   echo -e "0) Exit"
+  echo -e""
+  echo -e"$RED At this Moment not for Oatv 7.5!!!!$NORMAL"
   read  -p "choose an Option: " main </dev/tty
   case $main in
     1)
