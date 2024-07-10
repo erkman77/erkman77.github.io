@@ -218,10 +218,10 @@ replace_oscam_bin() {
   sleep 2
   if cat /tmp/version | grep "${_oatv75}"
   then
-  wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta7.5-${_arch}-${_oscam_version} > /dev/null 2>&1
+  wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch}-${_oscam_version} > /dev/null 2>&1
   chmod +x ${_myoscambin}
   else
-  wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} > /dev/null 2>&1
+  wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-beta-${_arch}-${_oscam_version} > /dev/null 2>&1
   chmod +x ${_myoscambin}
   fi
   replace_initscript
