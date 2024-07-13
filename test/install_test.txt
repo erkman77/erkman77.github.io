@@ -204,8 +204,8 @@ replace_oscam_bin() {
   sleep 5
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
-    _arch=open_arm
-    _arch1=arm 
+    _arch=arm
+   
  elif [ -n "$(uname -m | grep aarch64)" ]; then
     _arch=dream_aarch64
    elif [ -n "$(uname -m | grep mips)" ]; then
