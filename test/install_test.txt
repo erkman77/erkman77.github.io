@@ -24,7 +24,7 @@ done
 
 _url=https://i.tv-lounge.eu
 _urlsub=
-_oscam_version="11804"
+_oscam_version="11805"
 _reader1="reader"
 _oatv75="openatv 7.5"
 _my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
