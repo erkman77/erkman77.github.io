@@ -205,7 +205,7 @@ replace_oscam_bin() {
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
     _arch=arm
-   
+    
  elif [ -n "$(uname -m | grep aarch64)" ]; then
     _arch=aarch64
    elif [ -n "$(uname -m | grep mips)" ]; then
@@ -472,7 +472,7 @@ install_oatv75() {
   fi
   echo "Changing your oscam to version ${_oscam_version}"
   sleep 2
-  wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta7.5-${_arch1}-${_oscam_version} > /dev/null 2>&1
+  wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch1}-${_oscam_version} > /dev/null 2>&1
   chmod +x ${_myoscambin}
   replace_initscript
   /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
