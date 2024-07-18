@@ -129,12 +129,6 @@
 #DESCRIPTION Sky Sport Austria 6 HD
 #SERVICE 1:0:19:105:B:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a105%3aB%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 7 HD
 #DESCRIPTION Sky Sport Austria 7 HD
-#SERVICE 1:0:19:73:9:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a73%3a9%3a85%3aC00000%3a0%3a0%3a0:Fussball.TV 1
-#DESCRIPTION Fussball.TV 1
-#SERVICE 1:0:19:75:9:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a75%3a9%3a85%3aC00000%3a0%3a0%3a0:Fussball.TV 2
-#DESCRIPTION Fussball.TV 2
-#SERVICE 1:0:19:77:10:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a77%3a10%3a85%3aC00000%3a0%3a0%3a0:Fussball.TV 3
-#DESCRIPTION Fussball.TV 3
 #SERVICE 1:64:27:0:0:0:0:0:0:0::---------- Kultur ----------
 #DESCRIPTION ---------- Kultur ----------
 #SERVICE 1:0:19:82:6:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a82%3a6%3a85%3aC00000%3a0%3a0%3a0%3a:Discovery HD
