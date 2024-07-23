@@ -412,8 +412,6 @@ disable_autoupdate_bouquets() {
 }
 
 
-
-
 replace_bouquets_type() {
   $_exec_cmd install exteplayer3
   $_exec_cmd install gstplayer
