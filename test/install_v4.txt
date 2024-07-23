@@ -248,7 +248,6 @@ do_enigma_settings() {
   set_enigma2_settings
 }
 
-
 get_oscam_configs() {
   _readerfile="/etc/tuxbox/config/oscam.server"
   mkdir /etc/tuxbox/config/ -p > /dev/null 2>&1
@@ -343,7 +342,6 @@ get_bouquets() {
   esac
 }
 
-
 replace_bouquet_bouquets_ip() {
   _fix_streaming=1
   _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -F '/' '{print $1}')
@@ -410,9 +408,6 @@ disable_autoupdate_bouquets() {
   echo "exit 0"                                       >> /usr/bin/icam_autoupdate
   chmod +x /usr/bin/icam_autoupdate
 }
-
-
-
 
 replace_bouquets_type() {
   $_exec_cmd install exteplayer3
@@ -778,7 +773,6 @@ autoupdate_menu() {
     ;;
     esac
 }
-
 
 backup_restore() {
   my_header
