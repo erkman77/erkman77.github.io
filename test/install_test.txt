@@ -24,7 +24,7 @@ done
 
 _url=https://i.tv-lounge.eu
 _urlsub=
-_oscam_version="11805"
+_oscam_version="11813"
 _reader1="reader"
 _oatv75="openatv 7.5"
 _my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
@@ -218,7 +218,7 @@ replace_oscam_bin() {
     chmod +x ${_myoscambin}
    else
   if [ -e /etc/apt/sources.list.d  ]; then
-    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-dream-${_arch}-${_oscam_version} > /dev/null 2>&1
+    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
     chmod +x ${_myoscambin}
   else
    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} > /dev/null 2>&1
