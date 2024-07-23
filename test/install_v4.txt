@@ -143,12 +143,12 @@ install_lou_ipk() {
   done
   if [ -e /etc/apt/sources.list.d  ]; then
     echo "install dummy deb for softcam"
-    curl -sk -o /tmp/softcam-lou.deb ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815-2.deb
+    curl -sk -o /tmp/softcam-lou.deb ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815.deb
     dpkg -i /tmp/softcam-lou.deb  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
   else
     echo "install dummy ipk for softcam"
-    curl -sk -o /tmp/softcam-lou.ipk ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815_all-2.ipk
+    curl -sk -o /tmp/softcam-lou.ipk ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815_all.ipk
     $_exec_cmd install --force-reinstall /tmp/softcam-lou.ipk  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
   fi
@@ -284,8 +284,8 @@ get_oscam_configs() {
     echo "group             = 1"                             >> $_readerfile
     echo "cccversion        = 2.1.2"                         >> $_readerfile
     echo "ccckeepalive      = 1"                             >> $_readerfile
-	
-	if cat /tmp/oscam.server | grep ${_reader1} >/dev/null 2>&1
+
+  	if cat /tmp/oscam.server | grep ${_reader1} >/dev/null 2>&1
      then
      cp /tmp/oscam.server /etc/tuxbox/config/ > /dev/null 2>&1
     else
@@ -304,7 +304,7 @@ update_whitelist() {
   echo "...done"
   sleep 2
 }
-  
+
 install_whitelist() {
   rm /etc/enigma2/*.tv > /dev/null 2>&1
   rm /etc/enigma2/*.radio > /dev/null 2>&1
@@ -449,42 +449,11 @@ install_oatv() {
   sleep 2 
 }
 
-install_oatv75() {
+install_opli() {
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
   $_exec_cmd install $_libusbvers  > /dev/null 2>&1
   $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
   $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
-  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
-  install_lou_ipk
-  rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
-  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
-  get_old_oscam
-  kill_oscam
-  get_oscam_configs
-  if [ -n "$(uname -m | grep armv7l)" ]; then
-    _arch1=arm
-    elif [ -n "$(uname -m | grep mips)" ]; then
-    _arch1=mipsel
-  else
-      echo -e "\e[31m Sorry, your device does not have the proper Emu \e[0m"
-      exit 1
-  fi
-  echo "Changing your oscam to version ${_oscam_version}"
-  sleep 2
-  wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch1}-${_oscam_version} > /dev/null 2>&1
-  chmod +x ${_myoscambin}
-  replace_initscript
-  /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
-  set_enigma2_settings
-  echo ""; echo -e "\e[32m ... Well, fancy! were done ;)\e[0m";
-  sleep 2 
-}
-
-install_opli() {
-  echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
-  $_exec_cmd install $_libusbvers > /dev/null 2>&1
-  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
-  $_exec_cmd install $_libcryptovers > /dev/null 2>&1
   $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
   install_lou_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
@@ -581,7 +550,6 @@ my_header() {
   echo "                                                                                "
   echo "                                                            in memory off...    "
   echo ""
- 
 }
 
 mainmenu() {
@@ -667,12 +635,11 @@ install_stable() {
   my_header
   echo -e "\e[33m ######*** Stable  Menu ***######\e[0m"
   echo -e "1) openATV     ( $_rebootmsg )"
-  echo -e "2) openATV 7.5 ( $_rebootmsg )"
-  echo -e "3) Openpli     ( $_rebootmsg )"
-  echo -e "4) VTI+vuplus  ( $_rebootmsg )"
-  echo -e "5) openNFR/HDF ( $_rebootmsg )"
-  echo -e "6) DreamOS     ( $_rebootmsg )"
-  echo -e "7) Pure2       ( $_rebootmsg )"
+  echo -e "2) Openpli     ( $_rebootmsg )"
+  echo -e "3) VTI+vuplus  ( $_rebootmsg )"
+  echo -e "4) openNFR/HDF ( $_rebootmsg )"
+  echo -e "5) DreamOS     ( $_rebootmsg )"
+  echo -e "6) Pure2       ( $_rebootmsg )"
   echo -e "0) Back"
   read  -p "choose an Option: " stablemenu </dev/tty
   case $stablemenu in
@@ -685,34 +652,28 @@ install_stable() {
     2)
       _flag=stable
       _reboot=1
-      install_oatv75
-      install_bouquets
-      ;;	
-	3)
-      _flag=stable
-      _reboot=1
       install_opli
       install_bouquets
       ;;
-    4)
+    3)
       _flag=stable
       _reboot=1
       install_vti
       install_bouquets
       ;;
-    5)
+    4)
       _flag=stable
       _reboot=1
       install_onfr
       install_bouquets
       ;;
-    6)
+    5)
       _flag=stable
       _reboot=1
       install_nn2
       install_bouquets
       ;;
-    7)
+    6)
       _flag=stable
       _reboot=1
       install_opli
