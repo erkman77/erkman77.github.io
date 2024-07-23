@@ -196,7 +196,7 @@ replace_initscript() {
 }
 
 replace_oscam_bin() {
-  sleep 5
+  sleep 1
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
     _arch=arm
@@ -557,7 +557,7 @@ mainmenu() {
   echo -e "\e[34m Fine! it looks you are running $_my_distribution\e[0m" 
   echo -e "\e[33m ######*** Main Menu ***######\e[0m"
   echo -e "1) Install Icam Oscam stable         // fresh box ... or sledgehammer mode ;)"
-  echo -e "2) Update Oscam Bin only             // updates any running oscam to ICam oscam"
+  echo -e "2) Update Oscam Bin only             // updates any running oscam to ICam oscam v${_oscam_version}"
   echo -e "3) Update Bouquets only              // rewrite ICam Bouquets"
   echo -e "4) Update ICAM Picons                // install ICam picons only"
   echo -e "5) Backup & Restore                  // backup or restore oscam"
