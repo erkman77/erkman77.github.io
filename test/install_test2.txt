@@ -27,8 +27,17 @@ _urlsub=
 _oscam_version="11813"
 _reader1="reader"
 _oatv75="openatv 7.5"
+older="/usr/bin/"
+newer=""
+
 _my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
 echo=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq >>/tmp/oscambinold)
+if [ -e /tmp/oscambinold  ]; then
+
+         sed -i "s#$older#$newer#g" /tmp/oscambinold
+
+fi
+read oscambinold < /tmp/oscambinold
 echo "${_my_distribution2}" >> /tmp/version
 
 echo "${_url}" >> /tmp/read
@@ -198,14 +207,7 @@ replace_initscript() {
 
 replace_oscam_bin() {
 wget -O - -q "127.0.0.1/web/message?text=Updating%20your%20is%20Oscam...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
-older="/usr/bin/"
-newer=""
-if [ -e /tmp/oscambinold  ]; then
 
-         sed -i "s#$older#$newer#g" /tmp/oscambinold
-
-fi
-read oscambinold < /tmp/oscambinold
 
   sleep 3
   cp ${_myoscambin} ${_myoscambin}_bak_lou
