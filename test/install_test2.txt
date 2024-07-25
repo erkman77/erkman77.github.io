@@ -196,7 +196,7 @@ replace_initscript() {
 }
 
 replace_oscam_bin() {
-  
+
   sleep 5
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
