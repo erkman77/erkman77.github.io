@@ -200,11 +200,11 @@ replace_oscam_bin() {
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
     _arch=arm
-     elif [ -n "$(uname -m | grep aarch64)" ]; then
+  elif [ -n "$(uname -m | grep aarch64)" ]; then
     _arch=aarch64
-   elif [ -n "$(uname -m | grep mips)" ]; then
+  elif [ -n "$(uname -m | grep mips)" ]; then
     _arch=mipsel
-	  else
+  else
       echo -e "\e[31m Sorry, your device does not have the proper Emu \e[0m"
       exit 1
   fi
