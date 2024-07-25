@@ -28,6 +28,7 @@ _oscam_version="11813"
 _reader1="reader"
 _oatv75="openatv 7.5"
 _my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
+echo=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq >>/tmp/oscambinold)
 echo "${_my_distribution2}" >> /tmp/version
 
 echo "${_url}" >> /tmp/read
@@ -196,7 +197,16 @@ replace_initscript() {
 }
 
 replace_oscam_bin() {
-  sleep 1
+older="/usr/bin/"
+newer=""
+if [ -e /tmp/oscambinold  ]; then
+
+         sed -i "s#$older#$newer#g" /tmp/oscambinold
+
+fi
+read oscambinold < /tmp/oscambinold
+
+  sleep 3
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
     _arch=arm
@@ -223,8 +233,9 @@ replace_oscam_bin() {
     chmod +x ${_myoscambin}
 	fi
   fi
-  replace_initscript
-  /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
+ # replace_initscript
+  cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
+  /etc/init.d/softcam.$oscambinold restart > /dev/null 2>&1
 }
 
 do_reboot() {
