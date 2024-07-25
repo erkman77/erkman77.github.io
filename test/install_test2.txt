@@ -472,20 +472,7 @@ install_oatv75() {
   get_old_oscam
   kill_oscam
   get_oscam_configs
-  if [ -n "$(uname -m | grep armv7l)" ]; then
-    _arch1=arm
-    elif [ -n "$(uname -m | grep mips)" ]; then
-    _arch1=mipsel
-  else
-      echo -e "\e[31m Sorry, your device does not have the proper Emu \e[0m"
-      exit 1
-  fi
-  echo "Changing your oscam to version ${_oscam_version}"
-  sleep 2
-  wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch1}-${_oscam_version} 
-  chmod +x ${_myoscambin}
-  replace_initscript
-  /etc/init.d/softcam.oscam_bin restart 
+  replace_oscam_bin
   set_enigma2_settings
   echo ""; echo -e "\e[32m ... Well, fancy! were done ;)\e[0m";
   sleep 2 
