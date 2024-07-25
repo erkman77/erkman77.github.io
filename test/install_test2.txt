@@ -207,7 +207,7 @@ fi
 fi
 read oscambinold < /tmp/oscambinold
 
-  sleep 5
+  sleep 3
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
     _arch=arm
@@ -235,7 +235,7 @@ read oscambinold < /tmp/oscambinold
 	fi
   fi
  # replace_initscript
-/etc/init.d/softcam.$oscambinold restart 
+/etc/init.d/softcam.$oscambinold start 
 }
 
 do_reboot() {
