@@ -196,6 +196,7 @@ replace_initscript() {
 }
 
 replace_oscam_bin() {
+  
   sleep 5
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
@@ -212,15 +213,15 @@ replace_oscam_bin() {
  sleep 2
   if cat /tmp/version | grep "${_oatv75}"
    then
-    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch}-${_oscam_version} 
-    chmod +x ${_myoscambin}
+    wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch}-${_oscam_version} 
+    chmod +x /usr/bin/oscam_bin
    else
   if [ -e /etc/apt/sources.list.d  ]; then
-    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} 
-    chmod +x ${_myoscambin}
+    wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} 
+    chmod +x /usr/bin/oscam_bin
   else
-   wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} 
-    chmod +x ${_myoscambin}
+   wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} 
+    chmod +x /usr/bin/oscam_bin
 	fi
   fi
   replace_initscript
