@@ -28,6 +28,7 @@ _oscam_version="11813"
 _reader1="reader"
 _oatv75="openatv 7.5"
 _my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
+echo=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq >>/tmp/oscambinold)
 echo "${_my_distribution2}" >> /tmp/version
 
 echo "${_url}" >> /tmp/read
@@ -196,14 +197,12 @@ replace_initscript() {
 }
 
 replace_oscam_bin() {
-echo=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq >>/tmp/oscambinold)
 older="/usr/bin/"
 newer=""
 if [ -e /tmp/oscambinold  ]; then
- if cat /tmp/oscambinold | grep $old
-        then
+
          sed -i "s#$older#$newer#g" /tmp/oscambinold
-fi
+
 fi
 read oscambinold < /tmp/oscambinold
 
