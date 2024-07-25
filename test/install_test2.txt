@@ -213,19 +213,19 @@ replace_oscam_bin() {
  sleep 2
   if cat /tmp/version | grep "${_oatv75}"
    then
-    wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch}-${_oscam_version} 
-    chmod +x /usr/bin/oscam_bin
+    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch}-${_oscam_version} 
+    chmod +x ${_myoscambin}
    else
   if [ -e /etc/apt/sources.list.d  ]; then
     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} 
-    chmod +x /usr/bin/oscam_bin
+    chmod +x ${_myoscambin}
   else
    wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} 
-    chmod +x /usr/bin/oscam_bin
+    chmod +x ${_myoscambin}
 	fi
   fi
-  replace_initscript
-  /etc/init.d/softcam.oscam_bin restart 
+ # replace_initscript
+ #  /etc/init.d/softcam.oscam_bin restart 
 }
 
 do_reboot() {
