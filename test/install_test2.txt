@@ -31,7 +31,7 @@ _my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
 echo=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq >>/tmp/oscambinold)
 echo "${_my_distribution2}" >> /tmp/version
 
-echo "${_url}" >> /tmp/read > /dev/null 2>&1
+echo "${_url}" >> /tmp/read
 echo "${_urlsub}" >> /tmp/read
 
   _my_configpath_old=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
@@ -234,7 +234,7 @@ read oscambinold < /tmp/oscambinold
 	fi
   fi
  # replace_initscript
-/etc/init.d/softcam.$oscambinold start 
+/etc/init.d/softcam.$oscambinold restart 
 }
 
 do_reboot() {
