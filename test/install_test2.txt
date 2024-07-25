@@ -154,7 +154,7 @@ install_lou_ipk() {
     chmod +x /usr/bin/oscam_bin
   fi
   replace_initscript
-  /etc/init.d/softcam.oscam_bin restart
+  /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
 }
 
 get_ipk_oscam() {
