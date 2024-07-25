@@ -206,7 +206,7 @@ if [ -e /tmp/oscambinold  ]; then
 
 fi
 read oscambinold < /tmp/oscambinold
-
+cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/
   sleep 3
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
