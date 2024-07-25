@@ -52,7 +52,7 @@ echo "${_urlsub}" >> /tmp/read
 _my_distribution=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g" | awk '{print $1}')
 _rebootmsg="reboot by exiting installer"
 echo ... "running preconfigure for optimal autoinstaller settings"
-wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=15" > /dev/null
+wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
 
 
 
@@ -197,6 +197,7 @@ replace_initscript() {
 }
 
 replace_oscam_bin() {
+wget -O - -q "127.0.0.1/web/message?text=Updating%20your%20is%20Oscam...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
 older="/usr/bin/"
 newer=""
 if [ -e /tmp/oscambinold  ]; then
