@@ -206,7 +206,7 @@ if [ -e /tmp/oscambinold  ]; then
 
 fi
 read oscambinold < /tmp/oscambinold
-cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/
+
   sleep 3
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
@@ -235,7 +235,8 @@ cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/
 	fi
   fi
  # replace_initscript
-/etc/init.d/softcam.$oscambinold restart 
+ cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
+/etc/init.d/softcam.$oscambinold restart > /dev/null 2>&1
 }
 
 do_reboot() {
