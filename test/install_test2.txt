@@ -38,6 +38,7 @@ if [ -e /tmp/oscambinold  ]; then
 
 fi
 read oscambinold < /tmp/oscambinold
+
 echo "${_my_distribution2}" >> /tmp/version
 
 echo "${_url}" >> /tmp/read
@@ -158,7 +159,7 @@ install_lou_ipk() {
     chmod +x /usr/bin/oscam_bin
   else
     echo "install dummy ipk for softcam"
-    curl -sk -o /tmp/softcam-lou.ipk ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815_all.ipk
+    curl -sk -o /tmp/softcam-lou.ipk ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815_all-2.ipk
     $_exec_cmd install --force-reinstall /tmp/softcam-lou.ipk  
     chmod +x /usr/bin/oscam_bin
   fi
