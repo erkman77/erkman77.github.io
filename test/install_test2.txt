@@ -54,7 +54,7 @@ echo "${_urlsub}" >> /tmp/read
     onfig-dir*)
        _my_configpath_old=$(ps axuww | grep oscam | awk -F 'config-dir ' '{print $2}'|grep '\S' |uniq|awk '{print $1}'|sed -e 's/ //g')
   
-  cp $_my_configpath_old/oscam.server /tmp/oscam.server      
+  cp $_my_configpath_old/oscam.server /tmp/oscam.server > /dev/null 2>&1    
 
 	 ;;
   esac
@@ -93,7 +93,7 @@ ins="echo ${_url} >> /tmp/read"
 tere="/tmp/read"
 
 if [ -e /usr/bin/icam_autoupdate  ]; then
- if cat /usr/bin/icam_autoupdate | grep $old 
+ if cat /usr/bin/icam_autoupdate | grep $old >/dev/null 2>&1
 	then
 	 echo -e "\e[33m ... Fixing autoupdate...\e[0m"
 	 sed -i "s#$old#$new#g" /usr/bin/icam_autoupdate 
@@ -103,7 +103,7 @@ if [ -e /usr/bin/icam_autoupdate  ]; then
 	 echo "Nothing to do, autoupdate seems to be ok"
  fi
 
- if cat /usr/bin/icam_autoupdate | grep $tere 
+ if cat /usr/bin/icam_autoupdate | grep $tere >/dev/null 2>&1
 	then
 	 echo "" 
 	else  
@@ -113,9 +113,9 @@ else
 	echo "No autoupdate installed..."
 fi
 
-$_exec_cmd install procps 
-$_exec_cmd install procps-ps 
-$_exec_cmd install curl 
+$_exec_cmd install procps >/dev/null 2>&1
+$_exec_cmd install procps-ps >/dev/null 2>&1
+$_exec_cmd install curl >/dev/null 2>&1
 _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -F '/' '{print $1}')
 
 echo "# Oscam Multitool " > /usr/bin/icam_multitool
@@ -127,7 +127,7 @@ fi
 echo "" >> /usr/bin/icam_multitool
 chmod +x /usr/bin/icam_multitool
 
-curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt 
+curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt >/dev/null 2>&1
 
 check_backupdir() {
   [ -d /backup ] || mkdir /backup
@@ -144,7 +144,7 @@ install_lou_ipk() {
   for _current_install in $_current_installs ; do
     echo "exit 0" > /var/lib/opkg/info/$_current_install.prerm
     echo "removing $_current_install"
-    $_exec_cmd remove $_current_install 
+    $_exec_cmd remove $_current_install >/dev/null 2>&1
   done
   for _current_runscript in `ls /etc/init.d/ | grep -i softcam` ; do
     rm /etc/init.d/$_current_runscript
@@ -155,16 +155,16 @@ install_lou_ipk() {
   if [ -e /etc/apt/sources.list.d  ]; then
     echo "install dummy deb for softcam"
     curl -sk -o /tmp/softcam-lou.deb ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815.deb
-    dpkg -i /tmp/softcam-lou.deb  
+    dpkg -i /tmp/softcam-lou.deb  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
   else
     echo "install dummy ipk for softcam"
     curl -sk -o /tmp/softcam-lou.ipk ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815_all-2.ipk
-    $_exec_cmd install --force-reinstall /tmp/softcam-lou.ipk  
+    $_exec_cmd install --force-reinstall /tmp/softcam-lou.ipk  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
   fi
   replace_initscript
-  /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
+  /etc/init.d/softcam.oscam_bin restart
 }
 
 get_ipk_oscam() {
@@ -194,17 +194,16 @@ kill_oscam() {
 }
 
 replace_initscript() {
-  update-rc.d -f softcam.oscam remove 
-  rm /etc/init.d/softcam* /etc/init.d/cardserver* 
-  wget -O /etc/init.d/softcam ${_url}/ot_cams/startfiles/softcam 
-  wget -O /etc/init.d/softcam.oscam_bin ${_url}/ot_cams/startfiles/softcam.oscam_bin 
-  wget -O /etc/init.d/softcam.None ${_url}/ot_cams/startfiles/softcam.None 
-  wget -O /etc/init.d/cardserver.None ${_url}/ot_cams/startfiles/cardserver.None 
-  wget -O /etc/init.d/cardserver ${_url}/ot_cams/startfiles/cardserver 
-  chmod 755 /etc/init.d/softcam* /etc/init.d/cardserver* 
-  chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* 
-  update-rc.d -f softcam.oscam_bin defaults 
-}
+  update-rc.d -f softcam.oscam remove > /dev/null 2>&1
+  rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
+  wget -O /etc/init.d/softcam ${_url}/ot_cams/startfiles/softcam > /dev/null 2>&1
+  wget -O /etc/init.d/softcam.oscam_bin ${_url}/ot_cams/startfiles/softcam.oscam_bin > /dev/null 2>&1
+  wget -O /etc/init.d/softcam.None ${_url}/ot_cams/startfiles/softcam.None > /dev/null 2>&1
+  wget -O /etc/init.d/cardserver.None ${_url}/ot_cams/startfiles/cardserver.None > /dev/null 2>&1
+  wget -O /etc/init.d/cardserver ${_url}/ot_cams/startfiles/cardserver > /dev/null 2>&1
+  chmod 755 /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
+  chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
+  update-rc.d -f softcam.oscam_bin defaults > /dev/null 2>&1
 
 replace_oscam_bin() {
 wget -O - -q "127.0.0.1/web/message?text=Updating%20your%20is%20Oscam...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
@@ -226,20 +225,20 @@ wget -O - -q "127.0.0.1/web/message?text=Updating%20your%20is%20Oscam...%20pleas
  sleep 2
   if cat /tmp/version | grep "${_oatv75}"
    then
-    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch}-${_oscam_version} 
+    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch}-${_oscam_version} > /dev/null 2>&1
     chmod +x ${_myoscambin}
    else
   if [ -e /etc/apt/sources.list.d  ]; then
-    wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} 
+    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
     chmod +x ${_myoscambin}
   else
-   wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} 
+   wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} > /dev/null 2>&1
     chmod +x ${_myoscambin}
 	fi
   fi
  # replace_initscript
- cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
-/etc/init.d/softcam.$oscambinold restart > /dev/null 2>&1
+  cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
+  /etc/init.d/softcam.$oscambinold restart > /dev/null 2>&1
 }
 
 do_reboot() {
@@ -250,11 +249,11 @@ do_reboot() {
 }
 
 set_enigma2_settings() {
-  curl --noproxy '*' --data value="false" "http://127.0.0.1/api/saveconfig?key=config.plugins.fccsetup.activate" 
-  curl --noproxy '*' --data value="false" "http://127.0.0.1/api/saveconfig?key=config.streaming.stream_ecm" 
-  curl --noproxy '*' --data value="true" "http://127.0.0.1/api/saveconfig?key=config.streaming.descramble" 
-  curl --noproxy '*' --data value="false" "http://127.0.0.1/api/saveconfig?key=config.streaming.descramble_client" 
-  curl --noproxy '*' --data value="expert" "http://127.0.0.1/api/saveconfig?key=config.usage.setup_level" 
+  curl --noproxy '*' --data value="false" "http://127.0.0.1/api/saveconfig?key=config.plugins.fccsetup.activate" > /dev/null 2>&1
+  curl --noproxy '*' --data value="false" "http://127.0.0.1/api/saveconfig?key=config.streaming.stream_ecm" > /dev/null 2>&1
+  curl --noproxy '*' --data value="true" "http://127.0.0.1/api/saveconfig?key=config.streaming.descramble" > /dev/null 2>&1
+  curl --noproxy '*' --data value="false" "http://127.0.0.1/api/saveconfig?key=config.streaming.descramble_client" > /dev/null 2>&1
+  curl --noproxy '*' --data value="expert" "http://127.0.0.1/api/saveconfig?key=config.usage.setup_level" > /dev/null 2>&1
   echo -e "\e[32m all done ...\e[0m"
   sleep 3
 }
@@ -266,12 +265,12 @@ do_enigma_settings() {
 
 get_oscam_configs() {
   _readerfile="/etc/tuxbox/config/oscam.server"
-  mkdir /etc/tuxbox/config/ -p 
-  curl -sk -o /etc/tuxbox/config/oscam.conf ${_url}/ot_cams/configs/oscam.conf 
-  curl -sk -o /etc/tuxbox/config/oscam.user ${_url}/ot_cams/configs/oscam.user 
-  curl -sk -o /etc/tuxbox/config/oscam.server ${_url}/ot_cams/configs/oscam.server 
-  curl -sk -o /etc/tuxbox/config/SoftCam.Key ${_url}/ot_cams/configs/SoftCam.Key 
-  curl -sk -o /etc/tuxbox/config/oscam.dvbapi ${_url}/ot_cams/configs/oscam.dvbapi 
+  mkdir /etc/tuxbox/config/ -p > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/oscam.conf ${_url}/ot_cams/configs/oscam.conf > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/oscam.user ${_url}/ot_cams/configs/oscam.user > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/oscam.server ${_url}/ot_cams/configs/oscam.server > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/SoftCam.Key ${_url}/ot_cams/configs/SoftCam.Key > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/oscam.dvbapi ${_url}/ot_cams/configs/oscam.dvbapi > /dev/null 2>&1
 
   if [ -n "$_my_reader_user" ] ; then
     echo ""                                                        >> $_readerfile
@@ -300,11 +299,11 @@ get_oscam_configs() {
     echo "cccversion        = 2.1.2"                         >> $_readerfile
     echo "ccckeepalive      = 1"                             >> $_readerfile
 	
-	if cat /tmp/oscam.server | grep ${_reader1} 
+	if cat /tmp/oscam.server | grep ${_reader1} > /dev/null 2>&1
      then
-     cp /tmp/oscam.server /etc/tuxbox/config/ 
+     cp /tmp/oscam.server /etc/tuxbox/config/ > /dev/null 2>&1
     else
-    echo "" 
+    echo "" > /dev/null 2>&1
    fi
   fi
 }
@@ -313,24 +312,24 @@ update_whitelist() {
   curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
   curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
   curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
-  curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' 
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' 
+  curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
   echo "...done"
   sleep 2
 }
 
 install_whitelist() {
-  rm /etc/enigma2/*.tv 
-  rm /etc/enigma2/*.radio 
-  rm /etc/enigma2/*.del 
+  rm /etc/enigma2/*.tv > /dev/null 2>&1
+  rm /etc/enigma2/*.radio > /dev/null 2>&1
+  rm /etc/enigma2/*.del > /dev/null 2>&1
   curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
   curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
   curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
   curl -sk ${_url}/ot_tune/whitelist/astra_wl.txt | bash
-  curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' 
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' 
+  curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
   set_enigma2_settings
   echo "...done"
   sleep 2
@@ -347,13 +346,13 @@ get_bouquets() {
       curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
       curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
       curl -sk ${_url}/${_bouquet} | bash
-      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' 
-      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' 
+      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
       ;;
     *)
       curl -sk ${_url}/${_bouquet} | bash
-      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' 
-      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' 
+      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
       ;;
   esac
 }
@@ -363,8 +362,8 @@ replace_bouquet_bouquets_ip() {
   _fix_streaming=1
   _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -F '/' '{print $1}')
   sed -i "s/127.0.0.1/${_myip}/g" /etc/enigma2/*.tv
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' 
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' 
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
 }
 
 autoupdate_bouquet_bouquets() {
@@ -409,8 +408,8 @@ autoupdate_bouquet_bouquets() {
   echo "curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml" >> /usr/bin/icam_autoupdate
   echo "curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml"         >> /usr/bin/icam_autoupdate
   echo "curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt" >> /usr/bin/icam_autoupdate
-  echo 'curl -s "http://127.0.0.1/web/servicelistreload?mode=0" '>> /usr/bin/icam_autoupdate
-  echo 'curl -s "http://127.0.0.1/web/servicelistreload?mode=0" '>> /usr/bin/icam_autoupdate
+  echo 'curl -s "http://127.0.0.1/web/servicelistreload?mode=0" > /dev/null 2>&1'>> /usr/bin/icam_autoupdate
+  echo 'curl -s "http://127.0.0.1/web/servicelistreload?mode=0" > /dev/null 2>&1'>> /usr/bin/icam_autoupdate
   echo '' >> /usr/bin/icam_autoupdate
   chmod +x /usr/bin/icam_autoupdate
   (crontab -l | sed -e '/icam_autoupdate/d') | crontab -
@@ -427,34 +426,32 @@ disable_autoupdate_bouquets() {
 }
 
 
-
-
 replace_bouquets_type() {
   $_exec_cmd install exteplayer3
   $_exec_cmd install gstplayer
   $_exec_cmd install enigma2-plugin-systemplugins-serviceapp
-  curl --noproxy '*' --data value="exteplayer3" "http://127.0.0.1/api/saveconfig?key=config.plugins.serviceapp.servicemp3.player" 
-  curl --noproxy '*' --data value="true" "http://127.0.0.1/api/saveconfig?key=config.plugins.serviceapp.servicemp3.replace" 
+  curl --noproxy '*' --data value="exteplayer3" "http://127.0.0.1/api/saveconfig?key=config.plugins.serviceapp.servicemp3.player" > /dev/null 2>&1
+  curl --noproxy '*' --data value="true" "http://127.0.0.1/api/saveconfig?key=config.plugins.serviceapp.servicemp3.replace" > /dev/null 2>&1
   sed -i '/config.plugins.serviceapp.servicemp3/d' /etc/enigma2/settings
   echo "config.plugins.serviceapp.servicemp3.player=gstplayer" >> /etc/enigma2/settings
   echo "config.plugins.serviceapp.servicemp3.replace=true" >> /etc/enigma2/settings
   touch /etc/enigma2/serviceapp_replaceservicemp3
   sed -i 's/3a17999\/1/3a17999\/5001/g' /etc/enigma2/*.tv
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' 
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' 
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
   _fix_sound=true
   _reboot=1
 }
 
 install_oatv() {
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
-  $_exec_cmd install $_libusbvers  
-  $_exec_cmd install $_libatomicvers  
-  $_exec_cmd install $_libcryptovers  
-  $_exec_cmd install $_libcurlvers4  
+  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
   install_lou_ipk
-  rm /usr/lib/libcrypto.so.0.9.8 
-  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 
+  rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   get_old_oscam
   kill_oscam
   get_oscam_configs
@@ -466,13 +463,13 @@ install_oatv() {
 
 install_oatv75() {
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
-  $_exec_cmd install $_libusbvers  
-  $_exec_cmd install $_libatomicvers  
-  $_exec_cmd install $_libcryptovers  
-  $_exec_cmd install $_libcurlvers4  
+  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
   install_lou_ipk
-  rm /usr/lib/libcrypto.so.0.9.8 
-  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 
+  rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   get_old_oscam
   kill_oscam
   get_oscam_configs
@@ -484,13 +481,13 @@ install_oatv75() {
 
 install_opli() {
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
-  $_exec_cmd install $_libusbvers 
-  $_exec_cmd install $_libatomicvers  
-  $_exec_cmd install $_libcryptovers 
-  $_exec_cmd install $_libcurlvers4  
+  $_exec_cmd install $_libusbvers > /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers> /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
   install_lou_ipk
-  rm /usr/lib/libcrypto.so.0.9.8 
-  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 
+  rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   get_old_oscam
   kill_oscam
   get_oscam_configs
@@ -502,13 +499,13 @@ install_opli() {
 
 install_onfr() {
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
-  $_exec_cmd install $_libusbvers  
-  $_exec_cmd install $_libatomicvers  
-  $_exec_cmd install $_libcryptovers  
-  $_exec_cmd install $_libcurlvers4  
+  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
   install_lou_ipk
-  rm /usr/lib/libcrypto.so.0.9.8 
-  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 
+  rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   get_old_oscam
   kill_oscam
   get_oscam_configs
@@ -520,13 +517,13 @@ install_onfr() {
 
 install_vti() {
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
-  $_exec_cmd install $_libusbvers  
-  $_exec_cmd install $_libatomicvers  
-  $_exec_cmd install $_libcryptovers  
-  $_exec_cmd install $_libcurlvers4  
+  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
   install_lou_ipk
-  rm /lib/libcrypto.so.0.9.8 
-  ln -s `find /lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /lib/libcrypto.so.0.9.8 
+  rm /lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  ln -s `find /lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   get_old_oscam
   kill_oscam
   get_oscam_configs
@@ -538,13 +535,13 @@ install_vti() {
 
 install_nn2() {
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
-  $_exec_cmd install $_libusbvers  
-  $_exec_cmd install $_libatomicvers  
-  $_exec_cmd install $_libcryptovers  
-  $_exec_cmd install $_libcurlvers4  
+  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
   install_lou_ipk
-  rm /usr/lib/libcrypto.so.0.9.8 
-  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 
+  rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   get_old_oscam
   kill_oscam
   get_oscam_configs
@@ -555,13 +552,13 @@ install_nn2() {
 }
 
 install_picons() {
-  wget -O /tmp/icam_picons.tar ${_url}/ot_picons/icam_picons.tar 
-  [ -d /usr/share/enigma2/picon ] || mkdir -p /usr/share/enigma2/picon 
+  wget -O /tmp/icam_picons.tar ${_url}/ot_picons/icam_picons.tar > /dev/null 2>&1
+  [ -d /usr/share/enigma2/picon ] || mkdir -p /usr/share/enigma2/picon > /dev/null 2>&1
   cd /usr/share/enigma2/picon
-  tar xfv /tmp/icam_picons.tar 
+  tar xfv /tmp/icam_picons.tar > /dev/null 2>&1
   case $_my_distribution in
     Dream*)
-      cp -rfp /picons/piconHD/* /usr/share/enigma2/picon/ 
+      cp -rfp /picons/piconHD/* /usr/share/enigma2/picon/ > /dev/null 2>&1
       rm -rf  /picons/piconHD/
       ln -s /usr/share/enigma2/picon/ /picons/piconHD
       ;;
@@ -591,7 +588,7 @@ mainmenu() {
   echo -e "\e[34m Fine! it looks you are running $_my_distribution\e[0m" 
   echo -e "\e[33m ######*** Main Menu ***######\e[0m"
   echo -e "1) Install Icam Oscam stable         // fresh box ... or sledgehammer mode ;)"
-  echo -e "2) Update Oscam Bin only             // updates any running oscam to ICam oscam"
+  echo -e "2) Update Oscam Bin only             // updates any running oscam to ICam oscam v${_oscam_version}"
   echo -e "3) Update Bouquets only              // rewrite ICam Bouquets"
   echo -e "4) Update ICAM Picons                // install ICam picons only"
   echo -e "5) Backup & Restore                  // backup or restore oscam"
