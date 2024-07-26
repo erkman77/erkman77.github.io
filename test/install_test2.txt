@@ -25,6 +25,7 @@ done
 _url=https://i.tv-lounge.eu
 _urlsub=
 _oscam_version="11813"
+_myoscambin2="/usr/bin/oscam_bin"
 _reader1="reader"
 _oatv75="openatv 7.5"
 older="/usr/bin/"
@@ -207,8 +208,6 @@ replace_initscript() {
 
 replace_oscam_bin() {
 wget -O - -q "127.0.0.1/web/message?text=Updating%20your%20is%20Oscam...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
-
-
   sleep 3
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
@@ -225,20 +224,20 @@ wget -O - -q "127.0.0.1/web/message?text=Updating%20your%20is%20Oscam...%20pleas
  sleep 2
   if cat /tmp/version | grep "${_oatv75}"
    then
-    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch}-${_oscam_version} > /dev/null 2>&1
-    chmod +x ${_myoscambin}
+    wget -O ${_myoscambin2} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch}-${_oscam_version} > /dev/null 2>&1
+    chmod +x ${_myoscambin2}
    else
   if [ -e /etc/apt/sources.list.d  ]; then
-    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
-    chmod +x ${_myoscambin}
+    wget -O ${_myoscambin2} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
+    chmod +x ${_myoscambin2}
   else
-   wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} > /dev/null 2>&1
-    chmod +x ${_myoscambin}
+   wget -O ${_myoscambin2} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} > /dev/null 2>&1
+    chmod +x ${_myoscambin2}
 	fi
   fi
- # replace_initscript
+  replace_initscript
   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
-  /etc/init.d/softcam.$oscambinold restart > /dev/null 2>&1
+  /etc/init.d/softcam.oscam_bin restart
 }
 
 do_reboot() {
