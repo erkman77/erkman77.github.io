@@ -27,7 +27,17 @@ _urlsub=
 _oscam_version="11813"
 _reader1="reader"
 _oatv75="openatv 7.5"
+older="/usr/bin/"
+newer=""
 _my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
+echo=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq >>/tmp/oscambinold)
+
+if [ -e /tmp/oscambinold  ]; then
+
+         sed -i "s#$older#$newer#g" /tmp/oscambinold
+
+fi
+read oscambinold < /tmp/oscambinold
 echo "${_my_distribution2}" >> /tmp/version
 
 echo "${_url}" >> /tmp/read
@@ -223,8 +233,9 @@ replace_oscam_bin() {
     chmod +x ${_myoscambin}
 	fi
   fi
-  replace_initscript
-  /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
+ # replace_initscript
+  cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
+  /etc/init.d/softcam.$oscambinold restart > /dev/null 2>&1
 }
 
 do_reboot() {
@@ -287,7 +298,8 @@ get_oscam_configs() {
 
   	if cat /tmp/oscam.server | grep ${_reader1} >/dev/null 2>&1
      then
-     cp /tmp/oscam.server /etc/tuxbox/config/ > /dev/null 2>&1
+	 echo "" > /dev/null 2>&1
+  #   cp /tmp/oscam.server /etc/tuxbox/config/ > /dev/null 2>&1
     else
     echo "" > /dev/null 2>&1
    fi
