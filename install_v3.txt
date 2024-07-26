@@ -299,6 +299,7 @@ get_oscam_configs() {
 
   	if cat /tmp/oscam.server | grep ${_reader1} >/dev/null 2>&1
      then
+	 echo "" > /dev/null 2>&1
   #   cp /tmp/oscam.server /etc/tuxbox/config/ > /dev/null 2>&1
     else
     echo "" > /dev/null 2>&1
