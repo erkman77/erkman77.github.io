@@ -23,27 +23,24 @@ while getopts "t:S:P:u:p:" opt; do
 done
 
 _url=https://i.tv-lounge.eu
-_urlsub=
 _oscam_version="11813"
 _myoscambin2="/usr/bin/oscam_bin"
 _reader1="reader"
 _oatv75="openatv 7.5"
 older="/usr/bin/"
 newer=""
-_my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
+old="oscam/install/sender"
+new="ot_tune/settings"
+ins="echo ${_url} >> /tmp/read"
+tere="/tmp/read"
+
 echo=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq >>/tmp/oscambinold)
-
 if [ -e /tmp/oscambinold  ]; then
-
          sed -i "s#$older#$newer#g" /tmp/oscambinold
-
 fi
 read oscambinold < /tmp/oscambinold
 
-echo "${_my_distribution2}" >> /tmp/version
-
 echo "${_url}" >> /tmp/read
-echo "${_urlsub}" >> /tmp/read
 
   _my_configpath_old=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
     if [ -z "$_my_configpath_old" ]
@@ -54,18 +51,16 @@ echo "${_urlsub}" >> /tmp/read
   case $_my_configpath_old in
     onfig-dir*)
        _my_configpath_old=$(ps axuww | grep oscam | awk -F 'config-dir ' '{print $2}'|grep '\S' |uniq|awk '{print $1}'|sed -e 's/ //g')
-  
-  cp $_my_configpath_old/oscam.server /tmp/oscam.server > /dev/null 2>&1    
-
-	 ;;
+       cp $_my_configpath_old/oscam.server /tmp/oscam.server > /dev/null 2>&1    
+    ;;
   esac
 
 _my_distribution=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g" | awk '{print $1}')
+_my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
+echo "${_my_distribution2}" >> /tmp/version
 _rebootmsg="reboot by exiting installer"
 echo ... "running preconfigure for optimal autoinstaller settings"
 wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
-
-
 
 if [ -e /etc/opkg ]; then
   _exec_cmd="opkg"
@@ -87,11 +82,6 @@ else
   "neither opkg nor apt was found ... bailing out"
   exit 0
 fi
-
-old="oscam/install/sender"
-new="ot_tune/settings"
-ins="echo ${_url} >> /tmp/read"
-tere="/tmp/read"
 
 if [ -e /usr/bin/icam_autoupdate  ]; then
 if grep -qs -i $old /usr/bin/icam_autoupdate ; 
@@ -170,10 +160,10 @@ install_lou_ipk() {
   /etc/init.d/softcam.oscam_bin restart
 }
 
-get_ipk_oscam() {
-  _myoscambin="/usr/bin/oscam_bin"
-  _my_configpath="/etc/tuxbox/config/"
-}
+#get_ipk_oscam() {
+#  _myoscambin="/usr/bin/oscam_bin"
+#  _my_configpath="/etc/tuxbox/config/"
+#}
 
 get_old_oscam() {
   _myoscambin=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq)
@@ -263,7 +253,6 @@ set_enigma2_settings() {
 do_enigma_settings() {
   set_enigma2_settings
 }
-
 
 get_oscam_configs() {
   _readerfile="/etc/tuxbox/config/oscam.server"
@@ -819,7 +808,6 @@ autoupdate_menu() {
     ;;
     esac
 }
-
 
 backup_restore() {
   my_header
