@@ -1,6 +1,17 @@
 #!/bin/bash +x
 set +x
 _version="4.0"
+_url=https://i.tv-lounge.eu
+_oscam_version="11813"
+_myoscambin2="/usr/bin/oscam_bin"
+_reader1="reader"
+_oatv75="openatv 7.5"
+older="/usr/bin/"
+newer=""
+old="oscam/install/sender"
+new="ot_tune/settings"
+ins="echo ${_url} >> /tmp/read"
+tere="/tmp/read"
 
 while getopts "t:S:P:u:p:" opt; do
   case ${opt} in
@@ -22,19 +33,8 @@ while getopts "t:S:P:u:p:" opt; do
   esac
 done
 
-_url=https://i.tv-lounge.eu
-_oscam_version="11813"
-_myoscambin2="/usr/bin/oscam_bin"
-_reader1="reader"
-_oatv75="openatv 7.5"
-older="/usr/bin/"
-newer=""
-old="oscam/install/sender"
-new="ot_tune/settings"
-ins="echo ${_url} >> /tmp/read"
-tere="/tmp/read"
-
 echo=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq >>/tmp/oscambinold)
+
 if [ -e /tmp/oscambinold  ]; then
          sed -i "s#$older#$newer#g" /tmp/oscambinold
 fi
