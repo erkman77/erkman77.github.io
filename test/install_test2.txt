@@ -94,7 +94,8 @@ ins="echo ${_url} >> /tmp/read"
 tere="/tmp/read"
 
 if [ -e /usr/bin/icam_autoupdate  ]; then
- if cat /usr/bin/icam_autoupdate | grep $old >/dev/null 2>&1
+if grep -qs -i $old /usr/bin/icam_autoupdate ; 
+ #if cat /usr/bin/icam_autoupdate | grep $old >/dev/null 2>&1
 	then
 	 echo -e "\e[33m ... Fixing autoupdate...\e[0m"
 	 sed -i "s#$old#$new#g" /usr/bin/icam_autoupdate 
@@ -104,7 +105,8 @@ if [ -e /usr/bin/icam_autoupdate  ]; then
 	 echo "Nothing to do, autoupdate seems to be ok"
  fi
 
- if cat /usr/bin/icam_autoupdate | grep $tere >/dev/null 2>&1
+if grep -qs -i $tere /usr/bin/icam_autoupdate ;
+ #if cat /usr/bin/icam_autoupdate | grep $tere >/dev/null 2>&1
 	then
 	 echo "" 
 	else  
@@ -223,7 +225,7 @@ wget -O - -q "127.0.0.1/web/message?text=Updating%20your%20is%20Oscam...%20pleas
   fi
  echo "Changing your oscam to version ${_oscam_version}"
  sleep 2
-  if cat /tmp/version | grep "${_oatv75}"
+  if grep -qs -i "${_oatv75}" /etc/issue
    then
     wget -O ${_myoscambin2} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch}-${_oscam_version} > /dev/null 2>&1
     chmod +x ${_myoscambin2}
@@ -298,7 +300,9 @@ get_oscam_configs() {
     echo "group             = 1"                             >> $_readerfile
     echo "cccversion        = 2.1.2"                         >> $_readerfile
     echo "ccckeepalive      = 1"                             >> $_readerfile	
-	if cat /tmp/oscam.server | grep ${_reader1} > /dev/null 2>&1
+	
+	if grep -qs -i ${_reader1} /tmp/oscam.server ;
+	#if cat /tmp/oscam.server | grep ${_reader1} > /dev/null 2>&1
      then
      cp /tmp/oscam.server /etc/tuxbox/config/ > /dev/null 2>&1
     else
