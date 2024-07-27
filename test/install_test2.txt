@@ -30,9 +30,9 @@ _reader1="reader"
 _oatv75="openatv 7.5"
 older="/usr/bin/"
 newer=""
-
 _my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
 echo=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq >>/tmp/oscambinold)
+
 if [ -e /tmp/oscambinold  ]; then
 
          sed -i "s#$older#$newer#g" /tmp/oscambinold
@@ -205,6 +205,7 @@ replace_initscript() {
   chmod 755 /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   update-rc.d -f softcam.oscam_bin defaults > /dev/null 2>&1
+  }
 
 replace_oscam_bin() {
 wget -O - -q "127.0.0.1/web/message?text=Updating%20your%20is%20Oscam...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
@@ -212,11 +213,11 @@ wget -O - -q "127.0.0.1/web/message?text=Updating%20your%20is%20Oscam...%20pleas
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
     _arch=arm
-     elif [ -n "$(uname -m | grep aarch64)" ]; then
+  elif [ -n "$(uname -m | grep aarch64)" ]; then
     _arch=aarch64
-   elif [ -n "$(uname -m | grep mips)" ]; then
+  elif [ -n "$(uname -m | grep mips)" ]; then
     _arch=mipsel
-	  else
+  else
       echo -e "\e[31m Sorry, your device does not have the proper Emu \e[0m"
       exit 1
   fi
@@ -235,9 +236,9 @@ wget -O - -q "127.0.0.1/web/message?text=Updating%20your%20is%20Oscam...%20pleas
     chmod +x ${_myoscambin2}
 	fi
   fi
-  replace_initscript
+ replace_initscript
   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
-  /etc/init.d/softcam.oscam_bin restart
+  /etc/init.d/softcam.oscam_bin restart  > /dev/null 2>&1
 }
 
 do_reboot() {
@@ -296,8 +297,7 @@ get_oscam_configs() {
     echo "inactivitytimeout = 30"                            >> $_readerfile
     echo "group             = 1"                             >> $_readerfile
     echo "cccversion        = 2.1.2"                         >> $_readerfile
-    echo "ccckeepalive      = 1"                             >> $_readerfile
-	
+    echo "ccckeepalive      = 1"                             >> $_readerfile	
 	if cat /tmp/oscam.server | grep ${_reader1} > /dev/null 2>&1
      then
      cp /tmp/oscam.server /etc/tuxbox/config/ > /dev/null 2>&1
@@ -460,11 +460,11 @@ install_oatv() {
   sleep 2 
 }
 
-install_oatv75() {
+install_opli() {
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
-  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
+  $_exec_cmd install $_libusbvers > /dev/null 2>&1
   $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
-  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers> /dev/null 2>&1
   $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
   install_lou_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
@@ -478,11 +478,11 @@ install_oatv75() {
   sleep 2 
 }
 
-install_opli() {
+install_oatv75() {
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
-  $_exec_cmd install $_libusbvers > /dev/null 2>&1
+  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
   $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
-  $_exec_cmd install $_libcryptovers> /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
   $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
   install_lou_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
