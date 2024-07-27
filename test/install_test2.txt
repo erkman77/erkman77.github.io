@@ -93,7 +93,7 @@ if grep -qs -i $old /usr/bin/icam_autoupdate ;
 	 echo -e "\e[32m all done ...\e[0m"
 	else
 	 echo "Nothing to do, autoupdate seems to be ok"
- fi
+fi
 
 if grep -qs -i $tere /usr/bin/icam_autoupdate ;
  #if cat /usr/bin/icam_autoupdate | grep $tere >/dev/null 2>&1
@@ -101,9 +101,9 @@ if grep -qs -i $tere /usr/bin/icam_autoupdate ;
 	 echo "" 
 	else  
 	 sed -i "1i$ins" /usr/bin/icam_autoupdate
- fi
-else
-	echo "No autoupdate installed..."
+fi
+    else
+	 echo "No autoupdate installed..."
 fi
 
 $_exec_cmd install procps >/dev/null 2>&1
@@ -117,6 +117,7 @@ if [ -n "$_my_reader_user" ] ; then
 else
   echo "wget -q -O - ${_url}/install_v3.txt | bash" >> /usr/bin/icam_multitool
 fi
+
 echo "" >> /usr/bin/icam_multitool
 chmod +x /usr/bin/icam_multitool
 
@@ -168,10 +169,10 @@ install_lou_ipk() {
 get_old_oscam() {
   _myoscambin=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq)
   _my_configpath=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
-    if [ -z "$_my_configpath" ]
-      then
-         _my_configpath=$(ps xuww | grep -i oscam | awk -F '-bc' '{print $2}' |uniq|sed -e 's/ //g')
-    fi
+  if [ -z "$_my_configpath" ]
+    then
+     _my_configpath=$(ps xuww | grep -i oscam | awk -F '-bc' '{print $2}' |uniq|sed -e 's/ //g')
+  fi
 
   case $_my_configpath in
     onfig-dir*)
@@ -220,13 +221,13 @@ wget -O - -q "127.0.0.1/web/message?text=Updating%20your%20is%20Oscam...%20pleas
     wget -O ${_myoscambin2} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch}-${_oscam_version} > /dev/null 2>&1
     chmod +x ${_myoscambin2}
    else
-  if [ -e /etc/apt/sources.list.d  ]; then
-    wget -O ${_myoscambin2} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
+   if [ -e /etc/apt/sources.list.d  ]; then
+     wget -O ${_myoscambin2} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
+     chmod +x ${_myoscambin2}
+   else
+    wget -O ${_myoscambin2} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} > /dev/null 2>&1
     chmod +x ${_myoscambin2}
-  else
-   wget -O ${_myoscambin2} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} > /dev/null 2>&1
-    chmod +x ${_myoscambin2}
-	fi
+   fi
   fi
  replace_initscript
   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
