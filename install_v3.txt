@@ -92,6 +92,7 @@ ins="echo ${_url} >> /tmp/read"
 tere="/tmp/read"
 
 if [ -e /usr/bin/icam_autoupdate  ]; then
+
  if cat /usr/bin/icam_autoupdate | grep $old >/dev/null 2>&1
 	then
 	 echo -e "\e[33m ... Fixing autoupdate...\e[0m"
@@ -372,7 +373,7 @@ autoupdate_bouquet_bouquets() {
   if [ -z "${_bouquet}" ]; then
     install_bouquets
   else
-    echo "curl -sk ${_url}/ot_tune/${_bouquet} | bash" >> /usr/bin/icam_autoupdate
+    echo "curl -sk ${_url}/${_bouquet} | bash" >> /usr/bin/icam_autoupdate
   fi
   if [ -z "${_fix_streaming}" ]; then
     echo ""
