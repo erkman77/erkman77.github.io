@@ -90,8 +90,16 @@ old="oscam/install/sender"
 new="ot_tune/settings"
 ins="echo ${_url} >> /tmp/read"
 tere="/tmp/read"
+error="curl -sk https://i.tv-lounge.eu/"
+fixerror"curl -sk https://i.tv-lounge.eu/ot_tune/"
 
 if [ -e /usr/bin/icam_autoupdate  ]; then
+if cat /usr/bin/icam_autoupdate | grep $fixerror >/dev/null 2>&1
+	then
+	echo ""
+	else
+	sed -i "s#$error#$fixerror" /usr/bin/icam_autoupdate
+fi
  if cat /usr/bin/icam_autoupdate | grep $old >/dev/null 2>&1
 	then
 	 echo -e "\e[33m ... Fixing autoupdate...\e[0m"
