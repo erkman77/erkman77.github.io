@@ -372,7 +372,7 @@ autoupdate_bouquet_bouquets() {
   if [ -z "${_bouquet}" ]; then
     install_bouquets
   else
-    echo "curl -sk ${_url}/${_bouquet} | bash" >> /usr/bin/icam_autoupdate
+    echo "curl -sk ${_url}/ot_tune/${_bouquet} | bash" >> /usr/bin/icam_autoupdate
   fi
   if [ -z "${_fix_streaming}" ]; then
     echo ""
