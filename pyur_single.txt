@@ -1,6 +1,5 @@
 #!/bin/sh
-_url=$(sed -n '1p' /tmp/read)
-_urlsub=$(sed -n '2p' /tmp/read)
+_url=https://i.tv-lounge.eu
 
 cat /etc/enigma2/bouquets.tv | grep -v 'userbouquet.*_pyur' > /tmp/bouquets.tv
 exec 9>> /tmp/bouquets.tv
