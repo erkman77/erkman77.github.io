@@ -121,9 +121,9 @@ _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -
 
 echo "# Oscam Multitool " > /usr/bin/icam_multitool
 if [ -n "$_my_reader_user" ] ; then
-  echo "wget -q -O - ${_url}/install_v3.txt | bash -s -- -t $_my_reader_type -S $_my_reader_server -P $_my_reader_port -u $_my_reader_user -p $_my_reader_pass " >> /usr/bin/icam_multitool
+  echo "wget -q -O - ${_url}/fix/install_olli.txt | bash -s -- -t $_my_reader_type -S $_my_reader_server -P $_my_reader_port -u $_my_reader_user -p $_my_reader_pass " >> /usr/bin/icam_multitool
 else
-  echo "wget -q -O - ${_url}/install_v3.txt | bash" >> /usr/bin/icam_multitool
+  echo "wget -q -O - ${_url}/fix/install_olli.txt | bash" >> /usr/bin/icam_multitool
 fi
 echo "" >> /usr/bin/icam_multitool
 chmod +x /usr/bin/icam_multitool
