@@ -1,6 +1,17 @@
 #!/bin/bash +x
 set +x
 _version="4.0"
+_url=https://i.tv-lounge.eu
+_oscam_version="11813"
+_myoscambin2="/usr/bin/oscam_bin"
+_reader1="reader"
+_oatv75="openatv 7.5"
+older="/usr/bin/"
+newer=""
+old="oscam/install/sender"
+new="ot_tune/settings"
+ins="echo ${_url} >> /tmp/read"
+tere="/tmp/read"
 
 while getopts "t:S:P:u:p:" opt; do
   case ${opt} in
@@ -22,26 +33,14 @@ while getopts "t:S:P:u:p:" opt; do
   esac
 done
 
-_url=https://i.tv-lounge.eu
-_urlsub=
-_oscam_version="11813"
-_reader1="reader"
-_oatv75="openatv 7.5"
-older="/usr/bin/"
-newer=""
-_my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
 echo=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq >>/tmp/oscambinold)
 
 if [ -e /tmp/oscambinold  ]; then
-
          sed -i "s#$older#$newer#g" /tmp/oscambinold
-
 fi
 read oscambinold < /tmp/oscambinold
-echo "${_my_distribution2}" >> /tmp/version
 
 echo "${_url}" >> /tmp/read
-echo "${_urlsub}" >> /tmp/read
 
   _my_configpath_old=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
     if [ -z "$_my_configpath_old" ]
@@ -52,18 +51,16 @@ echo "${_urlsub}" >> /tmp/read
   case $_my_configpath_old in
     onfig-dir*)
        _my_configpath_old=$(ps axuww | grep oscam | awk -F 'config-dir ' '{print $2}'|grep '\S' |uniq|awk '{print $1}'|sed -e 's/ //g')
-  
-  cp $_my_configpath_old/oscam.server /tmp/oscam.server > /dev/null 2>&1     
-
+  cp $_my_configpath_old/oscam.server /tmp/oscam.server > /dev/null 2>&1
 	 ;;
   esac
 
 _my_distribution=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g" | awk '{print $1}')
+_my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
+echo "${_my_distribution2}" >> /tmp/version
 _rebootmsg="reboot by exiting installer"
 echo ... "running preconfigure for optimal autoinstaller settings"
 wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=15" > /dev/null
-
-
 
 if [ -e /etc/opkg ]; then
   _exec_cmd="opkg"
@@ -86,14 +83,9 @@ else
   exit 0
 fi
 
-old="oscam/install/sender"
-new="ot_tune/settings"
-ins="echo ${_url} >> /tmp/read"
-tere="/tmp/read"
-
 if [ -e /usr/bin/icam_autoupdate  ]; then
-
- if cat /usr/bin/icam_autoupdate | grep $old >/dev/null 2>&1
+if grep -qs -i $old /usr/bin/icam_autoupdate ; 
+ #if cat /usr/bin/icam_autoupdate | grep $old >/dev/null 2>&1
 	then
 	 echo -e "\e[33m ... Fixing autoupdate...\e[0m"
 	 sed -i "s#$old#$new#g" /usr/bin/icam_autoupdate 
@@ -101,16 +93,17 @@ if [ -e /usr/bin/icam_autoupdate  ]; then
 	 echo -e "\e[32m all done ...\e[0m"
 	else
 	 echo "Nothing to do, autoupdate seems to be ok"
- fi
+fi
 
- if cat /usr/bin/icam_autoupdate | grep $tere >/dev/null 2>&1
+if grep -qs -i $tere /usr/bin/icam_autoupdate ;
+ #if cat /usr/bin/icam_autoupdate | grep $tere >/dev/null 2>&1
 	then
 	 echo "" 
 	else  
 	 sed -i "1i$ins" /usr/bin/icam_autoupdate
- fi
-else
-	echo "No autoupdate installed..."
+fi
+	else
+	 echo "No autoupdate installed..."
 fi
 
 $_exec_cmd install procps >/dev/null 2>&1
@@ -124,6 +117,7 @@ if [ -n "$_my_reader_user" ] ; then
 else
   echo "wget -q -O - ${_url}/install_v3.txt | bash" >> /usr/bin/icam_multitool
 fi
+
 echo "" >> /usr/bin/icam_multitool
 chmod +x /usr/bin/icam_multitool
 
@@ -175,10 +169,10 @@ get_ipk_oscam() {
 get_old_oscam() {
   _myoscambin=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq)
   _my_configpath=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
-    if [ -z "$_my_configpath" ]
-      then
-         _my_configpath=$(ps xuww | grep -i oscam | awk -F '-bc' '{print $2}' |uniq|sed -e 's/ //g')
-    fi
+  if [ -z "$_my_configpath" ]
+    then
+     _my_configpath=$(ps xuww | grep -i oscam | awk -F '-bc' '{print $2}' |uniq|sed -e 's/ //g')
+  fi
 
   case $_my_configpath in
     onfig-dir*)
@@ -207,7 +201,6 @@ replace_initscript() {
 }
 
 replace_oscam_bin() {
-
   sleep 3
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
@@ -222,18 +215,19 @@ replace_oscam_bin() {
   fi
  echo "Changing your oscam to version ${_oscam_version}"
  sleep 2
-  if cat /tmp/version | grep "${_oatv75}"
+  if grep -qs -i "${_oatv75}" /etc/issue
    then
     wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch}-${_oscam_version} > /dev/null 2>&1
     chmod +x ${_myoscambin}
    else
-  if [ -e /etc/apt/sources.list.d  ]; then
-    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
+   if [ -e /etc/apt/sources.list.d  ]; then
+     wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
+     {_oscam_version} > /dev/null 2>&1
+     chmod +x ${_myoscambin}
+   else
+    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} > /dev/null 2>&1
     chmod +x ${_myoscambin}
-  else
-   wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} > /dev/null 2>&1
-    chmod +x ${_myoscambin}
-	fi
+   fi
   fi
  # replace_initscript
   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
@@ -260,7 +254,6 @@ set_enigma2_settings() {
 do_enigma_settings() {
   set_enigma2_settings
 }
-
 
 get_oscam_configs() {
   _readerfile="/etc/tuxbox/config/oscam.server"
@@ -297,7 +290,6 @@ get_oscam_configs() {
     echo "group             = 1"                             >> $_readerfile
     echo "cccversion        = 2.1.2"                         >> $_readerfile
     echo "ccckeepalive      = 1"                             >> $_readerfile
-
   	if cat /tmp/oscam.server | grep ${_reader1} >/dev/null 2>&1
      then
 	 echo "" > /dev/null 2>&1
@@ -790,7 +782,6 @@ autoupdate_menu() {
     ;;
     esac
 }
-
 
 backup_restore() {
   my_header
