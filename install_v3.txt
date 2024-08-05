@@ -569,6 +569,7 @@ mainmenu() {
   echo -e "7) Fix Streaming-IP                  // changes 127.0.0.1 to $_myip for home streaming"
   echo -e "8) Bouquet Autoupdate                // updates bouquets @ reboot"
   echo -e "9) Whitelist Streamrelay             // install / update whitelist_streamrelay"
+  echo -e "s) Oscam Start Patch					// checks whether oscam starts twice"
   echo -e "0) Exit"
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
@@ -610,7 +611,11 @@ mainmenu() {
       update_whitelist
       mainmenu
       ;;  
-    t)
+	s)
+      oscam_startpatch
+      mainmenu
+      ;;
+	t)
       install_whitelist
       mainmenu
       ;;
@@ -849,5 +854,23 @@ backup_restore() {
       backup_restore
     ;;
     esac
+}
+
+oscam_startpatch() {
+  _reboot=1
+  _camgrep=$(pgrep oscam)
+  _cams_start=$(wc -l <(echo "$_camgrep") | awk '{print $1}')
+
+  if [ $_cams_start -gt 2 ]; then
+        echo "Oscam started more than 2 times. Run Patch..."
+		sleep 2
+        /etc/init.d/softcam.oscam_bin stop; update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
+        /etc/init.d/softcam stop; update-rc.d -f softcam remove > /dev/null 2>&1
+        update-rc.d softcam defaults; /etc/init.d/softcam start > /dev/null 2>&1
+        _reboot=1
+  else
+        echo "System runs cool, no patch needed"
+		sleep 2
+  fi
 }
 mainmenu
