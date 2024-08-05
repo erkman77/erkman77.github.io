@@ -569,7 +569,7 @@ mainmenu() {
   echo -e "7) Fix Streaming-IP                  // changes 127.0.0.1 to $_myip for home streaming"
   echo -e "8) Bouquet Autoupdate                // updates bouquets @ reboot"
   echo -e "9) Whitelist Streamrelay             // install / update whitelist_streamrelay"
-  echo -e "s) Oscam Start Patch					// checks whether oscam starts twice"
+  echo -e "s) Oscam Start Patch                 // checks whether oscam starts twice"
   echo -e "0) Exit"
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
@@ -857,7 +857,6 @@ backup_restore() {
 }
 
 oscam_startpatch() {
-  _reboot=1
   _camgrep=$(pgrep oscam)
   _cams_start=$(wc -l <(echo "$_camgrep") | awk '{print $1}')
 
