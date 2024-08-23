@@ -91,6 +91,7 @@ if grep -qs -i $old /usr/bin/icam_autoupdate ;
 	 sed -i "s#$old#$new#g" /usr/bin/icam_autoupdate 
 	 sed -i "1i$ins" /usr/bin/icam_autoupdate
 	 echo -e "\e[32m all done ...\e[0m"
+	 _reboot=1
 	else
 	 echo "Nothing to do, autoupdate seems to be ok"
 fi
@@ -101,6 +102,7 @@ if grep -qs -i $tere /usr/bin/icam_autoupdate ;
 	 echo "" 
 	else  
 	 sed -i "1i$ins" /usr/bin/icam_autoupdate
+	 _reboot=1
 fi
 	else
 	 echo "No autoupdate installed..."
