@@ -224,6 +224,8 @@ replace_oscam_bin() {
     wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
     chmod +x ${_myoscambin}
    fi
+   unset _neon
+   _oscam_version="11748"
  # replace_initscript
   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
   /etc/init.d/softcam.$oscambinold restart > /dev/null 2>&1
@@ -775,7 +777,7 @@ update_bin() {
       ;;
     9)
       _reboot=1
-      _oscam_version=11816
+      _oscam_version="11816"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
