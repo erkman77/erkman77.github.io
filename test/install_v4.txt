@@ -215,7 +215,7 @@ replace_oscam_bin() {
       echo -e "\e[31m Sorry, your device does not have the proper Emu \e[0m"
       exit 1
   fi
- echo "Changing your oscam ..."
+ echo "Changing your oscam to version ${_oscam_version}"
  sleep 2
    if [ -e /etc/apt/sources.list.d  ]; then
      wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
