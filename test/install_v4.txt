@@ -777,7 +777,7 @@ update_bin() {
       ;;
     9)
       _reboot=1
-      _oscam_version="11818"
+      _oscam_version=11818
       get_old_oscam
       kill_oscam
       replace_oscam_bin
