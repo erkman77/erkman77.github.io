@@ -704,7 +704,7 @@ update_bin() {
   echo -e "6) Update Bin Stable  Icam - V23 NEON          ( $_rebootmsg )"
   echo -e "7) Update Bin Stable  Icam - oscam 11748       ( $_rebootmsg )"
   echo -e "8) Update Bin Stable  Icam - oscam 11748 NEON  ( $_rebootmsg )"
-  echo -e "9) Update Bin Stable  Icam - oscam 11813       ( $_rebootmsg )"
+  echo -e "9) Update Bin Stable  Icam - oscam 11815       ( $_rebootmsg )"
   echo -e "0) Back"
   read  -p "choose an Option: " updatebin </dev/tty
   case $updatebin in
@@ -777,7 +777,7 @@ update_bin() {
       ;;
     9)
       _reboot=1
-      _oscam_version="11813"
+      _oscam_version="11815"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
