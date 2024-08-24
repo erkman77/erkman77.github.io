@@ -618,18 +618,6 @@ mainmenu() {
       ;;
     0)
       echo "Bye bye."
-	  unset _version
-	  unset _url
-	  unset _oscam_version
-	  unset _neon
-	  unset _oatv75
-	  unset old
-	  unset older
-	  unset new
-	  unset tere
-	  unset ins
-	  unset _myoscambin
-	  unset _myoscambin2
 	  rm /tmp/read > dev/null 
  	  rm /tmp/version > dev/null 
 	  rm /tmp/oscam.server > dev/null
