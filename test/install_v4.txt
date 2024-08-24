@@ -706,6 +706,7 @@ update_bin() {
   echo -e "7) Update Bin Stable  Icam - oscam 11748       ( $_rebootmsg )"
   echo -e "8) Update Bin Stable  Icam - oscam 11748 NEON  ( $_rebootmsg )"
   echo -e "9) Update Bin Stable  Icam - oscam 11815       ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable  Test                    ( $_rebootmsg )"
   echo -e "0) Back"
   read  -p "choose an Option: " updatebin </dev/tty
   case $updatebin in
@@ -784,6 +785,12 @@ update_bin() {
       replace_oscam_bin
       mainmenu
       ;;
+	10)
+      
+      echo -e "\e[33m ######*** Ein TEst ***######\e[0m"
+	  sleep 10
+      mainmenu
+      ;;  
     0)
       clear
       mainmenu
