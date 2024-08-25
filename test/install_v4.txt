@@ -2,7 +2,7 @@
 set +x
 _version="4.0"
 _url=https://i.tv-lounge.eu
-_oscam_version="11748"
+_oscam_version=v24
 _myoscambin2="/usr/bin/oscam_bin"
 _reader1="reader"
 _oatv75="openatv 7.5"
@@ -226,10 +226,10 @@ replace_oscam_bin() {
     chmod +x ${_myoscambin}
    fi
    unset _neon
-   _oscam_version="11748"
- # replace_initscript
+   _oscam_version=v24
+   replace_initscript
   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
-  /etc/init.d/softcam.$oscambinold restart > /dev/null 2>&1
+  /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
 }
 
 do_reboot() {
@@ -700,16 +700,16 @@ install_stable() {
 update_bin() {
   my_header
   echo -e "\e[33m ######*** Update Bin only ***######\e[0m"
-  echo -e "1) Update Bin Stable  Icam - V5                ( $_rebootmsg )"
-  echo -e "2) Update Bin Stable  Icam - V8                ( $_rebootmsg )"
-  echo -e "3) Update Bin Stable  Icam - V9                ( $_rebootmsg )"
-  echo -e "4) Update Bin Stable  Icam - V9 NEON           ( $_rebootmsg )"
-  echo -e "5) Update Bin Stable  Icam - V23               ( $_rebootmsg )"
-  echo -e "6) Update Bin Stable  Icam - V23 NEON          ( $_rebootmsg )"
-  echo -e "7) Update Bin Stable  Icam - oscam 11748       ( $_rebootmsg )"
-  echo -e "8) Update Bin Stable  Icam - oscam 11748 NEON  ( $_rebootmsg )"
-  echo -e "9) Update Bin Stable  Icam - oscam 11815       ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Test                    ( $_rebootmsg )"
+  echo -e " 1) Update Bin Stable  Icam - V5                ( $_rebootmsg )"
+  echo -e " 2) Update Bin Stable  Icam - V8                ( $_rebootmsg )"
+  echo -e " 3) Update Bin Stable  Icam - V9                ( $_rebootmsg )"
+  echo -e " 4) Update Bin Stable  Icam - V9 NEON           ( $_rebootmsg )"
+  echo -e " 5) Update Bin Stable  Icam - V23               ( $_rebootmsg )"
+  echo -e " 6) Update Bin Stable  Icam - V23 NEON          ( $_rebootmsg )"
+  echo -e " 7) Update Bin Stable  Icam - oscam 11748       ( $_rebootmsg )"
+  echo -e " 8) Update Bin Stable  Icam - oscam 11748 NEON  ( $_rebootmsg )"
+  echo -e " 9) Update Bin Stable  Icam - oscam 11819       ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable  Icam - oscam 11819 NEON  ( $_rebootmsg )"
   echo -e "0) Back"
   read  -p "choose an Option: " updatebin </dev/tty
   case $updatebin in
@@ -782,16 +782,19 @@ update_bin() {
       ;;
     9)
       _reboot=1
-      _oscam_version="11815"
+      _oscam_version="11819"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
       mainmenu
       ;;
 	10)
-      
-      echo -e "\e[33m ######*** Ein TEst ***######\e[0m"
-	  sleep 10
+      _reboot=1
+      _oscam_version="11819"
+      _neon="-neon"
+      get_old_oscam
+      kill_oscam
+      replace_oscam_bin
       mainmenu
       ;;  
     0)
