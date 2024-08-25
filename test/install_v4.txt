@@ -700,16 +700,16 @@ install_stable() {
 update_bin() {
   my_header
   echo -e "\e[33m ######*** Update Bin only ***######\e[0m"
-  echo -e " 1) Update Bin Stable  Icam - V5                ( $_rebootmsg )"
-  echo -e " 2) Update Bin Stable  Icam - V8                ( $_rebootmsg )"
-  echo -e " 3) Update Bin Stable  Icam - V9                ( $_rebootmsg )"
-  echo -e " 4) Update Bin Stable  Icam - V9 NEON           ( $_rebootmsg )"
-  echo -e " 5) Update Bin Stable  Icam - V23               ( $_rebootmsg )"
-  echo -e " 6) Update Bin Stable  Icam - V23 NEON          ( $_rebootmsg )"
-  echo -e " 7) Update Bin Stable  Icam - oscam V24         ( $_rebootmsg )"
-  echo -e " 8) Update Bin Stable  Icam - oscam V24 NEON    ( $_rebootmsg )"
-  echo -e " 9) Update Bin Stable  Icam - oscam 11819       ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Icam - oscam 11819 NEON  ( $_rebootmsg )"
+  echo -e " 1) Update Bin Stable  Icam - V5           ( $_rebootmsg )"
+  echo -e " 2) Update Bin Stable  Icam - V8           ( $_rebootmsg )"
+  echo -e " 3) Update Bin Stable  Icam - V9           ( $_rebootmsg )"
+  echo -e " 4) Update Bin Stable  Icam - V9 NEON      ( $_rebootmsg )"
+  echo -e " 5) Update Bin Stable  Icam - V23          ( $_rebootmsg )"
+  echo -e " 6) Update Bin Stable  Icam - V23 NEON     ( $_rebootmsg )"
+  echo -e " 7) Update Bin Stable  Icam - V24          ( $_rebootmsg )"
+  echo -e " 8) Update Bin Stable  Icam - V24 NEON     ( $_rebootmsg )"
+  echo -e " 9) Update Bin Stable  Icam - V11819       ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable  Icam - V11819 NEON  ( $_rebootmsg )"
   echo -e "0) Back"
   read  -p "choose an Option: " updatebin </dev/tty
   case $updatebin in
