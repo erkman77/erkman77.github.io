@@ -710,7 +710,7 @@ update_bin() {
   echo -e " 8) Update Bin Stable  Icam - V24 NEON     ( $_rebootmsg )"
   echo -e " 9) Update Bin Stable  Icam - V11819       ( $_rebootmsg )"
   echo -e "10) Update Bin Stable  Icam - V11819 NEON  ( $_rebootmsg )"
-  echo -e "0) Back"
+  echo -e " 0) Back"
   read  -p "choose an Option: " updatebin </dev/tty
   case $updatebin in
     1)
