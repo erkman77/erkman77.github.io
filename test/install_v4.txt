@@ -618,9 +618,9 @@ mainmenu() {
       ;;
     0)
       echo "Bye bye."
-	  rm /tmp/read > /dev/null 2>&1
- 	  rm /tmp/version > /dev/null 2>&1
-	  rm /tmp/oscam.server > /dev/null 2>&1
+	  rm /tmp/read > /dev/null 
+ 	  rm /tmp/version > /dev/null 
+	  rm /tmp/oscam.server > /dev/null 
       wget -O - -q "127.0.0.1/web/message?text=oscam%20Multitool%20is%20%20now%20stopped...%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
       if [ -n "_enigmasettings" ]; then
         do_enigma_settings
