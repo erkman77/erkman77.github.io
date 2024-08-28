@@ -2,7 +2,7 @@
 set +x
 _version="4.0"
 _url=https://i.tv-lounge.eu
-_oscam_version=v24
+_oscam_version="11813"
 _myoscambin2="/usr/bin/oscam_bin"
 _reader1="reader"
 _oatv75="openatv 7.5"
@@ -211,25 +211,29 @@ replace_oscam_bin() {
     _arch=aarch64
   elif [ -n "$(uname -m | grep mips)" ]; then
     _arch=mipsel
-	unset _neon
   else
       echo -e "\e[31m Sorry, your device does not have the proper Emu \e[0m"
       exit 1
   fi
- echo "Changing your oscam to version ${_oscam_version}${_neon}"
+ echo "Changing your oscam to version ${_oscam_version}"
  sleep 2
+  if grep -qs -i "${_oatv75}" /etc/issue
+   then
+    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch}-${_oscam_version} > /dev/null 2>&1
+    chmod +x ${_myoscambin}
+   else
    if [ -e /etc/apt/sources.list.d  ]; then
      wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
+     {_oscam_version} > /dev/null 2>&1
      chmod +x ${_myoscambin}
    else
-    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
+    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} > /dev/null 2>&1
     chmod +x ${_myoscambin}
    fi
-   unset _neon
-   _oscam_version=v24
-   replace_initscript
+  fi
+ # replace_initscript
   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
-  /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
+  /etc/init.d/softcam.$oscambinold restart > /dev/null 2>&1
 }
 
 do_reboot() {
@@ -358,7 +362,7 @@ replace_bouquet_bouquets_ip() {
 
 autoupdate_bouquet_bouquets() {
   _autoupdate_switch=true
-  echo "#  Oscam Multitool " >> /usr/bin/icam_autoupdate
+  echo "#  Oscam Multitool " > /usr/bin/icam_autoupdate
   echo "echo ${_url} >> /tmp/read" > /usr/bin/icam_autoupdate
   if [ -z "${_bouquet}" ]; then
     install_bouquets
@@ -558,14 +562,14 @@ mainmenu() {
   echo -e "\e[34m Fine! it looks you are running $_my_distribution\e[0m" 
   echo -e "\e[33m ######*** Main Menu ***######\e[0m"
   echo -e "1) Install Icam Oscam stable         // fresh box ... or sledgehammer mode ;)"
-  echo -e "2) Update Oscam Bin only             // updates any running oscam to ICam Oscam"
+  echo -e "2) Update Oscam Bin only             // updates any running oscam to ICam Oscam v${_oscam_version}"
   echo -e "3) Update Bouquets only              // rewrite ICam Bouquets"
   echo -e "4) Update ICAM Picons                // install ICam picons only"
   echo -e "5) Backup & Restore                  // backup or restore oscam"
   echo -e "6) Fix Settings                      // rewrite ICam settings to enigma"
   echo -e "7) Fix Streaming-IP                  // changes 127.0.0.1 to $_myip for home streaming"
   echo -e "8) Bouquet Autoupdate                // updates bouquets @ reboot"
-  echo -e "9) Whitelist Streamrelay             // install/update whitelist_streamrelay"
+  echo -e "9) Whitelist Streamrelay             // install / update whitelist_streamrelay"
   echo -e "s) Oscam Start Patch                 // checks whether oscam starts twice"
   echo -e "0) Exit"
   echo -e ""
@@ -618,9 +622,6 @@ mainmenu() {
       ;;
     0)
       echo "Bye bye."
-	  rm /tmp/read > /dev/null 
- 	  rm /tmp/version > /dev/null 
-	  rm /tmp/oscam.server > /dev/null 
       wget -O - -q "127.0.0.1/web/message?text=oscam%20Multitool%20is%20%20now%20stopped...%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
       if [ -n "_enigmasettings" ]; then
         do_enigma_settings
@@ -698,114 +699,12 @@ install_stable() {
 }
 
 update_bin() {
-  my_header
-  echo -e "\e[33m ######*** Update Bin only ***######\e[0m"
-  echo -e " 1) Update Bin Stable  Icam - V5           ( $_rebootmsg )"
-  echo -e " 2) Update Bin Stable  Icam - V8           ( $_rebootmsg )"
-  echo -e " 3) Update Bin Stable  Icam - V9           ( $_rebootmsg )"
-  echo -e " 4) Update Bin Stable  Icam - V9 NEON      ( $_rebootmsg )"
-  echo -e " 5) Update Bin Stable  Icam - V23          ( $_rebootmsg )"
-  echo -e " 6) Update Bin Stable  Icam - V23 NEON     ( $_rebootmsg )"
-  echo -e " 7) Update Bin Stable  Icam - V24          ( $_rebootmsg )"
-  echo -e " 8) Update Bin Stable  Icam - V24 NEON     ( $_rebootmsg )"
-  echo -e " 9) Update Bin Stable  Icam - V11820       ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Icam - V11820 NEON  ( $_rebootmsg )"
-  echo -e " 0) Back"
-  read  -p "choose an Option: " updatebin </dev/tty
-  case $updatebin in
-    1)
+      _flag=stable
       _reboot=1
-      _oscam_version=v5
       get_old_oscam
       kill_oscam
       replace_oscam_bin
       mainmenu
-    ;;
-    2)
-      _reboot=1
-      _oscam_version=v8
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    3)
-      _reboot=1
-      _oscam_version=v9
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    4)
-      _reboot=1
-      _oscam_version=v9
-      _neon="-neon"
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    5)
-      _reboot=1
-      _oscam_version=v23
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    6)
-      _reboot=1
-      _oscam_version=v23
-      _neon="-neon"
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    7)
-      _reboot=1
-      _oscam_version=v24
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    8)
-      _reboot=1
-      _oscam_version=v24
-      _neon="-neon"
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    9)
-      _reboot=1
-      _oscam_version="11820"
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-	10)
-      _reboot=1
-      _oscam_version="11820"
-      _neon="-neon"
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;  
-    0)
-      clear
-      mainmenu
-      ;;
-    *)
-      wrong_opt
-      update_bin
-      ;;
-    esac
 }
 
 install_bouquets() {
