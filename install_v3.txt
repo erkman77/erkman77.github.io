@@ -219,11 +219,11 @@ replace_oscam_bin() {
  echo "Changing your oscam to version ${_oscam_version}${_neon}"
  sleep 2
    if [ -e /etc/apt/sources.list.d  ]; then
-     wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
-     chmod +x ${_myoscambin}
+     wget -O ${_myoscambin2} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
+     chmod +x ${_myoscambin2}
    else
-    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
-    chmod +x ${_myoscambin}
+    wget -O ${_myoscambin2} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
+    chmod +x ${_myoscambin2}
    fi
    unset _neon
    _oscam_version=v24
