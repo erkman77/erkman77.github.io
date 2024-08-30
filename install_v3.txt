@@ -203,6 +203,7 @@ replace_initscript() {
 }
 
 replace_oscam_bin() {
+_myoscambin2="/usr/bin/oscam_bin"
   sleep 3
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
