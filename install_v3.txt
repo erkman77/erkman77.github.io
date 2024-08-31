@@ -220,7 +220,7 @@ _myoscambin2="/usr/bin/oscam_bin"
  echo "Changing your oscam to version ${_oscam_version}${_neon}"
  sleep 2
    if [ -e /etc/apt/sources.list.d  ]; then
-     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
+     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
      chmod +x /usr/bin/oscam_bin
    else
     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
@@ -709,8 +709,8 @@ update_bin() {
   echo -e " 6) Update Bin Stable  Icam - V23 NEON     ( $_rebootmsg )"
   echo -e " 7) Update Bin Stable  Icam - V24          ( $_rebootmsg )"
   echo -e " 8) Update Bin Stable  Icam - V24 NEON     ( $_rebootmsg )"
-  echo -e " 9) Update Bin Stable  Icam - V11821       ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Icam - V11821 NEON  ( $_rebootmsg )"
+  echo -e " 9) Update Bin Stable  Icam - V11822       ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable  Icam - V11822 NEON  ( $_rebootmsg )"
   echo -e " 0) Back"
   read  -p "choose an Option: " updatebin </dev/tty
   case $updatebin in
@@ -783,7 +783,7 @@ update_bin() {
       ;;
     9)
       _reboot=1
-      _oscam_version="11821"
+      _oscam_version="11822"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
@@ -791,7 +791,7 @@ update_bin() {
       ;;
 	10)
       _reboot=1
-      _oscam_version="11821"
+      _oscam_version="11822"
       _neon="-neon"
       get_old_oscam
       kill_oscam
