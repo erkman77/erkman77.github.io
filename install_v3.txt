@@ -228,7 +228,7 @@ _myoscambin2="/usr/bin/oscam_bin"
    fi
    unset _neon
    _oscam_version=v24
-   replace_initscript
+  # replace_initscript
   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
   /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
 }
