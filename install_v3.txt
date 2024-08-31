@@ -220,15 +220,15 @@ _myoscambin2="/usr/bin/oscam_bin"
  echo "Changing your oscam to version ${_oscam_version}${_neon}"
  sleep 2
    if [ -e /etc/apt/sources.list.d  ]; then
-     wget -O ${_myoscambin2} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
-     chmod +x ${_myoscambin2}
+     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
+     chmod +x /usr/bin/oscam_bin
    else
-    wget -O ${_myoscambin2} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
-    chmod +x ${_myoscambin2}
+    wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
+    chmod +x /usr/bin/oscam_bin
    fi
    unset _neon
    _oscam_version=v24
-  # replace_initscript
+   replace_initscript
   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
   /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
 }
