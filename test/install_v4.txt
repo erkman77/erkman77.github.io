@@ -12,7 +12,7 @@ old="oscam/install/sender"
 new="ot_tune/settings"
 ins="echo ${_url} >> /tmp/read"
 tere="/tmp/read"
-
+f
 while getopts "t:S:P:u:p:" opt; do
   case ${opt} in
     t )
@@ -708,8 +708,8 @@ update_bin() {
   echo -e " 6) Update Bin Stable  Icam - V23 NEON     ( $_rebootmsg )"
   echo -e " 7) Update Bin Stable  Icam - V24          ( $_rebootmsg )"
   echo -e " 8) Update Bin Stable  Icam - V24 NEON     ( $_rebootmsg )"
-  echo -e " 9) Update Bin Stable  Icam - V11824       ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Icam - V11824 NEON  ( $_rebootmsg )"
+  echo -e " 9) Update Bin Stable  Icam - V11825       ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable  Icam - V11825 NEON  ( $_rebootmsg )"
   echo -e " 0) Back"
   read  -p "choose an Option: " updatebin </dev/tty
   case $updatebin in
@@ -782,7 +782,7 @@ update_bin() {
       ;;
     9)
       _reboot=1
-      _oscam_version="11824"
+      _oscam_version="11825"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
@@ -790,7 +790,7 @@ update_bin() {
       ;;
 	10)
       _reboot=1
-      _oscam_version="11824"
+      _oscam_version="11825"
       _neon="-neon"
       get_old_oscam
       kill_oscam
