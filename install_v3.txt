@@ -709,10 +709,14 @@ update_bin() {
   echo -e " 6) Update Bin Stable  Icam - V23 NEON     ( $_rebootmsg )"
   echo -e " 7) Update Bin Stable  Icam - V24          ( $_rebootmsg )"
   echo -e " 8) Update Bin Stable  Icam - V24 NEON     ( $_rebootmsg )"
-  echo -e " 9) Update Bin Stable  Icam - V11825       ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Icam - V11825 NEON  ( $_rebootmsg )"
+  echo -e " 9) Update Bin Stable  Icam - V11826       ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable  Icam - V11826 NEON  ( $_rebootmsg )"
   echo -e " 0) Back"
+  echo -e ""
+  echo -e "Hit Strg + F5 in Webif"
+  echo -e ""
   read  -p "choose an Option: " updatebin </dev/tty
+
   case $updatebin in
     1)
       _reboot=1
@@ -783,7 +787,7 @@ update_bin() {
       ;;
     9)
       _reboot=1
-      _oscam_version="11825"
+      _oscam_version="11826"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
@@ -791,7 +795,7 @@ update_bin() {
       ;;
 	10)
       _reboot=1
-      _oscam_version="11825"
+      _oscam_version="11826"
       _neon="-neon"
       get_old_oscam
       kill_oscam
