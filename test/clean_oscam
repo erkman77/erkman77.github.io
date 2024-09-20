@@ -1,0 +1,26 @@
+#!/bin/bash
+
+RED='\033[0;31m'
+ORANGE='\033[0;33m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+list_softcams=$(opkg list-installed | grep softcams)
+echo -e "${ORANGE} #### Installed Cams #### ${NC}"
+echo -e "${ORANGE}$list_softcams${NC}"
+
+while :
+do
+        grep_softcam=$(opkg list-installed | grep softcams | awk '/softcams/ {print $1}' | head -n 1)
+        if  [ -n "$grep_softcam" ]
+                then
+                        echo -e "${GREEN}remove $grep_softcam${NC}"
+                        opkg remove $grep_softcam
+
+                else
+                        echo -e "${GREEN}all done${NC}"
+                        break
+        fi
+
+
+done
