@@ -51,8 +51,10 @@ fi
 
 # replace oscam  
   if [ -e /etc/apt/sources.list.d  ]; then
+  systemctl stop $_oscambin.service > /dev/null 2>&1
      wget -O $_myoscambin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-$Version_new${_neon} > /dev/null 2>&1
      chmod +x $_myoscambin
+	 systemctl start $_oscambin.service > /dev/null 2>&1
    else
     wget -O $_myoscambin ${_url}/ot_cams/oscam/oscam-${_arch}-$Version_new${_neon} > /dev/null 2>&1
     chmod +x $_myoscambin
