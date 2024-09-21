@@ -60,7 +60,7 @@ fi
     chmod +x $_myoscambin
    fi
   /etc/init.d/softcam.$_oscambin restart > /dev/null 2>&1
-
+   echo "OSCam changed from $Version_old to $Version_new"
  else
  echo ""
  fi
