@@ -22,7 +22,7 @@ X=22
 content2=$(grep "$search2" "$file2")
 if [ -n "$content2" ]; then
   Version_old=$(echo "$content2" | cut -c $((X + 1))-)
-  Version_old=$(echo "$Version_old" | sed 's/........................$//')
+  Version_old=$(echo "$Version_old" | cut -c1-5)
 fi
 if [[ "$Version_new" != "$Version_old" ]]; then
 #find arch und backup old oscam 
