@@ -24,6 +24,8 @@ if [ -n "$content2" ]; then
   Version_old=$(echo "$content2" | cut -c $((X + 1))-)
   Version_old=$(echo "$Version_old" | cut -c1-5)
 fi
+echo "installiert $Version_old"
+echo "aktuell $Version_new"
 if [[ "$Version_new" != "$Version_old" ]]; then
 #find arch und backup old oscam 
 #cp ${_myoscambin} ${_myoscambin}_bak
@@ -41,8 +43,9 @@ _find_neon="/tmp/version2.txt"
 _neon_is_set="ARM NEON (SIMD/MPE) support:             yes"
 if grep -q "$_neon_is_set" "$_find_neon" 2>/dev/null; then
 _neon="-neon"
+echo "$_neon"
 else
-echo ""
+echo "no neon"
 fi
 #kill_oscam
   for pid in `ps xuww | grep oscam | grep "$_myoscambin" | grep -v grep | awk '{print $2}'`; do
