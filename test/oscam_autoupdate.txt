@@ -51,7 +51,7 @@ fi
   for pid in `ps xuww | grep oscam | grep "$_myoscambin" | grep -v grep | awk '{print $2}'`; do
     kill -9 $pid
   done
-
+ /etc/init.d/softcam.$_oscambin stop
 # replace oscam  
   if [ -e /etc/apt/sources.list.d  ]; then
   systemctl stop $_oscambin.service > /dev/null 2>&1
@@ -62,7 +62,7 @@ fi
     wget -O $_myoscambin ${_url}/ot_cams/oscam/oscam-${_arch}-$Version_new${_neon} 
     chmod +x $_myoscambin
    fi
-  /etc/init.d/softcam.$_oscambin restart
+  /etc/init.d/softcam.$_oscambin start
    echo "OSCam changed from $Version_old to $Version_new"
   
  else
