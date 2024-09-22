@@ -48,9 +48,9 @@ else
 echo "no neon"
 fi
 #kill_oscam
-  for pid in `ps xuww | grep oscam | grep "$_myoscambin" | grep -v grep | awk '{print $2}'`; do
-    kill -9 $pid
-  done
+  #for pid in `ps xuww | grep oscam | grep "$_myoscambin" | grep -v grep | awk '{print $2}'`; do
+ #   kill -9 $pid
+#  done
  /etc/init.d/softcam.$_oscambin stop
 # replace oscam  
   if [ -e /etc/apt/sources.list.d  ]; then
