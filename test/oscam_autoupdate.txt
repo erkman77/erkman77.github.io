@@ -51,7 +51,7 @@ fi
  #   kill -9 $pid
 #  done
  /etc/init.d/softcam.$_oscambin stop > /dev/null 2>&1
- /usr/script/$_oscambin stop > /dev/null 2>&1
+ /usr/script/$_oscambin.sh stop > /dev/null 2>&1
 # replace oscam  
   if [ -e /etc/apt/sources.list.d  ]; then
   systemctl stop $_oscambin.service > /dev/null 2>&1
@@ -63,7 +63,7 @@ fi
     chmod +x $_myoscambin
    fi
   /etc/init.d/softcam.$_oscambin start > /dev/null 2>&1
-  /usr/script/$_oscambin start > /dev/null 2>&1
+  /usr/script/$_oscambin.sh start > /dev/null 2>&1
    echo "OSCam changed from $Version_old to $Version_new"
   
  else
