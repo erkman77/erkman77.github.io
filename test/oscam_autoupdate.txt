@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_url=https://i.tv-lounge.eu > /dev/null 2>&1
+_url=https://i.tv-lounge.eu 
 
 #compare oscam version
 wget -O /tmp/version.txt ${_url}/version.txt > /dev/null 2>&1
