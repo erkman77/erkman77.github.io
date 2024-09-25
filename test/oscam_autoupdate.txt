@@ -50,10 +50,28 @@ fi
   #for pid in `ps xuww | grep oscam | grep "$_myoscambin" | grep -v grep | awk '{print $2}'`; do
  #   kill -9 $pid
 #  done
- /etc/init.d/softcam.$_oscambin stop > /dev/null 2>&1
- /usr/script/$_oscambin.sh stop > /dev/null 2>&1
+if [ -f /etc/init.d/softcam.$_oscambin ]; then
+		/etc/init.d/softcam.$_oscambin stop > /dev/null 2>&1
+		sleep 2
+fi
+if [ -f /usr/camscript/Ncam_$_oscambin.sh ]; then
+		/usr/camscript/Ncam_$_oscambin.sh stop > /dev/null 2>&1
+		sleep 2
+fi
+if [ -f /usr/script/$_oscambin.emu ]; then
+		/usr/script/$_oscambin.emu stop > /dev/null 2>&1
+		sleep 2
+fi
+if [ -f /usr/script/$_oscambin.sh ]; then
+		/usr/script/$_oscambin.sh stop > /dev/null 2>&1
+		sleep 2
+fi
+if [ -f /etc/cam.d/$_oscambin.sh ]; then
+		/etc/cam.d/$_oscambin.sh stop > /dev/null 2>&1
+		sleep 2
+fi
  killall -9 $_oscambin > /dev/null 2>&1
- sleep 3
+ 
 # replace oscam  
   if [ -e /etc/apt/sources.list.d  ]; then
   systemctl stop $_oscambin.service > /dev/null 2>&1
@@ -68,8 +86,8 @@ if [ -f /etc/init.d/softcam.$_oscambin ]; then
 		/etc/init.d/softcam.$_oscambin start > /dev/null 2>&1
 		sleep 2
 fi
-if [ -f /usr/camscript/Ncam_$_oscambin_ncam.sh ]; then
-		/usr/camscript/Ncam_$_oscambin_ncam.sh start > /dev/null 2>&1
+if [ -f /usr/camscript/Ncam_$_oscambin.sh ]; then
+		/usr/camscript/Ncam_$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /usr/script/$_oscambin.emu ]; then
