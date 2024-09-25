@@ -52,6 +52,8 @@ fi
 #  done
  /etc/init.d/softcam.$_oscambin stop > /dev/null 2>&1
  /usr/script/$_oscambin.sh stop > /dev/null 2>&1
+ killall -9 $_oscambin > /dev/null 2>&1
+ sleep 3
 # replace oscam  
   if [ -e /etc/apt/sources.list.d  ]; then
   systemctl stop $_oscambin.service > /dev/null 2>&1
