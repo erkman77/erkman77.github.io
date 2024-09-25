@@ -91,13 +91,6 @@ if [ -f /etc/init.d/softcam.$_oscambin ]; then
 		sleep 2
 fi
 if [ -f /usr/camscript/Ncam_$_oscambin.sh ]; then
-		line=$(grep -n "CAMNAME=" /usr/camscript/Ncam_$_oscambin.sh)
-		line=$(echo "$line" | cut -c1-1)
-		camname=$(cat <<EOF
-		sed -i '${line}s/.*/OSCAMNAME=\"OSCam v$Version_new\"/' /usr/camscript/Ncam_$_oscambin.sh
-		EOF
-		)
-		eval $camname
 		/usr/camscript/Ncam_$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
@@ -117,14 +110,7 @@ if [ -f /usr/script/$_oscambin.sh ]; then
 		sleep 2
 fi
 if [ -f /usr/emu_scripts/EGcam_$_oscambin.sh ]; then
-        line=$(grep -n "CAMNAME=" /usr/emu_scripts/EGcam_$_oscambin.sh)
-		line=$(echo "$line" | cut -c1-1)
-		camname=$(cat <<EOF
-		sed -i '${line}s/.*/OSCAMNAME=\"OSCam v$Version_new\"/' /usr/scripts/EGcam_$_oscambin.sh
-		EOF
-		)
-		eval $camname
-		/usr/emu_script/EG_$_oscambin.sh start > /dev/null 2>&1
+        /usr/emu_scripts/EGcam_$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /etc/cam.d/$_oscambin.sh ]; then
