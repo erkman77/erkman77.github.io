@@ -99,13 +99,13 @@ if [ -f /usr/script/$_oscambin.emu ]; then
 		sleep 2
 fi
 if [ -f /usr/script/$_oscambin.sh ]; then
-		line=$(grep -n "CAMNAME=" /usr/script/$_oscambin.sh)
-		line=$(echo "$line" | cut -c1-1)
-		camname=$(cat <<EOF
-		sed -i '${line}s/.*/OSCAMNAME=\"OSCam v$Version_new\"/' /usr/script/$_oscambin.sh
-		EOF
-		)
-		eval $camname
+		#line=$(grep -n "CAMNAME=" /usr/script/$_oscambin.sh)
+		#line=$(echo "$line" | cut -c1-1)
+		#camname=$(cat <<EOF
+		#sed -i '${line}s/.*/OSCAMNAME=\"OSCam v$Version_new\"/' /usr/script/$_oscambin.sh
+		#EOF
+		#)
+		#eval $camname
 		/usr/script/$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
