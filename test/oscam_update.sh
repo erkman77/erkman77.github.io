@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CAMNAME="OScam-Installer"
+CAMNAME="OSCam-Installer"
 binary="oscam_bin"
 
 remove_tmp () {
