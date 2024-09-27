@@ -214,6 +214,9 @@ if [ -f /etc/cam.d/$_oscambin.sh ]; then
 		/etc/cam.d/$_oscambin.sh stop > /dev/null 2>&1
 		sleep 2
 fi
+ if [ -e /etc/apt/sources.list.d  ]; then
+     systemctl stop $_oscambin.service > /dev/null 2>&1
+fi
   for pid in `ps xuww | grep oscam | grep "$_myoscambin" | grep -v grep | awk '{print $2}'`; do
     kill -9 $pid
   done
@@ -362,6 +365,9 @@ chmod +x /etc/cam.d/oscam_bin.sh
 		/etc/cam.d/oscam_bin.sh start > /dev/null 2>&1
 		sleep 2
 fi
+ if [ -e /etc/apt/sources.list.d  ]; then
+     systemctl start $_oscambin.service > /dev/null 2>&1
+fi
 }
 
 replace_oscam_bin() {
@@ -389,9 +395,9 @@ replace_oscam_bin() {
     chmod +x /usr/bin/oscam_bin
    fi
    unset _neon
-   _oscam_version=v24
    cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
    replace_initscript
+   _oscam_version=v24
 }
 
 do_reboot() {

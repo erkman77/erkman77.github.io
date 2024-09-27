@@ -129,7 +129,9 @@ chmod +x /usr/emu_scripts/EGcam_${_oscambin}.sh
 		/usr/emu_scripts/EGcam_$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
-
+ if [ -e /etc/apt/sources.list.d  ]; then
+     systemctl stop $_oscambin.service > /dev/null 2>&1
+fi
 #newenigma
 if [ -f /usr/script/$_oscambin.emu ]; then
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh
@@ -224,6 +226,9 @@ fi
 if [ -f /etc/init.d/softcam.$_oscambin ]; then
 		/etc/init.d/softcam.$_oscambin start > /dev/null 2>&1
 		sleep 2
+fi
+ if [ -e /etc/apt/sources.list.d  ]; then
+     systemctl start $_oscambin.service > /dev/null 2>&1
 fi
 
    echo "OSCam changed from $Version_old to $Version_new"
