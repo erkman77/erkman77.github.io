@@ -54,8 +54,8 @@ if [ -f /etc/init.d/softcam.$_oscambin ]; then
 		/etc/init.d/softcam.$_oscambin stop > /dev/null 2>&1
 		sleep 2
 fi
-if [ -f /usr/camscript/Ncam_$_oscambin.sh ]; then
-		/usr/camscript/Ncam_$_oscambin.sh stop > /dev/null 2>&1
+if [ -f /usr/camscript/$_oscambin.sh ]; then
+		/usr/camscript/$_oscambin.sh stop > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /usr/script/$_oscambin.emu ]; then
@@ -90,25 +90,29 @@ if [ -f /etc/init.d/softcam.$_oscambin ]; then
 		/etc/init.d/softcam.$_oscambin start > /dev/null 2>&1
 		sleep 2
 fi
-if [ -f /usr/camscript/Ncam_$_oscambin.sh ]; then
-		/usr/camscript/Ncam_$_oscambin.sh start > /dev/null 2>&1
+if [ -f /usr/camscript/$_oscambin.sh ]; then
+		/usr/camscript/$_oscambin.sh start > /dev/null 2>&1
+		sleep 2
+fi
+if [ -f /usr/emu_scripts/$_oscambin.sh ]; then
+		/usr/emu_scripts/$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /usr/script/$_oscambin.emu ]; then
 		/usr/script/$_oscambin.emu start > /dev/null 2>&1
 		sleep 2
 fi
-if [ -f /usr/script/$_oscambin.sh ]; then
-##line=$(grep -n "CAMNAME=" /usr/script/$_oscambin.sh)
+#if [ -f /usr/script/$_oscambin.sh ]; then
+#line=$(grep -n "CAMNAME=" /usr/script/$_oscambin.sh)
 #line=$(echo "$line" | cut -c1-1)
 #camname=$(cat <<EOF
 #sed -i '${line}s/.*/OSCAMNAME=\"OScam v$Version_new\"/' /usr/script/$_oscambin.sh
 #EOF
 #)
 #eval $camname
-		/usr/script/$_oscambin.sh start > /dev/null 2>&1
-		sleep 2
-fi
+#		/usr/script/$_oscambin.sh start > /dev/null 2>&1
+#		sleep 2
+#fi
 if [ -f /usr/emu_scripts/$_oscambin.sh ]; then
         /usr/emu_scripts/$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
