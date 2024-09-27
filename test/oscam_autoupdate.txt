@@ -130,4 +130,4 @@ fi
  echo "OSCam up2date"
  fi
 rm /tmp/version* > /dev/null 2>&1
-rm /tmp/oscam > /dev/null 2>&1
+rm /tmp/oscam* > /dev/null 2>&1
