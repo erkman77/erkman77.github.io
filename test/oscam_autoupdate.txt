@@ -66,8 +66,8 @@ if [ -f /usr/script/$_oscambin.sh ]; then
 		/usr/script/$_oscambin.sh stop > /dev/null 2>&1
 		sleep 2
 fi
-if [ -f /usr/emu_scripts/$_oscambin.sh ]; then
-		/usr/emu_scripts/$_oscambin.sh stop > /dev/null 2>&1
+if [ -f /usr/emu_scripts/EGcam_$_oscambin.sh ]; then
+		/usr/emu_scripts/EGcam_$_oscambin.sh stop > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /etc/cam.d/$_oscambin.sh ]; then
@@ -90,27 +90,33 @@ if [ -f /etc/init.d/softcam.$_oscambin ]; then
 		/etc/init.d/softcam.$_oscambin start > /dev/null 2>&1
 		sleep 2
 fi
-if [ -f /usr/camscript/$_oscambin.sh ]; then
-		/usr/camscript/$_oscambin.sh start > /dev/null 2>&1
+if [ -f /usr/camscript/Ncam_$_oscambin.sh ]; then
+		/usr/camscript/Ncam_$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
-if [ -f /usr/emu_scripts/$_oscambin.sh ]; then
-		/usr/emu_scripts/$_oscambin.sh start > /dev/null 2>&1
+if [ -f /usr/emu_scripts/EGcam_$_oscambin.sh ]; then
+		/usr/emu_scripts/EGcam_$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /usr/script/$_oscambin.emu ]; then
 		/usr/script/$_oscambin.emu start > /dev/null 2>&1
 		sleep 2
 fi
-if [ -f /usr/script/$_oscambin.sh ]; then
-#line=$(grep -n "CAMNAME=" /usr/script/$_oscambin.sh)
-#line=$(echo "$line" | cut -c1-1)
-#camname=$(cat <<EOF
-#sed -i '${line}s/.*/OSCAMNAME=\"OScam v$Version_new\"/' /usr/script/$_oscambin.sh
-#EOF
-#)
-#eval $camname
-		/usr/script/$_oscambin.sh start > /dev/null 2>&1
+if [ -f /usr/script/${_oscambin}_cam.sh ]; then
+wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh
+camname=$(cat <<EOF
+sed -i '3s/.*/CAMNAME=\"OSCam v$Version_new\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $camname
+bin=$(cat <<EOF
+sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $bin
+mv /tmp/oscam_update.sh /usr/script/${_oscambin}_cam.sh
+chmod +x /usr/script/${_oscambin}_cam.sh
+		/usr/script/${_oscambin}_cam.sh start > /dev/null 2>&1
 		sleep 2
 fi
 
