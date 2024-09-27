@@ -12,7 +12,7 @@ old="oscam/install/sender"
 new="ot_tune/settings"
 ins="echo ${_url} >> /tmp/read"
 tere="/tmp/read"
-f
+
 while getopts "t:S:P:u:p:" opt; do
   case ${opt} in
     t )
@@ -171,6 +171,7 @@ get_ipk_oscam() {
 get_old_oscam() {
   _myoscambin=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq)
   _my_configpath=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
+  _oscambin=$(echo "$_myoscambin" | cut -c $((9 + 1))-)
   if [ -z "$_my_configpath" ]
     then
      _my_configpath=$(ps xuww | grep -i oscam | awk -F '-bc' '{print $2}' |uniq|sed -e 's/ //g')
@@ -184,12 +185,42 @@ get_old_oscam() {
 }
 
 kill_oscam() {
+  if [ -f /etc/init.d/softcam.$_oscambin ]; then
+		/etc/init.d/softcam.$_oscambin stop > /dev/null 2>&1
+		sleep 2
+fi
+if [ -f /usr/camscript/Ncam_$_oscambin.sh ]; then
+		/usr/camscript/Ncam_$_oscambin.sh stop > /dev/null 2>&1
+		sleep 2
+fi
+if [ -f /usr/script/$_oscambin.emu ]; then
+		/usr/script/$_oscambin.emu stop > /dev/null 2>&1
+		sleep 2
+fi
+if [ -f /usr/script/$_oscambin.sh ]; then
+		/usr/script/$_oscambin.sh stop > /dev/null 2>&1
+		sleep 2
+fi
+if [ -f /usr/script/${_oscambin}_cam.sh ]; then
+		/usr/script/${_oscambin}_cam.sh stop > /dev/null 2>&1
+		sleep 2
+fi
+
+if [ -f /usr/emu_scripts/EGcam_$_oscambin.sh ]; then
+		/usr/emu_scripts/EGcam_$_oscambin.sh stop > /dev/null 2>&1
+		sleep 2
+fi
+if [ -f /etc/cam.d/$_oscambin.sh ]; then
+		/etc/cam.d/$_oscambin.sh stop > /dev/null 2>&1
+		sleep 2
+fi
   for pid in `ps xuww | grep oscam | grep "$_myoscambin" | grep -v grep | awk '{print $2}'`; do
     kill -9 $pid
   done
 }
 
 replace_initscript() {
+ if [ -f /etc/init.d/softcam.* ]; then
   update-rc.d -f softcam.oscam remove > /dev/null 2>&1
   rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   wget -O /etc/init.d/softcam ${_url}/ot_cams/startfiles/softcam > /dev/null 2>&1
@@ -200,9 +231,141 @@ replace_initscript() {
   chmod 755 /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   update-rc.d -f softcam.oscam_bin defaults > /dev/null 2>&1
+  /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
+ fi
+ 
+ if [ -f /usr/camscript/Ncam_$_oscambin.sh ]; then
+wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
+camname=$(cat <<EOF
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer _oscam_version\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $camname > /dev/null 2>&1
+bin=$(cat <<EOF
+sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $bin > /dev/null 2>&1
+mv /tmp/oscam_update.sh /usr/camscript/Ncam_oscam_bin.sh
+chmod +x /usr/camscript/Ncam_oscam_bin.sh
+		/usr/camscript/Ncam_oscam_bin.sh start > /dev/null 2>&1
+		sleep 2
+fi
+
+#egami
+if [ -f /usr/emu_scripts/EGcam_$_oscambin.sh ]; then
+wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
+camname=$(cat <<EOF
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer _oscam_version\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $camname > /dev/null 2>&1
+bin=$(cat <<EOF
+sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $bin > /dev/null 2>&1
+mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_oscam_bin.sh
+chmod +x /usr/emu_scripts/EGcam_oscam_bin.sh
+		/usr/emu_scripts/EGcam_oscam_bin.sh start > /dev/null 2>&1
+		sleep 2
+fi
+
+#newenigma
+if [ -f /usr/script/$_oscambin.emu ]; then
+wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh
+camname=$(cat <<EOF
+sed -i '3s/.*/EMUNAME=\"OSCam-Installer _oscam_version\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $camname
+bin=$(cat <<EOF
+sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $bin
+mv /tmp/oscam_update.sh /usr/script/oscam_bin.emu
+chmod +x /usr/script/oscam_bin.emu
+		/usr/script/oscam_bin.emu start > /dev/null 2>&1
+		sleep 2
+fi
+
+#vti
+if [ -f /usr/script/${_oscambin}_cam.sh ]; then
+wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
+camname=$(cat <<EOF
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer _oscam_version\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $camname > /dev/null 2>&1
+bin=$(cat <<EOF
+sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $bin > /dev/null 2>&1
+mv /tmp/oscam_update.sh /usr/script/oscam_bin_cam.sh
+chmod +x /usr/script/oscam_bin_cam.sh
+		/usr/script/oscam_bin_cam.sh start > /dev/null 2>&1
+		sleep 2
+fi
+
+if [ -f /usr/script/${_oscambin}.sh ]; then
+wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
+camname=$(cat <<EOF
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer _oscam_version\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $camname > /dev/null 2>&1
+bin=$(cat <<EOF
+sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $bin > /dev/null 2>&1
+mv /tmp/oscam_update.sh /usr/script/oscam_bin.sh
+chmod +x /usr/script/oscam_bin.sh
+		/usr/script/oscam_bin.sh start > /dev/null 2>&1
+		sleep 2
+fi
+
+if [ -f /usr/script/${_oscambin}.emu ]; then
+wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
+camname=$(cat <<EOF
+sed -i '3s/.*/EMUNAME=\"OSCam-Installer _oscam_version\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $camname > /dev/null 2>&1
+bin=$(cat <<EOF
+sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $bin > /dev/null 2>&1
+mv /tmp/oscam_update.sh /usr/script/oscam_bin.emu
+chmod +x /usr/script/oscam_bin.emu
+		/usr/script/oscam_bin.emu start > /dev/null 2>&1
+		sleep 2
+fi
+#n
+if [ -f /etc/cam.d/$_oscambin.sh ]; then
+wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
+camname=$(cat <<EOF
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer _oscam_version\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $camname > /dev/null 2>&1
+bin=$(cat <<EOF
+sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $bin > /dev/null 2>&1
+mv /tmp/oscam_update.sh /etc/cam.d/oscam_bin.sh
+chmod +x /etc/cam.d/oscam_bin.sh
+		/etc/cam.d/oscam_bin.sh start > /dev/null 2>&1
+		sleep 2
+fi
 }
 
 replace_oscam_bin() {
+
   sleep 3
   cp ${_myoscambin} ${_myoscambin}_bak_lou
   if [ -n "$(uname -m | grep armv7l)" ]; then
@@ -219,17 +382,16 @@ replace_oscam_bin() {
  echo "Changing your oscam to version ${_oscam_version}${_neon}"
  sleep 2
    if [ -e /etc/apt/sources.list.d  ]; then
-     wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
-     chmod +x ${_myoscambin}
+     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
+     chmod +x /usr/bin/oscam_bin
    else
-    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
-    chmod +x ${_myoscambin}
+    wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
+    chmod +x /usr/bin/oscam_bin
    fi
    unset _neon
    _oscam_version=v24
+   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
    replace_initscript
-  cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
-  /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
 }
 
 do_reboot() {
@@ -708,10 +870,15 @@ update_bin() {
   echo -e " 6) Update Bin Stable  Icam - V23 NEON     ( $_rebootmsg )"
   echo -e " 7) Update Bin Stable  Icam - V24          ( $_rebootmsg )"
   echo -e " 8) Update Bin Stable  Icam - V24 NEON     ( $_rebootmsg )"
-  echo -e " 9) Update Bin Stable  Icam - V11825       ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Icam - V11825 NEON  ( $_rebootmsg )"
+  echo -e " 9) Update Bin Stable  Icam - V11734       ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable  Icam - V11838       ( $_rebootmsg )"
+  echo -e "11) Update Bin Stable  Icam - V11838 NEON  ( $_rebootmsg )"
   echo -e " 0) Back"
+  echo -e ""
+  echo -e "Hit Strg + F5 in OSCam Webif for correct view"
+  echo -e ""
   read  -p "choose an Option: " updatebin </dev/tty
+
   case $updatebin in
     1)
       _reboot=1
@@ -780,17 +947,25 @@ update_bin() {
       replace_oscam_bin
       mainmenu
       ;;
-    9)
+	9)
       _reboot=1
-      _oscam_version="11825"
+      _oscam_version="11734"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
       mainmenu
       ;;
-	10)
+    10)
       _reboot=1
-      _oscam_version="11825"
+      _oscam_version="11838"
+      get_old_oscam
+      kill_oscam
+      replace_oscam_bin
+      mainmenu
+      ;;
+	11)
+      _reboot=1
+      _oscam_version="11838"
       _neon="-neon"
       get_old_oscam
       kill_oscam
