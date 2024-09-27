@@ -102,7 +102,7 @@ if [ -f /usr/script/$_oscambin.emu ]; then
 		/usr/script/$_oscambin.emu start > /dev/null 2>&1
 		sleep 2
 fi
-#if [ -f /usr/script/$_oscambin.sh ]; then
+if [ -f /usr/script/$_oscambin.sh ]; then
 #line=$(grep -n "CAMNAME=" /usr/script/$_oscambin.sh)
 #line=$(echo "$line" | cut -c1-1)
 #camname=$(cat <<EOF
@@ -110,13 +110,10 @@ fi
 #EOF
 #)
 #eval $camname
-#		/usr/script/$_oscambin.sh start > /dev/null 2>&1
-#		sleep 2
-#fi
-if [ -f /usr/emu_scripts/$_oscambin.sh ]; then
-        /usr/emu_scripts/$_oscambin.sh start > /dev/null 2>&1
+		/usr/script/$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
+
 if [ -f /etc/cam.d/$_oscambin.sh ]; then
 		/etc/cam.d/$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
