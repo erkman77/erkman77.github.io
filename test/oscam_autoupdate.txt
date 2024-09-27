@@ -66,8 +66,8 @@ if [ -f /usr/script/$_oscambin.sh ]; then
 		/usr/script/$_oscambin.sh stop > /dev/null 2>&1
 		sleep 2
 fi
-if [ -f /usr/emu_scripts/EGcam_$_oscambin.sh ]; then
-		/usr/emu_scripts/EGcam_$_oscambin.sh stop > /dev/null 2>&1
+if [ -f /usr/emu_scripts/$_oscambin.sh ]; then
+		/usr/emu_scripts/$_oscambin.sh stop > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /etc/cam.d/$_oscambin.sh ]; then
@@ -99,18 +99,18 @@ if [ -f /usr/script/$_oscambin.emu ]; then
 		sleep 2
 fi
 if [ -f /usr/script/$_oscambin.sh ]; then
-		#line=$(grep -n "CAMNAME=" /usr/script/$_oscambin.sh)
-		#line=$(echo "$line" | cut -c1-1)
-		#camname=$(cat <<EOF
-		#sed -i '${line}s/.*/OSCAMNAME=\"OSCam v$Version_new\"/' /usr/script/$_oscambin.sh
-		#EOF
-		#)
-		#eval $camname
+##line=$(grep -n "CAMNAME=" /usr/script/$_oscambin.sh)
+#line=$(echo "$line" | cut -c1-1)
+#camname=$(cat <<EOF
+#sed -i '${line}s/.*/OSCAMNAME=\"OScam v$Version_new\"/' /usr/script/$_oscambin.sh
+#EOF
+#)
+#eval $camname
 		/usr/script/$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
-if [ -f /usr/emu_scripts/EGcam_$_oscambin.sh ]; then
-        /usr/emu_scripts/EGcam_$_oscambin.sh start > /dev/null 2>&1
+if [ -f /usr/emu_scripts/$_oscambin.sh ]; then
+        /usr/emu_scripts/$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /etc/cam.d/$_oscambin.sh ]; then
