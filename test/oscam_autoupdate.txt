@@ -91,10 +91,36 @@ if [ -f /etc/init.d/softcam.$_oscambin ]; then
 		sleep 2
 fi
 if [ -f /usr/camscript/Ncam_$_oscambin.sh ]; then
+wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
+camname=$(cat <<EOF
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $camname > /dev/null 2>&1
+bin=$(cat <<EOF
+sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $bin > /dev/null 2>&1
+mv /tmp/oscam_update.sh /usr/camscript/Ncam_${_oscambin}.sh
+chmod +x /usr/camscript/Ncam_${_oscambin}.sh
 		/usr/camscript/Ncam_$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /usr/emu_scripts/EGcam_$_oscambin.sh ]; then
+wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
+camname=$(cat <<EOF
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $camname > /dev/null 2>&1
+bin=$(cat <<EOF
+sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $bin > /dev/null 2>&1
+mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_${_oscambin}.sh
+chmod +x /usr/emu_scripts/EGcam_${_oscambin}.sh
 		/usr/emu_scripts/EGcam_$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
@@ -103,17 +129,17 @@ if [ -f /usr/script/$_oscambin.emu ]; then
 		sleep 2
 fi
 if [ -f /usr/script/${_oscambin}_cam.sh ]; then
-wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh
+wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
-sed -i '3s/.*/CAMNAME=\"OSCam v$Version_new\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new\"/' /tmp/oscam_update.sh
 EOF
 )
-eval $camname
+eval $camname > /dev/null 2>&1
 bin=$(cat <<EOF
 sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
 EOF
 )
-eval $bin
+eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/script/${_oscambin}_cam.sh
 chmod +x /usr/script/${_oscambin}_cam.sh
 		/usr/script/${_oscambin}_cam.sh start > /dev/null 2>&1
