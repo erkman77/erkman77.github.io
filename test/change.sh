@@ -1,6 +1,4 @@
-#!/bin/bash
-#line=$(grep -n "CAMNAME=" /usr/script/$_oscambin.sh)
-#line=$(echo "$line" | cut -c1-1)
+
 Version_new="11111"
 _oscambin="oscam-erki"
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh
