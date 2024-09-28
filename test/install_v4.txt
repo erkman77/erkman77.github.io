@@ -240,12 +240,12 @@ replace_initscript() {
  if [ -f /usr/camscript/Ncam_$_oscambin.sh ]; then
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
-sed -i '3s/.*/CAMNAME=\"OSCam-Installer _oscam_version\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer $_oscam_version\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname > /dev/null 2>&1
 bin=$(cat <<EOF
-sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
@@ -259,12 +259,12 @@ fi
 if [ -f /usr/emu_scripts/EGcam_$_oscambin.sh ]; then
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
-sed -i '3s/.*/CAMNAME=\"OSCam-Installer _oscam_version\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer ${_oscam_version}\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname > /dev/null 2>&1
 bin=$(cat <<EOF
-sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
@@ -278,12 +278,12 @@ fi
 if [ -f /usr/script/$_oscambin.emu ]; then
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh
 camname=$(cat <<EOF
-sed -i '3s/.*/EMUNAME=\"OSCam-Installer _oscam_version\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/EMUNAME=\"OSCam-Installer ${_oscam_version}\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname
 bin=$(cat <<EOF
-sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin
@@ -297,12 +297,12 @@ fi
 if [ -f /usr/script/${_oscambin}_cam.sh ]; then
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
-sed -i '3s/.*/CAMNAME=\"OSCam-Installer _oscam_version\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer ${_oscam_version}\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname > /dev/null 2>&1
 bin=$(cat <<EOF
-sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
@@ -315,12 +315,12 @@ fi
 if [ -f /usr/script/${_oscambin}.sh ]; then
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
-sed -i '3s/.*/CAMNAME=\"OSCam-Installer _oscam_version\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer ${_oscam_version}\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname > /dev/null 2>&1
 bin=$(cat <<EOF
-sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
@@ -333,12 +333,12 @@ fi
 if [ -f /usr/script/${_oscambin}.emu ]; then
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
-sed -i '3s/.*/EMUNAME=\"OSCam-Installer _oscam_version\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/EMUNAME=\"OSCam-Installer ${_oscam_version}\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname > /dev/null 2>&1
 bin=$(cat <<EOF
-sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
@@ -351,12 +351,12 @@ fi
 if [ -f /etc/cam.d/$_oscambin.sh ]; then
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
-sed -i '3s/.*/CAMNAME=\"OSCam-Installer _oscam_version\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer ${_oscam_version}\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname > /dev/null 2>&1
 bin=$(cat <<EOF
-sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
+sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
