@@ -13,7 +13,7 @@ if [ -n "$content" ]; then
 fi
 ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscam
 _myoscambin=$(head -n 1 /tmp/oscam)
-_oscambin=$(echo "$_myoscambin" | cut -c $((9 + 1))-)
+_oscambin=$(basename "$_myoscambin")
 
 $_myoscambin -V > /tmp/version2.txt
 file2="/tmp/version2.txt"
@@ -52,6 +52,8 @@ fi
 #  done
 if [ -f /etc/init.d/softcam.$_oscambin ]; then
 		/etc/init.d/softcam.$_oscambin stop > /dev/null 2>&1
+		_file=$(find /etc/init.d/softcam* -type f -exec grep -l "$_oscambin" {} +)
+		$_file stop > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /usr/camscript/Ncam_$_oscambin.sh ]; then
@@ -80,6 +82,7 @@ if [ -f /etc/cam.d/$_oscambin.sh ]; then
 		sleep 2
 fi
  killall -9 $_oscambin > /dev/null 2>&1
+ kill `pidof $_oscambin` > /dev/null 2>&1
  
 # replace oscam  
   if [ -e /etc/apt/sources.list.d  ]; then
@@ -225,6 +228,7 @@ chmod +x /etc/cam.d/${_oscambin}.sh
 fi
 if [ -f /etc/init.d/softcam.$_oscambin ]; then
 		/etc/init.d/softcam.$_oscambin start > /dev/null 2>&1
+		$_file start > /dev/null 2>&1
 		sleep 2
 fi
  if [ -e /etc/apt/sources.list.d  ]; then
