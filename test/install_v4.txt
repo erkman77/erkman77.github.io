@@ -672,6 +672,42 @@ install_vti() {
   sleep 2 
 }
 
+install_egami() {
+  echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
+  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
+  install_lou_ipk
+  rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  get_old_oscam
+  kill_oscam
+  get_oscam_configs
+  replace_oscam_bin
+  set_enigma2_settings
+  echo ""; echo -e "\e[32m ... Well, fancy! were done ;)\e[0m";
+  sleep 2 
+}
+
+install_bh() {
+  echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
+  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
+  install_lou_ipk
+  rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  get_old_oscam
+  kill_oscam
+  get_oscam_configs
+  replace_oscam_bin
+  set_enigma2_settings
+  echo ""; echo -e "\e[32m ... Well, fancy! were done ;)\e[0m";
+  sleep 2 
+}
+
 install_nn2() {
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
   $_exec_cmd install $_libusbvers  > /dev/null 2>&1
@@ -815,6 +851,8 @@ install_stable() {
   echo -e "4) openNFR/HDF ( $_rebootmsg )"
   echo -e "5) DreamOS     ( $_rebootmsg )"
   echo -e "6) Pure2       ( $_rebootmsg )"
+  echo -e "7) Egami       ( $_rebootmsg )"
+  echo -e "8) Blackhole   ( $_rebootmsg )"
   echo -e "0) Back"
   read  -p "choose an Option: " stablemenu </dev/tty
   case $stablemenu in
@@ -854,6 +892,18 @@ install_stable() {
       install_opli
       install_bouquets
       ;;
+	7)
+      _flag=stable
+      _reboot=1
+      install_egami
+      install_bouquets
+      ;;  
+	8)
+      _flag=stable
+      _reboot=1
+      install_bh
+      install_bouquets
+      ;;  
     0)
       clear
       mainmenu
