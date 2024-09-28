@@ -160,7 +160,7 @@ install_lou_ipk() {
     chmod +x /usr/bin/oscam_bin
   fi
   replace_initscript
-  /etc/init.d/softcam.oscam_bin restart
+  /etc/init.d/softcam.oscam_bin restart >/dev/null 2>&1
 }
 
 get_ipk_oscam() {
@@ -191,27 +191,33 @@ kill_oscam() {
 fi
 if [ -f /usr/camscript/Ncam_$_oscambin.sh ]; then
 		/usr/camscript/Ncam_$_oscambin.sh stop > /dev/null 2>&1
+		rm /usr/camscript/Ncam_$_oscambin.sh > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /usr/script/$_oscambin.emu ]; then
 		/usr/script/$_oscambin.emu stop > /dev/null 2>&1
+		rm /usr/script/$_oscambin.emu > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /usr/script/$_oscambin.sh ]; then
 		/usr/script/$_oscambin.sh stop > /dev/null 2>&1
+		rm /usr/script/$_oscambin.sh > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /usr/script/${_oscambin}_cam.sh ]; then
 		/usr/script/${_oscambin}_cam.sh stop > /dev/null 2>&1
+		rm /usr/script/${_oscambin}_cam.sh > /dev/null 2>&1
 		sleep 2
 fi
 
 if [ -f /usr/emu_scripts/EGcam_$_oscambin.sh ]; then
 		/usr/emu_scripts/EGcam_$_oscambin.sh stop > /dev/null 2>&1
+		rm /usr/emu_scripts/EGcam_$_oscambin.sh > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /etc/cam.d/$_oscambin.sh ]; then
 		/etc/cam.d/$_oscambin.sh stop > /dev/null 2>&1
+		rm /etc/cam.d/$_oscambin.sh > /dev/null 2>&1
 		sleep 2
 fi
  if [ -e /etc/apt/sources.list.d  ]; then
@@ -238,6 +244,7 @@ replace_initscript() {
  fi
  
  if [ -f /usr/camscript/Ncam_$_oscambin.sh ]; then
+ curl --noproxy '*' --data value="OSCam-Installer ${_oscam_version}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer $_oscam_version\"/' /tmp/oscam_update.sh
@@ -257,6 +264,7 @@ fi
 
 #egami
 if [ -f /usr/emu_scripts/EGcam_$_oscambin.sh ]; then
+curl --noproxy '*' --data value="OSCam-Installer ${_oscam_version}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer ${_oscam_version}\"/' /tmp/oscam_update.sh
@@ -276,6 +284,7 @@ fi
 
 #newenigma
 if [ -f /usr/script/$_oscambin.emu ]; then
+curl --noproxy '*' --data value="OSCam-Installer ${_oscam_version}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh
 camname=$(cat <<EOF
 sed -i '3s/.*/EMUNAME=\"OSCam-Installer ${_oscam_version}\"/' /tmp/oscam_update.sh
@@ -295,6 +304,7 @@ fi
 
 #vti
 if [ -f /usr/script/${_oscambin}_cam.sh ]; then
+curl --noproxy '*' --data value="OSCam-Installer ${_oscam_version}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer ${_oscam_version}\"/' /tmp/oscam_update.sh
@@ -313,6 +323,7 @@ chmod +x /usr/script/oscam_bin_cam.sh
 fi
 
 if [ -f /usr/script/${_oscambin}.sh ]; then
+curl --noproxy '*' --data value="OSCam-Installer ${_oscam_version}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer ${_oscam_version}\"/' /tmp/oscam_update.sh
@@ -331,6 +342,7 @@ chmod +x /usr/script/oscam_bin.sh
 fi
 
 if [ -f /usr/script/${_oscambin}.emu ]; then
+curl --noproxy '*' --data value="OSCam-Installer ${_oscam_version}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/EMUNAME=\"OSCam-Installer ${_oscam_version}\"/' /tmp/oscam_update.sh
@@ -349,6 +361,7 @@ chmod +x /usr/script/oscam_bin.emu
 fi
 #n
 if [ -f /etc/cam.d/$_oscambin.sh ]; then
+curl --noproxy '*' --data value="OSCam-Installer ${_oscam_version}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer ${_oscam_version}\"/' /tmp/oscam_update.sh
@@ -852,7 +865,7 @@ install_stable() {
   echo -e "5) DreamOS     ( $_rebootmsg )"
   echo -e "6) Pure2       ( $_rebootmsg )"
   echo -e "7) Egami       ( $_rebootmsg )"
-  echo -e "8) Blackhole   ( $_rebootmsg )"
+  echo -e "8) openBH      ( $_rebootmsg )"
   echo -e "0) Back"
   read  -p "choose an Option: " stablemenu </dev/tty
   case $stablemenu in
