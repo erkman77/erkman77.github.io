@@ -847,14 +847,14 @@ mainmenu() {
 install_stable() {
   my_header
   echo -e "\e[33m ######*** Stable  Menu ***######\e[0m"
-  echo -e "1) openATV     ( $_rebootmsg )"
-  echo -e "2) Openpli     ( $_rebootmsg )"
-  echo -e "3) VTI+vuplus  ( $_rebootmsg )"
-  echo -e "4) openNFR/HDF ( $_rebootmsg )"
-  echo -e "5) DreamOS     ( $_rebootmsg )"
-  echo -e "6) Pure2       ( $_rebootmsg )"
-  echo -e "7) Egami       ( $_rebootmsg )"
-  echo -e "8) openBH      ( $_rebootmsg )"
+  echo -e "1) openATV        ( $_rebootmsg )"
+  echo -e "2) Openpli        ( $_rebootmsg )"
+  echo -e "3) VTI/Blackhole  ( $_rebootmsg )"
+  echo -e "4) openNFR/HDF    ( $_rebootmsg )"
+  echo -e "5) DreamOS        ( $_rebootmsg )"
+  echo -e "6) Pure2          ( $_rebootmsg )"
+  echo -e "7) Egami          ( $_rebootmsg )"
+  echo -e "8) openBH         ( $_rebootmsg )"
   echo -e "0) Back"
   read  -p "choose an Option: " stablemenu </dev/tty
   case $stablemenu in
