@@ -246,6 +246,9 @@ replace_initscript() {
  if [ -f /usr/camscript/Ncam_*.sh ]; then
 cp /usr/bin/oscam_bin /usr/softcams/
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
+wget -O /etc/init.d/softcam.oscam_bin ${_url}/ot_cams/startfiles/softcam.oscam_bin_bh > /dev/null 2>&1
+chmod 755 /etc/init.d/softcam*
+update-rc.d -f softcam.oscam_bin defaults > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer $_oscam_version\"/' /tmp/oscam_update.sh
 EOF
@@ -259,6 +262,7 @@ eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/camscript/Ncam_oscam_bin.sh
 chmod +x /usr/camscript/Ncam_oscam_bin.sh
 		/usr/camscript/Ncam_oscam_bin.sh start > /dev/null 2>&1
+		/etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
 		sleep 2
 		 curl --noproxy '*' --data value="OSCam-Installer ${_oscam_version}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
 fi
