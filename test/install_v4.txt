@@ -155,7 +155,7 @@ install_lou_ipk() {
     chmod +x /usr/bin/oscam_bin
   else
     echo "install dummy ipk for softcam"
-    curl -sk -o /tmp/softcam-lou.ipk ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815_all.ipk
+    curl -sk -o /tmp/softcam-lou.ipk ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815_all_2.ipk
     $_exec_cmd install --force-reinstall /tmp/softcam-lou.ipk  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
   fi
@@ -189,7 +189,7 @@ kill_oscam() {
 		/etc/init.d/softcam.$_oscambin stop > /dev/null 2>&1
 		sleep 2
 fi
-if [ -f /usr/camscript/Ncam_$_oscambin.sh ]; then
+if [ -f /usr/lib/enigma2/python/Screens/BpBlue.pyc ]; then
 		/usr/camscript/Ncam_$_oscambin.sh stop > /dev/null 2>&1
 		rm /usr/camscript/Ncam_$_oscambin.sh > /dev/null 2>&1
 		sleep 2
@@ -210,7 +210,7 @@ if [ -f /usr/script/${_oscambin}_cam.sh ]; then
 		sleep 2
 fi
 
-if [ -f /usr/emu_scripts/EGcam_$_oscambin.sh ]; then
+if [ -r /usr/lib/enigma2/python/EGAMI ]; then
 		/usr/emu_scripts/EGcam_$_oscambin.sh stop > /dev/null 2>&1
 		rm /usr/emu_scripts/EGcam_$_oscambin.sh > /dev/null 2>&1
 		sleep 2
@@ -243,7 +243,8 @@ replace_initscript() {
   /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
  fi
  
- if [ -f /usr/camscript/Ncam_*.sh ]; then
+if [ -f /usr/lib/enigma2/python/Screens/BpBlue.pyc ]; then
+ 
 cp /usr/bin/oscam_bin /usr/softcams/
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 wget -O /etc/init.d/softcam.oscam_bin ${_url}/ot_cams/startfiles/softcam.oscam_bin_bh > /dev/null 2>&1
@@ -268,7 +269,7 @@ chmod +x /usr/camscript/Ncam_oscam_bin.sh
 fi
 
 #egami
-if [ -f /usr/emu_scripts/EGcam_*.sh ]; then
+if [ -r /usr/lib/enigma2/python/EGAMI ]; then
 curl --noproxy '*' --data value="OSCam-Installer ${_oscam_version}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
 wget -O /tmp/oscam_update.sh https://i.tv-lounge.eu/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
