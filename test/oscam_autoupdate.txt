@@ -12,7 +12,8 @@ if [ -n "$content" ]; then
   Version_new=$(echo "$content" | cut -c $((X + 1))-)
 fi
 ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscam
-_start=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{for (i=11; i<=26; i++) printf "%s%s", $i, (i<26 ? OFS : ORS)}'|uniq)
+ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{for (i=11; i<=26; i++) printf "%s%s", $i, (i<26 ? OFS : ORS)}'|uniq > /tmp/oscam_start
+_start=$(head -n 1 /tmp/oscam_start)
 _myoscambin=$(head -n 1 /tmp/oscam)
 _oscambin=$(basename "$_myoscambin")
 
