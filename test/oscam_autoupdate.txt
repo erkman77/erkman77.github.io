@@ -229,8 +229,8 @@ chmod +x /etc/cam.d/${_oscambin}.sh
 		sleep 2
 fi
 if [ -f /etc/init.d/softcam.$_oscambin ]; then
-		/etc/init.d/softcam.$_oscambin start > /dev/null 2>&1
-		$_file start > /dev/null 2>&1
+		#/etc/init.d/softcam.$_oscambin start > /dev/null 2>&1
+		#$_file start > /dev/null 2>&1
 		sleep 2
 fi
  if [ -e /etc/apt/sources.list.d  ]; then
