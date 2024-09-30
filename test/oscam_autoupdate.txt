@@ -12,6 +12,7 @@ if [ -n "$content" ]; then
   Version_new=$(echo "$content" | cut -c $((X + 1))-)
 fi
 ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscam
+_start=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{for (i=11; i<=26; i++) printf "%s%s", $i, (i<26 ? OFS : ORS)}'|uniq)
 _myoscambin=$(head -n 1 /tmp/oscam)
 _oscambin=$(basename "$_myoscambin")
 
@@ -110,7 +111,7 @@ EOF
 eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/camscript/Ncam_${_oscambin}.sh
 chmod +x /usr/camscript/Ncam_${_oscambin}.sh
-		/usr/camscript/Ncam_$_oscambin.sh start > /dev/null 2>&1
+#		/usr/camscript/Ncam_$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
 
@@ -129,7 +130,7 @@ EOF
 eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_${_oscambin}.sh
 chmod +x /usr/emu_scripts/EGcam_${_oscambin}.sh
-		/usr/emu_scripts/EGcam_$_oscambin.sh start > /dev/null 2>&1
+#		/usr/emu_scripts/EGcam_$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
  if [ -e /etc/apt/sources.list.d  ]; then
@@ -150,7 +151,7 @@ EOF
 eval $bin
 mv /tmp/oscam_update.sh /usr/script/${_oscambin}.emu
 chmod +x /usr/script/${_oscambin}.emu
-		/usr/script/$_oscambin.emu start > /dev/null 2>&1
+#		/usr/script/$_oscambin.emu start > /dev/null 2>&1
 		sleep 2
 fi
 
@@ -169,7 +170,7 @@ EOF
 eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/script/${_oscambin}_cam.sh
 chmod +x /usr/script/${_oscambin}_cam.sh
-		/usr/script/${_oscambin}_cam.sh start > /dev/null 2>&1
+#		/usr/script/${_oscambin}_cam.sh start > /dev/null 2>&1
 		sleep 2
 fi
 
@@ -187,7 +188,7 @@ EOF
 eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/script/${_oscambin}.sh
 chmod +x /usr/script/${_oscambin}.sh
-		/usr/script/${_oscambin}.sh start > /dev/null 2>&1
+#		/usr/script/${_oscambin}.sh start > /dev/null 2>&1
 		sleep 2
 fi
 
@@ -205,7 +206,7 @@ EOF
 eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/script/${_oscambin}.emu
 chmod +x /usr/script/${_oscambin}.emu
-		/usr/script/${_oscambin}.emu start > /dev/null 2>&1
+#		/usr/script/${_oscambin}.emu start > /dev/null 2>&1
 		sleep 2
 fi
 #n
@@ -223,7 +224,7 @@ EOF
 eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /etc/cam.d/${_oscambin}.sh
 chmod +x /etc/cam.d/${_oscambin}.sh
-		/etc/cam.d/$_oscambin.sh start > /dev/null 2>&1
+#		/etc/cam.d/$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /etc/init.d/softcam.$_oscambin ]; then
@@ -240,5 +241,6 @@ fi
  else
  echo "OSCam up2date"
  fi
+ eval $_start > /dev/null 2>&1
 rm /tmp/version* > /dev/null 2>&1
 rm /tmp/oscam* > /dev/null 2>&1
