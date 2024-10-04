@@ -1,25 +1,21 @@
 #!/bin/bash
 
 _url=https://i.tv-lounge.eu
-_scriptversion=1
+_scriptversion=0
 #compare script version
 wget -O /tmp/oscam_autoupdate ${_url}/test/oscam_autoupdate.txt > /dev/null 2>&1
-file="/tmp/oscam_autoupdate"
-search="_scriptversion="
-X=15 
-content=$(grep "$search" "$file")
-if [ -n "$content" ]; then
-  _script_new=$(echo "$content" | cut -c $((X + 1))-)
-fi
+
+#compare script version
+wget -O /tmp/oscam_autoupdate ${_url}/test/oscam_autoupdate.txt > /dev/null 2>&1
+_script_new=$(sed -n '4p' /tmp/oscam_autoupdate)
+X=15
+_script_new=$(echo "$_script_new" | cut -c $((X + 1))-)
 if [[ "${_script_new}" != "${_scriptversion}" ]]; then
 cp /tmp/oscam_autoupdate /usr/bin/oscam_autoupdate
 chmod +x /usr/bin/oscam_autoupdate
-echo "update neustart"
-sleep 3
 exec "$0" "$@"
 fi
-echo "kein neustart programm geht weiter"
-sleep 3
+
 #compare oscam version
 wget -O /tmp/version.txt ${_url}/version.txt > /dev/null 2>&1
 file="/tmp/version.txt"
