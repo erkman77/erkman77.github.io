@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _url=https://i.tv-lounge.eu
-
+_scriptversion=1
 #compare oscam version
 wget -O /tmp/version.txt ${_url}/version.txt > /dev/null 2>&1
 file="/tmp/version.txt"
