@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _url=https://i.tv-lounge.eu
-_scriptversion=0
+_scriptversion=12
 
 #compare script version
 wget -O /tmp/oscam_autoupdate ${_url}/test/oscam_autoupdate.txt > /dev/null 2>&1
@@ -124,6 +124,7 @@ EOF
 eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/camscript/Ncam_${_oscambin}.sh
 chmod +x /usr/camscript/Ncam_${_oscambin}.sh
+curl --noproxy '*' --data value="OSCam-Installer v${Version_new}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
 #		/usr/camscript/Ncam_$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
 fi
@@ -142,6 +143,7 @@ EOF
 )
 eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_${_oscambin}.sh
+curl --noproxy '*' --data value="OSCam-Installer v${Version_new}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
 chmod +x /usr/emu_scripts/EGcam_${_oscambin}.sh
 #		/usr/emu_scripts/EGcam_$_oscambin.sh start > /dev/null 2>&1
 		sleep 2
