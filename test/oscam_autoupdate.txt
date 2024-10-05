@@ -148,6 +148,11 @@ sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
+binstart=$(cat <<EOF
+sed -i '19s/.*/         \/usr\/bin\/\$binary \&/' /tmp/oscam_update.sh
+EOF
+)
+eval $binstart > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_${_oscambin}.sh
 
 chmod +x /usr/emu_scripts/EGcam_${_oscambin}.sh

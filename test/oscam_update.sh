@@ -16,7 +16,7 @@ case "$1" in
 		remove_tmp
 		touch /tmp/.emu.info
 		echo "$CAMNAME" > /tmp/.emu.info
-		/usr/softcams/$binary -b -r 2 -c /etc/tuxbox/config --daemon --pidfile /var/tmp/$binary.pid --restart 2
+		/usr/bin/$binary -b -r 2 -c /etc/tuxbox/config --daemon --pidfile /var/tmp/$binary.pid --restart 2
 	;;
 	stop)
 		echo "[SCRIPT] $1: $CAMNAME"
