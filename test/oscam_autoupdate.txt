@@ -275,11 +275,11 @@ fi
 fi
 
    echo "OSCam changed from $Version_old to $Version_new"
-  
+   eval $_start > /dev/null 2>&1
+ curl --noproxy '*' --data value="OSCam-Installer v${Version_new}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
  else
  echo "OSCam up2date"
  fi
- eval $_start > /dev/null 2>&1
- curl --noproxy '*' --data value="OSCam-Installer v${Version_new}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
+
 rm /tmp/version* > /dev/null 2>&1
 rm /tmp/oscam* > /dev/null 2>&1
