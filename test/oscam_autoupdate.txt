@@ -122,6 +122,12 @@ sed -i '4s/.*/binary=\"$_oscambin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
+eval $camname > /dev/null 2>&1
+binstart=$(cat <<EOF
+sed -i '19s/.*/\/usr\/softcams\/$_oscambin -b -r 2 -c \/etc\/tuxbox\/config/' /tmp/oscam_update.sh
+EOF
+)
+eval $binstart > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/camscript/Ncam_${_oscambin}.sh
 chmod +x /usr/camscript/Ncam_${_oscambin}.sh
 curl --noproxy '*' --data value="OSCam-Installer v${Version_new}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
