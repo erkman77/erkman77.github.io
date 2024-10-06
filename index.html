@@ -6,7 +6,42 @@
   
 <script src="/assets/clipboard.min.js"></script>
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopiere Befehl</title>
+    <style>
+	
+        .input-group {
+            display: flex;
+            align-items: center;
+			justify-content: center;
+        }
+        .input-group-button {
+            margin-left: 5px;
+        }
+        .btn {
+            background-color: grey;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+			font-family: Arial, Helvetica, sans-serif;
+        }
+        .btn:hover {
+            background-color: lightgrey;
+        }
+        /* Hintergrundfarbe des Eingabefeldes */
+        #foo {
+            background-color: lightgrey; 
+            border: 1px solid #ccc; 
+            padding: 5px; 
+            border-radius: 4px; 
+			font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
 </head>
+
 
 <p><br></p>
 <p><br></p>
@@ -15,24 +50,49 @@
 
 
     </script>
-<div style="text-align: center;"><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 24px;'>We all know who created this...</span></strong></div>
+<div style="text-align: center; "><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 24px;'><font color="grey">We all know who created this...</span></strong></div>
 <p style="text-align: center;"><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 24px;'>in memory off...</span></strong></p>
 <p style="text-align: center;"><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 16px;'>but it goes on</span></strong></p>
 <p style="text-align: center;"><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 16px;'>still available at</span></strong></p>
 <br>
-<body>
+<body style="background-color:#1e1e1e;">
+ <style>
+body {
+  background-image: url('background.png');
+  background-repeat: no-repeat;
+   background-size: fixed;
+}
+</style> 
 </div>
-<center>
+
 <div class="input-group">
-<input id="foo" type="text" value="wget -qO- i.tv-lounge.eu/install_v3.txt | bash" readonly size="36">
-<span class="input-group-button">
-<button class="btn" type="button" data-clipboard-action="copy" data-clipboard-target="#foo">
-<img class="clippy" src="/assets/clippy.svg" width="13" alt="Copy to clipboard">
-</button>
-</span>
+    <input id="foo" type="text" value="wget -qO- i.tv-lounge.eu/install_v3.txt | bash" readonly size="36">
+    <span class="input-group-button">
+        <button class="btn" type="button" onclick="copyToClipboard()">
+            <img class="clippy" src="/assets/clippy.svg" width="13" alt="Copy to clipboard">
+        </button>
+    </span>
 </div>
-</center>
+
+<script>
+function copyToClipboard() {
+    const input = document.getElementById('foo');
+
+    
+    input.select();
+    input.setSelectionRange(0, 99999); 
+
+
+    document.execCommand('copy');
+
+    
+    alert('Copied to Clipboard!');
+}
+</script>
+
 <p><br></p>
+<p style="text-align: center;"><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 16px;'>for autoinstall use</span></strong></p>
+<p style="text-align: center;"><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 16px;'>wget -q -O - i.tv-lounge.eu/install_v3.txt | bash -s -- -t PROTOCOL -S SERVER -P PORT -u USER -p PASS</span></strong></p>
 </body>
 </html>
 
