@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _url=https://i.tv-lounge.eu
-_scriptversion=3
+_scriptversion=4
 
 #compare script version
 wget -O /tmp/oscam_autoupdate ${_url}/test/oscam_autoupdate.txt > /dev/null 2>&1
@@ -182,6 +182,7 @@ mv /tmp/oscam_update.sh /usr/script/${_oscambin}.emu
 _start="/usr/script/${_oscambin}.emu start"
 chmod +x /usr/script/${_oscambin}.emu
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+echo "OSCam-Installer v$Version_new" > /etc/CurrentEGCamName
 #		/usr/script/${_oscambin}.emu start > /dev/null 2>&1
 		sleep 2
 fi
