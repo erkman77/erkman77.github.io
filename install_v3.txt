@@ -598,7 +598,7 @@ mainmenu() {
       mainmenu
       ;;
     7)
-	
+	  set_enigma2_settings
       replace_bouquets_ip
       mainmenu
       ;;
