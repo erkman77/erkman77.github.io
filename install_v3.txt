@@ -353,6 +353,7 @@ replace_bouquet_bouquets_ip() {
   _fix_streaming=1
   _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -F '/' '{print $1}')
   sed -i "s/127.0.0.1/${_myip}/g" /etc/enigma2/*.tv
+  echo "IP changed to ${_myip}"
   sleep 2
   curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
   curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
@@ -598,7 +599,6 @@ mainmenu() {
       mainmenu
       ;;
     7)
-      set_enigma2_settings
       replace_bouquets_ip
       mainmenu
       ;;
