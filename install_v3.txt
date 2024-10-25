@@ -933,9 +933,9 @@ whitelist_auto_menu() {
   echo -e "1) Enable whitelist Autoupdate "
   echo -e "2) Disable whitelist Autoupdate"
   echo -e "0) Back"
-  read  -p "choose an Option: "whitelist_auto_menu </dev/tty
+  read  -p "choose an Option: " whitelistauto_menu </dev/tty
 
-  case $whitelist_auto_menu in
+  case $whitelistauto_menu in
     1)
       whitelist_auto_install
       sleep 2
