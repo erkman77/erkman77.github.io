@@ -1,5 +1,6 @@
 #!/bin/bash +x
 set +x
+clear
 _version="4.0"
 _url=https://i.tv-lounge.eu
 _oscam_version=v24
