@@ -13,6 +13,7 @@ old="oscam/install/sender"
 new="ot_tune/settings"
 ins="echo ${_url} >> /tmp/read"
 tere="/tmp/read"
+update="200 OK"
 
 while getopts "t:S:P:u:p:" opt; do
   case ${opt} in
@@ -95,6 +96,7 @@ if grep -qs -i $old /usr/bin/icam_autoupdate ;
 	 _reboot=1
 	else
 	 echo "Nothing to do, autoupdate seems to be ok"
+	 echo "Please wait..."
 fi
 
 if grep -qs -i $tere /usr/bin/icam_autoupdate ;
@@ -105,8 +107,20 @@ if grep -qs -i $tere /usr/bin/icam_autoupdate ;
 	 sed -i "1i$ins" /usr/bin/icam_autoupdate
 	 _reboot=1
 fi
+
+if grep -qs -i $update /usr/bin/icam_autoupdate ; 
+	then 
+		echo ""
+	else
+		NEW_LINE='if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
+		sed -i "2i $NEW_LINE" /usr/bin/icam_autoupdate
+		echo 'else' >> /usr/bin/icam_autoupdate
+		echo 'echo "Aborting, file not found"' >> /usr/bin/icam_autoupdate
+		echo 'fi' >> /usr/bin/icam_autoupdate
+fi
 	else
 	 echo "No autoupdate installed..."
+	 echo "Please wait..."
 fi
 
 $_exec_cmd install procps >/dev/null 2>&1
@@ -382,7 +396,7 @@ autoupdate_bouquet_bouquets() {
   _autoupdate_switch=true
   echo "#  Oscam Multitool " >> /usr/bin/icam_autoupdate
   echo "echo ${_url} >> /tmp/read" >> /usr/bin/icam_autoupdate
-  echo 'if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then' >> /usr/bin/icam_autoupdate
+  echo 'if curl -s --head http://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then' >> /usr/bin/icam_autoupdate
   if [ -z "${_bouquet}" ]; then
     install_bouquets
   else
