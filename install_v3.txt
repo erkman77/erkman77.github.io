@@ -381,7 +381,8 @@ replace_bouquets_ip() {
 autoupdate_bouquet_bouquets() {
   _autoupdate_switch=true
   echo "#  Oscam Multitool " >> /usr/bin/icam_autoupdate
-  echo "echo ${_url} >> /tmp/read" > /usr/bin/icam_autoupdate
+  echo "echo ${_url} >> /tmp/read" >> /usr/bin/icam_autoupdate
+  echo 'if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then' >> /usr/bin/icam_autoupdate
   if [ -z "${_bouquet}" ]; then
     install_bouquets
   else
@@ -422,6 +423,10 @@ autoupdate_bouquet_bouquets() {
   echo 'curl -s "http://127.0.0.1/web/servicelistreload?mode=0" > /dev/null 2>&1'>> /usr/bin/icam_autoupdate
   echo 'curl -s "http://127.0.0.1/web/servicelistreload?mode=0" > /dev/null 2>&1'>> /usr/bin/icam_autoupdate
   echo '' >> /usr/bin/icam_autoupdate
+  echo 'else' >> /usr/bin/icam_autoupdate
+  echo 'echo "Aborting, file not found"' >> /usr/bin/icam_autoupdate
+  echo 'fi' >> /usr/bin/icam_autoupdate
+  echo '' >> /usr/bin/icam_autoupdate  
   chmod +x /usr/bin/icam_autoupdate
   (crontab -l | sed -e '/icam_autoupdate/d') | crontab -
   (crontab -l 2>/dev/null; echo "@reboot /usr/bin/icam_autoupdate ") | crontab -
