@@ -310,6 +310,25 @@ update_whitelist() {
   sleep 2
 }
 
+
+whitelist_auto_install() {
+  curl -sko /usr/bin/icam_whitelist_update ${_url}/ot_tune/whitelist/whitelist_autoupdate.txt  > /dev/null 2>&1
+  chmod +x /usr/bin/icam_whitelist_update > /dev/null 2>&1
+  (crontab -l | sed -e '/icam_whitelist_update/d') | crontab -
+  (crontab -l 2>/dev/null; echo "@reboot /usr/bin/icam_whitelist_update ") | crontab -
+  echo "...done"
+  sleep 2
+}
+
+whitelist_auto_remove() {
+  echo > /usr/bin/icam_whitelist_update 
+  echo "#whitelist autoupdate by OSCam-Installer " >  /usr/bin/icam_whitelist_update
+  echo "exit 0"                                       >> /usr/bin/icam_whitelist_update
+  chmod +x /usr/bin/icam_whitelist_update
+  echo "...done"
+  sleep 2
+}
+
 install_whitelist() {
   rm /etc/enigma2/*.tv > /dev/null 2>&1
   rm /etc/enigma2/*.radio > /dev/null 2>&1
@@ -559,16 +578,17 @@ mainmenu() {
   my_header
   echo -e "\e[34m Fine! it looks you are running $_my_distribution\e[0m" 
   echo -e "\e[33m ######*** Main Menu ***######\e[0m"
-  echo -e "1) Install Icam Oscam stable         // fresh box ... or sledgehammer mode ;)"
-  echo -e "2) Update Oscam Bin only             // updates any running oscam to ICam Oscam"
-  echo -e "3) Update Bouquets only              // rewrite ICam Bouquets"
-  echo -e "4) Update ICAM Picons                // install ICam picons only"
-  echo -e "5) Backup & Restore                  // backup or restore oscam"
-  echo -e "6) Fix Settings                      // rewrite ICam settings to enigma"
-  echo -e "7) Fix Streaming-IP                  // changes 127.0.0.1 to $_myip for home streaming"
-  echo -e "8) Bouquet Autoupdate                // updates bouquets @ reboot"
-  echo -e "9) Whitelist Streamrelay             // install/update whitelist_streamrelay"
-  echo -e "s) Oscam Start Patch                 // checks whether oscam starts twice"
+  echo -e " 1) Install Icam Oscam stable         // fresh box ... or sledgehammer mode ;)"
+  echo -e " 2) Update Oscam Bin only             // updates any running oscam to ICam Oscam"
+  echo -e " 3) Update Bouquets only              // rewrite ICam Bouquets"
+  echo -e " 4) Update ICAM Picons                // install ICam picons only"
+  echo -e " 5) Backup & Restore                  // backup or restore oscam"
+  echo -e " 6) Fix Settings                      // rewrite ICam settings to enigma"
+  echo -e " 7) Fix Streaming-IP                  // changes 127.0.0.1 to $_myip for home streaming"
+  echo -e " 8) Bouquet Autoupdate                // updates bouquets @ reboot"
+  echo -e " 9) Whitelist Streamrelay             // install/update whitelist_streamrelay"
+  echo -e "10) Whitelist Autoupdate              // update whitelist only @ reboot"
+  echo -e "11) Oscam Start Patch                 // checks whether oscam starts twice"
   echo -e "0) Exit"
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
@@ -609,8 +629,12 @@ mainmenu() {
 	9)
       update_whitelist
       mainmenu
-      ;;  
-	s)
+      ;;
+	10)
+      whitelist_auto_menu
+      mainmenu
+      ;;
+	11)
       oscam_startpatch
       mainmenu
       ;;
@@ -898,7 +922,37 @@ autoupdate_menu() {
     ;;
     *)
       wrong_opt
-      backup_restore
+      autoupdate_menu
+    ;;
+    esac
+}
+
+whitelist_auto_menu() {
+  my_header
+  echo -e "\e[33m ######*** whitelist Autoupdate  Menu ***######\e[0m"
+  echo -e "1) Enable whitelist Autoupdate "
+  echo -e "2) Disable whitelist Autoupdate"
+  echo -e "0) Back"
+  read  -p "choose an Option: "whitelist_auto_menu </dev/tty
+
+  case $whitelist_auto_menu in
+    1)
+      whitelist_auto_install
+      sleep 2
+      mainmenu
+      ;;
+    2)
+      whitelist_auto_remove
+      sleep 2
+      mainmenu
+      ;;
+    0)
+      clear
+      mainmenu
+    ;;
+    *)
+      wrong_opt
+      whitelist_auto_menu
     ;;
     esac
 }
