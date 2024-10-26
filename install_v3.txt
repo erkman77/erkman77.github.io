@@ -615,6 +615,7 @@ mainmenu() {
   case $main in
     1)
       install_stable
+	  update_whitelist
       mainmenu
       ;;
     2)
