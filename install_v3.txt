@@ -158,10 +158,10 @@ install_lou_ipk() {
     $_exec_cmd remove $_current_install >/dev/null 2>&1
   done
   for _current_runscript in `ls /etc/init.d/ | grep -i softcam` ; do
-    rm /etc/init.d/$_current_runscript
+    rm /etc/init.d/$_current_runscript > /dev/null 2>&1
   done
   for _current_binfile in `ls /usr/bin/ | grep -i osca | grep -vE 'bak'` ; do
-    rm /usr/bin/$_current_binfile
+    rm /usr/bin/$_current_binfile > /dev/null 2>&1
   done
   if [ -e /etc/apt/sources.list.d  ]; then
     echo "install dummy deb for softcam"
@@ -220,7 +220,7 @@ replace_initscript() {
 replace_oscam_bin() {
 
   sleep 3
-  cp ${_myoscambin} ${_myoscambin}_bak_lou
+  cp ${_myoscambin} ${_myoscambin}_bak_lou > /dev/null 2>&1
   if [ -n "$(uname -m | grep armv7l)" ]; then
     _arch=arm
   elif [ -n "$(uname -m | grep aarch64)" ]; then
@@ -571,7 +571,7 @@ install_picons() {
   case $_my_distribution in
     Dream*)
       cp -rfp /picons/piconHD/* /usr/share/enigma2/picon/ > /dev/null 2>&1
-      rm -rf  /picons/piconHD/
+      rm -rf  /picons/piconHD/  > /dev/null 2>&1
       ln -s /usr/share/enigma2/picon/ /picons/piconHD
       ;;
     esac
@@ -665,9 +665,9 @@ mainmenu() {
       ;;
     0)
       echo "Bye bye."
-	  rm /tmp/read > /dev/null 
- 	  rm /tmp/version > /dev/null 
-	  rm /tmp/oscam.server > /dev/null 
+	  rm /tmp/read > /dev/null 2>&1
+ 	  rm /tmp/version > /dev/null 2>&1
+	  rm /tmp/oscam.server  > /dev/null 2>&1
       wget -O - -q "127.0.0.1/web/message?text=oscam%20Multitool%20is%20%20now%20stopped...%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
       if [ -n "_enigmasettings" ]; then
         do_enigma_settings
@@ -992,7 +992,7 @@ backup_restore() {
     1)
       check_backupdir
       get_old_oscam
-      cp ${_myoscambin} /backup/oscam_bin
+      cp ${_myoscambin} /backup/oscam_bin > /dev/null 2>&1
       echo "...oscam backup done"
       sleep 2
       mainmenu
@@ -1006,7 +1006,7 @@ backup_restore() {
       echo -e "\e[31mno running oscam found ... please start your oscam\e[0m"
       exit 1
       fi
-      cp /backup/oscam_bin ${_myoscambin}
+      cp /backup/oscam_bin ${_myoscambin} > /dev/null 2>&1
       echo "...oscam restore done"
       _flag=testing
       _reboot=1
@@ -1015,10 +1015,10 @@ backup_restore() {
     3)
       check_backupdir
       get_old_oscam
-      cp ${_myoscambin} /backup/oscam_bin
+      cp ${_myoscambin} /backup/oscam_bin > /dev/null 2>&1
       _files='oscam.conf oscam.user oscam.server oscam.srvid2'
       for _file in $_files ; do
-        cp ${_my_configpath}/$_file /backup/$_file
+        cp ${_my_configpath}/$_file /backup/$_file > /dev/null 2>&1
       done
       echo "...oscam backup done"
       sleep 2
@@ -1030,7 +1030,7 @@ backup_restore() {
       kill_oscam
       _files='oscam.conf oscam.user oscam.server oscam.srvid2'
       for _file in $_files ; do
-        cp /backup/$_file ${_my_configpath}/$_file
+        cp /backup/$_file ${_my_configpath}/$_file > /dev/null 2>&1
       done
       _reboot=1
       echo "...oscam restore done"
