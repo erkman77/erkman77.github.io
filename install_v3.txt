@@ -215,6 +215,11 @@ replace_initscript() {
   chmod 755 /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   update-rc.d -f softcam.oscam_bin defaults > /dev/null 2>&1
+  if [ -e /etc/apt/sources.list.d  ]; then
+  wget -O /etc/systemd/system/oscam.service ${_url}/ot_cams/startfiles/oscam.service > /dev/null 2>&1
+  systemctl enable oscam.service
+  systemctl start oscam.service
+  fi
 }
 
 replace_oscam_bin() {

@@ -1,0 +1,9 @@
+   [Unit]
+   Description=Start OSCam
+
+   [Service]
+   ExecStart=//etc/init.d/softcam.oscam_bin restart
+   Restart=always
+
+   [Install]
+   WantedBy=multi-user.target
