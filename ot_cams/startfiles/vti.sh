@@ -4,7 +4,7 @@ CAMNAME="OScam by OSCam-Installer"
 
 
 remove_tmp () {
-	rm -rf /tmp/cainfo.* /tmp/camd.* /tmp/sc.* /tmp/*.info* /tmp/*.tmp* /tmp/oscam*
+	rm -rf /tmp/cainfo.* /tmp/camd.* /tmp/sc.* /tmp/*.info* /tmp/*.tmp* /tmp/oscam* /var/tmp/oscam*
 	[ -e /tmp/.oscam ] && rm -rf /tmp/.oscam
 	[ -e /tmp/.emu.info ] && rm -rf /tmp/.emu.info
 	[ -e /tmp/oscam.mem ] && rm -rf /tmp/oscam.mem
