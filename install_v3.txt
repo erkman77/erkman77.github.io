@@ -178,8 +178,15 @@ install_lou_ipk() {
   replace_initscript
     if [grep -qs -i "${_vti}" /etc/issue]; then
    [ -d /usr/script ] || mkdir -p /usr/script > /dev/null 2>&1
-  wget -O /usr/script/oscam_bin_cam.sh ${_url}/ot_cams/startfiles/vti.sh > /dev/null 2>&1
-  chmod +x /usr/script/oscam_bin_cam.sh  > /dev/null 2>&1
+	wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
+	camname=$(cat <<EOF
+	sed -i '3s/.*/CAMNAME=\"OSCam-Installer v${_oscam_version}\"/' /tmp/oscam_update.sh
+    EOF
+    )
+    eval $camname > /dev/null 2>&1
+	mv /tmp/oscam_update.sh /usr/script/oscam_bin_cam.sh
+	chmod +x /usr/script/${_oscambin}_cam.sh
+	/usr/script/oscam_bin_cam.sh start
   fi
   /etc/init.d/softcam.oscam_bin restart
 }
