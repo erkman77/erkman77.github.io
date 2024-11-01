@@ -176,6 +176,11 @@ install_lou_ipk() {
     chmod +x /usr/bin/oscam_bin
   fi
   replace_initscript
+    if [grep -qs -i "${_vti}" /etc/issue]; then
+   [ -d /usr/script ] || mkdir -p /usr/script > /dev/null 2>&1
+  wget -O /usr/script/oscam_bin_cam.sh ${_url}/ot_cams/startfiles/vti.sh > /dev/null 2>&1
+  chmod +x /usr/script/oscam_bin_cam.sh  > /dev/null 2>&1
+  fi
   /etc/init.d/softcam.oscam_bin restart
 }
 
@@ -221,11 +226,6 @@ replace_initscript() {
   systemctl daemon-reload > /dev/null 2>&1
   systemctl enable oscam_bin.service > /dev/null 2>&1
   systemctl start oscam_bin.service > /dev/null 2>&1
-  fi
-  if [grep -qs -i "${_vti}" /etc/issue]; then
-   [ -d /usr/script ] || mkdir -p /usr/script > /dev/null 2>&1
-  wget -O /usr/script/oscam_bin_cam.sh ${_url}/ot_cams/startfiles/vti.sh > /dev/null 2>&1
-  chmod +x /usr/script/oscam_bin_cam.sh  > /dev/null 2>&1
   fi
 }
 
