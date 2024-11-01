@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CAMNAME="softcam-oscam"
+CAMNAME="OScam-Installer"
 BINARY="oscam_bin"
 
 case "$1" in
