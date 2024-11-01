@@ -768,8 +768,8 @@ update_bin() {
   echo -e " 7) Update Bin Stable  Icam - V24          ( $_rebootmsg )"
   echo -e " 8) Update Bin Stable  Icam - V24 NEON     ( $_rebootmsg )"
   echo -e " 9) Update Bin Stable  Icam - V11734       ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Icam - V11845       ( $_rebootmsg )"
-  echo -e "11) Update Bin Stable  Icam - V11845 NEON  ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable  Icam - V11846       ( $_rebootmsg )"
+  echo -e "11) Update Bin Stable  Icam - V11846 NEON  ( $_rebootmsg )"
   echo -e " 0) Back"
   echo -e ""
   echo -e "Hit Strg + F5 in OSCam Webif for correct view"
@@ -854,7 +854,7 @@ update_bin() {
       ;;
     10)
       _reboot=1
-      _oscam_version="11845"
+      _oscam_version="11846"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
@@ -862,7 +862,7 @@ update_bin() {
       ;;
 	11)
       _reboot=1
-      _oscam_version="11845"
+      _oscam_version="11846"
       _neon="-neon"
       get_old_oscam
       kill_oscam
