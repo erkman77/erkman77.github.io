@@ -675,6 +675,10 @@ mainmenu() {
       oscam_auto_update
       mainmenu
       ;;
+	ua)
+      oscam_remove_auto_update
+      mainmenu
+      ;;
 	t)
       install_whitelist
       mainmenu
@@ -1085,8 +1089,17 @@ oscam_auto_update() {
  echo -e "\e[32m Installing OSCam autoupdate ...\e[0m "
  wget -O /usr/bin/oscam_autoupdate ${_url}/test/oscam_autoupdate.txt > /dev/null 2>&1
  chmod +x /usr/bin/oscam_autoupdate
-  (crontab -l | sed -e '/oscam_autoupdate/d') | crontab -
-  (crontab -l 2>/dev/null; echo "0 5 * * * /usr/bin/oscam_autoupdate ") | crontab -
-echo -e "\e[32m all done ...\e[0m"
+ (crontab -l | sed -e '/oscam_autoupdate/d') | crontab -
+ (crontab -l 2>/dev/null; echo "0 5 * * * /usr/bin/oscam_autoupdate ") | crontab -
+ echo -e "\e[32m all done ...\e[0m"
+ sleep 3
+}
+
+oscam_remove_auto_update() {
+ echo -e "\e[32m Removing OSCam autoupdate ...\e[0m "
+ echo "#OSCam autoupdate removed" > /usr/bin/oscam_autoupdate
+ chmod +x /usr/bin/oscam_autoupdate
+ echo -e "\e[32m all done ...\e[0m"
+ sleep 3
 }
 mainmenu
