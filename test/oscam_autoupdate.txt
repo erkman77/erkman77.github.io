@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _url=i.tv-lounge.eu
-_scriptversion=4
+_scriptversion=5
 if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then
 #compare script version
 wget -O /tmp/oscam_autoupdate ${_url}/test/oscam_autoupdate.txt > /dev/null 2>&1
