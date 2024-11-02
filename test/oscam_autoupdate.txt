@@ -1,4 +1,4 @@
-A#!/bin/bash
+#!/bin/bash
 
 _url=i.tv-lounge.eu
 _scriptversion=4
