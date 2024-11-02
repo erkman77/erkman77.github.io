@@ -1,6 +1,6 @@
-#!/bin/bash
+A#!/bin/bash
 
-_url=https://i.tv-lounge.eu
+_url=i.tv-lounge.eu
 _scriptversion=4
 if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then
 #compare script version
