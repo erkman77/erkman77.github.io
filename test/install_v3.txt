@@ -14,7 +14,7 @@ new="ot_tune/settings"
 ins="echo ${_url} >> /tmp/read"
 tere="/tmp/read"
 update="200 OK"
-update_wrong="'if curl -s --head //i.tv-'"
+update_wrong="if curl -s --head //i.tv-"
 _vti="vuplus"
 NEW_LINE='if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 
@@ -113,7 +113,7 @@ fi
 
 if grep -qs -i $update /usr/bin/icam_autoupdate ; 
 	then 
-	if grep -qs -i ${update_wrong} /usr/bin/icam_autoupdate ; 
+	if grep -qs -i '${update_wrong}' /usr/bin/icam_autoupdate ; 
 		then
 		echo "url falsch"
 #		sed "2s/.*/$NEW_LINE/" /usr/bin/icam_autoupdate
