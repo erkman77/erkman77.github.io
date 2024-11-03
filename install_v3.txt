@@ -117,6 +117,7 @@ if grep -qs -i $update /usr/bin/icam_autoupdate ;
 #		then
 #		sed "2s/.*/$NEW_LINE/" /usr/bin/icam_autoupdate
 #		fi
+echo ""
 	else
 		sed -i "2i $NEW_LINE" /usr/bin/icam_autoupdate
 		echo 'else' >> /usr/bin/icam_autoupdate
