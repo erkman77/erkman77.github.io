@@ -14,7 +14,9 @@ new="ot_tune/settings"
 ins="echo ${_url} >> /tmp/read"
 tere="/tmp/read"
 update="200 OK"
+update_wrong="if curl -s --head //i.tv-"
 _vti="vuplus"
+NEW_LINE='if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 
 while getopts "t:S:P:u:p:" opt; do
   case ${opt} in
@@ -111,9 +113,11 @@ fi
 
 if grep -qs -i $update /usr/bin/icam_autoupdate ; 
 	then 
-		echo ""
+	if grep -qs -i $update_wrong /usr/bin/icam_autoupdate ; 
+		then
+		sed '2s/.*/$NEW_LINE/' /usr/bin/icam_autoupdate
+		fi
 	else
-		NEW_LINE='if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 		sed -i "2i $NEW_LINE" /usr/bin/icam_autoupdate
 		echo 'else' >> /usr/bin/icam_autoupdate
 		echo 'echo "Aborting, file not found"' >> /usr/bin/icam_autoupdate
