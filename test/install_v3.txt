@@ -117,11 +117,8 @@ if grep -qs -i $update /usr/bin/icam_autoupdate ;
 		then
 		echo "url falsch"
 #		sed "2s/.*/$NEW_LINE/" /usr/bin/icam_autoupdate
-else "url richtig"
-	fi
-
-else 
-echo " url ist richtig"
+	else 
+    echo " url ist richtig"
 		fi
 
 	else
