@@ -14,6 +14,9 @@ new="ot_tune/settings"
 ins="echo ${_url} >> /tmp/read"
 tere="/tmp/read"
 update="200 OK"
+update_wrong="'if curl -s --head //i.tv-'"
+_vti="vuplus"
+NEW_LINE='if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 
 while getopts "t:S:P:u:p:" opt; do
   case ${opt} in
@@ -110,9 +113,19 @@ fi
 
 if grep -qs -i $update /usr/bin/icam_autoupdate ; 
 	then 
-		echo ""
+	if grep -qs -i ${update_wrong} /usr/bin/icam_autoupdate ; 
+		then
+		echo "url falsch"
+#		sed "2s/.*/$NEW_LINE/" /usr/bin/icam_autoupdate
+else "url richtig"
+	fi
+	echo "ist da"
+else 
+echo " url ist richtig"
+		fi
+
 	else
-		NEW_LINE='if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
+		echo "ist nicht da"
 		sed -i "2i $NEW_LINE" /usr/bin/icam_autoupdate
 		echo 'else' >> /usr/bin/icam_autoupdate
 		echo 'echo "Aborting, file not found"' >> /usr/bin/icam_autoupdate
@@ -215,6 +228,12 @@ replace_initscript() {
   chmod 755 /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   update-rc.d -f softcam.oscam_bin defaults > /dev/null 2>&1
+  if [ -e /etc/apt/sources.list.d  ]; then
+  wget -O /etc/systemd/system/oscam_bin.service ${_url}/ot_cams/startfiles/oscam_bin.service > /dev/null 2>&1
+  systemctl daemon-reload > /dev/null 2>&1
+  systemctl enable oscam_bin.service > /dev/null 2>&1
+  systemctl start oscam_bin.service > /dev/null 2>&1
+  fi
 }
 
 replace_oscam_bin() {
@@ -659,6 +678,14 @@ mainmenu() {
       oscam_startpatch
       mainmenu
       ;;
+	a)
+      oscam_auto_update
+      mainmenu
+      ;;
+	ua)
+      oscam_remove_auto_update
+      mainmenu
+      ;;
 	t)
       install_whitelist
       mainmenu
@@ -756,8 +783,8 @@ update_bin() {
   echo -e " 7) Update Bin Stable  Icam - V24          ( $_rebootmsg )"
   echo -e " 8) Update Bin Stable  Icam - V24 NEON     ( $_rebootmsg )"
   echo -e " 9) Update Bin Stable  Icam - V11734       ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Icam - V11845       ( $_rebootmsg )"
-  echo -e "11) Update Bin Stable  Icam - V11845 NEON  ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable  Icam - V11847       ( $_rebootmsg )"
+  echo -e "11) Update Bin Stable  Icam - V11847 NEON  ( $_rebootmsg )"
   echo -e " 0) Back"
   echo -e ""
   echo -e "Hit Strg + F5 in OSCam Webif for correct view"
@@ -842,7 +869,7 @@ update_bin() {
       ;;
     10)
       _reboot=1
-      _oscam_version="11845"
+      _oscam_version="11847"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
@@ -850,7 +877,7 @@ update_bin() {
       ;;
 	11)
       _reboot=1
-      _oscam_version="11845"
+      _oscam_version="11847"
       _neon="-neon"
       get_old_oscam
       kill_oscam
@@ -1063,5 +1090,23 @@ oscam_startpatch() {
         echo "System runs cool, no patch needed"
 		sleep 2
   fi
+}
+
+oscam_auto_update() {
+ echo -e "\e[32m Installing OSCam autoupdate ...\e[0m "
+ wget -O /usr/bin/oscam_autoupdate ${_url}/test/oscam_autoupdate.txt > /dev/null 2>&1
+ chmod +x /usr/bin/oscam_autoupdate
+ (crontab -l | sed -e '/oscam_autoupdate/d') | crontab -
+ (crontab -l 2>/dev/null; echo "0 5 * * * /usr/bin/oscam_autoupdate ") | crontab -
+ echo -e "\e[32m all done ...\e[0m"
+ sleep 3
+}
+
+oscam_remove_auto_update() {
+ echo -e "\e[32m Removing OSCam autoupdate ...\e[0m "
+ echo "#OSCam autoupdate removed" > /usr/bin/oscam_autoupdate
+ chmod +x /usr/bin/oscam_autoupdate
+ echo -e "\e[32m all done ...\e[0m"
+ sleep 3
 }
 mainmenu
