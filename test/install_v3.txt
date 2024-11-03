@@ -117,12 +117,8 @@ if grep -qs -i $update /usr/bin/icam_autoupdate ;
 		then
 		sed  -i '2s/head /head https:/g' /usr/bin/icam_autoupdate
 	#sed -i "2i $NEW_LINE" /usr/bin/icam_autoupdate
-	else 
-    echo " url ist richtig"
 		fi
-
 	else
-		echo "ist nicht da"
 		sed -i "2i $NEW_LINE" /usr/bin/icam_autoupdate
 		echo 'else' >> /usr/bin/icam_autoupdate
 		echo 'echo "Aborting, file not found"' >> /usr/bin/icam_autoupdate
