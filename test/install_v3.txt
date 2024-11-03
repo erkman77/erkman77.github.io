@@ -14,7 +14,7 @@ new="ot_tune/settings"
 ins="echo ${_url} >> /tmp/read"
 tere="/tmp/read"
 update="200 OK"
-update_wrong="if curl -s --head //i.tv-"
+update_wrong="if curl -s --head //i.tv-1"
 _vti="vuplus"
 NEW_LINE='if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 
