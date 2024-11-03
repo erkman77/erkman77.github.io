@@ -113,7 +113,7 @@ if grep -qs -i $update /usr/bin/icam_autoupdate ;
 	then 
 		echo ""
 	else
-		NEW_LINE='if curl -s --head //i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
+		NEW_LINE='if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 		sed -i "2i $NEW_LINE" /usr/bin/icam_autoupdate
 		echo 'else' >> /usr/bin/icam_autoupdate
 		echo 'echo "Aborting, file not found"' >> /usr/bin/icam_autoupdate
