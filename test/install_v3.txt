@@ -113,7 +113,7 @@ fi
 
 if grep -qs -i $update /usr/bin/icam_autoupdate ; 
 	then 
-	if grep -qs -i '${update_wrong}' /usr/bin/icam_autoupdate ; 
+	if grep -qs -i 'if curl -s --head //i.tv-' /usr/bin/icam_autoupdate ; 
 		then
 		echo "url falsch"
 #		sed "2s/.*/$NEW_LINE/" /usr/bin/icam_autoupdate
