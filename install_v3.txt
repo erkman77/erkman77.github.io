@@ -111,7 +111,7 @@ if grep -qs -i $tere /usr/bin/icam_autoupdate ;
 	 _reboot=1
 fi
 
-if grep -qs -i '$update' /usr/bin/icam_autoupdate ; 
+if grep -qs -i $update /usr/bin/icam_autoupdate ; 
 	then 
 #	if grep -qs -i ${update_wrong} /usr/bin/icam_autoupdate ; 
 #		then
