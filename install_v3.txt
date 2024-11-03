@@ -113,11 +113,12 @@ fi
 
 if grep -qs -i $update /usr/bin/icam_autoupdate ; 
 	then 
-#	if grep -qs -i ${update_wrong} /usr/bin/icam_autoupdate ; 
+	grep -qs -i ${update_wrong} /usr/bin/icam_autoupdate ; 
 #		then
 #		sed "2s/.*/$NEW_LINE/" /usr/bin/icam_autoupdate
+	echo ""
 #		fi
-echo ""
+
 	else
 		sed -i "2i $NEW_LINE" /usr/bin/icam_autoupdate
 		echo 'else' >> /usr/bin/icam_autoupdate
