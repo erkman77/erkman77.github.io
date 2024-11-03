@@ -115,8 +115,7 @@ if grep -qs -i $update /usr/bin/icam_autoupdate ;
 	then 
 	if grep -qs -i 'if curl -s --head //i.tv-' /usr/bin/icam_autoupdate ; 
 		then
-		echo "url falsch"
-		sed  -i '3s/head /head https:/g' /usr/bin/icam_autoupdate
+		sed  -i '2s/head /head https:/g' /usr/bin/icam_autoupdate
 	#sed -i "2i $NEW_LINE" /usr/bin/icam_autoupdate
 	else 
     echo " url ist richtig"
