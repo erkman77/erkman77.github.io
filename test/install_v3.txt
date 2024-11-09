@@ -684,6 +684,7 @@ mainmenu() {
       mainmenu
       ;;
     0)
+	  clear
       echo "Bye bye."
 	  rm /tmp/read > /dev/null 2>&1
  	  rm /tmp/version > /dev/null 2>&1
