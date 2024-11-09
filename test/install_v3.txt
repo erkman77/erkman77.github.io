@@ -171,12 +171,12 @@ install_lou_ipk() {
   done
   if [ -e /etc/apt/sources.list.d  ]; then
     echo "install dummy deb for softcam"
-    curl -sk -o /tmp/softcam-lou.deb ${_url}/ot_cams/base_install/enigma2-softcams-oscam-installer_13.37-emu-r0815.deb
+    curl -sk -o /tmp/softcam-lou.deb ${_url}/test/enigma2-softcams-oscam-installer_13.37-emu-r0815.deb
     dpkg -i /tmp/softcam-lou.deb  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
   else
     echo "install dummy ipk for softcam"
-    curl -sk -o /tmp/softcam-lou.ipk ${_url}/ot_cams/base_install/enigma2-softcams-oscam-installer_13.37-emu-r0815_all.ipk
+    curl -sk -o /tmp/softcam-lou.ipk ${_url}/test/enigma2-softcams-oscam-installer_13.37-emu-r0815_all.ipk
     $_exec_cmd install --force-reinstall /tmp/softcam-lou.ipk  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
   fi
