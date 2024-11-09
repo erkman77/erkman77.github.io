@@ -247,13 +247,14 @@ replace_oscam_bin() {
  echo "Changing your oscam to version ${_oscam_version}${_neon}"
  sleep 2
    if [ -e /etc/apt/sources.list.d  ]; then
-     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
+     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
      chmod +x /usr/bin/oscam_bin
    else
-    wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
+    wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
    fi
    unset _neon
+   unset _emu
    _oscam_version=v24
    replace_initscript
   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
@@ -767,17 +768,19 @@ install_stable() {
 update_bin() {
   my_header
   echo -e "\e[33m ######*** Update Bin only ***######\e[0m"
-  echo -e " 1) Update Bin Stable  Icam - V5           ( $_rebootmsg )"
-  echo -e " 2) Update Bin Stable  Icam - V8           ( $_rebootmsg )"
-  echo -e " 3) Update Bin Stable  Icam - V9           ( $_rebootmsg )"
-  echo -e " 4) Update Bin Stable  Icam - V9 NEON      ( $_rebootmsg )"
-  echo -e " 5) Update Bin Stable  Icam - V23          ( $_rebootmsg )"
-  echo -e " 6) Update Bin Stable  Icam - V23 NEON     ( $_rebootmsg )"
-  echo -e " 7) Update Bin Stable  Icam - V24          ( $_rebootmsg )"
-  echo -e " 8) Update Bin Stable  Icam - V24 NEON     ( $_rebootmsg )"
-  echo -e " 9) Update Bin Stable  Icam - V11734       ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Icam - V11847       ( $_rebootmsg )"
-  echo -e "11) Update Bin Stable  Icam - V11847 NEON  ( $_rebootmsg )"
+  echo -e " 1) Update Bin Stable  Icam - V5               ( $_rebootmsg )"
+  echo -e " 2) Update Bin Stable  Icam - V8               ( $_rebootmsg )"
+  echo -e " 3) Update Bin Stable  Icam - V9               ( $_rebootmsg )"
+  echo -e " 4) Update Bin Stable  Icam - V9 NEON          ( $_rebootmsg )"
+  echo -e " 5) Update Bin Stable  Icam - V23              ( $_rebootmsg )"
+  echo -e " 6) Update Bin Stable  Icam - V23 NEON         ( $_rebootmsg )"
+  echo -e " 7) Update Bin Stable  Icam - V24              ( $_rebootmsg )"
+  echo -e " 8) Update Bin Stable  Icam - V24 NEON         ( $_rebootmsg )"
+  echo -e " 9) Update Bin Stable  Icam - V11734           ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable  Icam - V11847           ( $_rebootmsg )"
+  echo -e "11) Update Bin Stable  Icam - V11847 NEON      ( $_rebootmsg )"
+  echo -e "12) Update Bin Stable  Icam - V11847 EMU       ( $_rebootmsg )"
+  echo -e "13) Update Bin Stable  Icam - V11847 EMU NEON  ( $_rebootmsg )"
   echo -e " 0) Back"
   echo -e ""
   echo -e "Hit Strg + F5 in OSCam Webif for correct view"
@@ -876,7 +879,26 @@ update_bin() {
       kill_oscam
       replace_oscam_bin
       mainmenu
+      ;;
+	12)
+      _reboot=1
+      _oscam_version="11847"
+	  _emu="-emu"
+      get_old_oscam
+      kill_oscam
+      replace_oscam_bin
+      mainmenu
       ;;  
+	13)
+      _reboot=1
+      _oscam_version="11847"
+      _neon="-neon"
+      _emu="-emu"
+	  get_old_oscam
+      kill_oscam
+      replace_oscam_bin
+      mainmenu
+      ;;	  
     0)
       clear
       mainmenu
