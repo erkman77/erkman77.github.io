@@ -8,7 +8,7 @@
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # Short-Description: oscam_bin
-# Description:       icam oscam SoftCAM, card reader and server by LouCipher
+# Description:       icam oscam SoftCAM, card reader and server by OSCam-Installer
 ### END INIT INFO
 
 readlink -f $0 >/dev/null 2>&1
