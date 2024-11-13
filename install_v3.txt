@@ -778,10 +778,10 @@ update_bin() {
   echo -e " 7) Update Bin Stable  Icam - V24              ( $_rebootmsg )"
   echo -e " 8) Update Bin Stable  Icam - V24 NEON         ( $_rebootmsg )"
   echo -e " 9) Update Bin Stable  Icam - V11734           ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Icam - V11848           ( $_rebootmsg )"
-  echo -e "11) Update Bin Stable  Icam - V11848 Neon      ( $_rebootmsg )"
-  echo -e "12) Update Bin Stable  Icam - V11848 EMU       ( $_rebootmsg )"
-  echo -e "13) Update Bin Stable  Icam - V11848 EMU NEON  ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable  Icam - V11849           ( $_rebootmsg )"
+  echo -e "11) Update Bin Stable  Icam - V11849 Neon      ( $_rebootmsg )"
+  echo -e "12) Update Bin Stable  Icam - V11849 EMU       ( $_rebootmsg )"
+  echo -e "13) Update Bin Stable  Icam - V11849 EMU NEON  ( $_rebootmsg )"
   echo -e " 0) Back"
   echo -e ""
   echo -e "Hit Strg + F5 in OSCam Webif for correct view"
@@ -866,7 +866,7 @@ update_bin() {
       ;;
     10)
       _reboot=1
-      _oscam_version="11848"
+      _oscam_version="11849"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
@@ -874,7 +874,7 @@ update_bin() {
       ;;
 	11)
       _reboot=1
-      _oscam_version="11848"
+      _oscam_version="11849"
       _neon="-neon"
       get_old_oscam
       kill_oscam
@@ -883,7 +883,7 @@ update_bin() {
       ;;
 	12)
       _reboot=1
-      _oscam_version="11848"
+      _oscam_version="11849"
 	  _emu="-emu"
       get_old_oscam
       kill_oscam
@@ -892,7 +892,7 @@ update_bin() {
       ;;  
 	13)
       _reboot=1
-      _oscam_version="11848"
+      _oscam_version="11849"
       _neon="-neon"
       _emu="-emu"
 	  get_old_oscam
