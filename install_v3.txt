@@ -866,7 +866,7 @@ update_bin() {
       ;;
     10)
       _reboot=1
-      _oscam_version="11847"
+      _oscam_version="11848"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
@@ -874,7 +874,7 @@ update_bin() {
       ;;
 	11)
       _reboot=1
-      _oscam_version="11847"
+      _oscam_version="11848"
       _neon="-neon"
       get_old_oscam
       kill_oscam
@@ -883,7 +883,7 @@ update_bin() {
       ;;
 	12)
       _reboot=1
-      _oscam_version="11847"
+      _oscam_version="11848"
 	  _emu="-emu"
       get_old_oscam
       kill_oscam
@@ -892,7 +892,7 @@ update_bin() {
       ;;  
 	13)
       _reboot=1
-      _oscam_version="11847"
+      _oscam_version="11848"
       _neon="-neon"
       _emu="-emu"
 	  get_old_oscam
