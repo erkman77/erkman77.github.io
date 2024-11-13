@@ -769,19 +769,17 @@ install_stable() {
 update_bin() {
   my_header
   echo -e "\e[33m ######*** Update Bin only ***######\e[0m"
-  echo -e " 1) Update Bin Stable  Icam - V5               ( $_rebootmsg )"
-  echo -e " 2) Update Bin Stable  Icam - V8               ( $_rebootmsg )"
-  echo -e " 3) Update Bin Stable  Icam - V9               ( $_rebootmsg )"
-  echo -e " 4) Update Bin Stable  Icam - V9 NEON          ( $_rebootmsg )"
-  echo -e " 5) Update Bin Stable  Icam - V23              ( $_rebootmsg )"
-  echo -e " 6) Update Bin Stable  Icam - V23 NEON         ( $_rebootmsg )"
-  echo -e " 7) Update Bin Stable  Icam - V24              ( $_rebootmsg )"
-  echo -e " 8) Update Bin Stable  Icam - V24 NEON         ( $_rebootmsg )"
-  echo -e " 9) Update Bin Stable  Icam - V11734           ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Icam - V11849           ( $_rebootmsg )"
-  echo -e "11) Update Bin Stable  Icam - V11849 Neon      ( $_rebootmsg )"
-  echo -e "12) Update Bin Stable  Icam - V11849 EMU       ( $_rebootmsg )"
-  echo -e "13) Update Bin Stable  Icam - V11849 EMU NEON  ( $_rebootmsg )"
+  echo -e " 1) Update Bin Stable  Icam - V9               ( $_rebootmsg )"
+  echo -e " 2) Update Bin Stable  Icam - V9 NEON          ( $_rebootmsg )"
+  echo -e " 3) Update Bin Stable  Icam - V23              ( $_rebootmsg )"
+  echo -e " 4) Update Bin Stable  Icam - V23 NEON         ( $_rebootmsg )"
+  echo -e " 5) Update Bin Stable  Icam - V24              ( $_rebootmsg )"
+  echo -e " 6) Update Bin Stable  Icam - V24 NEON         ( $_rebootmsg )"
+  echo -e " 7) Update Bin Stable  Icam - V11734           ( $_rebootmsg )"
+  echo -e " 8) Update Bin Stable  Icam - V11849           ( $_rebootmsg )"
+  echo -e " 9) Update Bin Stable  Icam - V11849 Neon      ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable  Icam - V11849 EMU       ( $_rebootmsg )"
+  echo -e "11) Update Bin Stable  Icam - V11849 EMU NEON  ( $_rebootmsg )"
   echo -e " 0) Back"
   echo -e ""
   echo -e "Hit Strg + F5 in OSCam Webif for correct view"
@@ -791,15 +789,16 @@ update_bin() {
   case $updatebin in
     1)
       _reboot=1
-      _oscam_version=v5
+      _oscam_version=v9
       get_old_oscam
       kill_oscam
       replace_oscam_bin
       mainmenu
-    ;;
+      ;;
     2)
       _reboot=1
-      _oscam_version=v8
+      _oscam_version=v9
+      _neon="-neon"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
@@ -807,7 +806,7 @@ update_bin() {
       ;;
     3)
       _reboot=1
-      _oscam_version=v9
+      _oscam_version=v23
       get_old_oscam
       kill_oscam
       replace_oscam_bin
@@ -815,7 +814,7 @@ update_bin() {
       ;;
     4)
       _reboot=1
-      _oscam_version=v9
+      _oscam_version=v23
       _neon="-neon"
       get_old_oscam
       kill_oscam
@@ -824,7 +823,7 @@ update_bin() {
       ;;
     5)
       _reboot=1
-      _oscam_version=v23
+      _oscam_version=v24
       get_old_oscam
       kill_oscam
       replace_oscam_bin
@@ -832,23 +831,6 @@ update_bin() {
       ;;
     6)
       _reboot=1
-      _oscam_version=v23
-      _neon="-neon"
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    7)
-      _reboot=1
-      _oscam_version=v24
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    8)
-      _reboot=1
       _oscam_version=v24
       _neon="-neon"
       get_old_oscam
@@ -856,7 +838,7 @@ update_bin() {
       replace_oscam_bin
       mainmenu
       ;;
-	9)
+	7)
       _reboot=1
       _oscam_version="11734"
       get_old_oscam
@@ -864,7 +846,7 @@ update_bin() {
       replace_oscam_bin
       mainmenu
       ;;
-    10)
+    8)
       _reboot=1
       _oscam_version="11849"
       get_old_oscam
@@ -872,7 +854,7 @@ update_bin() {
       replace_oscam_bin
       mainmenu
       ;;
-	11)
+	9)
       _reboot=1
       _oscam_version="11849"
       _neon="-neon"
@@ -881,7 +863,7 @@ update_bin() {
       replace_oscam_bin
       mainmenu
       ;;
-	12)
+	10)
       _reboot=1
       _oscam_version="11849"
 	  _emu="-emu"
@@ -890,7 +872,7 @@ update_bin() {
       replace_oscam_bin
       mainmenu
       ;;  
-	13)
+	11)
       _reboot=1
       _oscam_version="11849"
       _neon="-neon"
