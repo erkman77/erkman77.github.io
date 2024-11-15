@@ -777,11 +777,10 @@ update_bin() {
   echo -e " 4) Update Bin Stable  Icam - V23 NEON         ( $_rebootmsg )"
   echo -e " 5) Update Bin Stable  Icam - V24              ( $_rebootmsg )"
   echo -e " 6) Update Bin Stable  Icam - V24 NEON         ( $_rebootmsg )"
-  echo -e " 7) Update Bin Stable  Icam - V11734           ( $_rebootmsg )"
-  echo -e " 8) Update Bin Stable  Icam - V11853           ( $_rebootmsg )"
-  echo -e " 9) Update Bin Stable  Icam - V11853 Neon      ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Icam - V11853 EMU       ( $_rebootmsg )"
-  echo -e "11) Update Bin Stable  Icam - V11853 EMU NEON  ( $_rebootmsg )"
+  echo -e " 7) Update Bin Stable  Icam - V11853           ( $_rebootmsg )"
+  echo -e " 8) Update Bin Stable  Icam - V11853 Neon      ( $_rebootmsg )"
+  echo -e " 9) Update Bin Stable  Icam - V11853 EMU       ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable  Icam - V11853 EMU NEON  ( $_rebootmsg )"
   echo -e " 0) Back"
   echo -e ""
   echo -e "Hit Strg + F5 in OSCam Webif for correct view"
@@ -840,17 +839,18 @@ update_bin() {
       replace_oscam_bin
       mainmenu
       ;;
-	7)
+    7)
       _reboot=1
-      _oscam_version="11734"
+      _oscam_version="11853"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
       mainmenu
       ;;
-    8)
+	8)
       _reboot=1
       _oscam_version="11853"
+      _neon="-neon"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
@@ -859,27 +859,26 @@ update_bin() {
 	9)
       _reboot=1
       _oscam_version="11853"
-      _neon="-neon"
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-	10)
-      _reboot=1
-      _oscam_version="11853"
 	  _emu="-emu"
       get_old_oscam
       kill_oscam
       replace_oscam_bin
       mainmenu
       ;;  
-	11)
+	10)
       _reboot=1
       _oscam_version="11853"
       _neon="-neon"
       _emu="-emu"
 	  get_old_oscam
+      kill_oscam
+      replace_oscam_bin
+      mainmenu
+      ;;
+	666)
+      _reboot=1
+      _oscam_version="11734"
+      get_old_oscam
       kill_oscam
       replace_oscam_bin
       mainmenu
