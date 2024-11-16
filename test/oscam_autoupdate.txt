@@ -1,9 +1,19 @@
 #!/bin/bash
 
 _url=i.tv-lounge.eu
-_scriptversion=8
+_scriptversion=9
 
-if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then
+if [ -e /etc/opkg ]; then
+  _exec_cmd="opkg"
+elif [ -e /etc/apt/sources.list.d ]; then
+  _exec_cmd="apt -y"
+ else
+   "neither opkg nor apt was found ... bailing out"
+  exit 0
+fi
+$_exec_cmd install curl >/dev/null 2>&1
+
+if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null; then
 #compare script version
 wget -O /tmp/oscam_autoupdate ${_url}/test/oscam_autoupdate.txt > /dev/null 2>&1
 _script_new=$(sed -n '4p' /tmp/oscam_autoupdate)
