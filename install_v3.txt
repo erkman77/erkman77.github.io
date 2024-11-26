@@ -84,7 +84,7 @@ elif [ -e /etc/apt/sources.list.d ]; then
   _libcryptovers=`apt-cache search libcrypto | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
   _libcurlvers4=`apt-cache search libcurl4 |grep -vE 'PycU'|awk '{print $1}'`
 else
-  "neither opkg nor apt was found ... bailing out"
+  echo "neither opkg nor apt was found ... bailing out"
   exit 0
 fi
 
@@ -179,12 +179,12 @@ install_lou_ipk() {
     curl -sk -o /tmp/softcam-lou.ipk ${_url}/ot_cams/base_install/enigma2-softcams-oscam-installer_13.37-emu-r0815_all.ipk
     $_exec_cmd install --force-reinstall /tmp/softcam-lou.ipk  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
-  fi
-   if opkg list-installed | grep  libcrypto-compat > /dev/null 2>&1; then
+	if opkg list-installed | grep  libcrypto-compat > /dev/null 2>&1; then
      echo "" > /dev/null 2>&1
    else
      $_exec_cmd install libcrypto-compat > /dev/null 2>&1
    fi
+  fi
   replace_initscript
   /etc/init.d/softcam.oscam_bin restart
 }
@@ -257,11 +257,11 @@ replace_oscam_bin() {
    else
     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
-   fi
    if opkg list-installed | grep  libcrypto-compat > /dev/null 2>&1; then
-    echo "" > /dev/null 2>&1
+     echo "" > /dev/null 2>&1
    else
-    $_exec_cmd install libcrypto-compat > /dev/null 2>&1
+     $_exec_cmd install libcrypto-compat > /dev/null 2>&1
+   fi
    fi
    unset _neon
    unset _emu
