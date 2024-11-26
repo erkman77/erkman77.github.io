@@ -180,6 +180,11 @@ install_lou_ipk() {
     $_exec_cmd install --force-reinstall /tmp/softcam-lou.ipk  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
   fi
+   if opkg list-installed | grep  libcrypto-compat > /dev/null 2>&1; then
+     echo "" > /dev/null 2>&1
+   else
+     $_exec_cmd install libcrypto-compat > /dev/null 2>&1
+   fi
   replace_initscript
   /etc/init.d/softcam.oscam_bin restart
 }
@@ -252,6 +257,11 @@ replace_oscam_bin() {
    else
     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
+   fi
+   if opkg list-installed | grep  libcrypto-compat > /dev/null 2>&1; then
+    echo "" > /dev/null 2>&1
+   else
+    $_exec_cmd install libcrypto-compat > /dev/null 2>&1
    fi
    unset _neon
    unset _emu
