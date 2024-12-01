@@ -283,7 +283,9 @@ chmod +x /usr/emu_scripts/EGcam_oscam_bin.sh  > /dev/null 2>&1
 chmod +x /usr/bin/StartEGCam  > /dev/null 2>&1
 if [[ $_oscambin != "oscam_bin" ]]; then
 rm /usr/emu_scripts/EGcam_${_oscambin}.sh  > /dev/null 2>&1
+rm /usr/bin/${_oscambin} > /dev/null 2>&1
 fi
+
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 #eval $binstart > /dev/null 2>&1 
 

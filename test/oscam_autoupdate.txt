@@ -177,8 +177,9 @@ EOF
 #eval $binstart > /dev/null 2>&1
 _start="/usr/emu_scripts/EGcam_${_oscambin}.sh restart"
 mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_${_oscambin}.sh
-
+cp  /usr/emu_scripts/EGcam_${_oscambin}.sh /usr/bin/StartEGCam  > /dev/null 2>&1
 chmod +x /usr/emu_scripts/EGcam_${_oscambin}.sh
+chmod +x /usr/bin/StartEGCam  > /dev/null 2>&1
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 echo "OSCam v$Version_new${_neon}${_emu}" > /etc/CurrentEGCamName
 #		/usr/emu_scripts/EGcam_${_oscambin}.sh start > /dev/null 2>&1
