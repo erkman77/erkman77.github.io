@@ -180,7 +180,7 @@ mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_${_oscambin}.sh
 
 chmod +x /usr/emu_scripts/EGcam_${_oscambin}.sh
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
-echo "OSCam-Installer v$Version_new${_neon}${_emu}" > /etc/CurrentEGCamName
+echo "OSCam v$Version_new${_neon}${_emu}" > /etc/CurrentEGCamName
 #		/usr/emu_scripts/EGcam_${_oscambin}.sh start > /dev/null 2>&1
 		sleep 2
 fi

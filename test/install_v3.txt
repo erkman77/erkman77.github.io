@@ -274,7 +274,7 @@ mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_oscam_bin.sh
 
 chmod +x /usr/emu_scripts/EGcam_oscam_bin.sh
 cp /etc/tuxbox/config/oscam_bin/* /etc/tuxbox/config > /dev/null 2>&1
-echo "OSCam-Installer v$Version_new${_neon}${_emu}" > /etc/CurrentEGCamName
+echo "OSCam v$Version_new${_neon}${_emu}" > /etc/CurrentEGCamName
 #		/usr/emu_scripts/EGcam_oscam_bin.sh start > /dev/null 2>&1
 		sleep 2
 fi
