@@ -19,7 +19,7 @@ _vti="vuplus"
 NEW_LINE='if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscamfile
 _myoscambinfile=$(head -n 1 /tmp/oscamfile)
-_oscambin=$(basename "$_myoscambinfile")
+${_oscambin}=$(basename "$_myoscambinfile")
 
 while getopts "t:S:P:u:p:" opt; do
   case ${opt} in
@@ -225,7 +225,7 @@ replace_initscript() {
   chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   update-rc.d -f softcam.oscam_bin defaults > /dev/null 2>&1
   #bh
-if [ -f /usr/camscript/Ncam_oscam_bin.sh ]; then
+if [ -f /usr/camscript/Ncam_${_oscambin}.sh ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
@@ -243,16 +243,16 @@ sed -i '19s/.*/         \/usr\/softcams\/\$binary -b -r 2 -c \/etc\/tuxbox\/conf
 EOF
 )
 eval $binstart > /dev/null 2>&1
-_start="/usr/camscript/Ncam_oscam_bin.sh restart"
-mv /tmp/oscam_update.sh /usr/camscript/Ncam_oscam_bin.sh
-chmod +x /usr/camscript/Ncam_oscam_bin.sh
-cp /etc/tuxbox/config/oscam_bin/* /etc/tuxbox/config > /dev/null 2>&1
+_start="/usr/camscript/Ncam_${_oscambin}.sh restart"
+mv /tmp/oscam_update.sh /usr/camscript/${_oscambin}.sh
+chmod +x /usr/camscript/Ncam_${_oscambin}.sh
+cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 #		/usr/camscript/Ncam_oscam_bin.sh start > /dev/null 2>&1
 		sleep 2
 fi
 
 #egami
-if [ -f /usr/emu_scripts/EGcam_oscam_bin.sh ]; then
+if [ -f /usr/emu_scripts/EGcam_${_oscambin}.sh ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
@@ -269,20 +269,18 @@ sed -i '19s/.*/         \/usr\/bin\/\$binary \&/' /tmp/oscam_update.sh
 EOF
 )
 eval $binstart > /dev/null 2>&1
-_start="/usr/emu_scripts/EGcam_oscam_bin.sh restart"
-mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_oscam_bin.sh
+_start="/usr/emu_scripts/EGcam_${_oscambin}.sh restart"
+mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_${_oscambin}.sh
 
-chmod +x /usr/emu_scripts/EGcam_oscam_bin.sh
-cp /etc/tuxbox/config/oscam_bin/* /etc/tuxbox/config > /dev/null 2>&1
+chmod +x /usr/emu_scripts/EGcam_${_oscambin}.sh
+cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 echo "OSCam v$Version_new${_neon}${_emu}" > /etc/CurrentEGCamName
 #		/usr/emu_scripts/EGcam_oscam_bin.sh start > /dev/null 2>&1
 		sleep 2
 fi
- if [ -e /etc/apt/sources.list.d  ]; then
-     systemctl stop oscam_bin.service > /dev/null 2>&1
-fi
+
 #newenigma
-if [ -f /usr/script/oscam_bin.emu ]; then
+if [ -f /usr/script/${_oscambin}.emu ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh
 camname=$(cat <<EOF
 sed -i '3s/.*/EMUNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
@@ -294,17 +292,17 @@ sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin
-mv /tmp/oscam_update.sh /usr/script/oscam_bin.emu
+mv /tmp/oscam_update.sh /usr/script/${_oscambin}.emu
 _start="/usr/script/oscam_bin.emu restart"
-chmod +x /usr/script/oscam_bin.emu
-cp /etc/tuxbox/config/oscam_bin/* /etc/tuxbox/config > /dev/null 2>&1
+chmod +x /usr/script/${_oscambin}.emu
+cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 
 #		/usr/script/oscam_bin.emu start > /dev/null 2>&1
 		sleep 2
 fi
 
 #vti
-if [ -f /usr/script/oscam_bin_cam.sh ]; then
+if [ -f /usr/script/${_oscambin}_cam.sh ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
@@ -316,15 +314,15 @@ sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
-mv /tmp/oscam_update.sh /usr/script/oscam_bin_cam.sh
-chmod +x /usr/script/oscam_bin_cam.sh
+mv /tmp/oscam_update.sh /usr/script/${_oscambin}_cam.sh
+chmod +x /usr/script/${_oscambin}_cam.sh
 _start="/usr/script/oscam_bin_cam.sh restart"
-cp /etc/tuxbox/config/oscam_bin/* /etc/tuxbox/config > /dev/null 2>&1
+cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 #		/usr/script/oscam_bin_cam.sh start > /dev/null 2>&1
 		sleep 2
 fi
 
-if [ -f /usr/script/oscam_bin.sh ]; then
+if [ -f /usr/script/${_oscambin}.sh ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
@@ -336,15 +334,15 @@ sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
-mv /tmp/oscam_update.sh /usr/script/oscam_bin.sh
-_start="/usr/script/oscam_bin.sh restart"
-chmod +x /usr/script/oscam_bin.sh
-cp /etc/tuxbox/config/oscam_bin/* /etc/tuxbox/config > /dev/null 2>&1
+mv /tmp/oscam_update.sh /usr/script/${_oscambin}.sh
+_start="/usr/script/${_oscambin}.sh restart"
+chmod +x /usr/script/${_oscambin}.sh
+cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 #		/usr/script/oscam_bin.sh start > /dev/null 2>&1
 		sleep 2
 fi
 
-if [ -f /usr/script/oscam_bin.emu ]; then
+if [ -f /usr/script/${_oscambin}.emu ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/EMUNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
@@ -356,16 +354,16 @@ sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
-mv /tmp/oscam_update.sh /usr/script/oscam_bin.emu
-chmod +x /usr/script/oscam_bin.emu
-_start="/usr/script/oscam_bin.emu restart"
-cp /etc/tuxbox/config/oscam_bin/* /etc/tuxbox/config > /dev/null 2>&1
+mv /tmp/oscam_update.sh /usr/script/${_oscambin}.emu
+chmod +x /usr/script/${_oscambin}.emu
+_start="/usr/script/${_oscambin}.emu restart"
+cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 #		/usr/script/oscam_bin.emu start > /dev/null 2>&1
 		sleep 2
 fi
 
 #nfnr
-if [ -f /usr/emu/start/oscam_bin.emu ]; then
+if [ -f /usr/emu/start/${_oscambin}.emu ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/EMUNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
@@ -377,16 +375,16 @@ sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
-mv /tmp/oscam_update.sh /usr/emu/start/oscam_bin.emu
-chmod +x /usr/emu/start/oscam_bin.emu
-cp /etc/tuxbox/config/oscam_bin/* /etc/tuxbox/config > /dev/null 2>&1
+mv /tmp/oscam_update.sh /usr/emu/start/${_oscambin}.emu
+chmod +x /usr/emu/start/${_oscambin}.emu
+cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 #		/usr/script/oscam_bin.emu start > /dev/null 2>&1
 _start="/usr/emu/start/oscam_bin.emu restart"
 		sleep 2
 fi
 
 #n
-if [ -f /etc/cam.d/oscam_bin.sh ]; then
+if [ -f /etc/cam.d/${_oscambin}.sh ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
@@ -398,10 +396,10 @@ sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
-mv /tmp/oscam_update.sh /etc/cam.d/oscam_bin.sh
-chmod +x /etc/cam.d/oscam_bin.sh
-_start="/etc/cam.d/${_oscambin.sh} restart"
-cp /etc/tuxbox/config/oscam_bin/* /etc/tuxbox/config > /dev/null 2>&1
+mv /tmp/oscam_update.sh /etc/cam.d/${_oscambin}.sh
+chmod +x /etc/cam.d/${_oscambin}.sh
+_start="/etc/cam.d/${${_oscambin}.sh} restart"
+cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 #		/etc/cam.d/oscam_bin.sh start > /dev/null 2>&1
 		sleep 2
 fi
@@ -410,6 +408,7 @@ if [ -f /etc/init.d/softcam.oscam_bin ]; then
 		#$_file start > /dev/null 2>&1
 		sleep 2
 fi
+
   if [ -e /etc/apt/sources.list.d  ]; then
   wget -O /etc/systemd/system/oscam_bin.service ${_url}/ot_cams/startfiles/oscam_bin.service > /dev/null 2>&1
   systemctl daemon-reload > /dev/null 2>&1
@@ -439,7 +438,7 @@ replace_oscam_bin() {
    if [ -e /etc/apt/sources.list.d  ]; then
      wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
      chmod +x /usr/bin/oscam_bin
-	# systemctl restart ${_oscambin}.service > /dev/null 2>&1
+	# systemctl restart ${${_oscambin}}.service > /dev/null 2>&1
    else
     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon} > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
