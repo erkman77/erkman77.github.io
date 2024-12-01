@@ -65,6 +65,7 @@ echo "${_url}" >> /tmp/read
 
 _my_distribution=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g" | awk '{print $1}')
 _my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
+echo "${_my_distribution2}" >> /tmp/version
 if cat /tmp/version | grep egami >/dev/null 2>&1
 then 
 _my_distribution="Egami"
