@@ -406,7 +406,7 @@ cp /etc/tuxbox/config/oscam_bin/* /etc/tuxbox/config > /dev/null 2>&1
 		sleep 2
 fi
 if [ -f /etc/init.d/softcam.oscam_bin ]; then
-		#/etc/init.d/softcam.oscam_bin start > /dev/null 2>&1
+		_start="/etc/init.d/softcam.oscam_bin restart"
 		#$_file start > /dev/null 2>&1
 		sleep 2
 fi
@@ -448,7 +448,8 @@ replace_oscam_bin() {
    _oscam_version=v24
    replace_initscript
   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
-  /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
+  eval $_start > /dev/null 2>&1
+  #/etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
 }
 
 do_reboot() {
