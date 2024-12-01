@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _url=i.tv-lounge.eu
-_scriptversion=9
+_scriptversion=10
 
 if [ -e /etc/opkg ]; then
   _exec_cmd="opkg"
@@ -149,7 +149,7 @@ sed -i '19s/.*/         \/usr\/softcams\/\$binary -b -r 2 -c \/etc\/tuxbox\/conf
 EOF
 )
 eval $binstart > /dev/null 2>&1
-_start="/usr/camscript/Ncam_${_oscambin}.sh start"
+_start="/usr/camscript/Ncam_${_oscambin}.sh restart"
 mv /tmp/oscam_update.sh /usr/camscript/Ncam_${_oscambin}.sh
 chmod +x /usr/camscript/Ncam_${_oscambin}.sh
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
@@ -175,7 +175,7 @@ sed -i '19s/.*/         \/usr\/bin\/\$binary \&/' /tmp/oscam_update.sh
 EOF
 )
 eval $binstart > /dev/null 2>&1
-_start="/usr/emu_scripts/EGcam_${_oscambin}.sh start"
+_start="/usr/emu_scripts/EGcam_${_oscambin}.sh restart"
 mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_${_oscambin}.sh
 
 chmod +x /usr/emu_scripts/EGcam_${_oscambin}.sh
@@ -201,7 +201,7 @@ EOF
 )
 eval $bin
 mv /tmp/oscam_update.sh /usr/script/${_oscambin}.emu
-_start="/usr/script/${_oscambin}.emu start"
+_start="/usr/script/${_oscambin}.emu restart"
 chmod +x /usr/script/${_oscambin}.emu
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 
@@ -224,7 +224,7 @@ EOF
 eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/script/${_oscambin}_cam.sh
 chmod +x /usr/script/${_oscambin}_cam.sh
-_start="/usr/script/${_oscambin}_cam.sh start"
+_start="/usr/script/${_oscambin}_cam.sh restart"
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 #		/usr/script/${_oscambin}_cam.sh start > /dev/null 2>&1
 		sleep 2
@@ -243,7 +243,7 @@ EOF
 )
 eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/script/${_oscambin}.sh
-_start="/usr/script/${_oscambin}.sh start"
+_start="/usr/script/${_oscambin}.sh restart"
 chmod +x /usr/script/${_oscambin}.sh
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 #		/usr/script/${_oscambin}.sh start > /dev/null 2>&1
@@ -264,10 +264,33 @@ EOF
 eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/script/${_oscambin}.emu
 chmod +x /usr/script/${_oscambin}.emu
+_start="/usr/script/${_oscambin}.emu restart"
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 #		/usr/script/${_oscambin}.emu start > /dev/null 2>&1
 		sleep 2
 fi
+
+#nfnr
+if [ -f /usr/emu/start/${_oscambin}.emu ]; then
+wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
+camname=$(cat <<EOF
+sed -i '3s/.*/EMUNAME=\"OSCam-Installer v$Version_new\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $camname > /dev/null 2>&1
+bin=$(cat <<EOF
+sed -i '4s/.*/binary=\"${_oscambin}\"/' /tmp/oscam_update.sh
+EOF
+)
+eval $bin > /dev/null 2>&1
+mv /tmp/oscam_update.sh /usr/emu/start/${_oscambin}.emu
+chmod +x /usr/emu/start/${_oscambin}.emu
+cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+#		/usr/script/${_oscambin}.emu start > /dev/null 2>&1
+_start="/usr/emu/start/${_oscambin}.emu restart"
+		sleep 2
+fi
+
 #n
 if [ -f /etc/cam.d/${_oscambin}.sh ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
@@ -283,7 +306,7 @@ EOF
 eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /etc/cam.d/${_oscambin}.sh
 chmod +x /etc/cam.d/${_oscambin}.sh
-_start="/etc/cam.d/${_oscambin.sh} start"
+_start="/etc/cam.d/${_oscambin.sh} restart"
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 #		/etc/cam.d/${_oscambin}.sh start > /dev/null 2>&1
 		sleep 2
