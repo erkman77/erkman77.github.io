@@ -174,7 +174,7 @@ binstart=$(cat <<EOF
 sed -i '19s/.*/         \/usr\/bin\/\$binary \&/' /tmp/oscam_update.sh
 EOF
 )
-eval $binstart > /dev/null 2>&1
+#eval $binstart > /dev/null 2>&1
 _start="/usr/emu_scripts/EGcam_${_oscambin}.sh restart"
 mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_${_oscambin}.sh
 

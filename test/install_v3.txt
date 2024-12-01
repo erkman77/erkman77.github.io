@@ -269,7 +269,7 @@ bin=$(cat <<EOF
 sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
-eval $bin > /dev/null 2>&1
+#eval $bin > /dev/null 2>&1
 binstart=$(cat <<EOF
 sed -i '19s/.*/         \/usr\/bin\/\$binary \&/' /tmp/oscam_update.sh
 EOF
