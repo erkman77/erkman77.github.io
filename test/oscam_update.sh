@@ -12,14 +12,14 @@ remove_tmp () {
 
 case "$1" in
 	start)
-		echo "[SCRIPT] $1: $CAMNAME"
+		echo "[SCRIPT] $1: $binary"
 		remove_tmp
 		touch /tmp/.emu.info
 		echo "$CAMNAME" > /tmp/.emu.info
 		/usr/bin/$binary -b -r 2 -c /etc/tuxbox/config --daemon --pidfile /var/tmp/$binary.pid --restart 2
 	;;
 	stop)
-		echo "[SCRIPT] $1: $CAMNAME"
+		echo "[SCRIPT] $1: $binary"
 		kill `pidof $binary`
 		remove_tmp
 	;;
