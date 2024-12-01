@@ -134,7 +134,7 @@ fi
 if [ -f /usr/camscript/Ncam_${_oscambin}.sh ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
-sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname > /dev/null 2>&1
@@ -161,7 +161,7 @@ fi
 if [ -f /usr/emu_scripts/EGcam_${_oscambin}.sh ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
-sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname > /dev/null 2>&1
@@ -180,7 +180,7 @@ mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_${_oscambin}.sh
 
 chmod +x /usr/emu_scripts/EGcam_${_oscambin}.sh
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
-echo "OSCam-Installer v$Version_new" > /etc/CurrentEGCamName
+echo "OSCam-Installer v$Version_new${_neon}${_emu}" > /etc/CurrentEGCamName
 #		/usr/emu_scripts/EGcam_${_oscambin}.sh start > /dev/null 2>&1
 		sleep 2
 fi
@@ -191,7 +191,7 @@ fi
 if [ -f /usr/script/${_oscambin}.emu ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh
 camname=$(cat <<EOF
-sed -i '3s/.*/EMUNAME=\"OSCam-Installer v$Version_new\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/EMUNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname
@@ -213,7 +213,7 @@ fi
 if [ -f /usr/script/${_oscambin}_cam.sh ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
-sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname > /dev/null 2>&1
@@ -233,7 +233,7 @@ fi
 if [ -f /usr/script/${_oscambin}.sh ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
-sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname > /dev/null 2>&1
@@ -253,7 +253,7 @@ fi
 if [ -f /usr/script/${_oscambin}.emu ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
-sed -i '3s/.*/EMUNAME=\"OSCam-Installer v$Version_new\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/EMUNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname > /dev/null 2>&1
@@ -274,7 +274,7 @@ fi
 if [ -f /usr/emu/start/${_oscambin}.emu ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
-sed -i '3s/.*/EMUNAME=\"OSCam-Installer v$Version_new\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/EMUNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname > /dev/null 2>&1
@@ -295,7 +295,7 @@ fi
 if [ -f /etc/cam.d/${_oscambin}.sh ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
-sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new\"/' /tmp/oscam_update.sh
+sed -i '3s/.*/CAMNAME=\"OSCam-Installer v$Version_new${_neon}${_emu}\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $camname > /dev/null 2>&1
