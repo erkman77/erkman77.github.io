@@ -445,10 +445,10 @@ replace_oscam_bin() {
     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
    fi
-   _oscam_version=v24
    replace_initscript
   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
   eval $_start > /dev/null 2>&1
+  _oscam_version=v24
   unset _neon
   unset _emu
   #/etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
