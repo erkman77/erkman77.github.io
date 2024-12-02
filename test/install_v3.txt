@@ -266,7 +266,7 @@ fi
 eval $binstart > /dev/null 2>&1
 #		/usr/camscript/Ncam_oscam_bin.sh start > /dev/null 2>&1
 echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/CurrentBhCamName
-rm /usr/camscript/Ncam_${_oscambin}_bak_lou.sh > /dev/null 2>&1
+rm /usr/camscript/*_bak_lou.sh > /dev/null 2>&1
 		sleep 2
 fi
 
