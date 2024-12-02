@@ -236,7 +236,6 @@ replace_initscript() {
 
 #bh
 if [ -f /usr/camscript/Ncam_${_oscambin}.sh ]; then
-
 wget -O /tmp/oscam_update.sh ${_url}/ot_cams/startfiles/oscam_update.sh > /dev/null 2>&1
 wget -O /etc/BhCamConf ${_url}/ot_cams/startfiles/BhCamConf > /dev/null 2>&1
 camname=$(cat <<EOF
@@ -488,6 +487,7 @@ replace_oscam_bin() {
 	else
     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
+	fi
    fi
    replace_initscript
   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
