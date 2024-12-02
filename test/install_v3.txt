@@ -70,6 +70,10 @@ if cat /tmp/version | grep egami >/dev/null 2>&1
 then 
 _my_distribution="Egami"
 fi
+if cat /tmp/version | grep openBH >/dev/null 2>&1
+then 
+_my_distribution="OpenBh"
+fi
 echo "${_my_distribution2}" >> /tmp/version
 _rebootmsg="reboot by exiting installer"
 echo ... "running preconfigure for optimal autoinstaller settings"
