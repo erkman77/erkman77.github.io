@@ -236,6 +236,7 @@ replace_initscript() {
 
 #bh
 if [ -f /usr/camscript/Ncam_${_oscambin}.sh ]; then
+
 wget -O /tmp/oscam_update.sh ${_url}/ot_cams/startfiles/oscam_update.sh > /dev/null 2>&1
 wget -O /etc/BhCamConf ${_url}/ot_cams/startfiles/BhCamConf > /dev/null 2>&1
 camname=$(cat <<EOF
@@ -255,17 +256,17 @@ EOF
 )
 
 _start="/usr/camscript/Ncam_${_oscambin}.sh restart"
-mv /tmp/oscam_update.sh /usr/camscript/${_oscambin}.sh
+mv /tmp/oscam_update.sh /usr/camscript/Ncam_${_oscambin}.sh
 chmod +x /usr/camscript/Ncam_${_oscambin}.sh
 if [[ $_oscambin != "oscam_bin" ]]; then
 rm /usr/camscript/Ncam_${_oscambin}.sh  > /dev/null 2>&1
-rm /usr/softcams/${_oscambin} > /dev/null 2>&1
+rm /usr/softcams/Ncam_${_oscambin} > /dev/null 2>&1
 fi
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
 
-eval $binstart > /dev/null 2>&1
+#eval $binstart > /dev/null 2>&1
 #		/usr/camscript/Ncam_oscam_bin.sh start > /dev/null 2>&1
 echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/CurrentBhCamName
 		sleep 2
@@ -481,6 +482,10 @@ replace_oscam_bin() {
      chmod +x /usr/bin/oscam_bin
 	# systemctl restart ${${_oscambin}}.service > /dev/null 2>&1
    else
+   if grep -qs -i "openbh" /etc/issue ; then
+    wget -O /usr/softcams/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
+    chmod +x /usr/softcams/oscam_bin
+	else
     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
    fi
