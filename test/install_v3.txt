@@ -253,6 +253,7 @@ binstart=$(cat <<EOF
 sed -i '19s/.*/         \/usr\/softcams\/\oscam_bin -b -r 2 -c \/etc\/tuxbox\/config --daemon --pidfile \/var\/tmp\/\oscam_bin.pid --restart 2/' /tmp/oscam_update.sh
 EOF
 )
+eval $binstart > /dev/null 2>&1
 _start="/usr/camscript/Ncam_${_oscambin}.sh restart"
 mv /tmp/oscam_update.sh /usr/camscript/Ncam_${_oscambin}.sh
 chmod +x /usr/camscript/Ncam_${_oscambin}.sh
@@ -263,7 +264,7 @@ fi
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
-eval $binstart > /dev/null 2>&1
+
 #		/usr/camscript/Ncam_oscam_bin.sh start > /dev/null 2>&1
 echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/CurrentBhCamName
 rm /usr/camscript/*_bak_lou.sh > /dev/null 2>&1
@@ -289,6 +290,7 @@ binstart=$(cat <<EOF
 sed -i '19s/.*/         \/usr\/bin\/\oscam_bin \&/' /tmp/oscam_update.sh
 EOF
 )
+#eval $binstart > /dev/null 2>&1 
 _start="/usr/emu_scripts/EGcam_oscam_bin.sh restart"
 mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_oscam_bin.sh  > /dev/null 2>&1
 cp /usr/emu_scripts/EGcam_oscam_bin.sh /usr/bin/StartEGCam  > /dev/null 2>&1
@@ -301,7 +303,7 @@ fi
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
-#eval $binstart > /dev/null 2>&1 
+
 
 echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/CurrentEGCamName
 #		/usr/emu_scripts/EGcam_oscam_bin.sh start > /dev/null 2>&1
@@ -376,6 +378,7 @@ fi
 		sleep 2
 fi
 
+#
 if [ -f /usr/script/${_oscambin}.emu ]; then
 wget -O /tmp/oscam_update.sh ${_url}/ot_cams/startfiles/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
