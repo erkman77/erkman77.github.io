@@ -171,7 +171,7 @@ wrong_opt() {
   clear
 }
 
-install_OI_ipk() {
+install_OMT_ipk() {
   _current_installs=$( $_listinstalled | grep -E 'softcam|camd'| grep -vE 'camdctrl|crypto|ii' |awk '{print $1}')
   for _current_install in $_current_installs ; do
     echo "exit 0" > /var/lib/opkg/info/$_current_install.prerm
@@ -186,13 +186,13 @@ install_OI_ipk() {
   done
   if [ -e /etc/apt/sources.list.d  ]; then
     echo "install dummy deb for softcam"
-    curl -sk -o /tmp/softcam-OI.deb ${_url}/test/enigma2-softcams-oscam-installer_13.37-emu-r0815.deb
-    dpkg -i /tmp/softcam-OI.deb  > /dev/null 2>&1
+    curl -sk -o /tmp/softcam-OMT.deb ${_url}/test/enigma2-softcams-oscam-installer_13.37-emu-r0815.deb
+    dpkg -i /tmp/softcam-OMT.deb  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
   else
     echo "install dummy ipk for softcam"
-    curl -sk -o /tmp/softcam-OI.ipk ${_url}/test/enigma2-softcams-oscam-installer_13.37-emu-r0815_all.ipk
-    $_exec_cmd install --force-reinstall /tmp/softcam-OI.ipk  > /dev/null 2>&1
+    curl -sk -o /tmp/softcam-OMT.ipk ${_url}/test/enigma2-softcams-oscam-installer_13.37-emu-r0815_all.ipk
+    $_exec_cmd install --force-reinstall /tmp/softcam-OMT.ipk  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
 	if opkg list-installed | grep  libcrypto-compat > /dev/null 2>&1; then
      echo "" > /dev/null 2>&1
@@ -277,7 +277,7 @@ cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
 #		/usr/camscript/Ncam_oscam_bin.sh start > /dev/null 2>&1
 echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/CurrentBhCamName
-rm /usr/camscript/*_bak_OI.sh > /dev/null 2>&1
+rm /usr/camscript/*_bak_OMT.sh > /dev/null 2>&1
 		sleep 2
 fi
 
@@ -473,7 +473,7 @@ fi
 replace_oscam_bin() {
 
   sleep 3
-  cp ${_myoscambin} ${_myoscambin}_bak_OI > /dev/null 2>&1
+  cp ${_myoscambin} ${_myoscambin}_bak_OMT > /dev/null 2>&1
   if [ -n "$(uname -m | grep armv7l)" ]; then
     _arch=arm
   elif [ -n "$(uname -m | grep aarch64)" ]; then
@@ -746,7 +746,7 @@ install_oatv() {
   $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
   $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
   $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
-  install_OI_ipk
+  install_OMT_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   get_old_oscam
@@ -764,7 +764,7 @@ install_opli() {
   $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
   $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
   $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
-  install_OI_ipk
+  install_OMT_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   get_old_oscam
@@ -782,7 +782,7 @@ install_onfr() {
   $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
   $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
   $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
-  install_OI_ipk
+  install_OMT_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   get_old_oscam
@@ -800,7 +800,7 @@ install_vti() {
   $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
   $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
   $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
-  install_OI_ipk
+  install_OMT_ipk
   rm /lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   ln -s `find /lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   get_old_oscam
@@ -818,7 +818,7 @@ install_nn2() {
   $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
   $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
   $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
-  install_OI_ipk
+  install_OMT_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   get_old_oscam
