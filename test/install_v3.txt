@@ -66,15 +66,18 @@ echo "${_url}" >> /tmp/read
 _my_distribution=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g" | awk '{print $1}')
 _my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
 echo "${_my_distribution2}" >> /tmp/version
-if cat /tmp/version | grep egami >/dev/null 2>&1
+if cat /tmp/version | grep -i egami >/dev/null 2>&1
 then 
 _my_distribution="Egami"
 fi
-if cat /tmp/version | grep openBH >/dev/null 2>&1
+if cat /tmp/version | grep -i openBH >/dev/null 2>&1
 then 
 _my_distribution="OpenBh"
 fi
-echo "${_my_distribution2}" >> /tmp/version
+if cat /tmp/version | grep- i vti >/dev/null 2>&1
+then 
+_my_distribution="VTi"
+fi
 _rebootmsg="reboot by exiting installer"
 echo ... "running preconfigure for optimal autoinstaller settings"
 wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=15" > /dev/null
@@ -96,7 +99,7 @@ elif [ -e /etc/apt/sources.list.d ]; then
   _libcryptovers=`apt-cache search libcrypto | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
   _libcurlvers4=`apt-cache search libcurl4 |grep -vE 'PycU'|awk '{print $1}'`
 else
-  "neither opkg nor apt was found ... bailing out"
+  echo "neither opkg nor apt was found ... bailing out"
   exit 0
 fi
 
@@ -191,6 +194,11 @@ install_lou_ipk() {
     curl -sk -o /tmp/softcam-lou.ipk ${_url}/test/enigma2-softcams-oscam-installer_13.37-emu-r0815_all.ipk
     $_exec_cmd install --force-reinstall /tmp/softcam-lou.ipk  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin
+	if opkg list-installed | grep  libcrypto-compat > /dev/null 2>&1; then
+     echo "" > /dev/null 2>&1
+   else
+     $_exec_cmd install libcrypto-compat > /dev/null 2>&1
+   fi
   fi
   replace_initscript
   /etc/init.d/softcam.oscam_bin restart
@@ -235,7 +243,7 @@ replace_initscript() {
   update-rc.d -f softcam.oscam_bin defaults > /dev/null 2>&1
 
 #bh
-if [ -f /usr/camscript/Ncam_${_oscambin}.sh ]; then
+if [[ $_my_distribution == "OpenBH" ]]; then
 _stop="/usr/camscript/Ncam_${_oscambin}.sh stop"
 update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
 rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
@@ -267,15 +275,14 @@ fi
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
-
 #		/usr/camscript/Ncam_oscam_bin.sh start > /dev/null 2>&1
 echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/CurrentBhCamName
-rm /usr/camscript/*_bak_lou.sh > /dev/null 2>&1
+rm /usr/camscript/*_bak_OI.sh > /dev/null 2>&1
 		sleep 2
 fi
 
 #egami
-if [ -f /usr/emu_scripts/EGcam_${_oscambin}.sh ]; then
+if [[ $_my_distribution == "OpenBH" ]]; then
 update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
 rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
 _stop="/usr/emu_scripts/EGcam_${_oscambin}.sh stop"
@@ -308,8 +315,6 @@ fi
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
-
-
 echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/CurrentEGCamName
 #		/usr/emu_scripts/EGcam_oscam_bin.sh start > /dev/null 2>&1
 		sleep 2
@@ -463,13 +468,12 @@ fi
   systemctl enable oscam_bin.service > /dev/null 2>&1
   systemctl start oscam_bin.service > /dev/null 2>&1
   fi
-  
 }
 
 replace_oscam_bin() {
 
   sleep 3
-  cp ${_myoscambin} ${_myoscambin}_bak_lou > /dev/null 2>&1
+  cp ${_myoscambin} ${_myoscambin}_bak_OI > /dev/null 2>&1
   if [ -n "$(uname -m | grep armv7l)" ]; then
     _arch=arm
   elif [ -n "$(uname -m | grep aarch64)" ]; then
@@ -486,18 +490,24 @@ replace_oscam_bin() {
    if [ -e /etc/apt/sources.list.d  ]; then
      wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
      chmod +x /usr/bin/oscam_bin
-	# systemctl restart ${${_oscambin}}.service > /dev/null 2>&1
+	#systemctl restart ${_oscambin}.service > /dev/null 2>&1
    else
-    if grep -qs -i "openbh" /etc/issue ; then
+     if grep -qs -i "openbh" /etc/issue ; then
      wget -O /usr/softcams/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
      chmod +x /usr/softcams/oscam_bin
 	else
      wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
      chmod +x /usr/bin/oscam_bin
-	fi
+   if opkg list-installed | grep  libcrypto-compat > /dev/null 2>&1; then
+     echo "" > /dev/null 2>&1
+   else
+     $_exec_cmd install libcrypto-compat > /dev/null 2>&1
    fi
-   replace_initscript
-  cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
+   fi
+  replace_initscript
+  if [ -r /etc/tuxbox/config/$oscambinold ]; then
+   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
+  fi
   eval $_start > /dev/null 2>&1
   _oscam_version=v24
   unset _neon
@@ -561,7 +571,7 @@ get_oscam_configs() {
     echo "group             = 1"                             >> $_readerfile
     echo "cccversion        = 2.1.2"                         >> $_readerfile
     echo "ccckeepalive      = 1"                             >> $_readerfile
-  	if cat /tmp/oscam.server | grep ${_reader1} >/dev/null 2>&1
+  	if cat /tmp/oscam.server > /dev/null 2>&1 | grep ${_reader1} > /dev/null 2>&1
      then
 	 echo "" > /dev/null 2>&1
   #   cp /tmp/oscam.server /etc/tuxbox/config/ > /dev/null 2>&1
@@ -847,7 +857,7 @@ my_header() {
   echo "/ /_/ (__  ) /__/ /_/ / / / / / /  _/ // / / (__  ) /_/ /_/ / / /  __/ /        "
   echo "\____/____/\___/\__,_/_/ /_/ /_/  /___/_/ /_/____/\__/\__,_/_/_/\___/_/         "
   echo "                                                                                "
-  echo "                                                            in memory off...    "
+  echo "                                                       greetings goes out...    "
   echo ""
 }
 
@@ -865,7 +875,9 @@ mainmenu() {
   echo -e " 8) Bouquet Autoupdate                // updates bouquets @ reboot"
   echo -e " 9) Whitelist Streamrelay             // install/update whitelist_streamrelay"
   echo -e "10) Whitelist Autoupdate              // update whitelist only @ reboot"
-  echo -e "11) Oscam Start Patch                 // checks whether oscam starts twice"
+  echo -e "11) Oscam Start Patch                 // checks whether oscam starts twice,"
+  echo -e "                                         use this after a fresh reboot"
+  echo -e "                                         and DONT restart oscam"
   echo -e "0) Exit"
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
@@ -1034,29 +1046,13 @@ update_bin() {
   case $updatebin in
     1)
       _reboot=1
-      _oscam_version=v5
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-    ;;
-    2)
-      _reboot=1
-      _oscam_version=v8
-      get_old_oscam
-      kill_oscam
-      replace_oscam_bin
-      mainmenu
-      ;;
-    3)
-      _reboot=1
       _oscam_version=v9
       get_old_oscam
       kill_oscam
       replace_oscam_bin
       mainmenu
       ;;
-    4)
+    2)
       _reboot=1
       _oscam_version=v9
       _neon="-neon"
@@ -1065,7 +1061,7 @@ update_bin() {
       replace_oscam_bin
       mainmenu
       ;;
-    5)
+    3)
       _reboot=1
       _oscam_version=v23
       get_old_oscam
@@ -1073,9 +1069,26 @@ update_bin() {
       replace_oscam_bin
       mainmenu
       ;;
-    6)
+    4)
       _reboot=1
       _oscam_version=v23
+      _neon="-neon"
+      get_old_oscam
+      kill_oscam
+      replace_oscam_bin
+      mainmenu
+      ;;
+    5)
+      _reboot=1
+      _oscam_version=v24
+      get_old_oscam
+      kill_oscam
+      replace_oscam_bin
+      mainmenu
+      ;;
+    6)
+      _reboot=1
+      _oscam_version=v24
       _neon="-neon"
       get_old_oscam
       kill_oscam
