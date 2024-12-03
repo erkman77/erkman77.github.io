@@ -74,7 +74,7 @@ if cat /tmp/version | grep -i openBH > /dev/null 2>&1
 then 
 _my_distribution="OpenBh"
 fi
-if cat /tmp/version | grep- i vti > /dev/null 2>&1
+if [ -e /etc/vtiversion.info ];  > /dev/null 2>&1
 then 
 _my_distribution="VTi"
 fi
