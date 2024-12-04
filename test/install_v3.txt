@@ -74,8 +74,7 @@ if cat /tmp/version | grep -i openBH > /dev/null 2>&1
 then 
 _my_distribution="OpenBh"
 fi
-if [ -e /etc/vtiversion.info ];  > /dev/null 2>&1
-then 
+if [ -r /usr/lib/enigma2/python/Plugins/SystemPlugins/VTIPanel ]; then 
 _my_distribution="VTi"
 fi
 _rebootmsg="reboot by exiting installer"
@@ -503,24 +502,24 @@ replace_oscam_bin() {
   fi
  echo "Changing your oscam to version ${_oscam_version}${_neon}${_emu}"
  sleep 2
-   if [ -e /etc/apt/sources.list.d  ]; then
+  if [ -e /etc/apt/sources.list.d  ]; then
      wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
      chmod +x /usr/bin/oscam_bin
 	#systemctl restart ${_oscambin}.service > /dev/null 2>&1
    else
      if grep -qs -i "openbh" /etc/issue ; then
-     wget -O /usr/softcams/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
-     chmod +x /usr/softcams/oscam_bin
-	else
-     wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
-     chmod +x /usr/bin/oscam_bin
+      wget -O /usr/softcams/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
+      chmod +x /usr/softcams/oscam_bin
+	 else
+      wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
+      chmod +x /usr/bin/oscam_bin
 	 fi
    if opkg list-installed | grep  libcrypto-compat > /dev/null 2>&1; then
      echo "" > /dev/null 2>&1
    else
      $_exec_cmd install libcrypto-compat > /dev/null 2>&1
    fi
-   fi
+  fi
   replace_initscript
   if [ -r /etc/tuxbox/config/$oscambinold ]; then
    cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
