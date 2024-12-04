@@ -187,12 +187,12 @@ install_OMT_ipk() {
     echo "install dummy deb for softcam"
     curl -sk -o /tmp/softcam-OMT.deb ${_url}/test/enigma2-softcams-oscam-installer_13.37-emu-r0815.deb
     dpkg -i /tmp/softcam-OMT.deb  > /dev/null 2>&1
-    chmod +x /usr/bin/oscam_bin
+    chmod +x /usr/bin/oscam_bin > /dev/null 2>&1
   else
     echo "install dummy ipk for softcam"
     curl -sk -o /tmp/softcam-OMT.ipk ${_url}/test/enigma2-softcams-oscam-installer_13.37-emu-r0815_all.ipk
     $_exec_cmd install --force-reinstall /tmp/softcam-OMT.ipk  > /dev/null 2>&1
-    chmod +x /usr/bin/oscam_bin
+    chmod +x /usr/bin/oscam_bin > /dev/null 2>&1
 	if opkg list-installed | grep  libcrypto-compat > /dev/null 2>&1; then
      echo "" > /dev/null 2>&1
    else
@@ -200,7 +200,7 @@ install_OMT_ipk() {
    fi
   fi
   replace_initscript
-  if [ ! -f /etc/init.d/softcam.oscam_bin ]; then
+  if [ -f /etc/init.d/softcam.oscam_bin ]; then
   /etc/init.d/softcam.oscam_bin restart
   fi
 }
@@ -508,15 +508,15 @@ replace_oscam_bin() {
  sleep 2
   if [ -e /etc/apt/sources.list.d  ]; then
      wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
-     chmod +x /usr/bin/oscam_bin
+     chmod +x /usr/bin/oscam_bin > /dev/null 2>&1
 	#systemctl restart ${_oscambin}.service > /dev/null 2>&1
    else
      if grep -qs -i "openbh" /etc/issue ; then
       wget -O /usr/softcams/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
-      chmod +x /usr/softcams/oscam_bin
+      chmod +x /usr/softcams/oscam_bin > /dev/null 2>&1
 	 else
       wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
-      chmod +x /usr/bin/oscam_bin
+      chmod +x /usr/bin/oscam_bin > /dev/null 2>&1
 	 fi
    if opkg list-installed | grep  libcrypto-compat > /dev/null 2>&1; then
      echo "" > /dev/null 2>&1
@@ -558,7 +558,9 @@ do_enigma_settings() {
 
 get_oscam_configs() {
   _readerfile="/etc/tuxbox/config/oscam.server"
-  if [ ! -f /etc/tuxbox/config/oscam.server ]; then
+  if [ -f /etc/tuxbox/config/oscam.server ]; then
+  :
+  else
   mkdir /etc/tuxbox/config/ -p > /dev/null 2>&1
   curl -sk -o /etc/tuxbox/config/oscam.conf ${_url}/ot_cams/configs/oscam.conf > /dev/null 2>&1
   curl -sk -o /etc/tuxbox/config/oscam.user ${_url}/ot_cams/configs/oscam.user > /dev/null 2>&1
