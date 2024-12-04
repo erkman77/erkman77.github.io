@@ -200,7 +200,9 @@ install_OMT_ipk() {
    fi
   fi
   replace_initscript
+  if [ ! -f /etc/init.d/softcam.oscam_bin ]; then
   /etc/init.d/softcam.oscam_bin restart
+  fi
 }
 
 get_ipk_oscam() {
@@ -285,7 +287,7 @@ if [[ $_my_distribution == "Egami" ]]; then
 update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
 rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
 _stop="/usr/emu_scripts/EGcam_${_oscambin}.sh stop"
-eval $_stop #> /dev/null 2>&1
+eval $_stop > /dev/null 2>&1
 wget -O /tmp/oscam_update.sh ${_url}/ot_cams/startfiles/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer ${_oscam_version}${_neon}${_emu}\"/' /tmp/oscam_update.sh
@@ -347,7 +349,7 @@ if [[ $_my_distribution == "VTi" ]]; then
 update-rc.d -f softcam.${_oscambin} remove > /dev/null 2>&1
 rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
 _stop="/usr/script/${_oscambin}_cam.sh stop"
-eval $_stop #> /dev/null 2>&1
+eval $_stop > /dev/null 2>&1
 wget -O /tmp/oscam_update.sh ${_url}/ot_cams/startfiles/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer ${_oscam_version}${_neon}${_emu}\"/' /tmp/oscam_update.sh
