@@ -244,7 +244,7 @@ replace_initscript() {
   update-rc.d -f softcam.oscam_bin defaults > /dev/null 2>&1
 
 #bh
-if [[ $_my_distribution == "OpenBH" ]]; then
+if [[ $_my_distribution == "OpenBh" ]]; then
 _stop="/usr/camscript/Ncam_${_oscambin}.sh stop"
 update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
 rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
@@ -274,14 +274,14 @@ if [[ $_oscambin != "oscam_bin" ]]; then
 rm /usr/camscript/Ncam_${_oscambin}.sh  > /dev/null 2>&1
 rm /usr/softcams/${_oscambin} > /dev/null 2>&1
 fi
-mkdir /usr/softcams/softcams_old > /dev/null 2>&1
-mv -f /usr/softcams/${_oscambin}_bak_OMT /usr/softcams/softcams_old/ > /dev/null 2>&1
+mkdir /usr/softcams_old > /dev/null 2>&1
+mv -f /usr/softcams/${_oscambin}_bak_OMT /usr/softcams_old/ > /dev/null 2>&1
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
 #		/usr/camscript/Ncam_oscam_bin.sh start > /dev/null 2>&1
 echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/CurrentBhCamName
-rm /usr/camscript/*_bak_OMT.sh > /dev/null 2>&1
+rm /usr/camscript/${_oscambin}_bak_OMT.sh > /dev/null 2>&1
 		sleep 2
 fi
 
