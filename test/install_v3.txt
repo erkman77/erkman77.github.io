@@ -990,6 +990,7 @@ install_stable() {
   echo -e "4) openNFR/HDF    ( $_rebootmsg )"
   echo -e "5) DreamOS        ( $_rebootmsg )"
   echo -e "6) Pure2          ( $_rebootmsg )"
+  echo -e "7) Egami          ( $_rebootmsg )"
   echo -e "0) Back"
   read  -p "choose an Option: " stablemenu </dev/tty
   case $stablemenu in
@@ -1029,6 +1030,12 @@ install_stable() {
       install_opli
       install_bouquets
       ;;
+	7)
+      _flag=stable
+      _reboot=1
+      install_opli
+      install_bouquets
+      ;;  
     0)
       clear
       mainmenu
