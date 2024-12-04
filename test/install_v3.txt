@@ -226,7 +226,7 @@ get_old_oscam() {
 }
 
 kill_oscam() {
-  for pid in `ps xuww | grep oscam | grep "$_myoscambin" | grep -v grep | awk '{print $2}'`; do
+  for pid in `ps xuww | grep oscam | grep "$_oscambin" | grep -v grep | awk '{print $2}'`; do
     kill -9 $pid
   done
 }
