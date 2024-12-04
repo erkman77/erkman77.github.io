@@ -248,6 +248,7 @@ if [[ $_my_distribution == "OpenBH" ]]; then
 _stop="/usr/camscript/Ncam_${_oscambin}.sh stop"
 update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
 rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
+rm /usr/camscript/libcrypto.so.0.9.8 > /dev/null 2>&1
 wget -O /tmp/oscam_update.sh ${_url}/ot_cams/startfiles/oscam_update.sh > /dev/null 2>&1
 wget -O /etc/BhCamConf ${_url}/ot_cams/startfiles/BhCamConf > /dev/null 2>&1
 camname=$(cat <<EOF
