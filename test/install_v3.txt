@@ -491,9 +491,6 @@ fi
 }
 
 replace_oscam_bin() {
-  ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscamfile2
-  _myoscambinfile2=$(head -n 1 /tmp/oscamfile2)
-  _oscambin=$(basename "$_myoscambinfile2")
   sleep 3
   cp ${_myoscambin} ${_myoscambin}_bak_OMT > /dev/null 2>&1
   if [ -n "$(uname -m | grep armv7l)" ]; then
