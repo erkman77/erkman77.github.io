@@ -348,6 +348,7 @@ if [[ $_my_distribution == "VTi" ]]; then
 update-rc.d -f softcam.${_oscambin} remove > /dev/null 2>&1
 rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
 _stop="/usr/script/${_oscambin}_cam.sh stop"
+eval $_stop #> /dev/null 2>&1
 wget -O /tmp/oscam_update.sh ${_url}/ot_cams/startfiles/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer v${_oscam_version}${_neon}${_emu}\"/' /tmp/oscam_update.sh
