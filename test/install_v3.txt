@@ -986,7 +986,7 @@ install_stable() {
   echo -e "\e[33m ######*** Stable  Menu ***######\e[0m"
   echo -e "1) openATV        ( $_rebootmsg )"
   echo -e "2) Openpli        ( $_rebootmsg )"
-  echo -e "3) VTI/Blackhole  ( $_rebootmsg )"
+  echo -e "3) VTI/OpenBh     ( $_rebootmsg )"
   echo -e "4) openNFR/HDF    ( $_rebootmsg )"
   echo -e "5) DreamOS        ( $_rebootmsg )"
   echo -e "6) Pure2          ( $_rebootmsg )"
