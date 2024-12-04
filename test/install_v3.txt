@@ -344,7 +344,10 @@ fi
 fi
 
 #vti
-if [ -f /usr/script/${_oscambin}_cam.sh ]; then
+if [[ $_my_distribution == "VTi" ]]; then
+update-rc.d -f softcam.${_oscambin} remove > /dev/null 2>&1
+rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
+_stop="/usr/script/${_oscambin}_cam.sh stop"
 wget -O /tmp/oscam_update.sh ${_url}/ot_cams/startfiles/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
 sed -i '3s/.*/CAMNAME=\"OSCam-Installer v${_oscam_version}${_neon}${_emu}\"/' /tmp/oscam_update.sh
@@ -356,9 +359,16 @@ sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
+_currentcam_file="/usr/share/enigma2/startwizard.xml"
+_oscam_bin_cam="/usr/script/oscam_bin_cam.sh"
+current_old=$(grep -oP 'cam_script="\K[^"]*' "$_currentcam_file")
+sed -i "s/cam_script=\"$current_old\"/cam_script=\"$_oscam_bin_cam\"/" "$_currentcam_file"
 mv /tmp/oscam_update.sh /usr/script/${_oscambin}_cam.sh
 chmod +x /usr/script/${_oscambin}_cam.sh
-_start="/usr/script/oscam_bin_cam.sh restart"
+rm /etc/init.d/current_cam.sh  > /dev/null 2>&1
+ln -s /usr/script/${_oscambin}_cam.sh /etc/init.d/current_cam.sh  > /dev/null 2>&1
+chmod +x /etc/init.d/current_cam.sh  > /dev/null 2>&1
+_start="/etc/init.d/current_cam.sh restart"
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
@@ -366,6 +376,7 @@ fi
 		sleep 2
 fi
 
+# ???
 if [ -f /usr/script/${_oscambin}.sh ]; then
 wget -O /tmp/oscam_update.sh ${_url}/ot_cams/startfiles/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
