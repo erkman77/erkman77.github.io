@@ -268,14 +268,14 @@ EOF
 )
 eval $binstart > /dev/null 2>&1
 _start="/usr/camscript/Ncam_${_oscambin}.sh restart"
-mv /tmp/oscam_update.sh /usr/camscript/Ncam_oscam_bin.sh
+mv -f /tmp/oscam_update.sh /usr/camscript/Ncam_oscam_bin.sh
 chmod +x /usr/camscript/Ncam_oscam_bin.sh
 if [[ $_oscambin != "oscam_bin" ]]; then
 rm /usr/camscript/Ncam_${_oscambin}.sh  > /dev/null 2>&1
 rm /usr/softcams/${_oscambin} > /dev/null 2>&1
 fi
 mkdir /usr/softcams/softcams_old > /dev/null 2>&1
-mv /usr/softcams/${_oscambin}_bak_OMT /usr/softcams/softcams_old/ > /dev/null 2>&1
+mv -f /usr/softcams/${_oscambin}_bak_OMT /usr/softcams/softcams_old/ > /dev/null 2>&1
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
@@ -308,7 +308,7 @@ EOF
 )
 eval $binstart > /dev/null 2>&1 
 _start="/usr/emu_scripts/EGcam_oscam_bin.sh restart"
-mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_oscam_bin.sh  > /dev/null 2>&1
+mv -f /tmp/oscam_update.sh /usr/emu_scripts/EGcam_oscam_bin.sh  > /dev/null 2>&1
 cp /usr/emu_scripts/EGcam_oscam_bin.sh /usr/bin/StartEGCam  > /dev/null 2>&1
 chmod +x /usr/emu_scripts/EGcam_oscam_bin.sh  > /dev/null 2>&1
 chmod +x /usr/bin/StartEGCam  > /dev/null 2>&1
@@ -337,7 +337,7 @@ sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin
-mv /tmp/oscam_update.sh /usr/script/${_oscambin}.emu
+mv -f /tmp/oscam_update.sh /usr/script/${_oscambin}.emu
 _start="/usr/script/oscam_bin.emu restart"
 chmod +x /usr/script/${_oscambin}.emu
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
@@ -372,7 +372,7 @@ sed -i "s/cam_script=\"$current_old\"/cam_script=\"$_oscam_bin_cam\"/" "$_curren
 EOF
 )
 eval $_wizard > /dev/null 2>&1
-mv /tmp/oscam_update.sh /usr/script/oscam_bin_cam.sh
+mv -f /tmp/oscam_update.sh /usr/script/oscam_bin_cam.sh
 chmod +x /usr/script/oscam_bin_cam.sh
 rm /etc/init.d/current_cam.sh  > /dev/null 2>&1
 ln -s /usr/script/oscam_bin_cam.sh /etc/init.d/current_cam.sh  > /dev/null 2>&1
@@ -398,7 +398,7 @@ sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
-mv /tmp/oscam_update.sh /usr/script/${_oscambin}.sh
+mv -f /tmp/oscam_update.sh /usr/script/${_oscambin}.sh
 _start="/usr/script/${_oscambin}.sh restart"
 chmod +x /usr/script/${_oscambin}.sh
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
@@ -421,7 +421,7 @@ sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
-mv /tmp/oscam_update.sh /usr/script/${_oscambin}.emu
+mv -f /tmp/oscam_update.sh /usr/script/${_oscambin}.emu
 chmod +x /usr/script/${_oscambin}.emu
 _start="/usr/script/${_oscambin}.emu restart"
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
@@ -444,7 +444,7 @@ sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
-mv /tmp/oscam_update.sh /usr/emu/start/${_oscambin}.emu
+mv -f /tmp/oscam_update.sh /usr/emu/start/${_oscambin}.emu
 chmod +x /usr/emu/start/${_oscambin}.emu
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
@@ -467,7 +467,7 @@ sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
-mv /tmp/oscam_update.sh /etc/cam.d/${_oscambin}.sh
+mv -f /tmp/oscam_update.sh /etc/cam.d/${_oscambin}.sh
 chmod +x /etc/cam.d/${_oscambin}.sh
 _start="/etc/cam.d/${${_oscambin}.sh} restart"
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
