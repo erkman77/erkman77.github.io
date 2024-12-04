@@ -266,8 +266,8 @@ EOF
 )
 eval $binstart > /dev/null 2>&1
 _start="/usr/camscript/Ncam_${_oscambin}.sh restart"
-mv /tmp/oscam_update.sh /usr/camscript/Ncam_${_oscambin}.sh
-chmod +x /usr/camscript/Ncam_${_oscambin}.sh
+mv /tmp/oscam_update.sh /usr/camscript/Ncam_oscam_bin.sh
+chmod +x /usr/camscript/Ncam_oscam_bin.sh
 if [[ $_oscambin != "oscam_bin" ]]; then
 rm /usr/camscript/Ncam_${_oscambin}.sh  > /dev/null 2>&1
 rm /usr/softcams/${_oscambin} > /dev/null 2>&1
@@ -282,7 +282,7 @@ rm /usr/camscript/*_bak_OMT.sh > /dev/null 2>&1
 fi
 
 #egami
-if [[ $_my_distribution == "OpenBH" ]]; then
+if [[ $_my_distribution == "Egami" ]]; then
 update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
 rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
 _stop="/usr/emu_scripts/EGcam_${_oscambin}.sh stop"
@@ -368,10 +368,10 @@ sed -i "s/cam_script=\"$current_old\"/cam_script=\"$_oscam_bin_cam\"/" "$_curren
 EOF
 )
 eval $_wizard > /dev/null 2>&1
-mv /tmp/oscam_update.sh /usr/script/${_oscambin}_cam.sh
-chmod +x /usr/script/${_oscambin}_cam.sh
+mv /tmp/oscam_update.sh /usr/script/oscam_bin_cam.sh
+chmod +x /usr/script/oscam_bin_cam.sh
 rm /etc/init.d/current_cam.sh  > /dev/null 2>&1
-ln -s /usr/script/${_oscambin}_cam.sh /etc/init.d/current_cam.sh  > /dev/null 2>&1
+ln -s /usr/script/oscam_bin_cam.sh /etc/init.d/current_cam.sh  > /dev/null 2>&1
 chmod +x /etc/init.d/current_cam.sh  > /dev/null 2>&1
 _start="/etc/init.d/current_cam.sh restart"
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
