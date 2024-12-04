@@ -274,6 +274,8 @@ if [[ $_oscambin != "oscam_bin" ]]; then
 rm /usr/camscript/Ncam_${_oscambin}.sh  > /dev/null 2>&1
 rm /usr/softcams/${_oscambin} > /dev/null 2>&1
 fi
+mkdir /usr/softcams/softcams_old > /dev/null 2>&1
+mv /usr/softcams/${_oscambin}_bak_OMT /usr/softcams/softcams_old/ > /dev/null 2>&1
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
