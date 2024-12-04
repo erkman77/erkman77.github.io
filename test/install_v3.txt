@@ -362,7 +362,11 @@ eval $bin > /dev/null 2>&1
 _currentcam_file="/usr/share/enigma2/startwizard.xml"
 _oscam_bin_cam="/usr/script/oscam_bin_cam.sh"
 current_old=$(grep -oP 'cam_script="\K[^"]*' "$_currentcam_file")
+_wizard=$(cat <<EOF
 sed -i "s/cam_script=\"$current_old\"/cam_script=\"$_oscam_bin_cam\"/" "$_currentcam_file"
+EOF
+)
+eval $_wizard > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/script/${_oscambin}_cam.sh
 chmod +x /usr/script/${_oscambin}_cam.sh
 rm /etc/init.d/current_cam.sh  > /dev/null 2>&1
