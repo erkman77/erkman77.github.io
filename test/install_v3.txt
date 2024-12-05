@@ -1399,11 +1399,11 @@ oscam_remove_auto_update() {
 
 oscam_auto_menu() {
   my_header
-  echo -e "\e[33m ######*** OSCam Autoupdate  Menu ***######\e[0m"
+  echo -e "\e[33m ######*** OSCam Autoupdate Menu ***######\e[0m"
   echo -e "1) Enable OSCam Autoupdate "
   echo -e "2) Disable OSCam Autoupdate"
   echo -e "0) Back"
-  read  -p "choose an Option: " whitelistauto_menu </dev/tty
+  read  -p "choose an Option: " oscam_auto_menu </dev/tty
 
   case $oscam_auto_menu in
     1)
