@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _url=i.tv-lounge.eu
-_scriptversion=13
+_scriptversion=14
 
 if [ -e /etc/opkg ]; then
   _exec_cmd="opkg"
@@ -232,7 +232,7 @@ EOF
 eval $bin > /dev/null 2>&1
 mv /tmp/oscam_update.sh /usr/script/${_oscambin}_cam.sh
 chmod +x /usr/script/${_oscambin}_cam.sh
-#ln -sf /usr/script/${_oscambin}_cam.sh /etc/init.d/current_cam.sh  > /dev/null 2>&1
+ln -sf /etc/init.d/current_cam.sh /usr/script/${_oscambin}_cam.sh > /dev/null 2>&1
 #chmod +x /usr/script/${_oscambin}_cam.sh
 _start="/usr/script/${_oscambin}_cam.sh restart"
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
@@ -262,6 +262,7 @@ fi
 		sleep 2
 fi
 
+#
 if [ -f /usr/script/${_oscambin}.emu ]; then
 wget -O /tmp/oscam_update.sh ${_url}/test/oscam_update.sh > /dev/null 2>&1
 camname=$(cat <<EOF
