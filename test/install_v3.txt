@@ -379,15 +379,14 @@ mv -f /tmp/oscam_update.sh /usr/script/oscam_bin_cam.sh
 chmod +x /usr/script/oscam_bin_cam.sh
 rm /etc/init.d/current_cam.sh  > /dev/null 2>&1
 ln -sf /usr/script/oscam_bin_cam.sh /etc/init.d/current_cam.sh > /dev/null 2>&1
-#ln -sf /etc/init.d/S98CamManager /etc/rcS.d/S98CamManager > /dev/null 2>&1
-_cammanger=$(cat > /etc/init.d/S98CamManager <<EOF
+_cammanger=$(cat > /etc/init.d/CamManager <<EOF
 #!/bin/sh
 /etc/init.d/current_cam.sh start
 EOF
 )
 eval $_cammanger > /dev/null 2>&1
-chmod +x /etc/init.d/S98CamManager > /dev/null 2>&1
-update-rc.d S98CamManager defaults > /dev/null 2>&1
+chmod +x /etc/init.d/CamManager > /dev/null 2>&1
+update-rc.d CamManager defaults > /dev/null 2>&1
 chmod +x /etc/init.d/current_cam.sh  > /dev/null 2>&1
 _start="/etc/init.d/current_cam.sh restart"
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
