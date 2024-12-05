@@ -958,11 +958,7 @@ mainmenu() {
       mainmenu
       ;;
 	a)
-      oscam_auto_update
-      mainmenu
-      ;;
-	ua)
-      oscam_remove_auto_update
+      oscam_auto_menu
       mainmenu
       ;;
 	t)
@@ -1400,4 +1396,34 @@ oscam_remove_auto_update() {
  echo -e "\e[32m all done ...\e[0m"
  sleep 3
 }
+
+oscam_auto_menu() {
+  my_header
+  echo -e "\e[33m ######*** OSCam Autoupdate Menu ***######\e[0m"
+  echo -e "1) Enable OSCam Autoupdate "
+  echo -e "2) Disable OSCam Autoupdate"
+  echo -e "0) Back"
+  read  -p "choose an Option: " oscam_auto_menu </dev/tty
+
+  case $oscam_auto_menu in
+    1)
+      oscam_auto_update
+      sleep 2
+      mainmenu
+      ;;
+    2)
+      oscam_remove_auto_update
+      sleep 2
+      mainmenu
+      ;;
+    0)
+      clear
+      mainmenu
+    ;;
+    *)
+      wrong_opt
+      oscam_auto_menu
+    ;;
+    esac
+	}
 mainmenu
