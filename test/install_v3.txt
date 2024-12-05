@@ -366,14 +366,6 @@ sed -i '4s/.*/binary=\"oscam_bin\"/' /tmp/oscam_update.sh
 EOF
 )
 eval $bin > /dev/null 2>&1
-_currentcam_file="/usr/share/enigma2/startwizard.xml"
-_oscam_bin_cam="/usr/script/oscam_bin_cam.sh"
-current_old=$(sed -n '/^cam_script =/s/.*"\(.*\)".*/\1/p' "$_currentcam_file")  > /dev/null 2>&1
-#current_old="/usr/script/${_oscambin}_cam.sh"
-#_wizard=$(cat <<EOF
-#sed -i "s/cam_script = \"$current_old\"/cam_script = \"$_oscam_bin_cam\"/" "$_currentcam_file"
-#EOF
-#)
 sed -i "s|\(cam_script = \"\)\(.*\)/\(.*\)\"|\1\2/oscam_bin_cam.sh\"|g" /usr/share/enigma2/startwizard.xml > /dev/null 2>&1
 mv -f /tmp/oscam_update.sh /usr/script/oscam_bin_cam.sh
 chmod +x /usr/script/oscam_bin_cam.sh
@@ -386,7 +378,7 @@ EOF
 )
 eval $_cammanger > /dev/null 2>&1
 chmod +x /etc/init.d/CamManager > /dev/null 2>&1
-update-rc.d CamManager defaults > /dev/null 2>&1
+ln -sf /etc/init.d/CamManager /etc/rcS.d/S98CamManager > /dev/null 2>&1
 chmod +x /etc/init.d/current_cam.sh  > /dev/null 2>&1
 _start="/etc/init.d/current_cam.sh restart"
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
