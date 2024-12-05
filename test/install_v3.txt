@@ -535,6 +535,9 @@ replace_oscam_bin() {
   _oscam_version=v24
   unset _neon
   unset _emu
+  if [ -f /usr/bin/*_bak_lou ]; then
+  rm -f /usr/bin/*_bak_lou  > /dev/null 2>&1
+  fi
   #/etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
 }
 
