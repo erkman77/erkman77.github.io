@@ -371,7 +371,7 @@ _oscam_bin_cam="/usr/script/oscam_bin_cam.sh"
 #current_old=$(grep -o 'cam_script="\K[^"]*' "$_currentcam_file")  > /dev/null 2>&1
 current_old="/usr/script/${_oscambin}_cam.sh"
 _wizard=$(cat <<EOF
-sed -i "s/cam_script=\"$current_old\"/cam_script=\"$_oscam_bin_cam\"/" "$_currentcam_file"
+sed -i "s/cam_script = \"$current_old\"/cam_script = \"$_oscam_bin_cam\"/" "$_currentcam_file"
 EOF
 )
 eval $_wizard > /dev/null 2>&1
