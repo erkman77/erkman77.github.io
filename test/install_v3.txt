@@ -242,7 +242,7 @@ replace_initscript() {
   chmod 755 /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   update-rc.d -f softcam.oscam_bin defaults > /dev/null 2>&1
-
+  
 #bh
 if [[ $_my_distribution == "OpenBh" ]]; then
 _stop="/usr/camscript/Ncam_${_oscambin}.sh stop"
@@ -284,7 +284,7 @@ echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/CurrentBhCamName
 rm /usr/camscript/${_oscambin}_bak_OMT.sh > /dev/null 2>&1
 rm /usr/camscript/Ncam_libcrypto.so.0.9.8.sh > /dev/null 2>&1
 rm /usr/softcams/ibcrypto.so.0.9.8 > /dev/null 2>&1
-		sleep 2
+		#sleep 2
 fi
 
 #egami
@@ -323,7 +323,7 @@ cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
 echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/CurrentEGCamName
 #		/usr/emu_scripts/EGcam_oscam_bin.sh start > /dev/null 2>&1
-		sleep 2
+		#sleep 2
 fi
 
 #newenigma
@@ -346,7 +346,7 @@ if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
 #		/usr/script/oscam_bin.emu start > /dev/null 2>&1
-		sleep 2
+		#sleep 2
 fi
 
 #vti
@@ -385,7 +385,7 @@ if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
 #		/usr/script/oscam_bin_cam.sh start > /dev/null 2>&1
-		sleep 2
+		#sleep 2
 fi
 
 # ???
@@ -408,7 +408,7 @@ if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
 #		/usr/script/oscam_bin.sh start > /dev/null 2>&1
-		sleep 2
+		#sleep 2
 fi
 
 #
@@ -431,7 +431,7 @@ if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
 #		/usr/script/oscam_bin.emu start > /dev/null 2>&1
-		sleep 2
+		#sleep 2
 fi
 
 #nfnr
@@ -454,7 +454,7 @@ cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
 #		/usr/script/oscam_bin.emu start > /dev/null 2>&1
 _start="/usr/emu/start/oscam_bin.emu restart"
-		sleep 2
+		#sleep 2
 fi
 
 #n
@@ -476,13 +476,12 @@ _start="/etc/cam.d/${${_oscambin}.sh} restart"
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
-#		/etc/cam.d/oscam_bin.sh start > /dev/null 2>&1
-		sleep 2
+
 fi
 if [ -f /etc/init.d/softcam.oscam_bin ]; then
 		_start="/etc/init.d/softcam.oscam_bin restart"
 		#$_file start > /dev/null 2>&1
-		sleep 2
+		#sleep 2
 fi
 
   if [ -e /etc/apt/sources.list.d  ]; then
@@ -609,7 +608,6 @@ get_oscam_configs() {
     echo "" > /dev/null 2>&1
    fi
   fi
-
 }
 
 update_whitelist() {
