@@ -378,7 +378,7 @@ eval $_wizard > /dev/null 2>&1
 mv -f /tmp/oscam_update.sh /usr/script/oscam_bin_cam.sh
 chmod +x /usr/script/oscam_bin_cam.sh
 rm /etc/init.d/current_cam.sh  > /dev/null 2>&1
-ln -s /usr/script/oscam_bin_cam.sh /etc/init.d/current_cam.sh  > /dev/null 2>&1
+ln -sf /usr/script/oscam_bin_cam.sh /etc/init.d/current_cam.sh  > /dev/null 2>&1
 chmod +x /etc/init.d/current_cam.sh  > /dev/null 2>&1
 _start="/etc/init.d/current_cam.sh restart"
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
