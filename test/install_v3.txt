@@ -163,13 +163,20 @@ pid=$!
 
 total_duration=18
 interval=0.1
-total_steps=$(echo "$total_duration / $interval" | bc)
+while kill -0 $pid >/dev/null 2>&1; do
+    for ((i=0; i<=total_steps; i++)); do
+        sleep $interval
 
-for ((i=0; i<=total_steps; i++)); do
-    sleep $interval
-    percent=$(( (i * 100) / total_steps ))
-    printf "\rpreparing %d%%" "$percent"
+        percent=$(( (i * 100) / total_steps ))
+
+        printf "\rpreparing %d%%" "$percent"
+
+        if [ $i -eq $total_steps ]; then
+            break
+        fi
+    done
 done
+
 
 wait $pid
 echo ""
