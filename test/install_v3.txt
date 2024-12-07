@@ -163,7 +163,7 @@ pid=$!
 if [ -n "$(uname -m | grep mips)" ]; then
 total_steps=200
 else
-total_steps=130
+total_steps=150
 fi
 interval=0.1
 while kill -0 $pid >/dev/null 2>&1; do
