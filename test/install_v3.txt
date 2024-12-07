@@ -165,6 +165,7 @@ total_steps=210
 else
 total_steps=160
 fi
+
 interval=0.1
 while kill -0 $pid >/dev/null 2>&1; do
     for ((i=0; i<=total_steps; i++)); do
