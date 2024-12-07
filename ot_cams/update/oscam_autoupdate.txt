@@ -21,7 +21,7 @@ X=15
 _script_new=$(echo "$_script_new" | cut -c $((X + 1))-)
 if [[ "${_script_new}" != "${_scriptversion}" ]]; then
 cp /tmp/oscam_autoupdate /usr/bin/oscam_autoupdate
-echo "Update oscam autoupdate"
+echo "Update OSCam autoupdate"
 chmod +x /usr/bin/oscam_autoupdate
 exec "$0" "$@"
 fi
