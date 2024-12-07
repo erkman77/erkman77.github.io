@@ -84,7 +84,7 @@ wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20p
 long_running_task() {
 if [ -e /etc/opkg ]; then
   _exec_cmd="opkg"
-  $_exec_cmd update
+  $_exec_cmd update > /dev/null 2>&1
   _listinstalled="$_exec_cmd list-installed"
   _libusbvers=`opkg list |grep libusb-1. | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
   _libatomicvers=`opkg list |grep libatomic | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
@@ -92,7 +92,7 @@ if [ -e /etc/opkg ]; then
   _libcurlvers4=`opkg list |grep libcurl4 |grep -vE 'PycU'|awk '{print $1}'`
 elif [ -e /etc/apt/sources.list.d ]; then
   _exec_cmd="apt -y"
-  $_exec_cmd update
+  $_exec_cmd update > /dev/null 2>&1
   _listinstalled="dpkg-query -l"
   _libusbvers=`apt-cache search libusb-1. | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
   _libatomicvers=`apt-cache search libatomic | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
