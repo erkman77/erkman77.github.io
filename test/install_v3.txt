@@ -81,6 +81,7 @@ _rebootmsg="reboot by exiting installer"
 echo ... "running preconfigure for optimal autoinstaller settings"
 wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=15" > /dev/null
 
+long_running_task() {
 if [ -e /etc/opkg ]; then
   _exec_cmd="opkg"
   $_exec_cmd update
@@ -116,7 +117,6 @@ if grep -qs -i $old /usr/bin/icam_autoupdate ;
 	 echo "Please wait..."
 fi
 
-
 if grep -qs -i $tere /usr/bin/icam_autoupdate ;
  #if cat /usr/bin/icam_autoupdate | grep $tere >/dev/null 2>&1
 	then
@@ -143,7 +143,7 @@ fi
 	 echo "No autoupdate installed..."
 	 echo "Please wait..."
 fi
-long_running_task() {
+
 $_exec_cmd install procps >/dev/null 2>&1
 $_exec_cmd install procps-ps >/dev/null 2>&1
 $_exec_cmd install curl >/dev/null 2>&1
