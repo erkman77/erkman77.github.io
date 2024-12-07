@@ -172,7 +172,7 @@ for ((i=0; i<=total_steps; i++)); do
 done
 
 wait $pid
-
+echo ""
 if [[ $set_autoupdate == "1" ]]; then
 echo -e "\e[33m ... autoupdate fixed...\e[0m"
 echo ""
