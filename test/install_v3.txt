@@ -169,7 +169,7 @@ pid=$!
 sleep 0.5
 total_duration=10
 interval=0.1
-total_steps=$(echo "$total_duration / $interval" | bc)
+total_steps=11
 
 for ((i=0; i<=total_steps; i++)); do
     sleep $interval
