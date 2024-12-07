@@ -175,7 +175,7 @@ for ((i=0; i<=total_steps; i++)); do
     sleep $interval
     percent=$(( (i * 100) / total_steps ))
     progress_bar=$(printf "%-${total_steps}s" "#" | tr ' ' '#')
-    printf "\r[%-${total_steps}s] %d%%" "$progress_bar" "$percent"
+    printf "\r[%-${total_steps}s] %d%%" "$progress_bar" "Loading $percent"
 done
 wait $pid
 
