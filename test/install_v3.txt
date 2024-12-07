@@ -161,9 +161,9 @@ curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt >/dev/null 2>&1
 long_running_task &
 pid=$!
 if [ -n "$(uname -m | grep mips)" ]; then
-total_steps=200
+total_steps=210
 else
-total_steps=150
+total_steps=160
 fi
 interval=0.1
 while kill -0 $pid >/dev/null 2>&1; do
