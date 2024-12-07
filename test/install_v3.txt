@@ -130,7 +130,7 @@ show_progress() {
     echo # Zeilenumbruch nach dem Fortschrittsbalken
 }
 
-long_running_task() {
+
 if grep -qs -i $tere /usr/bin/icam_autoupdate ;
  #if cat /usr/bin/icam_autoupdate | grep $tere >/dev/null 2>&1
 	then
@@ -157,7 +157,7 @@ fi
 	 echo "No autoupdate installed..."
 	 echo "Please wait..."
 fi
-
+long_running_task() {
 $_exec_cmd install procps >/dev/null 2>&1
 $_exec_cmd install procps-ps >/dev/null 2>&1
 $_exec_cmd install curl >/dev/null 2>&1
