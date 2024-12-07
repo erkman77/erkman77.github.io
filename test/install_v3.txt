@@ -116,9 +116,6 @@ if grep -qs -i $old /usr/bin/icam_autoupdate ;
 	 echo "Please wait..."
 fi
 
-
-
-
 if grep -qs -i $tere /usr/bin/icam_autoupdate ;
  #if cat /usr/bin/icam_autoupdate | grep $tere >/dev/null 2>&1
 	then
@@ -164,6 +161,11 @@ chmod +x /usr/bin/icam_multitool
 curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt >/dev/null 2>&1
 }
 
+long_running_task &
+pid=$!
+show_progress 10
+wait $pid
+
 check_backupdir() {
   [ -d /backup ] || mkdir /backup
 }
@@ -173,11 +175,6 @@ wrong_opt() {
   sleep 2
   clear
 }
-
-long_running_task &
-pid=$!
-show_progress 10
-wait $pid
 
 install_OMT_ipk() {
   _current_installs=$( $_listinstalled | grep -E 'softcam|camd'| grep -vE 'camdctrl|crypto|ii' |awk '{print $1}')
@@ -1436,7 +1433,7 @@ oscam_auto_menu() {
     esac
 	}
 	
-	show_progress() {
+show_progress() {
     local duration=$1
     local interval=0.1
     local total_steps=$(echo "$duration / $interval" | bc)
@@ -1447,6 +1444,6 @@ oscam_auto_menu() {
         progress_bar=$(printf "%-${total_steps}s" "#" | tr ' ' '#')
         printf "\r[%-${total_steps}s] %d%%" "$progress_bar" "$percent"
     done
-    echo # Zeilenumbruch nach dem Fortschrittsbalken
+    echo 
 }
 mainmenu
