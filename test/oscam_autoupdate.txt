@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _url=i.tv-lounge.eu
-_scriptversion=14
+_scriptversion=15
 
 if [ -e /etc/opkg ]; then
   _exec_cmd="opkg"
@@ -72,14 +72,14 @@ _neon_is_set="ARM NEON (SIMD/MPE) support:             yes"
 if grep -q "$_neon_is_set" "$_find_neon" 2>/dev/null; then
 _neon="-neon"
 else
-echo ""
+echo ""  > /dev/null 2>&1
 fi
 _find_emu="/tmp/version2.txt"
 _emu_is_set="Emulator support:                        yes"
 if grep -q "$_emu_is_set" "$_find_emu" 2>/dev/null; then
 _emu="-emu"
 else
-echo ""
+echo ""  > /dev/null 2>&1
 fi
 #kill_oscam
   #for pid in `ps xuww | grep oscam | grep "$_myoscambin" | grep -v grep | awk '{print $2}'`; do
