@@ -166,16 +166,22 @@ curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt >/dev/null 2>&1
 
 long_running_task &
 pid=$!
-sleep 0.5
-total_duration=10
-interval=0.1
-total_steps=$(echo "$total_duration / $interval" | bc)
+total_steps=10
+interval=0.5 
 
-for ((i=0; i<=total_steps; i++)); do
-    sleep $interval
-    percent=$(( (i * 100) / total_steps ))
-    progress_bar=$(printf "%-${total_steps}s" "#" | tr ' ' '#')
-    printf "\r[%-${total_steps}s] %d%%" "$progress_bar" "Loading $percent"
+
+while kill -0 $pid >/dev/null 2>&1; do
+    for ((i=0; i<=total_steps; i++)); do
+        sleep $interval
+
+        percent=$(( (i * 100) / total_steps ))
+
+        printf "\rLoading %d%%" "$percent"
+
+        if [ $i -eq $total_steps ]; then
+            break
+        fi
+    done
 done
 wait $pid
 
