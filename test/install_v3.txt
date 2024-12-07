@@ -162,6 +162,7 @@ long_running_task &
 pid=$!
 
 total_duration=18
+total_steps=18
 interval=0.1
 while kill -0 $pid >/dev/null 2>&1; do
     for ((i=0; i<=total_steps; i++)); do
