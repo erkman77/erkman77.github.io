@@ -174,7 +174,7 @@ total_steps=$(echo "$total_duration / $interval" | bc)
 for ((i=0; i<=total_steps; i++)); do
     sleep $interval
     percent=$(( (i * 100) / total_steps ))
-    printf "\rLoading %d%%" "$percent"
+    printf "\rpreparing %d%%" "$percent"
 done
 
 wait $pid
