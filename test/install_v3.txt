@@ -110,14 +110,11 @@ if [ -e /usr/bin/icam_autoupdate  ]; then
 if grep -qs -i $old /usr/bin/icam_autoupdate ; 
  #if cat /usr/bin/icam_autoupdate | grep $old > /dev/null 2>&1
 	then
-	 echo -e "\e[33m ... Fixing autoupdate...\e[0m"
+	 echo -e "\e[33m ... Fixing autoupdate...\e[0m" > /dev/null 2>&1
 	 sed -i "s#$old#$new#g" /usr/bin/icam_autoupdate 
 	 sed -i "1i$ins" /usr/bin/icam_autoupdate
-	 echo -e "\e[32m all done ...\e[0m"
+	 echo -e "\e[32m all done ...\e[0m" > /dev/null 2>&1
 	 _reboot=1
-	else
-	 echo "Nothing to do, autoupdate seems to be ok"  >/dev/null 2>&1
-	 echo "Please wait..."  >/dev/null 2>&1
 fi
 
 if grep -qs -i $tere /usr/bin/icam_autoupdate ;
@@ -142,9 +139,6 @@ if grep -qs -i $update /usr/bin/icam_autoupdate ;
 		echo 'echo "Aborting, file not found"' >> /usr/bin/icam_autoupdate
 		echo 'fi' >> /usr/bin/icam_autoupdate
 fi
-	else
-	 echo "No autoupdate installed..."  >/dev/null 2>&1
-	 echo "Please wait..."  >/dev/null 2>&1
 fi
 
 $_exec_cmd install procps >/dev/null 2>&1
