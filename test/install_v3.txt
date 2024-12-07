@@ -164,6 +164,7 @@ curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt >/dev/null 2>&1
 
 long_running_task &
 pid=$!
+sleep 0.5
 total_duration=9
 interval=0.1
 total_steps=$(echo "$total_duration / $interval" | bc)
