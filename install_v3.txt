@@ -81,9 +81,13 @@ _rebootmsg="reboot by exiting installer"
 echo ... "running preconfigure for optimal autoinstaller settings"
 wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=15" > /dev/null
 
+long_running_task() {
+echo ""
+echo "Please wait..." 
+echo ""
 if [ -e /etc/opkg ]; then
   _exec_cmd="opkg"
-  $_exec_cmd update
+  $_exec_cmd update > /dev/null 2>&1
   _listinstalled="$_exec_cmd list-installed"
   _libusbvers=`opkg list |grep libusb-1. | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
   _libatomicvers=`opkg list |grep libatomic | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
@@ -91,7 +95,7 @@ if [ -e /etc/opkg ]; then
   _libcurlvers4=`opkg list |grep libcurl4 |grep -vE 'PycU'|awk '{print $1}'`
 elif [ -e /etc/apt/sources.list.d ]; then
   _exec_cmd="apt -y"
-  $_exec_cmd update
+  $_exec_cmd update > /dev/null 2>&1
   _listinstalled="dpkg-query -l"
   _libusbvers=`apt-cache search libusb-1. | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
   _libatomicvers=`apt-cache search libatomic | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
@@ -104,7 +108,7 @@ fi
 
 if [ -e /usr/bin/icam_autoupdate  ]; then
 if grep -qs -i $old /usr/bin/icam_autoupdate ; 
- #if cat /usr/bin/icam_autoupdate | grep $old >/dev/null 2>&1
+ #if cat /usr/bin/icam_autoupdate | grep $old > /dev/null 2>&1
 	then
 	 echo -e "\e[33m ... Fixing autoupdate...\e[0m"
 	 sed -i "s#$old#$new#g" /usr/bin/icam_autoupdate 
@@ -112,8 +116,8 @@ if grep -qs -i $old /usr/bin/icam_autoupdate ;
 	 echo -e "\e[32m all done ...\e[0m"
 	 _reboot=1
 	else
-	 echo "Nothing to do, autoupdate seems to be ok"
-	 echo "Please wait..."
+	 echo "Nothing to do, autoupdate seems to be ok"  >/dev/null 2>&1
+	 echo "Please wait..."  >/dev/null 2>&1
 fi
 
 if grep -qs -i $tere /usr/bin/icam_autoupdate ;
@@ -139,8 +143,8 @@ if grep -qs -i $update /usr/bin/icam_autoupdate ;
 		echo 'fi' >> /usr/bin/icam_autoupdate
 fi
 	else
-	 echo "No autoupdate installed..."
-	 echo "Please wait..."
+	 echo "No autoupdate installed..."  >/dev/null 2>&1
+	 echo "Please wait..."  >/dev/null 2>&1
 fi
 
 $_exec_cmd install procps >/dev/null 2>&1
@@ -159,6 +163,22 @@ echo "" >> /usr/bin/icam_multitool
 chmod +x /usr/bin/icam_multitool
 
 curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt >/dev/null 2>&1
+}
+
+long_running_task &
+pid=$!
+
+total_duration=15
+interval=0.1
+total_steps=$(echo "$total_duration / $interval" | bc)
+
+for ((i=0; i<=total_steps; i++)); do
+    sleep $interval
+    percent=$(( (i * 100) / total_steps ))
+    printf "\rpreparing %d%%" "$percent"
+done
+
+wait $pid
 
 check_backupdir() {
   [ -d /backup ] || mkdir /backup
