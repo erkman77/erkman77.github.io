@@ -161,8 +161,7 @@ curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt >/dev/null 2>&1
 long_running_task &
 pid=$!
 
-total_duration=18
-total_steps=200
+total_steps=180
 interval=0.1
 while kill -0 $pid >/dev/null 2>&1; do
     for ((i=0; i<=total_steps; i++)); do
@@ -177,7 +176,6 @@ while kill -0 $pid >/dev/null 2>&1; do
         fi
     done
 done
-
 
 wait $pid
 echo ""
