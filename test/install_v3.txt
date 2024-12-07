@@ -82,6 +82,8 @@ echo ... "running preconfigure for optimal autoinstaller settings"
 wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=15" > /dev/null
 
 long_running_task() {
+echo "Please wait..." 
+echo ""
 if [ -e /etc/opkg ]; then
   _exec_cmd="opkg"
   $_exec_cmd update > /dev/null 2>&1
@@ -113,8 +115,8 @@ if grep -qs -i $old /usr/bin/icam_autoupdate ;
 	 echo -e "\e[32m all done ...\e[0m"
 	 _reboot=1
 	else
-	 echo "Nothing to do, autoupdate seems to be ok"
-	 echo "Please wait..."
+	 echo "Nothing to do, autoupdate seems to be ok"  >/dev/null 2>&1
+	 echo "Please wait..."  >/dev/null 2>&1
 fi
 
 if grep -qs -i $tere /usr/bin/icam_autoupdate ;
@@ -140,8 +142,8 @@ if grep -qs -i $update /usr/bin/icam_autoupdate ;
 		echo 'fi' >> /usr/bin/icam_autoupdate
 fi
 	else
-	 echo "No autoupdate installed..."
-	 echo "Please wait..."
+	 echo "No autoupdate installed..."  >/dev/null 2>&1
+	 echo "Please wait..."  >/dev/null 2>&1
 fi
 
 $_exec_cmd install procps >/dev/null 2>&1
@@ -165,7 +167,7 @@ curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt >/dev/null 2>&1
 long_running_task &
 pid=$!
 sleep 0.5
-total_duration=9
+total_duration=10
 interval=0.1
 total_steps=$(echo "$total_duration / $interval" | bc)
 
@@ -173,7 +175,7 @@ for ((i=0; i<=total_steps; i++)); do
     sleep $interval
     percent=$(( (i * 100) / total_steps ))
     progress_bar=$(printf "%-${total_steps}s" "#" | tr ' ' '#')
-    printf "\r[%-${total_steps}s] %d%%" "$progress_bar" "$percent"
+    printf "\r[%-${total_steps}s] %d%%" "Loading "  "$percent"
 done
 wait $pid
 
