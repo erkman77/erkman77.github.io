@@ -41,6 +41,12 @@ while getopts "t:S:P:u:p:" opt; do
   esac
 done
 
+if opkg list-installed | grep bash > /dev/null 2>&1; then
+     echo "" > /dev/null 2>&1
+   else
+     $_exec_cmd install bash > /dev/null 2>&1
+   fi
+   
 echo=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq >>/tmp/oscambinold)
 
 if [ -e /tmp/oscambinold  ]; then
