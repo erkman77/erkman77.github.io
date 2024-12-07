@@ -116,19 +116,7 @@ if grep -qs -i $old /usr/bin/icam_autoupdate ;
 	 echo "Please wait..."
 fi
 
-show_progress() {
-    local duration=$1
-    local interval=0.1
-    local total_steps=$(echo "$duration / $interval" | bc)
 
-    for ((i=0; i<=total_steps; i++)); do
-        sleep $interval
-        percent=$(( (i * 100) / total_steps ))
-        progress_bar=$(printf "%-${total_steps}s" "#" | tr ' ' '#')
-        printf "\r[%-${total_steps}s] %d%%" "$progress_bar" "$percent"
-    done
-    echo # Zeilenumbruch nach dem Fortschrittsbalken
-}
 
 
 if grep -qs -i $tere /usr/bin/icam_autoupdate ;
@@ -1447,4 +1435,18 @@ oscam_auto_menu() {
     ;;
     esac
 	}
+	
+	show_progress() {
+    local duration=$1
+    local interval=0.1
+    local total_steps=$(echo "$duration / $interval" | bc)
+
+    for ((i=0; i<=total_steps; i++)); do
+        sleep $interval
+        percent=$(( (i * 100) / total_steps ))
+        progress_bar=$(printf "%-${total_steps}s" "#" | tr ' ' '#')
+        printf "\r[%-${total_steps}s] %d%%" "$progress_bar" "$percent"
+    done
+    echo # Zeilenumbruch nach dem Fortschrittsbalken
+}
 mainmenu
