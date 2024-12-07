@@ -173,6 +173,7 @@ done
 
 wait $pid
 echo ""
+echo ""
 if [[ $set_autoupdate == "1" ]]; then
 echo -e "\e[33m ... autoupdate fixed...\e[0m"
 echo ""
