@@ -110,10 +110,9 @@ if [ -e /usr/bin/icam_autoupdate  ]; then
 if grep -qs -i $old /usr/bin/icam_autoupdate ; 
  #if cat /usr/bin/icam_autoupdate | grep $old > /dev/null 2>&1
 	then
-	 echo -e "\e[33m ... Fixing autoupdate...\e[0m" > /dev/null 2>&1
+	 set_autoupdate="1"
 	 sed -i "s#$old#$new#g" /usr/bin/icam_autoupdate 
 	 sed -i "1i$ins" /usr/bin/icam_autoupdate
-	 echo -e "\e[32m all done ...\e[0m" > /dev/null 2>&1
 	 _reboot=1
 fi
 
@@ -173,6 +172,14 @@ for ((i=0; i<=total_steps; i++)); do
 done
 
 wait $pid
+
+if [[ $set_autoupdate == "1" ]]; then
+echo -e "\e[33m ... autoupdate fixed...\e[0m"
+echo ""
+unset set_autoupdate
+fi
+echo "...all done..."
+sleep 2
 
 check_backupdir() {
   [ -d /backup ] || mkdir /backup
