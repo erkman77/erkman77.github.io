@@ -45,7 +45,7 @@ if opkg list-installed | grep bash > /dev/null 2>&1; then
      echo "" > /dev/null 2>&1
    else
      $_exec_cmd install bash > /dev/null 2>&1
-   fi
+fi
    
 echo=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq >>/tmp/oscambinold)
 
@@ -166,6 +166,7 @@ curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt >/dev/null 2>&1
 
 long_running_task &
 pid=$!
+
 if [ -n "$(uname -m | grep mips)" ]; then
 total_steps=210
 else
