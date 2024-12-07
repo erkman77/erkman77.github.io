@@ -82,6 +82,7 @@ echo ... "running preconfigure for optimal autoinstaller settings"
 wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=15" > /dev/null
 
 long_running_task() {
+echo ""
 echo "Please wait..." 
 echo ""
 if [ -e /etc/opkg ]; then
