@@ -169,21 +169,13 @@ pid=$!
 sleep 0.5
 total_duration=10
 interval=0.1
-total_steps=11
+total_steps=$(echo "$total_duration / $interval" | bc)
 
-while kill -0 $pid >/dev/null 2>&1; do
-    for ((i=0; i<=total_steps; i++)); do
-        sleep $interval
-
-        percent=$(( (i * 100) / total_steps ))
-        progress_bar=$(printf "%-${total_steps}s" "#" | tr ' ' '#')
-
-        printf "\r[%-${total_steps}s] %d%%" "$progress_bar" "$percent"
-
-        if [ $i -eq $total_steps ]; then
-            break
-        fi
-    done
+for ((i=0; i<=total_steps; i++)); do
+    sleep $interval
+    percent=$(( (i * 100) / total_steps ))
+    progress_bar=$(printf "%-${total_steps}s" "#" | tr ' ' '#')
+    printf "\r %d%%" "Loading "  "$percent"
 done
 wait $pid
 
