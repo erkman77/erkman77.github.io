@@ -412,6 +412,7 @@ rm /etc/init.d/current_cam.sh  > /dev/null 2>&1
 ln -sf /usr/script/oscam_bin_cam.sh /etc/init.d/current_cam.sh > /dev/null 2>&1
 _cammanger=$(cat > /etc/init.d/CamManager <<EOF
 #!/bin/sh
+sleep 15
 /etc/init.d/current_cam.sh start
 EOF
 )
