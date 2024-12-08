@@ -425,6 +425,7 @@ cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
 #		/usr/script/oscam_bin_cam.sh start > /dev/null 2>&1
 		#sleep 2
+		mv -f /tmp/oscam_update.sh /usr/script/oscam_bin_cam.sh
 fi
 
 # ???
