@@ -145,7 +145,7 @@ EOF
 eval $bin > /dev/null 2>&1
 eval $camname > /dev/null 2>&1
 binstart=$(cat <<EOF
-sed -i '19s/.*/         \/usr\/softcams\/\$binary -b -r 2 -c \/etc\/tuxbox\/config\/\$binary --daemon --pidfile \/var\/tmp\/\$binary.pid --restart 2/' /tmp/oscam_update.sh
+sed -i '19s/.*/         \/usr\/softcams\/\$binary -b -r 2 -c \/etc\/tuxbox\/config/' /tmp/oscam_update.sh
 EOF
 )
 eval $binstart > /dev/null 2>&1
