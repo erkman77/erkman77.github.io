@@ -409,7 +409,7 @@ EOF
 eval $bin > /dev/null 2>&1
 sed -i "s|\(cam_script = \"\)\(.*\)/\(.*\)\"|\1\2/oscam_bin_cam.sh\"|g" /usr/share/enigma2/startwizard.xml > /dev/null 2>&1
 cp -f /tmp/oscam_update.sh /usr/script/oscam_bin_cam.sh  > /dev/null 2>&1
-chmod +x /usr/script/oscam_bin_cam.sh
+chmod +x /usr/script/oscam_bin_cam.sh > /dev/null 2>&1
 chmod +x /usr/bin/oscam_bin > /dev/null 2>&1
 #rm /etc/init.d/current_cam.sh  > /dev/null 2>&1
 ln -sf /usr/script/oscam_bin_cam.sh /etc/init.d/current_cam.sh > /dev/null 2>&1
@@ -430,6 +430,9 @@ fi
 #		/usr/script/oscam_bin_cam.sh start > /dev/null 2>&1
 		#sleep 2
 		mv -f /tmp/oscam_update.sh /usr/script/oscam_bin_cam.sh  > /dev/null 2>&1
+chmod +x /usr/script/oscam_bin_cam.sh > /dev/null 2>&1
+ln -sf /usr/script/oscam_bin_cam.sh /etc/init.d/current_cam.sh > /dev/null 2>&1
+chmod +x /etc/init.d/current_cam.sh  > /dev/null 2>&1
 fi
 
 # ???
@@ -540,12 +543,6 @@ fi
   systemctl enable oscam_bin.service > /dev/null 2>&1
   systemctl start oscam_bin.service > /dev/null 2>&1
   fi
-  
-  chmod +x /usr/bin/oscam_bin  > /dev/null 2>&1
-  chmod +x /etc/init.d/current_cam.sh > /dev/null 2>&1
-  chmod +x /usr/script/oscam_bin_cam.sh > /dev/null 2>&1
-  chmod +x /etc/init.d/CamManager > /dev/null 2>&1
-  chmod +x /etc/rcS.d/S98CamManager > /dev/null 2>&1
 }
 
 replace_oscam_bin() {
