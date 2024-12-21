@@ -15,7 +15,7 @@ ins="echo ${_url} >> /tmp/read"
 tere="/tmp/read"
 update="200 OK"
 update_wrong="if curl -s --head //i.tv-"
-_stream"stream_relay_enabled"
+_stream="stream_relay_enabled"
 _vti="vuplus"
 NEW_LINE='if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscamfile
