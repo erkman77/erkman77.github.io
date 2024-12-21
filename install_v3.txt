@@ -15,6 +15,7 @@ ins="echo ${_url} >> /tmp/read"
 tere="/tmp/read"
 update="200 OK"
 update_wrong="if curl -s --head //i.tv-"
+_stream"stream_relay_enabled"
 _vti="vuplus"
 NEW_LINE='if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscamfile
@@ -525,9 +526,21 @@ EOF
 eval $bin > /dev/null 2>&1
 mv -f /tmp/oscam_update.sh /etc/cam.d/${_oscambin}.sh
 chmod +x /etc/cam.d/${_oscambin}.sh
-_start="/etc/cam.d/${${_oscambin}.sh} restart"
+_start="/etc/cam.d/${_oscambin}.sh restart"
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+if grep -qs -i $_stream /etc/tuxbox/config/oscam.conf ;
+ 	then
+	 echo ""  > /dev/null 2>&1
+	else  
+	 echo "" >> /etc/tuxbox/config/oscam.conf
+echo "[streamrelay]
+stream_relay_enabled          = 1
+stream_relay_buffer_time      = 500
+stream_relay_ctab             = 098C,098D,09C4" >> /etc/tuxbox/config/oscam.conf
+
+	 _reboot=1
+fi
 fi
 
 fi
@@ -582,6 +595,7 @@ replace_oscam_bin() {
   replace_initscript
   if [ -r /etc/tuxbox/config/$oscambinold ]; then
    cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
+   
   fi
   eval $_start > /dev/null 2>&1
   _oscam_version=v24
