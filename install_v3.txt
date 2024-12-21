@@ -529,18 +529,8 @@ chmod +x /etc/cam.d/${_oscambin}.sh
 _start="/etc/cam.d/${_oscambin}.sh restart"
 if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
-if grep -qs -i $_stream /etc/tuxbox/config/oscam.conf ;
- 	then
-	 echo ""  > /dev/null 2>&1
-	else  
-	 echo "" >> /etc/tuxbox/config/oscam.conf
-echo "[streamrelay]
-stream_relay_enabled          = 1
-stream_relay_buffer_time      = 500
-stream_relay_ctab             = 098C,098D,09C4" >> /etc/tuxbox/config/oscam.conf
-
-	 _reboot=1
 fi
+
 fi
 if grep -qs -i $_stream /etc/tuxbox/config/oscam.conf ;
  	then
@@ -551,9 +541,6 @@ echo "[streamrelay]
 stream_relay_enabled          = 1
 stream_relay_buffer_time      = 500
 stream_relay_ctab             = 098C,098D,09C4" >> /etc/tuxbox/config/oscam.conf
-
-	 _reboot=1
-fi
 fi
 if [ -f /etc/init.d/softcam.oscam_bin ]; then
 		_start="/etc/init.d/softcam.oscam_bin restart"
