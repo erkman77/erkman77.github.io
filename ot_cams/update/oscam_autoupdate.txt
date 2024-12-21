@@ -1,7 +1,8 @@
 #!/bin/bash
 
 _url=i.tv-lounge.eu
-_scriptversion=16
+_stream="stream_relay_enabled"
+_scriptversion=17
 
 if [ -e /etc/opkg ]; then
   _exec_cmd="opkg"
@@ -345,6 +346,17 @@ fi
  else
  echo "OSCam up2date"
  fi
+ 
+if grep -qs -i $_stream /etc/tuxbox/config/oscam.conf ;
+ 	then
+	 echo ""  > /dev/null 2>&1
+	else  
+	 echo "" >> /etc/tuxbox/config/oscam.conf
+echo "[streamrelay]
+stream_relay_enabled          = 1
+stream_relay_buffer_time      = 500
+stream_relay_ctab             = 098C,098D,09C4" >> /etc/tuxbox/config/oscam.conf
+fi
 
 rm /tmp/version* > /dev/null 2>&1
 rm /tmp/oscam* > /dev/null 2>&1
