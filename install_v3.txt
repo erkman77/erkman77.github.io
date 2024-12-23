@@ -1544,12 +1544,12 @@ astra_hotbird() {
     1)
       hotbird_install
       sleep 2
-      mainmenu
+      astra_hotbird
       ;;
     2)
       astra_install
       sleep 2
-      mainmenu
+      astra_hotbird
       ;;
     0)
       clear
