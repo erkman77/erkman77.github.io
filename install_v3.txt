@@ -743,6 +743,21 @@ get_bouquets() {
   esac
 }
 
+hotbird_install() {
+      curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
+      curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
+      curl -sk ${_url}/hotbird.txt | bash
+      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+}
+
+astra_install() {
+      curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
+      curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
+      curl -sk ${_url}/astra_full.txt | bash
+      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+}
 
 replace_bouquets_ip() {
   _fix_streaming=1
@@ -977,15 +992,16 @@ mainmenu() {
   echo -e "\e[33m ######*** Main Menu ***######\e[0m"
   echo -e " 1) Install Icam Oscam stable         // fresh box ... or sledgehammer mode ;)"
   echo -e " 2) Update Oscam Bin only             // updates any running oscam to ICam Oscam"
-  echo -e " 3) Update Bouquets only              // rewrite ICam Bouquets"
-  echo -e " 4) Update ICAM Picons                // install ICam picons only"
-  echo -e " 5) Backup & Restore                  // backup or restore oscam"
-  echo -e " 6) Fix Settings                      // rewrite ICam settings to enigma"
-  echo -e " 7) Fix Streaming-IP                  // changes 127.0.0.1 to $_myip for home streaming"
-  echo -e " 8) Bouquet Autoupdate                // updates bouquets @ reboot"
-  echo -e " 9) Whitelist Streamrelay             // install/update whitelist_streamrelay"
-  echo -e "10) Whitelist Autoupdate              // update whitelist only @ reboot"
-  echo -e "11) Oscam Start Patch                 // checks whether oscam starts twice,"
+  echo -e " 3) Bouquets for Astra or Hotbird     // install full Bouquets for Astra or Hotbird (no ICAM)"
+  echo -e " 4) Update Bouquets only              // rewrite ICam Bouquets"
+  echo -e " 5) Update ICAM Picons                // install ICam picons only"
+  echo -e " 6) Backup & Restore                  // backup or restore oscam"
+  echo -e " 7) Fix Settings                      // rewrite ICam settings to enigma"
+  echo -e " 8) Fix Streaming-IP                  // changes 127.0.0.1 to $_myip for home streaming"
+  echo -e " 9) Bouquet Autoupdate                // updates bouquets @ reboot"
+  echo -e "10 ) Whitelist Streamrelay             // install/update whitelist_streamrelay"
+  echo -e "11) Whitelist Autoupdate              // update whitelist only @ reboot"
+  echo -e "12) Oscam Start Patch                 // checks whether oscam starts twice,"
   echo -e "                                         use this after a fresh reboot"
   echo -e "                                         and DONT restart oscam"
   echo -e "0) Exit"
@@ -1001,40 +1017,44 @@ mainmenu() {
       update_bin
       mainmenu
       ;;
-    3)
+	3)
+      astra_hotbird
+      mainmenu
+      ;;  
+    4)
       install_bouquets
       mainmenu
       ;;
-    4)
+    5)
       install_picons
       mainmenu
       ;;
-    5)
+    6)
       backup_restore
       mainmenu
       ;;
-    6)
+    7)
       set_enigma2_settings
       mainmenu
       ;;
-    7)
+    8)
 	  set_enigma2_settings
       replace_bouquets_ip
       mainmenu
       ;;
-    8)
+    9)
       autoupdate_menu
       mainmenu
       ;;
-	9)
+	10)
       update_whitelist
       mainmenu
       ;;
-	10)
+	11)
       whitelist_auto_menu
       mainmenu
       ;;
-	11)
+	12)
       oscam_startpatch
       mainmenu
       ;;
@@ -1511,4 +1531,35 @@ oscam_auto_menu() {
     ;;
     esac
 	}
+	
+astra_hotbird() {
+  my_header
+  echo -e "\e[33m ######*** Bouquets Astra & Hotbird Menu ***######\e[0m"
+  echo -e "1) Install Hotbird Bouquet "
+  echo -e "2) Install Astra Bouquet"
+  echo -e "0) Back"
+  read  -p "choose an Option: " astra_hotbird </dev/tty
+
+  case $astra_hotbird in
+    1)
+      hotbird_install
+      sleep 2
+      mainmenu
+      ;;
+    2)
+      astra_install
+      sleep 2
+      mainmenu
+      ;;
+    0)
+      clear
+      mainmenu
+    ;;
+    *)
+      wrong_opt
+      astra_hotbird
+    ;;
+    esac
+	}
+ 
 mainmenu
