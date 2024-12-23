@@ -607,7 +607,8 @@ replace_oscam_bin() {
   if [ -r /etc/tuxbox/config/$oscambinold ]; then
    curl -sk -o /etc/tuxbox/config/${_oscambin}/css.css ${_url}/ot_cams/configs/css.css > /dev/null 2>&1
    cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
-   
+  else
+   curl -sk -o /etc/tuxbox/config/css.css ${_url}/ot_cams/configs/css.css > /dev/null 2>&1  
   fi
   eval $_start > /dev/null 2>&1
   _oscam_version=v24
