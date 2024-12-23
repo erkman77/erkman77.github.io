@@ -532,6 +532,7 @@ cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 fi
 
 fi
+
 if grep -qs -i $_stream /etc/tuxbox/config/oscam.conf ;
  	then
 	 echo ""  > /dev/null 2>&1
@@ -542,6 +543,18 @@ stream_relay_enabled          = 1
 stream_relay_buffer_time      = 500
 stream_relay_ctab             = 098C,098D,09C4" >> /etc/tuxbox/config/oscam.conf
 fi
+
+if grep -qs -i $_stream /etc/tuxbox/config/${_oscambin}/oscam.conf ;
+ 	then
+	 echo ""  > /dev/null 2>&1
+	else  
+	 echo "" >> /etc/tuxbox/config/oscam.conf
+echo "[streamrelay]
+stream_relay_enabled          = 1
+stream_relay_buffer_time      = 500
+stream_relay_ctab             = 098C,098D,09C4" >> /etc/tuxbox/config/oscam.conf
+fi
+
 if [ -f /etc/init.d/softcam.oscam_bin ]; then
 		_start="/etc/init.d/softcam.oscam_bin restart"
 		#$_file start > /dev/null 2>&1
@@ -592,6 +605,7 @@ replace_oscam_bin() {
   fi
   replace_initscript
   if [ -r /etc/tuxbox/config/$oscambinold ]; then
+   curl -sk -o /etc/tuxbox/config/${_oscambin}/css.css ${_url}/ot_cams/configs/css.css > /dev/null 2>&1
    cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
    
   fi
@@ -637,6 +651,7 @@ get_oscam_configs() {
   curl -sk -o /etc/tuxbox/config/oscam.server ${_url}/ot_cams/configs/oscam.server > /dev/null 2>&1
   curl -sk -o /etc/tuxbox/config/SoftCam.Key ${_url}/ot_cams/configs/SoftCam.Key > /dev/null 2>&1
   curl -sk -o /etc/tuxbox/config/oscam.dvbapi ${_url}/ot_cams/configs/oscam.dvbapi > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/css.css ${_url}/ot_cams/configs/css.css > /dev/null 2>&1
   fi
   
   if [ -n "$_my_reader_user" ] ; then
