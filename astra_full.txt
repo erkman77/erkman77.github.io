@@ -1,9 +1,20 @@
 #!/bin/sh
 _url=https://i.tv-lounge.eu
 
-cat /etc/enigma2/bouquets.tv | grep -v 'userbouquet.*_astra1kr-1l-1m-1n' > /tmp/bouquets.tv
+cat /etc/enigma2/bouquets.tv | grep -v 'userbouquet.192e*' > /tmp/bouquets.tv
 exec 9>> /tmp/bouquets.tv
 echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.192e_astra1kr-1l-1m-1n.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.192e_canalsat.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.192e_orange.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.192e_movistar.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.192e_skyd-ard.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.192e_canaldigitaal-tvvlaanderen.tv" ORDER BY bouquet' >&9
 cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv
 wget -O /etc/enigma2/userbouquet.192e_astra1kr-1l-1m-1n.tv ${_url}/ot_tune/astra_full/userbouquet.192e_astra1kr-1l-1m-1n.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.192e_canalsat.tv ${_url}/ot_tune/astra_full/userbouquet.192e_canalsat.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.192e_orange.tv ${_url}/ot_tune/astra_full/userbouquet.192e_orange.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.192e_skyd-ard.tv ${_url}/ot_tune/astra_full/userbouquet.192e_skyd-ard.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.192e_movistar.tv ${_url}/ot_tune/astra_full/userbouquet.192e_movistar.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.192e_canaldigitaal-tvvlaanderen.tv ${_url}/ot_tune/astra_full/userbouquet.192e_canaldigitaal-tvvlaanderen.tv > /dev/null 2>&1
 rm /tmp/bouquets.tv
+ 

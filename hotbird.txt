@@ -1,9 +1,23 @@
 #!/bin/sh
 _url=https://i.tv-lounge.eu
 
-cat /etc/enigma2/bouquets.tv | grep -v 'userbouquet.*_hotbird13' > /tmp/bouquets.tv
+cat /etc/enigma2/bouquets.tv | grep -v 'userbouquet.130e*' > /tmp/bouquets.tv
 exec 9>> /tmp/bouquets.tv
 echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.130e_hotbird13.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.130e_bis-orangefr.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.130e_cyfrowypolsat.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.130e_nc-orangepl.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.130e_nova.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.130e_rai-mediaset-tivusat.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.130e_skyitalia.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.130e_vivacom.tv" ORDER BY bouquet' >&9
 cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv
 wget -O /etc/enigma2/userbouquet.130e_hotbird13.tv ${_url}/ot_tune/hotbird/userbouquet.130e_hotbird13.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.130e_bis-orangefr.tv ${_url}/ot_tune/hotbird/userbouquet.130e_bis-orangefr.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.130e_cyfrowypolsat.tv ${_url}/ot_tune/hotbird/userbouquet.130e_cyfrowypolsat.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.130e_nc-orangepl.tv ${_url}/ot_tune/hotbird/userbouquet.130e_nc-orangepl.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.130e_nova.tv ${_url}/ot_tune/hotbird/userbouquet.130e_nova.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.130e_rai-mediaset-tivusat.tv ${_url}/ot_tune/hotbird/userbouquet.130e_rai-mediaset-tivusat.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.130e_skyitalia.tv ${_url}/ot_tune/hotbird/userbouquet.130e_skyitalia.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.130e_vivacom.tv ${_url}/ot_tune/hotbird/userbouquet.130e_vivacom.tv > /dev/null 2>&1
 rm /tmp/bouquets.tv
