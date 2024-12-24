@@ -1,8 +1,7 @@
 #!/bin/bash
-
 _url=i.tv-lounge.eu
 _stream="stream_relay_enabled"
-_scriptversion=17
+_scriptversion=18
 
 if [ -e /etc/opkg ]; then
   _exec_cmd="opkg"
