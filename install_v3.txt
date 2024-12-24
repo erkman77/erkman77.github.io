@@ -1559,6 +1559,9 @@ astra_hotbird() {
   echo -e "1) Install Hotbird Bouquet "
   echo -e "2) Install Astra Bouquet"
   echo -e "0) Back"
+  echo -e ""
+  echo -e "Thx to Morpheus883 for his settings"
+  echo -e ""
   read  -p "choose an Option: " astra_hotbird </dev/tty
 
   case $astra_hotbird in
