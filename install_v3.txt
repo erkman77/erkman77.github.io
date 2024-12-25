@@ -533,17 +533,6 @@ fi
 
 fi
 
-if grep -qs -i $_stream /etc/tuxbox/config/oscam.conf ;
- 	then
-	 echo ""  > /dev/null 2>&1
-	else  
-	 echo "" >> /etc/tuxbox/config/oscam.conf
-echo "[streamrelay]
-stream_relay_enabled          = 1
-stream_relay_buffer_time      = 500
-stream_relay_ctab             = 098C,098D,09C4" >> /etc/tuxbox/config/oscam.conf
-fi
-
 if grep -qs -i $_stream /etc/tuxbox/config/${_oscambin}/oscam.conf ;
  	then
 	 echo ""  > /dev/null 2>&1
