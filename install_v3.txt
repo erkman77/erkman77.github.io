@@ -17,6 +17,7 @@ update="200 OK"
 update_wrong="if curl -s --head //i.tv-"
 _stream="stream_relay_enabled"
 _vti="vuplus"
+SEARCH_PATH="/usr/tuxbox/config"
 NEW_LINE='if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscamfile
 _myoscambinfile=$(head -n 1 /tmp/oscamfile)
@@ -533,16 +534,19 @@ fi
 
 fi
 
-if grep -qs -i $_stream /etc/tuxbox/config/${_oscambin}/oscam.conf ;
- 	then
-	 echo ""  > /dev/null 2>&1
-	else  
-	 echo "" >> /etc/tuxbox/config/oscam.conf
-echo "[streamrelay]
-stream_relay_enabled          = 1
-stream_relay_buffer_time      = 500
-stream_relay_ctab             = 098C,098D,09C4" >> /etc/tuxbox/config/oscam.conf
-fi
+find "$SEARCH_PATH" -name "oscam.conf" | while read -r file; do
+    if grep -q "\[streamrelay\]" "$file"; then
+    :    
+    else
+        {
+            echo "[streamrelay]"
+            echo "stream_relay_enabled = 1"
+            echo "stream_relay_ctab = 098D"
+            echo "stream_relay_user = stream"
+            echo "stream_relay_buffer_time = 500"
+        } >> "$file"
+    fi
+done
 
 if [ -f /etc/init.d/softcam.oscam_bin ]; then
 		_start="/etc/init.d/softcam.oscam_bin restart"
