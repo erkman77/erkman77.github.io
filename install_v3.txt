@@ -534,7 +534,7 @@ fi
 
 fi
 
-find "$SEARCH_PATH" -name "oscam.conf" | while read -r file; do
+find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
     if grep -q "\[streamrelay\]" "$file"; then
     :    
     else
