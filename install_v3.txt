@@ -1,6 +1,7 @@
 #!/bin/bash +x
 set +x
 clear
+
 _version="4.0"
 _url=https://i.tv-lounge.eu
 _oscam_version=v24
@@ -19,6 +20,8 @@ _stream="stream_relay_enabled"
 _vti="vuplus"
 SEARCH_PATH="/usr/tuxbox/config"
 NEW_LINE='if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
+echo "${_url}" >> /tmp/read
+
 ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscamfile
 _myoscambinfile=$(head -n 1 /tmp/oscamfile)
 _oscambin=$(basename "$_myoscambinfile")
@@ -48,15 +51,6 @@ if opkg list-installed | grep bash > /dev/null 2>&1; then
    else
      $_exec_cmd install bash > /dev/null 2>&1
 fi
-   
-echo=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq >>/tmp/oscambinold)
-
-if [ -e /tmp/oscambinold  ]; then
-         sed -i "s#$older#$newer#g" /tmp/oscambinold
-fi
-read oscambinold < /tmp/oscambinold
-
-echo "${_url}" >> /tmp/read
 
   _my_configpath_old=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
     if [ -z "$_my_configpath_old" ]
@@ -252,22 +246,22 @@ get_ipk_oscam() {
 }
 
 get_old_oscam() {
-  _myoscambin=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq)
-  _my_configpath=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
+  _myoscambin=$(ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq)
+  _my_configpath=$(ps axuww | grep cam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
   if [ -z "$_my_configpath" ]
     then
-     _my_configpath=$(ps xuww | grep -i oscam | awk -F '-bc' '{print $2}' |uniq|sed -e 's/ //g')
+     _my_configpath=$(ps xuww | grep -i cam | awk -F '-bc' '{print $2}' |uniq|sed -e 's/ //g')
   fi
 
   case $_my_configpath in
     onfig-dir*)
-       _my_configpath=$(ps axuww | grep oscam | awk -F 'config-dir ' '{print $2}'|grep '\S' |uniq|awk '{print $1}'|sed -e 's/ //g')
+       _my_configpath=$(ps axuww | grep -i cam | awk -F 'config-dir ' '{print $2}'|grep '\S' |uniq|awk '{print $1}'|sed -e 's/ //g')
       ;;
   esac
 }
 
 kill_oscam() {
-  for pid in `ps xuww | grep oscam | grep "$_oscambin" | grep -v grep | awk '{print $2}'`; do
+  for pid in `ps xuww | grep -i cam | grep "$_oscambin" | grep -v grep | awk '{print $2}'`; do
     kill -9 $pid
   done
 }
@@ -597,9 +591,9 @@ replace_oscam_bin() {
    fi
   fi
   replace_initscript
-  if [ -r /etc/tuxbox/config/$oscambinold ]; then
+  if [ -r /etc/tuxbox/config/$_oscambin ]; then
    curl -sk -o /etc/tuxbox/config/${_oscambin}/css.css ${_url}/ot_cams/configs/css.css > /dev/null 2>&1
-   cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
+   cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config/ > /dev/null 2>&1
   else
    curl -sk -o /etc/tuxbox/config/css.css ${_url}/ot_cams/configs/css.css > /dev/null 2>&1  
   fi
