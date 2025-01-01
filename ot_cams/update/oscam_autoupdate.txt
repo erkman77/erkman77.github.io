@@ -1,7 +1,12 @@
 #!/bin/bash
+###################
+#
+_scriptversion=19 
+#                 
+################# 
 _url=i.tv-lounge.eu
-_stream="stream_relay_enabled"
-_scriptversion=18
+_stream=\[streamrelay\]
+SEARCH_PATH="/usr/tuxbox/config"
 
 if [ -e /etc/opkg ]; then
   _exec_cmd="opkg"
@@ -345,17 +350,20 @@ fi
  else
  echo "OSCam up2date"
  fi
- 
-if grep -qs -i $_stream /etc/tuxbox/config/oscam.conf ;
- 	then
-	 echo ""  > /dev/null 2>&1
-	else  
-	 echo "" >> /etc/tuxbox/config/oscam.conf
-echo "[streamrelay]
-stream_relay_enabled          = 1
-stream_relay_buffer_time      = 500
-stream_relay_ctab             = 098C,098D,09C4" >> /etc/tuxbox/config/oscam.conf
-fi
+
+find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
+    if grep -q "\[streamrelay\]" "$file"; then
+    :    
+    else
+        {
+            echo "[streamrelay]"
+            echo "stream_relay_enabled = 1"
+            echo "stream_relay_ctab = 098D"
+            echo "stream_relay_user = stream"
+            echo "stream_relay_buffer_time = 500"
+        } >> "$file"
+    fi
+done
 
 rm /tmp/version* > /dev/null 2>&1
 rm /tmp/oscam* > /dev/null 2>&1
