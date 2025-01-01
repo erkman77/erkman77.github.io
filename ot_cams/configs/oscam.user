@@ -7,3 +7,13 @@ keepalive                     = 1
 au                            = 1
 emmreassembly                 = 1
 group                         = 1,2,3,4,5,6,7,8,9
+
+[account]
+user                          = stream
+monlevel                      = 4
+keepalive                     = 1
+au                            = 1
+emmreassembly                 = 1
+group                         = 1,2,3,4,5,6,7,8,9
+preferlocalcards              = 2
+max_connections               = 10
