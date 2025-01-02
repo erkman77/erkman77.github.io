@@ -1,12 +1,13 @@
 #!/bin/bash
 ###################
 #
-_scriptversion=19 
+_scriptversion=20 
 #                 
 ################# 
 _url=i.tv-lounge.eu
 _stream=\[streamrelay\]
 SEARCH_PATH="/usr/tuxbox/config"
+_start=""
 
 if [ -e /etc/opkg ]; then
   _exec_cmd="opkg"
@@ -336,7 +337,7 @@ fi
 		sleep 2
 fi
 if [ -f /etc/init.d/softcam.${_oscambin} ]; then
-		#/etc/init.d/softcam.${_oscambin} start > /dev/null 2>&1
+		_start="/etc/init.d/softcam.${_oscambin} restart"
 		#$_file start > /dev/null 2>&1
 		sleep 2
 fi
