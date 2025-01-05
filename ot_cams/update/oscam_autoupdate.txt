@@ -1,9 +1,8 @@
 #!/bin/bash
-###################
-#
-_scriptversion=20 
-#                 
-################# 
+
+
+_scriptversion=21
+
 _url=i.tv-lounge.eu
 _stream=\[streamrelay\]
 SEARCH_PATH="/usr/tuxbox/config"
