@@ -274,6 +274,9 @@ replace_initscript() {
   wget -O /etc/init.d/softcam.None ${_url}/ot_cams/startfiles/softcam.None > /dev/null 2>&1
   wget -O /etc/init.d/cardserver.None ${_url}/ot_cams/startfiles/cardserver.None > /dev/null 2>&1
   wget -O /etc/init.d/cardserver ${_url}/ot_cams/startfiles/cardserver > /dev/null 2>&1
+  if [ -e /etc/apt/sources.list.d  ]; then
+  wget -O /etc/init.d/softcam.oscam_bin ${_url}/ot_cams/startfiles/softcam.oscam_bin_aarch > /dev/null 2>&1
+  fi
   chmod 755 /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   update-rc.d -f softcam.oscam_bin defaults > /dev/null 2>&1
