@@ -2,7 +2,7 @@
    Description=Start OSCam
 
    [Service]
-   ExecStart=//etc/init.d/softcam.oscam_bin restart
+   ExecStart=/etc/init.d/softcam.oscam_bin restart
    Restart=always
 
    [Install]
