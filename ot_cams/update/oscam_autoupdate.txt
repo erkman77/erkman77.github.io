@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-_scriptversion=23
+_scriptversion=24
 
 _url=i.tv-lounge.eu
 _stream=\[streamrelay\]
@@ -19,33 +19,40 @@ fi
 $_exec_cmd install curl >/dev/null 2>&1
 
 if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null; then
-#compare script version
-wget -O /tmp/oscam_autoupdate ${_url}/ot_cams/update/oscam_autoupdate.txt > /dev/null 2>&1
-_script_new=$(sed -n '4p' /tmp/oscam_autoupdate)
-X=15
-_script_new=$(echo "$_script_new" | cut -c $((X + 1))-)
+	#compare script version
+	wget -O /tmp/oscam_autoupdate ${_url}/ot_cams/update/oscam_autoupdate.txt > /dev/null 2>&1
+	_script_new=$(sed -n '4p' /tmp/oscam_autoupdate)
+	X=15
+	_script_new=$(echo "$_script_new" | cut -c $((X + 1))-)
 if [[ "${_script_new}" != "${_scriptversion}" ]]; then
-echo "Update OSCam autoupdate"
-sleep 2
-cp /tmp/oscam_autoupdate /usr/bin/oscam_autoupdate
-chmod +x /usr/bin/oscam_autoupdate
-exec "$0" "$@"
+	echo "Update OSCam autoupdate"
+	sleep 2
+	cp /tmp/oscam_autoupdate /usr/bin/oscam_autoupdate
+	chmod +x /usr/bin/oscam_autoupdate
+	exec "$0" "$@"
 fi
+
 output=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}' | uniq)
 
 if [ -z "$output" ]; then
-    echo "No running OScam found."
-	exit
+	echo ""  > /dev/null 2>&1
+	else
+	echo "No running OScam found. 
+	"
+    exit 0
 fi
+
 #compare oscam version
 wget -O /tmp/version.txt ${_url}/version.txt > /dev/null 2>&1
 file="/tmp/version.txt"
 search="version="
 X=8 
 content=$(grep "$search" "$file")
+
 if [ -n "$content" ]; then
   Version_new=$(echo "$content" | cut -c $((X + 1))-)
 fi
+
 ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscam
 ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{for (i=11; i<=26; i++) printf "%s%s", $i, (i<26 ? OFS : ORS)}'|uniq > /tmp/oscam_start
 ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}' | uniq | awk -F/ 'BEGIN {OFS="/"} {NF--; print}' > /tmp/oscam_path
@@ -65,16 +72,16 @@ Version_old=$(  $_myoscambin --build-info | grep -i 'version:' | grep -o '[0-9]\
 _find_neon="/tmp/version2.txt"
 _neon_is_set="ARM NEON (SIMD/MPE) support:             yes"
 if grep -q "$_neon_is_set" "$_find_neon" 2>/dev/null; then
-_neon="-neon"
-else
-echo ""  > /dev/null 2>&1
+	_neon="-neon"
+  else
+	echo ""  > /dev/null 2>&1
 fi
 _find_emu="/tmp/version2.txt"
 _emu_is_set="Emulator support:                        yes"
 if grep -q "$_emu_is_set" "$_find_emu" 2>/dev/null; then
-_emu="-emu"
-else
-echo ""  > /dev/null 2>&1
+	_emu="-emu"
+  else
+	echo ""  > /dev/null 2>&1
 fi
 
 echo "Found running OSCam
