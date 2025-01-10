@@ -56,9 +56,25 @@ X=22
 content2=$(grep "$search2" "$file2")
 
 Version_old=$(  $_myoscambin --build-info | grep -i 'version:' | grep -o '[0-9]\{5\}'   )  
+
+_find_neon="/tmp/version2.txt"
+_neon_is_set="ARM NEON (SIMD/MPE) support:             yes"
+if grep -q "$_neon_is_set" "$_find_neon" 2>/dev/null; then
+_neon="-neon"
+else
+echo ""  > /dev/null 2>&1
+fi
+_find_emu="/tmp/version2.txt"
+_emu_is_set="Emulator support:                        yes"
+if grep -q "$_emu_is_set" "$_find_emu" 2>/dev/null; then
+_emu="-emu"
+else
+echo ""  > /dev/null 2>&1
+fi
+
 echo "
 Found running OSCam
-Bin file: ${_oscambin} Version: ${Version_old}
+Bin file: ${_oscambin} Version: ${Version_old}${_neon}${_emu}
 in ${_oscam_path}"
 
 if [[ "$Version_new" != "$Version_old" ]]; then
@@ -77,20 +93,7 @@ Updating to Version: $Version_new
       echo -e "\e[31m Sorry, your device does not have the proper Emu \e[0m"
       exit 1
   fi
-_find_neon="/tmp/version2.txt"
-_neon_is_set="ARM NEON (SIMD/MPE) support:             yes"
-if grep -q "$_neon_is_set" "$_find_neon" 2>/dev/null; then
-_neon="-neon"
-else
-echo ""  > /dev/null 2>&1
-fi
-_find_emu="/tmp/version2.txt"
-_emu_is_set="Emulator support:                        yes"
-if grep -q "$_emu_is_set" "$_find_emu" 2>/dev/null; then
-_emu="-emu"
-else
-echo ""  > /dev/null 2>&1
-fi
+
 #kill_oscam
   #for pid in `ps xuww | grep oscam | grep "$_myoscambin" | grep -v grep | awk '{print $2}'`; do
  #   kill -9 $pid
