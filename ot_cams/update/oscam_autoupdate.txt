@@ -25,8 +25,9 @@ _script_new=$(sed -n '4p' /tmp/oscam_autoupdate)
 X=15
 _script_new=$(echo "$_script_new" | cut -c $((X + 1))-)
 if [[ "${_script_new}" != "${_scriptversion}" ]]; then
-cp /tmp/oscam_autoupdate /usr/bin/oscam_autoupdate
 echo "Update OSCam autoupdate"
+sleep 
+cp /tmp/oscam_autoupdate /usr/bin/oscam_autoupdate
 chmod +x /usr/bin/oscam_autoupdate
 exec "$0" "$@"
 fi
@@ -66,6 +67,9 @@ test"
 #echo "installiert $Version_old"
 #echo "aktuell $Version_new"
 if [[ "$Version_new" != "$Version_old" ]]; then
+echo "
+Updating to Version: $Version_new
+"
 #find arch und backup old oscam 
 #cp ${_myoscambin} ${_myoscambin}_bak
   if [ -n "$(uname -m | grep armv7l)" ]; then
