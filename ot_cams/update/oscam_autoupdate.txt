@@ -59,9 +59,10 @@ content2=$(grep "$search2" "$file2")
 
 Version_old=$(  $_myoscambin --build-info | grep -i 'version:' | grep -o '[0-9]\{5\}'   )  
 echo "
-Found running OSCam ${_oscambin} Version: ${Version_old}
+Found running OSCam
+Bin file: ${_oscambin} Version: ${Version_old}
 in ${_oscam_path}
-"
+test"
 #echo "installiert $Version_old"
 #echo "aktuell $Version_new"
 if [[ "$Version_new" != "$Version_old" ]]; then
@@ -351,12 +352,14 @@ fi
 
    #echo "OSCam changed from $Version_old${_neon}${_emu} to $Version_new${_neon}${_emu}"
    echo "
-   OSCam changed to $Version_new${_neon}${_emu}"
+   OSCam changed to $Version_new${_neon}${_emu}
+   "
    eval $_start > /dev/null 2>&1
  curl --noproxy '*' --data value="OSCam-Installer v${Version_new}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
  else
  echo "
- OSCam up2date"
+ OSCam up2date
+ "
  fi
 
 find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
