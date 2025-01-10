@@ -26,7 +26,7 @@ X=15
 _script_new=$(echo "$_script_new" | cut -c $((X + 1))-)
 if [[ "${_script_new}" != "${_scriptversion}" ]]; then
 echo "Update OSCam autoupdate"
-sleep 
+sleep 2
 cp /tmp/oscam_autoupdate /usr/bin/oscam_autoupdate
 chmod +x /usr/bin/oscam_autoupdate
 exec "$0" "$@"
@@ -54,19 +54,13 @@ file2="/tmp/version2.txt"
 search2="Version:        OSCam "
 X=22
 content2=$(grep "$search2" "$file2")
-#if [ -n "$content2" ]; then
-#  Version_old=$(echo "$content2" | cut -c $((X + 1))-)
-#  Version_old=$(echo "$Version_old" | cut -c1-5)
-#fi
 
 Version_old=$(  $_myoscambin --build-info | grep -i 'version:' | grep -o '[0-9]\{5\}'   )  
 echo "
 Found running OSCam
 Bin file: ${_oscambin} Version: ${Version_old}
-in ${_oscam_path}
-"
-#echo "installiert $Version_old"
-#echo "aktuell $Version_new"
+in ${_oscam_path}"
+
 if [[ "$Version_new" != "$Version_old" ]]; then
 echo "
 Updating to Version: $Version_new
