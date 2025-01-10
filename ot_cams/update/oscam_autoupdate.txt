@@ -43,7 +43,8 @@ if [ -n "$content" ]; then
 fi
 ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscam
 ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{for (i=11; i<=26; i++) printf "%s%s", $i, (i<26 ? OFS : ORS)}'|uniq > /tmp/oscam_start
-_oscam_path=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}' | uniq | awk -F/ 'BEGIN {OFS="/"} {NF--; print}')
+ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}' | uniq | awk -F/ 'BEGIN {OFS="/"} {NF--; print}' > /tmp/oscam_path
+_oscam_path=$(head -n 1 /tmp/oscam_path)
 _start=$(head -n 1 /tmp/oscam_start)
 _myoscambin=$(head -n 1 /tmp/oscam)
 _oscambin=$(basename "$_myoscambin")
@@ -63,7 +64,7 @@ echo "
 Found running OSCam
 Bin file: ${_oscambin} Version: ${Version_old}
 in ${_oscam_path}
-test"
+"
 #echo "installiert $Version_old"
 #echo "aktuell $Version_new"
 if [[ "$Version_new" != "$Version_old" ]]; then
