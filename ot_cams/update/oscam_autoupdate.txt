@@ -380,5 +380,6 @@ rm /tmp/oscam* > /dev/null 2>&1
 unset _emu
 unset _neon
 else
-echo "Host not reachable"
+echo "
+Host not reachable"
 fi
