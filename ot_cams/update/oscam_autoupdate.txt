@@ -360,7 +360,7 @@ fi
  curl --noproxy '*' --data value="OSCam-Installer v${Version_new}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
  else
  echo "
- OSCam up2date
+OSCam up2date
  "
  fi
 
