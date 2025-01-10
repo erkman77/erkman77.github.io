@@ -1,13 +1,13 @@
 #!/bin/bash
 
 
-_scriptversion=21
+_scriptversion=22
 
 _url=i.tv-lounge.eu
 _stream=\[streamrelay\]
 SEARCH_PATH="/usr/tuxbox/config"
 _start=""
-
+clear
 if [ -e /etc/opkg ]; then
   _exec_cmd="opkg"
 elif [ -e /etc/apt/sources.list.d ]; then
@@ -42,6 +42,7 @@ if [ -n "$content" ]; then
 fi
 ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscam
 ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{for (i=11; i<=26; i++) printf "%s%s", $i, (i<26 ? OFS : ORS)}'|uniq > /tmp/oscam_start
+_oscam_path=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}' | uniq | awk -F/ 'BEGIN {OFS="/"} {NF--; print}')
 _start=$(head -n 1 /tmp/oscam_start)
 _myoscambin=$(head -n 1 /tmp/oscam)
 _oscambin=$(basename "$_myoscambin")
@@ -57,6 +58,10 @@ content2=$(grep "$search2" "$file2")
 #fi
 
 Version_old=$(  $_myoscambin --build-info | grep -i 'version:' | grep -o '[0-9]\{5\}'   )  
+echo "
+Found running OSCam ${_oscambin} Version: ${Version_old}
+in ${_oscam_path}
+"
 #echo "installiert $Version_old"
 #echo "aktuell $Version_new"
 if [[ "$Version_new" != "$Version_old" ]]; then
@@ -344,11 +349,14 @@ fi
      systemctl start ${_oscambin}.service > /dev/null 2>&1
 fi
 
-   echo "OSCam changed from $Version_old${_neon}${_emu} to $Version_new${_neon}${_emu}"
+   #echo "OSCam changed from $Version_old${_neon}${_emu} to $Version_new${_neon}${_emu}"
+   echo "
+   OSCam changed to $Version_new${_neon}${_emu}"
    eval $_start > /dev/null 2>&1
  curl --noproxy '*' --data value="OSCam-Installer v${Version_new}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
  else
- echo "OSCam up2date"
+ echo "
+ OSCam up2date"
  fi
 
 find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
