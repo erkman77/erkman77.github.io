@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-_scriptversion=24
+_scriptversion=25
 
 _url=i.tv-lounge.eu
 _stream=\[streamrelay\]
@@ -62,10 +62,6 @@ exit 0
 fi 
 
 $_myoscambin -V > /tmp/version2.txt
-file2="/tmp/version2.txt"
-search2="Version:        OSCam "
-X=22
-content2=$(grep "$search2" "$file2")
 
 Version_old=$(  $_myoscambin --build-info | grep -i 'version:' | grep -o '[0-9]\{5\}'   )  
 
