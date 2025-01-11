@@ -18,7 +18,7 @@ elif [ -e /etc/apt/sources.list.d ]; then
   exit 0
 fi
 
-$_exec_cmd install curl >/dev/null 2>&1
+$_exec_cmd install curl > /dev/null 2>&1
 
 if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null; then
 	#compare script version
