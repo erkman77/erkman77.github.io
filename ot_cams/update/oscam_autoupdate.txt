@@ -81,7 +81,8 @@ if grep -q "$_emu_is_set" "$_find_emu" 2>/dev/null; then
 fi
 
 echo "Found running OSCam
-Bin file: ${_oscambin} Version: ${Version_old}${_neon}${_emu}
+Bin file: ${_oscambin}
+Version: ${Version_old}${_neon}${_emu}
 in ${_oscam_path}"
 
 if [[ "$Version_new" != "$Version_old" ]]; then
