@@ -51,11 +51,15 @@ _start=$(head -n 1 /tmp/oscam_start)
 _myoscambin=$(head -n 1 /tmp/oscam)
 _oscambin=$(basename "$_myoscambin")
 
-if [ -z "$output" ]; then
-	echo "No running OScam found. 
-	"
-    exit 0
-fi
+
+if [[ "$_myoscambin" == "" ]] ; then
+echo "No running OSCam found"
+exit 0
+fi 
+if [[ "$_myoscambin" == "/bin/bash" ]] ; then
+echo "No running OSCam found"
+exit 0
+fi 
 
 $_myoscambin -V > /tmp/version2.txt
 file2="/tmp/version2.txt"
@@ -86,7 +90,7 @@ in ${_oscam_path}"
 
 if [[ "$Version_new" != "$Version_old" ]]; then
 echo "
-Updating to Version: $Version_new
+Updating to Version: $Version_new${_neon}${_emu}
 "
 #find arch und backup old oscam 
 #cp ${_myoscambin} ${_myoscambin}_bak
