@@ -46,9 +46,9 @@ while getopts "t:S:P:u:p:" opt; do
 done
 
 if opkg list-installed | grep bash > /dev/null 2>&1; then
-      echo "" > /dev/null 2>&1
+    echo "" > /dev/null 2>&1
  else
-      opkg install bash > /dev/null 2>&1
+    opkg install bash > /dev/null 2>&1
 fi
 
 _my_configpath_old=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
@@ -113,24 +113,21 @@ long_running_task() {
   $_exec_cmd install curl >/dev/null 2>&1
 
   if [ -e /usr/bin/icam_autoupdate  ]; then
-	if grep -qs -i $old /usr/bin/icam_autoupdate ; 
-		then
+	if grep -qs -i $old /usr/bin/icam_autoupdate ; then
 		set_autoupdate="1"
 		sed -i "s#$old#$new#g" /usr/bin/icam_autoupdate 
 		sed -i "1i$ins" /usr/bin/icam_autoupdate
 		_reboot=1
 	fi
 
-	if grep -qs -i $tere /usr/bin/icam_autoupdate ;
-		then
+	if grep -qs -i $tere /usr/bin/icam_autoupdate ;	then
 		echo ""  > /dev/null 2>&1
 	else  
 		sed -i "1i$ins" /usr/bin/icam_autoupdate
 		_reboot=1
 	fi
 
-	if grep -qs -i $update /usr/bin/icam_autoupdate ; 
-		then 
+	if grep -qs -i $update /usr/bin/icam_autoupdate ; then 
 		if grep -qs -i 'if curl -s --head //i.tv-' /usr/bin/icam_autoupdate ; 
 			then
 			sed  -i '2s/head /head https:/g' /usr/bin/icam_autoupdate
@@ -164,9 +161,9 @@ long_running_task &
 pid=$!
 
 if [ -n "$(uname -m | grep mips)" ]; then
-	total_steps=210
+  total_steps=210
 else
-	total_steps=160
+  total_steps=160
 fi
 
 interval=0.1
@@ -242,7 +239,7 @@ install_OMT_ipk() {
   replace_initscript
   
   if [ -f /etc/init.d/softcam.oscam_bin ]; then
-  /etc/init.d/softcam.oscam_bin restart
+    /etc/init.d/softcam.oscam_bin restart
   fi
 }
 
@@ -308,15 +305,15 @@ replace_initscript() {
 	rm /usr/softcams/ibcrypto.so.0.9.8 > /dev/null 2>&1
 	
 	if [[ $_oscambin != "oscam_bin" ]]; then
-		rm /usr/camscript/Ncam_${_oscambin}.sh  > /dev/null 2>&1
-		rm /usr/softcams/${_oscambin} > /dev/null 2>&1
+	  rm /usr/camscript/Ncam_${_oscambin}.sh  > /dev/null 2>&1
+	  rm /usr/softcams/${_oscambin} > /dev/null 2>&1
 	fi
 	
 	mkdir -p /usr/softcams_old > /dev/null 2>&1
 	mv -f /usr/softcams/${_oscambin}_bak_OMT /usr/softcams_old/ > /dev/null 2>&1
 	
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
 
@@ -337,12 +334,12 @@ replace_initscript() {
 	echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/CurrentEGCamName
 	
 	if [[ $_oscambin != "oscam_bin" ]]; then
-		rm /usr/emu_scripts/EGcam_${_oscambin}.sh  > /dev/null 2>&1
-		rm /usr/bin/${_oscambin} > /dev/null 2>&1
+	  rm /usr/emu_scripts/EGcam_${_oscambin}.sh  > /dev/null 2>&1
+	  rm /usr/bin/${_oscambin} > /dev/null 2>&1
 	fi
 
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
 
@@ -355,7 +352,7 @@ replace_initscript() {
 	chmod +x /usr/script/${_oscambin}.emu
 
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
 
@@ -385,7 +382,7 @@ EOF
 	_start="/etc/init.d/current_cam.sh restart"
 
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	fi
 	
 	mv -f /tmp/oscam_update.sh /usr/script/oscam_bin_cam.sh  > /dev/null 2>&1
@@ -408,7 +405,7 @@ EOF
 	chmod +x /etc/rcS.d/S98CamManager > /dev/null 2>&1
 	
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
 
@@ -421,7 +418,7 @@ EOF
 	_start="/usr/script/${_oscambin}.emu restart"
 	
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
 
@@ -469,10 +466,10 @@ EOF
   fi
 
   if [ -e /etc/apt/sources.list.d  ]; then
-  wget -O /etc/systemd/system/oscam_bin.service ${_url}/ot_cams/startfiles/oscam_bin.service > /dev/null 2>&1
-  systemctl daemon-reload > /dev/null 2>&1
-  systemctl enable oscam_bin.service > /dev/null 2>&1
-  systemctl start oscam_bin.service > /dev/null 2>&1
+    wget -O /etc/systemd/system/oscam_bin.service ${_url}/ot_cams/startfiles/oscam_bin.service > /dev/null 2>&1
+    systemctl daemon-reload > /dev/null 2>&1
+    systemctl enable oscam_bin.service > /dev/null 2>&1
+    systemctl start oscam_bin.service > /dev/null 2>&1
   fi
 }
 
