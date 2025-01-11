@@ -299,7 +299,7 @@ fi
 
    #echo "OSCam changed from $Version_old${_neon}${_emu} to $Version_new${_neon}${_emu}"
    echo "
-   OSCam changed to $Version_new${_neon}${_emu}
+OSCam changed to $Version_new${_neon}${_emu}
    "
    eval $_start > /dev/null 2>&1
  curl --noproxy '*' --data value="OSCam-Installer v${Version_new}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
