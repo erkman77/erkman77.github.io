@@ -32,16 +32,6 @@ if [[ "${_script_new}" != "${_scriptversion}" ]]; then
 	exec "$0" "$@"
 fi
 
-output=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}' | uniq)
-
-if [ -z "$output" ]; then
-	echo ""  > /dev/null 2>&1
-	else
-	echo "No running OScam found. 
-	"
-    exit 0
-fi
-
 #compare oscam version
 wget -O /tmp/version.txt ${_url}/version.txt > /dev/null 2>&1
 file="/tmp/version.txt"
@@ -60,6 +50,12 @@ _oscam_path=$(head -n 1 /tmp/oscam_path)
 _start=$(head -n 1 /tmp/oscam_start)
 _myoscambin=$(head -n 1 /tmp/oscam)
 _oscambin=$(basename "$_myoscambin")
+
+if [ -z "$output" ]; then
+	echo "No running OScam found. 
+	"
+    exit 0
+fi
 
 $_myoscambin -V > /tmp/version2.txt
 file2="/tmp/version2.txt"
