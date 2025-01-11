@@ -14,7 +14,7 @@ if [ -e /etc/opkg ]; then
 elif [ -e /etc/apt/sources.list.d ]; then
   _exec_cmd="apt -y"
  else
-   "neither opkg nor apt was found ... bailing out"
+  echo "neither opkg nor apt was found ... bailing out"
   exit 0
 fi
 
@@ -140,8 +140,9 @@ if [ -f /etc/cam.d/${_oscambin}.sh ]; then
 		/etc/cam.d/${_oscambin}.sh stop > /dev/null 2>&1
 		sleep 2
 fi
- killall -9 ${_oscambin} > /dev/null 2>&1
- kill `pidof ${_oscambin}` > /dev/null 2>&1
+
+killall -9 ${_oscambin} > /dev/null 2>&1
+kill `pidof ${_oscambin}` > /dev/null 2>&1
  
 # replace oscam  
   if [ -e /etc/apt/sources.list.d  ]; then
@@ -150,8 +151,8 @@ fi
      chmod +x $_myoscambin
 	 systemctl start ${_oscambin}.service > /dev/null 2>&1
    else
-    wget -O $_myoscambin ${_url}/ot_cams/oscam/oscam-${_arch}-$Version_new${_neon}${_emu} > /dev/null 2>&1
-    chmod +x $_myoscambin
+     wget -O $_myoscambin ${_url}/ot_cams/oscam/oscam-${_arch}-$Version_new${_neon}${_emu} > /dev/null 2>&1
+     chmod +x $_myoscambin
    fi
 
 #bh
@@ -187,7 +188,7 @@ if [ -f /usr/emu_scripts/EGcam_${_oscambin}.sh ]; then
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	fi
-		sleep 2
+	sleep 2
 fi
 
 if [ -e /etc/apt/sources.list.d  ]; then
@@ -265,8 +266,8 @@ if [ -f /usr/emu/start/${_oscambin}.emu ]; then
 		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	fi
 #		/usr/script/${_oscambin}.emu start > /dev/null 2>&1
-_start="/usr/emu/start/${_oscambin}.emu restart"
-		sleep 2
+	_start="/usr/emu/start/${_oscambin}.emu restart"
+	sleep 2
 fi
 
 #n
@@ -289,21 +290,22 @@ if [ -f /etc/init.d/softcam.${_oscambin} ]; then
 		#$_file start > /dev/null 2>&1
 		sleep 2
 fi
- if [ -e /etc/apt/sources.list.d  ]; then
+
+if [ -e /etc/apt/sources.list.d  ]; then
      systemctl start ${_oscambin}.service > /dev/null 2>&1
 fi
 
-   #echo "OSCam changed from $Version_old${_neon}${_emu} to $Version_new${_neon}${_emu}"
-   echo "
+  #echo "OSCam changed from $Version_old${_neon}${_emu} to $Version_new${_neon}${_emu}"
+  echo "
 OSCam changed to $Version_new${_neon}${_emu}
    "
-   eval $_start > /dev/null 2>&1
- curl --noproxy '*' --data value="OSCam-Installer v${Version_new}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
- else
- echo "
+  eval $_start > /dev/null 2>&1
+  curl --noproxy '*' --data value="OSCam-Installer v${Version_new}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
+  else
+  echo "
 OSCam up2date
  "
- fi
+fi
 
 find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
     if grep -q "\[streamrelay\]" "$file"; then
@@ -319,11 +321,11 @@ find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
     fi
 done
 
-rm /tmp/version* > /dev/null 2>&1
-rm /tmp/oscam* > /dev/null 2>&1
-unset _emu
-unset _neon
+  rm /tmp/version* > /dev/null 2>&1
+  rm /tmp/oscam* > /dev/null 2>&1
+  unset _emu
+  unset _neon
 else
-echo "
+  echo "
 Host not reachable"
 fi
