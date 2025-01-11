@@ -111,36 +111,35 @@ else
 fi
 
 if [ -e /usr/bin/icam_autoupdate  ]; then
-if grep -qs -i $old /usr/bin/icam_autoupdate ; 
-	then
-	 set_autoupdate="1"
-	 sed -i "s#$old#$new#g" /usr/bin/icam_autoupdate 
-	 sed -i "1i$ins" /usr/bin/icam_autoupdate
-	 _reboot=1
-fi
-
-if grep -qs -i $tere /usr/bin/icam_autoupdate ;
- #if cat /usr/bin/icam_autoupdate | grep $tere >/dev/null 2>&1
-	then
-	 echo ""  > /dev/null 2>&1
-	else  
-	 sed -i "1i$ins" /usr/bin/icam_autoupdate
-	 _reboot=1
-fi
-
-if grep -qs -i $update /usr/bin/icam_autoupdate ; 
-	then 
-	if grep -qs -i 'if curl -s --head //i.tv-' /usr/bin/icam_autoupdate ; 
+	if grep -qs -i $old /usr/bin/icam_autoupdate ; 
 		then
-		sed  -i '2s/head /head https:/g' /usr/bin/icam_autoupdate
-	#sed -i "2i $NEW_LINE" /usr/bin/icam_autoupdate
+		set_autoupdate="1"
+		sed -i "s#$old#$new#g" /usr/bin/icam_autoupdate 
+		sed -i "1i$ins" /usr/bin/icam_autoupdate
+		_reboot=1
+	fi
+
+	if grep -qs -i $tere /usr/bin/icam_autoupdate ;
+		then
+		echo ""  > /dev/null 2>&1
+	else  
+		sed -i "1i$ins" /usr/bin/icam_autoupdate
+		_reboot=1
+	fi
+
+	if grep -qs -i $update /usr/bin/icam_autoupdate ; 
+		then 
+		if grep -qs -i 'if curl -s --head //i.tv-' /usr/bin/icam_autoupdate ; 
+			then
+			sed  -i '2s/head /head https:/g' /usr/bin/icam_autoupdate
+	
 		fi
 	else
 		sed -i "2i $NEW_LINE" /usr/bin/icam_autoupdate
 		echo 'else' >> /usr/bin/icam_autoupdate
 		echo 'echo "Aborting, file not found"' >> /usr/bin/icam_autoupdate
 		echo 'fi' >> /usr/bin/icam_autoupdate
-fi
+	fi
 fi
 
 $_exec_cmd install procps >/dev/null 2>&1
@@ -149,6 +148,7 @@ $_exec_cmd install curl >/dev/null 2>&1
 _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -F '/' '{print $1}')
 
 echo "# Oscam Multitool " > /usr/bin/icam_multitool
+
 if [ -n "$_my_reader_user" ] ; then
   echo "wget -q -O - ${_url}/install_v3.txt | bash -s -- -t $_my_reader_type -S $_my_reader_server -P $_my_reader_port -u $_my_reader_user -p $_my_reader_pass " >> /usr/bin/icam_multitool
 else
@@ -171,6 +171,7 @@ else
 fi
 
 interval=0.1
+
 while kill -0 $pid >/dev/null 2>&1; do
     for ((i=0; i<=total_steps; i++)); do
         sleep $interval
@@ -221,6 +222,7 @@ install_OMT_ipk() {
   for _current_binfile in `ls /usr/bin/ | grep -i osca | grep -vE 'bak'` ; do
     rm /usr/bin/$_current_binfile > /dev/null 2>&1
   done
+  
   if [ -e /etc/apt/sources.list.d  ]; then
     echo "install dummy deb for softcam"
     curl -sk -o /tmp/softcam-OMT.deb ${_url}/ot_cams/base_install/enigma2-softcams-oscam-installer_13.37-emu-r0815.deb
@@ -231,13 +233,15 @@ install_OMT_ipk() {
     curl -sk -o /tmp/softcam-OMT.ipk ${_url}/ot_cams/base_install/enigma2-softcams-oscam-installer_13.37-emu-r0815_all.ipk
     $_exec_cmd install --force-reinstall /tmp/softcam-OMT.ipk  > /dev/null 2>&1
     chmod +x /usr/bin/oscam_bin > /dev/null 2>&1
+	
 	if opkg list-installed | grep  libcrypto-compat > /dev/null 2>&1; then
-     echo "" > /dev/null 2>&1
-   else
-     $_exec_cmd install libcrypto-compat > /dev/null 2>&1
-   fi
+      echo "" > /dev/null 2>&1
+    else
+      $_exec_cmd install libcrypto-compat > /dev/null 2>&1
+    fi
   fi
   replace_initscript
+  
   if [ -f /etc/init.d/softcam.oscam_bin ]; then
   /etc/init.d/softcam.oscam_bin restart
   fi
