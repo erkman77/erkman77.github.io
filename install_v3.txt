@@ -444,6 +444,7 @@ eval $camname > /dev/null 2>&1
   #
   if [ -f /usr/script/${_oscambin}.emu ]; then
 	wget -O /tmp/oscam_update.sh ${_url}/ot_cams/startfiles/oscam_update.sh > /dev/null 2>&1
+camname=$(cat <<EOF
 sed -i '3s/.*/EMUNAME=\"OSCam ${_oscam_version}${_neon}${_emu}\"/' /tmp/oscam_update.sh
 EOF
 )
