@@ -351,6 +351,9 @@ transponders
 00c0ac88:0001:ffff
 	s 11400000:9874000:1:3:192:2:0:1:2:0:2
 /
+00c0ad48:0001:ffff
+	s 11592000:4800000:1:3:192:2:0:1:2:0:2
+/
 00820000:2cec:013e
 	s 10815000:27500000:0:4:130:2:0
 /
@@ -2167,7 +2170,7 @@ p:
 p:
 0020:00c00000:0021:0085:1:0
 Sonnenklar TV
-p:Sky Deutschland,f:1
+p:BetaDigital,f:1
 0028:00c00000:0021:0085:1:0
 Home Shopping Europe (HSE) 24
 p:BetaDigital,f:1
@@ -2181,7 +2184,7 @@ p:BetaDigital,f:1
 HSE24 Trend
 p:BetaDigital,f:1
 0295:00c00000:0021:0085:1:0
-Astro TV
+Spirit TV
 p:BetaDigital,f:1
 0382:00c00000:0021:0085:1:0
 MediaShop- Neuheiten
@@ -2492,9 +2495,6 @@ p:MB Satellite,f:1
 3138:00c00000:0459:0001:1:0
 MBS - Test2
 p:MB Satellite,f:1
-3159:00c00000:0459:0001:1:0
-Lilo.TV
-p:MB Satellite,f:1
 3146:00c00000:0459:0001:1:0
 RheinMain TV
 p:MB Satellite,f:1
@@ -2507,16 +2507,19 @@ p:MB Satellite,f:1
 3164:00c00000:0459:0001:1:0
 Schlager Radio
 p:MB Satellite,f:1
+3159:00c00000:0459:0001:1:0
+MBS Test 3
+p:MB Satellite,f:1
 332d:00c00000:045b:0001:1:0
 ORF III
-p:ORF Digital,f:1
-332e:00c00000:045b:0001:1:0
+p:ORF,f:1
+332e:00c00000:045b:0001:22:0
 RTL Nitro Austria
 p:RTL,f:1
-3330:00c00000:045b:0001:1:0
+3330:00c00000:045b:0001:22:0
 LT1
 p:-,f:1
-3332:00c00000:045b:0001:1:0
+3332:00c00000:045b:0001:22:0
 Shop LC
 p:ORS,f:1
 3333:00c00000:045b:0001:1:0
@@ -2525,63 +2528,63 @@ p:-,f:1
 3337:00c00000:045b:0001:1:0
 ServusTV Oesterreich
 p:ServusTV,f:1
-3339:00c00000:045b:0001:1:0
+3339:00c00000:045b:0001:22:0
 L-TV
 p:-,f:1
 3341:00c00000:045b:0001:2:0
 OE1
-p:ORF Digital
+p:ORF
 3342:00c00000:045b:0001:2:0
 OE1 DD
-p:ORF Digital
+p:ORF
 3343:00c00000:045b:0001:2:0
 OE2 W
-p:ORF Digital
+p:ORF
 3344:00c00000:045b:0001:2:0
 OE2 N
-p:ORF Digital
+p:ORF
 3345:00c00000:045b:0001:2:0
 OE2 B
-p:ORF Digital
+p:ORF
 3346:00c00000:045b:0001:2:0
 OE2 O
-p:ORF Digital
+p:ORF
 3347:00c00000:045b:0001:2:0
 OE2 S
-p:ORF Digital
+p:ORF
 3348:00c00000:045b:0001:2:0
 OE2 T
-p:ORF Digital
+p:ORF
 3349:00c00000:045b:0001:2:0
 OE2 V
-p:ORF Digital
+p:ORF
 334a:00c00000:045b:0001:2:0
 OE2 St
-p:ORF Digital
+p:ORF
 334b:00c00000:045b:0001:2:0
 OE2 K
-p:ORF Digital
+p:ORF
 334d:00c00000:045b:0001:2:0
 OE3
-p:ORF Digital
+p:ORF
 334e:00c00000:045b:0001:2:0
 FM4
-p:ORF Digital
+p:ORF
 3354:00c00000:045b:0001:2:0
 RADIO MARIA
 p:Radio Maria Österreich
-3338:00c00000:045b:0001:1:0
+3338:00c00000:045b:0001:22:0
 4News
-p:-,f:1
-3355:00c00000:045b:0001:25:0
-AstroTV HD
 p:-,f:1
 332f:00c00000:045b:0001:22:0
 Dokusat
 p:-,f:1
 3336:00c00000:045b:0001:22:0
 Genius TV
-p:-,f:1
+p:TV2000plus,f:1
+3355:00c00000:045b:0001:25:0
+EWTN katholisches TV HD
+p:FFmpeg,f:1
 32c9:00c00000:045d:0001:1:0
 ORF 1
 p:ORF,f:1
@@ -3764,9 +3767,6 @@ p:CSAT,f:1
 24c1:00c00000:043c:0001:25:0
 Planète+ Crime HD
 p:CSAT,f:1
-24c3:00c00000:043c:0001:25:0
-Télétoon+ HD
-p:CSAT,f:1
 251b:00c00000:043c:0001:12:0
 DATASYSTEM
 p:CSAT
@@ -3899,6 +3899,9 @@ p:CSAT,f:1
 238a:00c00000:0442:0001:100:0
 
 p:
+232d:00c00000:0442:0001:25:0
+Télétoon+ HD
+p:CSAT,f:1
 2261:00c00000:0438:0001:25:0
 Canal+ HD
 p:CSAT,f:1
@@ -4586,6 +4589,9 @@ p:Betamobil,f:1
 0001:00c0ac88:0001:ffff:1:0
 ITA 560 DIRTY - KRANJSKA
 p:LIVESAT,f:1
+0001:00c0ad48:0001:ffff:1:0
+WDR-SNG1-SL1
+p:Service Provider,f:1
 43a0:00820000:2cec:013e:1:0
 GNC
 p:RRsat,f:1
@@ -6027,7 +6033,7 @@ p:NOVA,f:1
 Attica TV
 p:NOVA,f:1
 3c8e:00820000:1bbc:013e:1:0
-NovaChristmasHD
+NovaStarsHD
 p:NOVA,f:1
 3c93:00820000:1bbc:013e:1:0
 Cosmote Sport 7 HD
@@ -6107,6 +6113,12 @@ p:GLOBECAST,f:1
 0e31:00820000:1c20:013e:2:0
 Giornale Radio
 p:M-Three Satcom
+29cd:00820000:1c20:013e:1:0
+TV Congo
+p:GLOBECAST,f:1
+2905:00820000:1c20:013e:2:0
+Radio Congo
+p:GLOBECAST
 015f:00820000:1c84:013e:1:0
 Discovery HD
 p:NetMed,f:1
@@ -8720,9 +8732,6 @@ p:VIVACOM,f:1
 00d4:00820000:25e4:00d5:1:12
 Viasat Nature
 p:VIVACOM,f:1
-00d5:00820000:25e4:00d5:1:13
-Russian Travel Guide Int
-p:VIVACOM,f:1
 00d6:00820000:25e4:00d5:1:14
 Fashion TV
 p:VIVACOM,f:1
@@ -8778,7 +8787,7 @@ p:VIVACOM,f:1
 MovieStar
 p:VIVACOM,f:1
 00f8:00820000:25e4:00d5:1:33
-Mezzo
+Marquee TV
 p:VIVACOM,f:1
 0104:00820000:25e4:00d5:1:34
 E-Kids
@@ -8878,6 +8887,12 @@ CTC Kids
 p:VIVACOM,f:1
 014a:00820000:2648:00d5:25:15
 Diema Sport 2 HD
+p:VIVACOM,f:1
+0131:00820000:2648:00d5:1:0
+Viasat True Crime
+p:VIVACOM,f:1
+00d5:00820000:2648:00d5:1:13
+Russian Travel Guide Int
 p:VIVACOM,f:1
 006e:00820000:251c:00d5:1:0
 Fen TV
@@ -9264,7 +9279,7 @@ p:CANAL+
 JASNA GORA
 p:CANAL+
 141a:00822ce0:05dc:013e:2:0
-CANAL+ RADIO
+JASNA GORA
 p:CANAL+
 141f:00822ce0:05dc:013e:1:0
 Canal+ 1 HD Polska
@@ -9570,7 +9585,7 @@ p:STN,f:1
 KICC TV
 p:STN,f:1
 2336:00820000:2328:013e:1:0
-Paci Contemporary Channel
+GO-TV Channel
 p:STN,f:1
 2338:00820000:2328:013e:1:0
 Somaliland National TV
