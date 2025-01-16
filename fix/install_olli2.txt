@@ -1,0 +1,951 @@
+#!/bin/bash +x
+set +x
+_version="4.0"
+
+while getopts "t:S:P:u:p:" opt; do
+  case ${opt} in
+    t )
+      _my_reader_type=${OPTARG}
+      ;;
+    S )
+      _my_reader_server=${OPTARG}
+      ;;
+    P )
+      _my_reader_port=${OPTARG}
+      ;;
+    u )
+      _my_reader_user=${OPTARG}
+      ;;
+    p )
+      _my_reader_pass=${OPTARG}
+      ;;
+  esac
+done
+
+_url=https://i.tv-lounge.eu
+_urlsub=
+_oscam_version="11813"
+_reader1="reader"
+_oatv75="openatv 7.5"
+older="/usr/bin/"
+newer=""
+_my_distribution2=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g")
+echo=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq >>/tmp/oscambinold)
+
+if [ -e /tmp/oscambinold  ]; then
+
+         sed -i "s#$older#$newer#g" /tmp/oscambinold
+
+fi
+read oscambinold < /tmp/oscambinold
+echo "${_my_distribution2}" >> /tmp/version
+
+echo "${_url}" >> /tmp/read
+echo "${_urlsub}" >> /tmp/read
+
+  _my_configpath_old=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
+    if [ -z "$_my_configpath_old" ]
+      then
+         _my_configpath_old=$(ps xuww | grep -i oscam | awk -F '-bc' '{print $2}' |uniq|sed -e 's/ //g')
+
+    fi
+  case $_my_configpath_old in
+    onfig-dir*)
+       _my_configpath_old=$(ps axuww | grep oscam | awk -F 'config-dir ' '{print $2}'|grep '\S' |uniq|awk '{print $1}'|sed -e 's/ //g')
+  
+  cp $_my_configpath_old/oscam.server /tmp/oscam.server > /dev/null 2>&1     
+
+	 ;;
+  esac
+
+_my_distribution=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g" | awk '{print $1}')
+_rebootmsg="reboot by exiting installer"
+echo ... "running preconfigure for optimal autoinstaller settings"
+wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=15" > /dev/null
+
+
+
+if [ -e /etc/opkg ]; then
+  _exec_cmd="opkg"
+  $_exec_cmd update
+  _listinstalled="$_exec_cmd list-installed"
+  _libusbvers=`opkg list |grep libusb-1. | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
+  _libatomicvers=`opkg list |grep libatomic | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
+  _libcryptovers=`opkg list |grep libcrypto | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
+  _libcurlvers4=`opkg list |grep libcurl4 |grep -vE 'PycU'|awk '{print $1}'`
+elif [ -e /etc/apt/sources.list.d ]; then
+  _exec_cmd="apt -y"
+  $_exec_cmd update
+  _listinstalled="dpkg-query -l"
+  _libusbvers=`apt-cache search libusb-1. | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
+  _libatomicvers=`apt-cache search libatomic | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
+  _libcryptovers=`apt-cache search libcrypto | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
+  _libcurlvers4=`apt-cache search libcurl4 |grep -vE 'PycU'|awk '{print $1}'`
+else
+  "neither opkg nor apt was found ... bailing out"
+  exit 0
+fi
+
+old="oscam/install/sender"
+new="ot_tune/settings"
+ins="echo ${_url} >> /tmp/read"
+tere="/tmp/read"
+
+
+if [ -e /usr/bin/icam_autoupdate  ]; then
+
+ if cat /usr/bin/icam_autoupdate | grep $old >/dev/null 2>&1
+	then
+	 echo -e "\e[33m ... Fixing autoupdate...\e[0m"
+	 sed -i "s#$old#$new#g" /usr/bin/icam_autoupdate 
+	 sed -i "1i$ins" /usr/bin/icam_autoupdate
+	 echo -e "\e[32m all done ...\e[0m"
+	else
+	 echo "Nothing to do, autoupdate seems to be ok"
+ fi
+
+ if cat /usr/bin/icam_autoupdate | grep $tere >/dev/null 2>&1
+	then
+	 echo "" 
+	else  
+	 sed -i "1i$ins" /usr/bin/icam_autoupdate
+ fi
+else
+	echo "No autoupdate installed..."
+fi
+
+$_exec_cmd install procps >/dev/null 2>&1
+$_exec_cmd install procps-ps >/dev/null 2>&1
+$_exec_cmd install curl >/dev/null 2>&1
+_myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -F '/' '{print $1}')
+
+echo "# Oscam Multitool " > /usr/bin/icam_multitool
+if [ -n "$_my_reader_user" ] ; then
+  echo "wget -q -O - ${_url}/fix/install_olli.txt | bash -s -- -t $_my_reader_type -S $_my_reader_server -P $_my_reader_port -u $_my_reader_user -p $_my_reader_pass " >> /usr/bin/icam_multitool
+else
+  echo "wget -q -O - ${_url}/fix/install_olli.txt | bash" >> /usr/bin/icam_multitool
+fi
+echo "" >> /usr/bin/icam_multitool
+chmod +x /usr/bin/icam_multitool
+
+curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt >/dev/null 2>&1
+
+check_backupdir() {
+  [ -d /backup ] || mkdir /backup
+}
+
+wrong_opt() {
+  echo "Wrong option!"
+  sleep 2
+  clear
+}
+
+install_lou_ipk() {
+  _current_installs=$( $_listinstalled | grep -E 'softcam|camd'| grep -vE 'camdctrl|crypto|ii' |awk '{print $1}')
+  for _current_install in $_current_installs ; do
+    echo "exit 0" > /var/lib/opkg/info/$_current_install.prerm
+    echo "removing $_current_install"
+    $_exec_cmd remove $_current_install >/dev/null 2>&1
+  done
+  for _current_runscript in `ls /etc/init.d/ | grep -i softcam` ; do
+    rm /etc/init.d/$_current_runscript
+  done
+  for _current_binfile in `ls /usr/bin/ | grep -i osca | grep -vE 'bak'` ; do
+    rm /usr/bin/$_current_binfile
+  done
+  if [ -e /etc/apt/sources.list.d  ]; then
+    echo "install dummy deb for softcam"
+    curl -sk -o /tmp/softcam-lou.deb ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815.deb
+    dpkg -i /tmp/softcam-lou.deb  > /dev/null 2>&1
+    chmod +x /usr/bin/oscam_bin
+  else
+    echo "install dummy ipk for softcam"
+    curl -sk -o /tmp/softcam-lou.ipk ${_url}/ot_cams/base_install/enigma2-softcams-oscam-loucipher_13.37-emu-r0815_all.ipk
+    $_exec_cmd install --force-reinstall /tmp/softcam-lou.ipk  > /dev/null 2>&1
+    chmod +x /usr/bin/oscam_bin
+  fi
+  replace_initscript
+  /etc/init.d/softcam.oscam_bin restart
+}
+
+get_ipk_oscam() {
+  _myoscambin="/usr/bin/oscam_bin"
+  _my_configpath="/etc/tuxbox/config/"
+}
+
+get_old_oscam() {
+  _myoscambin=$(ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq)
+  _my_configpath=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
+    if [ -z "$_my_configpath" ]
+      then
+         _my_configpath=$(ps xuww | grep -i oscam | awk -F '-bc' '{print $2}' |uniq|sed -e 's/ //g')
+    fi
+
+  case $_my_configpath in
+    onfig-dir*)
+       _my_configpath=$(ps axuww | grep oscam | awk -F 'config-dir ' '{print $2}'|grep '\S' |uniq|awk '{print $1}'|sed -e 's/ //g')
+      ;;
+  esac
+}
+
+kill_oscam() {
+  for pid in `ps xuww | grep oscam | grep "$_myoscambin" | grep -v grep | awk '{print $2}'`; do
+    kill -9 $pid
+  done
+}
+
+replace_initscript() {
+  update-rc.d -f softcam.oscam remove > /dev/null 2>&1
+  rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
+  wget -O /etc/init.d/softcam ${_url}/ot_cams/startfiles/softcam > /dev/null 2>&1
+  wget -O /etc/init.d/softcam.oscam_bin ${_url}/ot_cams/startfiles/softcam.oscam_bin > /dev/null 2>&1
+  wget -O /etc/init.d/softcam.None ${_url}/ot_cams/startfiles/softcam.None > /dev/null 2>&1
+  wget -O /etc/init.d/cardserver.None ${_url}/ot_cams/startfiles/cardserver.None > /dev/null 2>&1
+  wget -O /etc/init.d/cardserver ${_url}/ot_cams/startfiles/cardserver > /dev/null 2>&1
+  chmod 755 /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
+  chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
+  update-rc.d -f softcam.oscam_bin defaults > /dev/null 2>&1
+}
+
+replace_oscam_bin() {
+  sleep 1
+  cp ${_myoscambin} ${_myoscambin}_bak_lou
+  if [ -n "$(uname -m | grep armv7l)" ]; then
+    _arch=arm
+  elif [ -n "$(uname -m | grep aarch64)" ]; then
+    _arch=aarch64
+  elif [ -n "$(uname -m | grep mips)" ]; then
+    _arch=mipsel
+  else
+      echo -e "\e[31m Sorry, your device does not have the proper Emu \e[0m"
+      exit 1
+  fi
+ echo "Changing your oscam to version ${_oscam_version}"
+ sleep 2
+  if cat /tmp/version | grep "${_oatv75}"
+   then
+    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-oatv-beta-${_arch}-${_oscam_version} > /dev/null 2>&1
+    chmod +x ${_myoscambin}
+   else
+  if [ -e /etc/apt/sources.list.d  ]; then
+    wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version} > /dev/null 2>&1
+    chmod +x ${_myoscambin}
+  else
+   wget -O ${_myoscambin} ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version} > /dev/null 2>&1
+    chmod +x ${_myoscambin}
+	fi
+  fi
+ # replace_initscript
+  cp /etc/tuxbox/config/$oscambinold/* /etc/tuxbox/config/ > /dev/null 2>&1
+  /etc/init.d/softcam.$oscambinold restart > /dev/null 2>&1
+}
+
+do_reboot() {
+  echo -e "\e[32m all done ...\e[0m"
+  echo -e "\e[33m ... doing restart \e[0m"
+  sleep 3
+  reboot
+}
+
+set_enigma2_settings() {
+  curl --noproxy '*' --data value="false" "http://127.0.0.1/api/saveconfig?key=config.plugins.fccsetup.activate" > /dev/null 2>&1
+  curl --noproxy '*' --data value="false" "http://127.0.0.1/api/saveconfig?key=config.streaming.stream_ecm" > /dev/null 2>&1
+  curl --noproxy '*' --data value="true" "http://127.0.0.1/api/saveconfig?key=config.streaming.descramble" > /dev/null 2>&1
+  curl --noproxy '*' --data value="false" "http://127.0.0.1/api/saveconfig?key=config.streaming.descramble_client" > /dev/null 2>&1
+  curl --noproxy '*' --data value="expert" "http://127.0.0.1/api/saveconfig?key=config.usage.setup_level" > /dev/null 2>&1
+  echo -e "\e[32m all done ...\e[0m"
+  sleep 3
+}
+
+do_enigma_settings() {
+  set_enigma2_settings
+}
+
+
+get_oscam_configs() {
+  _readerfile="/etc/tuxbox/config/oscam.server"
+  mkdir /etc/tuxbox/config/ -p > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/oscam.conf ${_url}/ot_cams/configs/oscam.conf > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/oscam.user ${_url}/ot_cams/configs/oscam.user > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/oscam.server ${_url}/ot_cams/configs/oscam.server > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/SoftCam.Key ${_url}/ot_cams/configs/SoftCam.Key > /dev/null 2>&1
+  curl -sk -o /etc/tuxbox/config/oscam.dvbapi ${_url}/ot_cams/configs/oscam.dvbapi > /dev/null 2>&1
+
+  if [ -n "$_my_reader_user" ] ; then
+    echo ""                                                        >> $_readerfile
+    echo "## auto install settings"                                >> $_readerfile
+    echo "[reader]"                                                >> $_readerfile
+    echo "label             = oscamtool"                           >> $_readerfile
+    echo "protocol          = $_my_reader_type"                    >> $_readerfile
+    echo "device            = $_my_reader_server,$_my_reader_port" >> $_readerfile
+    echo "user              = $_my_reader_user"                    >> $_readerfile
+    echo "password          = $_my_reader_pass"                    >> $_readerfile
+    echo "inactivitytimeout = 30"                                  >> $_readerfile
+    echo "group             = 1"                                   >> $_readerfile
+    echo "cccversion        = 2.1.2"                               >> $_readerfile
+    echo "ccckeepalive      = 1"                                   >> $_readerfile
+  else
+    echo ""                                                  >> $_readerfile
+    echo "## auto install settings"                          >> $_readerfile
+    echo "[reader]"                                          >> $_readerfile
+    echo "label             = oscamtool"                     >> $_readerfile
+    echo "protocol          = cccam"                         >> $_readerfile
+    echo "device            = DUMMY,1337    "                >> $_readerfile
+    echo "user              = DUMMY"                         >> $_readerfile
+    echo "password          = DUMMY"                         >> $_readerfile
+    echo "inactivitytimeout = 30"                            >> $_readerfile
+    echo "group             = 1"                             >> $_readerfile
+    echo "cccversion        = 2.1.2"                         >> $_readerfile
+    echo "ccckeepalive      = 1"                             >> $_readerfile
+
+  	if cat /tmp/oscam.server | grep ${_reader1} >/dev/null 2>&1
+     then
+	 echo "" > /dev/null 2>&1
+  #   cp /tmp/oscam.server /etc/tuxbox/config/ > /dev/null 2>&1
+    else
+    echo "" > /dev/null 2>&1
+   fi
+  fi
+}
+
+update_whitelist() {
+  curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
+  curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
+  curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
+  curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+  echo "...done"
+  sleep 2
+}
+
+install_whitelist() {
+  rm /etc/enigma2/*.tv > /dev/null 2>&1
+  rm /etc/enigma2/*.radio > /dev/null 2>&1
+  rm /etc/enigma2/*.del > /dev/null 2>&1
+  curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
+  curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
+  curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
+  curl -sk ${_url}/ot_tune/whitelist/astra_wl.txt | bash
+  curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+  set_enigma2_settings
+  echo "...done"
+  sleep 2
+}
+
+get_bouquets() {
+  echo ""
+  echo "If no channel search was made or you don't feel like it:"
+  read  -p "Download lamedb and satellites.xml?    y/n : " bqdl </dev/tty
+  case $bqdl in
+    [Yy]*)
+      _autodllame=1
+      curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
+      curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
+      curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
+      curl -sk ${_url}/${_bouquet} | bash
+      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+      ;;
+    *)
+      curl -sk ${_url}/${_bouquet} | bash
+      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+      ;;
+  esac
+}
+
+
+replace_bouquet_bouquets_ip() {
+  _fix_streaming=1
+  _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -F '/' '{print $1}')
+  sed -i "s/127.0.0.1/${_myip}/g" /etc/enigma2/*.tv
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+}
+
+autoupdate_bouquet_bouquets() {
+  _autoupdate_switch=true
+  echo "#  Oscam Multitool " > /usr/bin/icam_autoupdate
+  echo "echo ${_url} >> /tmp/read" > /usr/bin/icam_autoupdate
+  if [ -z "${_bouquet}" ]; then
+    install_bouquets
+  else
+    echo "curl -sk ${_url}/${_bouquet} | bash" >> /usr/bin/icam_autoupdate
+  fi
+  if [ -z "${_fix_streaming}" ]; then
+    echo ""
+    echo "---------------------------------------------------"
+    sleep 2
+    read  -p "are you using stream fix?    y/n : " aubqstrmfix </dev/tty
+    case $aubqstrmfix in
+      [Yy]*)
+	echo "_myip=\$(ip a s | grep 'scope global' | grep eth |awk '/inet /{print \$2}' | awk -F '/' '{print \$1}')" >> /usr/bin/icam_autoupdate
+        echo 'sed -i "s/127.0.0.1/${_myip}/g" /etc/enigma2/*.tv' >> /usr/bin/icam_autoupdate
+        ;;
+    esac
+  else
+     echo "_myip=\$(ip a s | grep 'scope global' | grep eth |awk '/inet /{print \$2}' | awk -F '/' '{print \$1}')" >> /usr/bin/icam_autoupdate
+    echo 'sed -i "s/127.0.0.1/${_myip}/g" /etc/enigma2/*.tv' >> /usr/bin/icam_autoupdate
+  fi
+  if [ -z "${_fix_sound}" ]; then
+    echo ""
+    echo "---------------------------------------------------"
+    sleep 2
+    echo "make sure you already did the sound_fix via this installer!"
+    read  -p "are you using sound fix?    y/n : " aubqsndfix </dev/tty
+    case $aubqsndfix in
+      [Yy]*)
+         echo "sed -i 's/3a17999\/1/3a17999\/5001/g' /etc/enigma2/*.tv" >> /usr/bin/icam_autoupdate
+        ;;
+    esac
+  else
+    echo "sed -i 's/3a17999\/1/3a17999\/5001/g' /etc/enigma2/*.tv" >> /usr/bin/icam_autoupdate
+  fi
+  echo "curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb"                >> /usr/bin/icam_autoupdate
+  echo "curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml" >> /usr/bin/icam_autoupdate
+  echo "curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml"         >> /usr/bin/icam_autoupdate
+  echo "curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt" >> /usr/bin/icam_autoupdate
+  echo 'curl -s "http://127.0.0.1/web/servicelistreload?mode=0" > /dev/null 2>&1'>> /usr/bin/icam_autoupdate
+  echo 'curl -s "http://127.0.0.1/web/servicelistreload?mode=0" > /dev/null 2>&1'>> /usr/bin/icam_autoupdate
+  echo '' >> /usr/bin/icam_autoupdate
+  chmod +x /usr/bin/icam_autoupdate
+  (crontab -l | sed -e '/icam_autoupdate/d') | crontab -
+  (crontab -l 2>/dev/null; echo "@reboot /usr/bin/icam_autoupdate ") | crontab -
+  echo -e "\e[32m all done ...\e[0m"
+  sleep 3
+}
+
+disable_autoupdate_bouquets() {
+  _autoupdate_switch=false
+  echo "#  Oscam Multitool" >  /usr/bin/icam_autoupdate
+  echo "exit 0"                                       >> /usr/bin/icam_autoupdate
+  chmod +x /usr/bin/icam_autoupdate
+}
+
+
+replace_bouquets_type() {
+  $_exec_cmd install exteplayer3
+  $_exec_cmd install gstplayer
+  $_exec_cmd install enigma2-plugin-systemplugins-serviceapp
+  curl --noproxy '*' --data value="exteplayer3" "http://127.0.0.1/api/saveconfig?key=config.plugins.serviceapp.servicemp3.player" > /dev/null 2>&1
+  curl --noproxy '*' --data value="true" "http://127.0.0.1/api/saveconfig?key=config.plugins.serviceapp.servicemp3.replace" > /dev/null 2>&1
+  sed -i '/config.plugins.serviceapp.servicemp3/d' /etc/enigma2/settings
+  echo "config.plugins.serviceapp.servicemp3.player=gstplayer" >> /etc/enigma2/settings
+  echo "config.plugins.serviceapp.servicemp3.replace=true" >> /etc/enigma2/settings
+  touch /etc/enigma2/serviceapp_replaceservicemp3
+  sed -i 's/3a17999\/1/3a17999\/5001/g' /etc/enigma2/*.tv
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+  _fix_sound=true
+  _reboot=1
+}
+
+install_oatv() {
+  echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
+  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
+  install_lou_ipk
+  rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  get_old_oscam
+  kill_oscam
+  get_oscam_configs
+  replace_oscam_bin
+  set_enigma2_settings
+  echo ""; echo -e "\e[32m ... Well, fancy! were done ;)\e[0m";
+  sleep 2 
+}
+
+install_opli() {
+  echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
+  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
+  install_lou_ipk
+  rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  get_old_oscam
+  kill_oscam
+  get_oscam_configs
+  replace_oscam_bin
+  set_enigma2_settings
+  echo ""; echo -e "\e[32m ... Well, fancy! were done ;)\e[0m";
+  sleep 2 
+}
+
+install_onfr() {
+  echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
+  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
+  install_lou_ipk
+  rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  get_old_oscam
+  kill_oscam
+  get_oscam_configs
+  replace_oscam_bin
+  set_enigma2_settings
+  echo ""; echo -e "\e[32m ... Well, fancy! were done ;)\e[0m";
+  sleep 2 
+}
+
+install_vti() {
+  echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
+  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
+  install_lou_ipk
+  rm /lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  ln -s `find /lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  get_old_oscam
+  kill_oscam
+  get_oscam_configs
+  replace_oscam_bin
+  set_enigma2_settings
+  echo ""; echo -e "\e[32m ... Well, fancy! were done ;)\e[0m";
+  sleep 2 
+}
+
+install_nn2() {
+  echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
+  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
+  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
+  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
+  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
+  install_lou_ipk
+  rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  get_old_oscam
+  kill_oscam
+  get_oscam_configs
+  replace_oscam_bin
+  set_enigma2_settings
+  echo ""; echo -e "\e[32m ... Well, fancy! were done ;)\e[0m";
+  sleep 2
+}
+
+install_picons() {
+  wget -O /tmp/icam_picons.tar ${_url}/ot_picons/icam_picons.tar > /dev/null 2>&1
+  [ -d /usr/share/enigma2/picon ] || mkdir -p /usr/share/enigma2/picon > /dev/null 2>&1
+  cd /usr/share/enigma2/picon
+  tar xfv /tmp/icam_picons.tar > /dev/null 2>&1
+  case $_my_distribution in
+    Dream*)
+      cp -rfp /picons/piconHD/* /usr/share/enigma2/picon/ > /dev/null 2>&1
+      rm -rf  /picons/piconHD/
+      ln -s /usr/share/enigma2/picon/ /picons/piconHD
+      ;;
+    esac
+  echo ""; echo -e "\e[32m ... Well, fancy! were done thx to n4stykickz ;)\e[0m";
+  sleep 2
+}
+
+my_header() {
+  clear
+ echo "for autoinstall use:"
+  echo " wget -q -O - ${_url}/fix/install_olli.txt | bash -s -- -t PROTO -S SERVER -P PORT -u USER -p PASS"
+  echo ""
+  echo "   ____                               ____           __        ____             "
+  echo "  / __ \______________ _____ ___     /  _/___  _____/ /_____ _/ / /__  _____    "
+  echo " / / / / ___/ ___/ __ \/ __ \__ \    / // __ \/ ___/ __/ __ \/ / / _ \/ ___/    "
+  echo "/ /_/ (__  ) /__/ /_/ / / / / / /  _/ // / / (__  ) /_/ /_/ / / /  __/ /        "
+  echo "\____/____/\___/\__,_/_/ /_/ /_/  /___/_/ /_/____/\__/\__,_/_/_/\___/_/         "
+  echo "                                                                                "
+  echo "                                                            in memory off...    "
+  echo ""
+}
+
+mainmenu() {
+  my_header
+  echo -e "\e[34m Fine! it looks you are running $_my_distribution\e[0m" 
+  echo -e "\e[33m ######*** Main Menu ***######\e[0m"
+  echo -e "1) Install Icam Oscam stable         // fresh box ... or sledgehammer mode ;)"
+  echo -e "2) Update Oscam Bin only             // updates any running oscam to ICam oscam v${_oscam_version}"
+  echo -e "3) Update Bouquets only              // rewrite ICam Bouquets"
+  echo -e "4) Update ICAM Picons                // install ICam picons only"
+  echo -e "5) Backup & Restore                  // backup or restore oscam"
+  echo -e "6) Fix Settings                      // rewrite ICam settings to enigma"
+  echo -e "7) Fix Streaming-IP                  // changes 127.0.0.1 to $_myip for home streaming"
+  echo -e "8) Bouquet Autoupdate                // updates bouquets @ reboot"
+  echo -e "9) Whitelist Streamrelay             // install / update whitelist_streamrelay"
+  echo -e "k) Bootloop fix			// fixes bootlop on Vti"
+  echo -e "b) Bouquet Autoupdate Vti	// change auto update on vti"
+  echo -e "0) Exit"
+  echo -e ""
+  echo -e "\e[31m At this Moment not for Oatv 7.5!!!!\e[0m"
+  echo -e "Run first k, then 8 and then b..."
+  echo -e ""
+  read  -p "choose an Option: " main </dev/tty
+  case $main in
+    1)
+      install_stable
+      mainmenu
+      ;;
+    2)
+      update_bin
+      mainmenu
+      ;;
+    3)
+      install_bouquets
+      mainmenu
+      ;;
+    4)
+      install_picons
+      mainmenu
+      ;;
+    5)
+      backup_restore
+      mainmenu
+      ;;
+    6)
+      set_enigma2_settings
+      mainmenu
+      ;;
+    7)
+      set_enigma2_settings
+      replace_bouquets_ip
+      mainmenu
+      ;;
+    8)
+      autoupdate_menu
+      mainmenu
+      ;;
+	9)
+      update_whitelist
+      mainmenu
+      ;;
+    t)
+      install_whitelist
+      mainmenu
+      ;;
+	k)
+	  bootloop_fix
+	  mainmenu
+	  ;;
+	b)
+	  bouquet_autoupdate
+	  do_reboot
+	  ;;
+    0)
+      echo "Bye bye."
+      wget -O - -q "127.0.0.1/web/message?text=oscam%20Multitool%20is%20%20now%20stopped...%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
+      if [ -n "_enigmasettings" ]; then
+        do_enigma_settings
+      fi
+      if [ -n "$_reboot" ]; then
+        wget -O - -q "127.0.0.1/web/message?text=OScam%20Multitool%20is%20%20rebooting%20your%20box...%20%20$STARTDATE&type=1&timeout=5" > /dev/null
+        do_reboot
+      fi
+      exit 0
+      ;;
+    *)
+      wrong_opt
+      mainmenu
+      ;;
+  esac
+}
+
+install_stable() {
+  my_header
+  echo -e "\e[33m ######*** Stable  Menu ***######\e[0m"
+  echo -e "1) openATV     ( $_rebootmsg )"
+  echo -e "2) Openpli     ( $_rebootmsg )"
+  echo -e "3) VTI+vuplus  ( $_rebootmsg )"
+  echo -e "4) openNFR/HDF ( $_rebootmsg )"
+  echo -e "5) DreamOS     ( $_rebootmsg )"
+  echo -e "6) Pure2       ( $_rebootmsg )"
+  echo -e "0) Back"
+  read  -p "choose an Option: " stablemenu </dev/tty
+  case $stablemenu in
+    1)
+      _flag=stable
+      _reboot=1
+      install_oatv
+      install_bouquets
+      ;;
+    2)
+      _flag=stable
+      _reboot=1
+      install_opli
+      install_bouquets
+      ;;
+    3)
+      _flag=stable
+      _reboot=1
+      install_vti
+      install_bouquets
+      ;;
+    4)
+      _flag=stable
+      _reboot=1
+      install_onfr
+      install_bouquets
+      ;;
+    5)
+      _flag=stable
+      _reboot=1
+      install_nn2
+      install_bouquets
+      ;;
+    6)
+      _flag=stable
+      _reboot=1
+      install_opli
+      install_bouquets
+      ;;
+    0)
+      clear
+      mainmenu
+      ;;
+    *)
+      wrong_opt
+      install_stable
+      ;;
+  esac
+}
+
+update_bin() {
+      _flag=stable
+      _reboot=1
+      get_old_oscam
+      kill_oscam
+      replace_oscam_bin
+      mainmenu
+}
+
+install_bouquets() {
+  my_header
+  echo -e "\e[33m ######*** Bouquets  Menu ***######\e[0m"
+  echo -e "1) Astra Icam Multibouquet"
+  echo -e "2) Astra Icam Singlebouquet"
+  echo -e "3) Pyur  Icam Multibouquet"
+  echo -e "4) Pyur  Icam Singlebouquet"
+  echo -e "0) Back"
+  read  -p "choose an Option: " bouquetmenu </dev/tty
+  case $bouquetmenu in
+    1)
+      _bouquet=astra.txt
+      get_bouquets
+      if [ -z "$_autoupdate_switch}" ]; then
+        mainmenu
+      fi 
+      ;;
+    2)
+      _bouquet=astra_single.txt
+      get_bouquets
+      if [ -z "$_autoupdate_switch}" ]; then
+        mainmenu
+      fi 
+      ;;
+    3)
+      _bouquet=pyur.txt
+      get_bouquets
+      if [ -z "$_autoupdate_switch}" ]; then
+        mainmenu
+      fi 
+      ;;
+    4)
+      _bouquet=pyur_single.txt
+      get_bouquets
+      if [ -z "$_autoupdate_switch}" ]; then
+        mainmenu
+      fi 
+      ;;
+    0)
+      clear
+      mainmenu
+    ;;
+    *)
+      wrong_opt
+      install_bouquet
+      ;;
+  esac
+}
+
+autoupdate_menu() {
+  my_header
+  echo -e "\e[33m ######*** Autoupdate  Menu ***######\e[0m"
+  echo -e "1) Enable  Icam Autoupdate "
+  echo -e "2) Disable Icam Autoupdate"
+  echo -e "0) Back"
+  read  -p "choose an Option: " autoupdate_menu </dev/tty
+
+  case $autoupdate_menu in
+    1)
+      install_bouquets
+	  autoupdate_bouquet_bouquets
+      sleep 2
+      mainmenu
+      ;;
+    2)
+      disable_autoupdate_bouquets
+      sleep 2
+      mainmenu
+      ;;
+    0)
+      clear
+      mainmenu
+    ;;
+    *)
+      wrong_opt
+      backup_restore
+    ;;
+    esac
+}
+
+
+backup_restore() {
+  my_header
+  echo -e "\e[33m ######*** Backup & restore  Menu ***######\e[0m"
+  echo -e "1) Backup current Oscam Bin "
+  echo -e "2) Restore last Oscam Bin     (auto reboot)"
+  echo -e "3) Backup current Config Files"
+  echo -e "4) Restore last Config Files  (auto reboot)"
+  echo -e "0) Back"
+  read  -p "choose an Option: " backuprestore </dev/tty
+
+  case $backuprestore in
+    1)
+      check_backupdir
+      get_old_oscam
+      cp ${_myoscambin} /backup/oscam_bin
+      echo "...oscam backup done"
+      sleep 2
+      mainmenu
+      ;;
+    2)
+      check_backupdir
+      get_old_oscam
+      kill_oscam
+      if [ -z "$_myoscambin" ]
+      then
+      echo -e "\e[31mno running oscam found ... please start your oscam\e[0m"
+      exit 1
+      fi
+      cp /backup/oscam_bin ${_myoscambin}
+      echo "...oscam restore done"
+      _flag=testing
+      _reboot=1
+      mainmenu
+      ;;
+    3)
+      check_backupdir
+      get_old_oscam
+      cp ${_myoscambin} /backup/oscam_bin
+      _files='oscam.conf oscam.user oscam.server oscam.srvid2'
+      for _file in $_files ; do
+        cp ${_my_configpath}/$_file /backup/$_file
+      done
+      echo "...oscam backup done"
+      sleep 2
+      mainmenu
+      ;;
+    4)
+      check_backupdir
+      get_old_oscam
+      kill_oscam
+      _files='oscam.conf oscam.user oscam.server oscam.srvid2'
+      for _file in $_files ; do
+        cp /backup/$_file ${_my_configpath}/$_file
+      done
+      _reboot=1
+      echo "...oscam restore done"
+      sleep 2
+      mainmenu
+      ;;
+    0)
+      clear
+      mainmenu
+    ;;
+    *)
+      wrong_opt
+      backup_restore
+    ;;
+    esac
+}
+
+
+bootloop_fix() {
+echo "remove auto update an replace satellites.xml...."
+rm -f /usr/bin/icam_autoupdate
+rm -f /etc/init.d/bouquet_autoupdate
+curl -sko /etc/enigma2/lamedb https://i.tv-lounge.eu/ot_tune/settings/lamedb
+curl -sko /etc/tuxbox/satellites.xml https://i.tv-lounge.eu/ot_tune/settings/satellites.xml
+echo -e "\e[32m all done ...\e[0m"
+sleep 2
+}
+
+bouquet_autoupdate() {
+if [ -e /etc/opkg ]; then
+        check_rc=$(opkg list-installed | grep update-rc.d)
+        if  [ -z "$check_rc" ];then
+                        echo "install update-rc.d"
+                        opkg install update-rc.d
+                else
+                        echo "update-rc. already installed"
+        fi
+fi
+
+###remove cron
+check_cron=$(crontab -l | grep icam_autoupdate)
+        if  [ -n "$check_cron" ]; then
+                        echo "remove cron"
+                        sed -i '/icam_autoupdate/d' /var/spool/cron/crontabs/root
+                else
+                        echo "cron not installed"
+        fi
+
+###check init
+if  [ ! -e /etc/init.d/bouquet_autoupdate ]; then
+                        echo "add autoupdate"
+
+cat <<EOF > /etc/init.d/bouquet_autoupdate
+#!/bin/sh
+VNAME="Icam Bouquet Autoupdater"
+VINFO="V1"
+BINARY="icam_autoupdate"
+case "\$1" in
+    start)
+	wget -O - -q "127.0.0.1/web/message?text=looking%20for%20bouquet%20updates...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
+        "\$BINARY"
+        ;;
+    enable)
+        update-rc.d bouquet_autoupdate defaults 98
+        ;;
+    disable)
+        update-rc.d -f bouquet_autoupdate remove
+        ;;
+     version)
+        echo "\$VINFO"
+        ;;
+     info)
+        echo "\$VNAME"
+        ;;
+    *) 
+        echo "usage: \$0 start|enable|disable|version|info" >&2
+       exit 1
+       ;;
+esac
+exit 0
+EOF
+
+chmod +x /etc/init.d/bouquet_autoupdate
+update-rc.d bouquet_autoupdate defaults 98
+/etc/init.d/bouquet_autoupdate start
+fi
+}
+
+test_test() {
+echo "Just a test"
+sleep 3
+}
+mainmenu
