@@ -126,11 +126,11 @@ long_running_task() {
 		sed -i "1i$ins" /usr/bin/icam_autoupdate
 		_reboot=1
 	fi
-
+	
 	if grep -qs -i $update /usr/bin/icam_autoupdate ; then 
 		if grep -qs -i 'if curl -s --head //i.tv-' /usr/bin/icam_autoupdate ; 
 			then
-			sed  -i '2s/head /head https:/g' /usr/bin/icam_autoupdate
+			sed  -i '2s/head /head http:/g' /usr/bin/icam_autoupdate
 	
 		fi
 	else
@@ -139,6 +139,11 @@ long_running_task() {
 		echo 'echo "Aborting, file not found"' >> /usr/bin/icam_autoupdate
 		echo 'fi' >> /usr/bin/icam_autoupdate
 	fi
+	
+	if grep -qs -i https /usr/bin/icam_autoupdate ; then
+		sed -i "s#$https#http#g" /usr/bin/icam_autoupdate
+	fi
+	
   fi
 
 _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -F '/' '{print $1}')

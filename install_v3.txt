@@ -3,7 +3,7 @@ set +x
 clear
 
 _version="4.5"
-_url=https://i.tv-lounge.eu
+_url=http://i.tv-lounge.eu
 _oscam_version=v24
 _myoscambin2="/usr/bin/oscam_bin"
 _reader1="reader"
@@ -18,7 +18,7 @@ update_wrong="if curl -s --head //i.tv-"
 _stream="stream_relay_enabled"
 _rebootmsg="reboot by exiting installer"
 SEARCH_PATH="/usr/tuxbox/config"
-NEW_LINE='if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
+NEW_LINE='if curl -s --head http://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 echo "${_url}" >> /tmp/read
 
 ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscamfile
@@ -125,7 +125,7 @@ long_running_task() {
 
 	if grep -qs -i $update /usr/bin/icam_autoupdate ; then 
 		if grep -qs -i 'if curl -s --head //i.tv-' /usr/bin/icam_autoupdate ; then
-			sed  -i '2s/head /head https:/g' /usr/bin/icam_autoupdate
+			sed  -i '2s/head /head http:/g' /usr/bin/icam_autoupdate
 		fi
 	else
 		sed -i "2i $NEW_LINE" /usr/bin/icam_autoupdate
@@ -133,6 +133,11 @@ long_running_task() {
 		echo 'echo "Aborting, file not found"' >> /usr/bin/icam_autoupdate
 		echo 'fi' >> /usr/bin/icam_autoupdate
 	fi
+	
+	if grep -qs -i https /usr/bin/icam_autoupdate ; then
+		sed -i "s#$https#http#g" /usr/bin/icam_autoupdate
+	fi
+	
   fi
 
 _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -F '/' '{print $1}')
@@ -683,7 +688,7 @@ autoupdate_bouquet_bouquets() {
   _autoupdate_switch=true
   echo "#  Oscam Multitool " >> /usr/bin/icam_autoupdate
   echo "echo ${_url} >> /tmp/read" >> /usr/bin/icam_autoupdate
-  echo 'if curl -s --head https://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then' >> /usr/bin/icam_autoupdate
+  echo 'if curl -s --head http://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then' >> /usr/bin/icam_autoupdate
 
   if [ -z "${_bouquet}" ]; then
     install_bouquets
