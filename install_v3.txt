@@ -116,9 +116,7 @@ long_running_task() {
 		_reboot=1
 	fi
 
-	if grep -qs -i $tere /usr/bin/icam_autoupdate ;	then
-		echo ""  > /dev/null 2>&1
-	else  
+	if ! grep -qs -i $tere /usr/bin/icam_autoupdate ;	then
 		sed -i "1i$ins" /usr/bin/icam_autoupdate
 		_reboot=1
 	fi
