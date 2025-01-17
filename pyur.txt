@@ -27,4 +27,4 @@ wget -O /etc/enigma2/userbouquet.skyserien_pyur.tv ${_url}/ot_tune/pyur/userbouq
 wget -O /etc/enigma2/userbouquet.skysport_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skysport_pyur.tv > /dev/null 2>&1
 wget -O /etc/enigma2/userbouquet.skysportaustria_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skysportaustria_pyur.tv > /dev/null 2>&1
 wget -O /etc/enigma2/userbouquet.skysportextra_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skysportextra_pyur.tv > /dev/null 2>&1
-rm /tmp/bouquets.tv
+rm /tmp/bouquets.tv > /dev/null 2>&1

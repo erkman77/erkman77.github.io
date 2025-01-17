@@ -16,5 +16,5 @@ wget -O /etc/enigma2/userbouquet.192e_orange.tv ${_url}/ot_tune/astra_full/userb
 wget -O /etc/enigma2/userbouquet.192e_skyd-ard.tv ${_url}/ot_tune/astra_full/userbouquet.192e_skyd-ard.tv > /dev/null 2>&1
 wget -O /etc/enigma2/userbouquet.192e_movistar.tv ${_url}/ot_tune/astra_full/userbouquet.192e_movistar.tv > /dev/null 2>&1
 wget -O /etc/enigma2/userbouquet.192e_canaldigitaal-tvvlaanderen.tv ${_url}/ot_tune/astra_full/userbouquet.192e_canaldigitaal-tvvlaanderen.tv > /dev/null 2>&1
-rm /tmp/bouquets.tv
+rm /tmp/bouquets.tv > /dev/null 2>&1
  

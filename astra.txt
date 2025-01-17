@@ -45,4 +45,4 @@ wget -qO /etc/enigma2/userbouquet.skysportextra_astra.tv ${_url}/ot_tune/astra/u
 
 
 
-rm /tmp/bouquets.tv
+rm /tmp/bouquets.tv > /dev/null 2>&1

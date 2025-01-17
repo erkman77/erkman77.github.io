@@ -20,4 +20,4 @@ wget -O /etc/enigma2/userbouquet.130e_nova.tv ${_url}/ot_tune/hotbird/userbouque
 wget -O /etc/enigma2/userbouquet.130e_rai-mediaset-tivusat.tv ${_url}/ot_tune/hotbird/userbouquet.130e_rai-mediaset-tivusat.tv > /dev/null 2>&1
 wget -O /etc/enigma2/userbouquet.130e_skyitalia.tv ${_url}/ot_tune/hotbird/userbouquet.130e_skyitalia.tv > /dev/null 2>&1
 wget -O /etc/enigma2/userbouquet.130e_vivacom.tv ${_url}/ot_tune/hotbird/userbouquet.130e_vivacom.tv > /dev/null 2>&1
-rm /tmp/bouquets.tv
+rm /tmp/bouquets.tv > /dev/null 2>&1
