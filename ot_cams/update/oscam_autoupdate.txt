@@ -55,7 +55,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 
 
   if [[ -z "$_myoscambin" || "$_myoscambin" == "/bin/bash" ]]; then
-	echo -e "No running OSCam found\n"
+	echo -e "\e[31m\nNo running OSCam found\n\e[0m"
 	exit 0
   fi
 
@@ -303,5 +303,5 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
   unset _emu
   unset _neon
 else
-  echo -e "\nHost not reachable"
+  echo -e "\e[31m\nHost not reachable\n\e[0m"
 fi
