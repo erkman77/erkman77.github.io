@@ -141,7 +141,7 @@ long_running_task() {
 	fi
 	
 	if grep -qs -i https /usr/bin/icam_autoupdate ; then
-		sed -i "s#$https#http#g" /usr/bin/icam_autoupdate
+		sed -i "s#https#http#g" /usr/bin/icam_autoupdate
 	fi
 	
   fi
