@@ -593,7 +593,6 @@ get_oscam_configs() {
     echo "cccversion        = 2.1.2"                         >> $_readerfile
     echo "ccckeepalive      = 1"                             >> $_readerfile
   	if cat /tmp/oscam.server | grep "${_reader1}" > /dev/null 2>&1; then
-     then
 	 echo "" > /dev/null 2>&1
   #   cp /tmp/oscam.server /etc/tuxbox/config/ > /dev/null 2>&1
     else
