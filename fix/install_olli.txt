@@ -748,8 +748,26 @@ autoupdate_bouquet_bouquets() {
   echo 'fi' >> /usr/bin/icam_autoupdate
   echo '' >> /usr/bin/icam_autoupdate  
   chmod +x /usr/bin/icam_autoupdate
-  (crontab -l | sed -e '/icam_autoupdate/d') | crontab -
-  (crontab -l 2>/dev/null; echo "@reboot /usr/bin/icam_autoupdate ") | crontab -
+ 
+  if [[ $_my_distribution == "VTi" ]]; then
+    if [ -e /etc/opkg ]; then
+        check_rc=$(opkg list-installed | grep update-rc.d)
+        if  [ -z "$check_rc" ];then
+             opkg install update-rc.d
+        fi
+    fi
+
+    if  [ ! -e /etc/init.d/bouquet_autoupdate ]; then
+      wget -O /etc/init.d/bouquet_autoupdate ${_url}/ot_tune/bouquet_autoupdate.txt > /dev/null 2>&1
+      chmod +x /etc/init.d/bouquet_autoupdate
+      update-rc.d bouquet_autoupdate defaults 98
+      /etc/init.d/bouquet_autoupdate start
+    fi
+  else
+    (crontab -l | sed -e '/icam_autoupdate/d') | crontab -
+    (crontab -l 2>/dev/null; echo "@reboot /usr/bin/icam_autoupdate ") | crontab -
+  fi
+ 
   echo -e "\e[32m all done ...\e[0m"
   sleep 3
 }
@@ -930,7 +948,6 @@ mainmenu() {
   echo -e "8) Bouquet Autoupdate                // updates bouquets @ reboot"
   echo -e "9) Whitelist Streamrelay             // install / update whitelist_streamrelay"
   echo -e "k) Bootloop fix			// fixes bootlop on Vti"
-  echo -e "b) Bouquet Autoupdate Vti	// change auto update on vti"
   echo -e "0) Exit"
   echo -e ""
   echo -e "\e[31m At this Moment not for Oatv 7.5!!!!\e[0m"
@@ -1002,10 +1019,6 @@ mainmenu() {
 	k)
 	  bootloop_fix
 	  mainmenu
-	  ;;
-	b)
-	  bouquet_autoupdate
-	  do_reboot
 	  ;;
     0)
 	  clear
@@ -1511,65 +1524,5 @@ astra_hotbird() {
     ;;
     esac
 	}
-
-bouquet_autoupdate() {
-if [ -e /etc/opkg ]; then
-        check_rc=$(opkg list-installed | grep update-rc.d)
-        if  [ -z "$check_rc" ];then
-                        echo "install update-rc.d"
-                        opkg install update-rc.d
-                else
-                        echo "update-rc. already installed"
-        fi
-fi
-
-###remove cron
-check_cron=$(crontab -l | grep icam_autoupdate)
-        if  [ -n "$check_cron" ]; then
-                        echo "remove cron"
-                        sed -i '/icam_autoupdate/d' /var/spool/cron/crontabs/root
-                else
-                        echo "cron not installed"
-        fi
-
-###check init
-if  [ ! -e /etc/init.d/bouquet_autoupdate ]; then
-                        echo "add autoupdate"
-
-cat <<EOF > /etc/init.d/bouquet_autoupdate
-#!/bin/sh
-VNAME="Icam Bouquet Autoupdater"
-VINFO="V1"
-BINARY="icam_autoupdate"
-case "\$1" in
-    start)
-	wget -O - -q "127.0.0.1/web/message?text=looking%20for%20bouquet%20updates...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
-        "\$BINARY"
-        ;;
-    enable)
-        update-rc.d bouquet_autoupdate defaults 98
-        ;;
-    disable)
-        update-rc.d -f bouquet_autoupdate remove
-        ;;
-     version)
-        echo "\$VINFO"
-        ;;
-     info)
-        echo "\$VNAME"
-        ;;
-    *) 
-        echo "usage: \$0 start|enable|disable|version|info" >&2
-       exit 1
-       ;;
-esac
-exit 0
-EOF
-
-chmod +x /etc/init.d/bouquet_autoupdate
-update-rc.d bouquet_autoupdate defaults 98
-/etc/init.d/bouquet_autoupdate start
-fi
-}
  
 mainmenu
