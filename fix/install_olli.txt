@@ -679,6 +679,14 @@ get_bouquets() {
   esac
 }
 
+iptv_install() {
+      curl -sk ${_url}/iptv.txt | bash
+      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+	  echo -e "\e[32m all done ...\e[0m"
+	  sleep 3
+}
+
 hotbird_install() {
       curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
       curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
@@ -951,7 +959,7 @@ mainmenu() {
   echo -e " 1) Install Icam Oscam stable         // fresh box ... or sledgehammer mode ;)"
   echo -e " 2) Update Oscam Bin only             // updates any running oscam to ICam Oscam"
   echo -e " 3) Bouquets for Astra or Hotbird     // install full Bouquets for Astra or Hotbird (no ICAM)"
-  echo -e "                                         Stand 14.01.2025"
+  echo -e "                                         Stand 05.01.2025"
   echo -e " 4) Update ICam Bouquets only         // rewrite ICam Bouquets"
   echo -e " 5) Update ICAM Picons                // install ICam picons only"
   echo -e " 6) Backup & Restore                  // backup or restore oscam"
@@ -963,7 +971,9 @@ mainmenu() {
   echo -e "12) Oscam Start Patch                 // checks whether oscam starts twice,"
   echo -e "                                         use this after a fresh reboot"
   echo -e "                                         and DONT restart oscam"
+  echo -e "i) Some IPTV Channels                 // install some IPTV Channels"
   echo -e "k) Bootloop fix			             // fixes bootlop on Vti"
+  echo -e ""
   echo -e "0) Exit"
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
@@ -1029,6 +1039,10 @@ mainmenu() {
       install_whitelist
       mainmenu
       ;;
+	i)
+	  iptv_install
+	  mainmenu
+	  ;;
 	k)
 	  bootloop_fix
 	  mainmenu
@@ -1512,7 +1526,7 @@ astra_hotbird() {
   echo -e "2) Install Astra Bouquet"
   echo -e "0) Back"
   echo -e ""
-  echo -e "Thx to Morpheus883 for his settings"
+  echo -e "Thx to ciefp for his settings"
   echo -e ""
   read  -p "choose an Option: " astra_hotbird </dev/tty
 
