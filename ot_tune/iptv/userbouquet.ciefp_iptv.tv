@@ -1,4 +1,4 @@
-#NAME ciefp_IPTV
+#NAME IPTV_Channels_by_ciefp
 #SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefpsettings_iptv_exyu.tv" ORDER BY bouquet
 #SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefpsettings_iptv_exyu2.tv" ORDER BY bouquet
 #SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefpsettings_iptv_mix.tv" ORDER BY bouquet
