@@ -972,6 +972,7 @@ mainmenu() {
   echo -e "                                         use this after a fresh reboot"
   echo -e "                                         and DONT restart oscam"
   echo -e "i) Some IPTV Channels                 // install some IPTV Channels"
+  echo -e "                                         Stand 05.01.2025"
   echo -e "k) Bootloop fix			             // fixes bootlop on Vti"
   echo -e ""
   echo -e "0) Exit"
