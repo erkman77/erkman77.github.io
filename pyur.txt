@@ -15,7 +15,7 @@ echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skyserien_pyur.tv" 
 echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skysport_pyur.tv" ORDER BY bouquet' >&9
 echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skysportaustria_pyur.tv" ORDER BY bouquet' >&9
 echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skysportextra_pyur.tv" ORDER BY bouquet' >&9
-cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv
+cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv > /dev/null 2>&1
 wget -O /etc/enigma2/userbouquet.dazn_pyur.tv ${_url}/ot_tune/pyur/userbouquet.dazn_pyur.tv > /dev/null 2>&1
 wget -O /etc/enigma2/userbouquet.skybundesliga_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skybundesliga_pyur.tv > /dev/null 2>&1
 wget -O /etc/enigma2/userbouquet.skydoku_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skydoku_pyur.tv > /dev/null 2>&1

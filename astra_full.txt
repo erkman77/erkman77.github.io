@@ -18,7 +18,7 @@ echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefp_19e_movistard
 echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefp_19e_astra.tv" ORDER BY bouquet' >&9
 echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefp_19e_skyde_icam.tv" ORDER BY bouquet' >&9
 
-cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv
+cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv > /dev/null 2>&1
 
 wget -O /etc/enigma2/userbouquet.ciefp_19e_astra.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_astra.tv > /dev/null 2>&1
 wget -O /etc/enigma2/userbouquet.ciefp_19e_movistardocu.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_movistardocu.tv > /dev/null 2>&1

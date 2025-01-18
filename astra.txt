@@ -22,7 +22,7 @@ echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skyerotic_astra.tv"
 #echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.private-sd_astra.tv" ORDER BY bouquet' >&9
 #echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.austriasat_astra.tv" ORDER BY bouquet' >&9
 
-cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv
+cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv > /dev/null 2>&1
  
 sleep 1
 
