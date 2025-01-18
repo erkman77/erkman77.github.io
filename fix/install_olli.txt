@@ -143,7 +143,12 @@ long_running_task() {
 	if grep -qs -i https /usr/bin/icam_autoupdate ; then
 		sed -i "s#https#http#g" /usr/bin/icam_autoupdate
 	fi
-	
+    
+	if [ -e /etc/init.d/bouquet_autoupdate  ]; then
+	    if grep -qs -i "\\" /etc/init.d/bouquet_autoupdate ; then
+		sed -i 's/\\\$/\$/g' /etc/init.d/bouquet_autoupdate
+	    fi
+    fi	
   fi
 
 _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -F '/' '{print $1}')
