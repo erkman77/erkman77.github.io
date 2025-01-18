@@ -1,0 +1,425 @@
+#NAME :: ciefpsettings • IPTV SPORT ::
+#SERVICE 4097:0:1:40:151A:151A:0:0:0:0:http%3a//vip2102.112421.net%3a2050/00%3a1A%3a79%3a78%3aD1%3a4C/hmoyzTMLgZ/332585?play_token=noN8G5PbtW&mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=332585&chCm=http%3a//localhost/ch/332585_&end=:EX-YU%20%7C%20ARENA%20SPORT%201%20HR%20(TCH+)%20%5B5402%5D
+#DESCRIPTION EX-YU | ARENA SPORT 1 HR (TCH+) [5402]
+#SERVICE 4097:0:1:40:151B:151B:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=332586&chCm=http%3a//localhost/ch/332586_&end=:EX-YU%20%7C%20ARENA%20SPORT%201%20SRB%20(TCH+)%20%5B5403%5D
+#DESCRIPTION EX-YU | ARENA SPORT 1 SRB (TCH+) [5403]
+#SERVICE 4097:0:1:40:151C:151C:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=332587&chCm=http%3a//localhost/ch/332587_&end=:EX-YU%20%7C%20ARENA%20SPORT%202%20BIH%20(TCH+)%20%5B5404%5D
+#DESCRIPTION EX-YU | ARENA SPORT 2 BIH (TCH+) [5404]
+#SERVICE 4097:0:1:40:151D:151D:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=332588&chCm=http%3a//localhost/ch/332588_&end=:EX-YU%20%7C%20ARENA%20SPORT%202%20SRB%20(TCH+)%20%5B5405%5D
+#DESCRIPTION EX-YU | ARENA SPORT 2 SRB (TCH+) [5405]
+#SERVICE 4097:0:1:40:151E:151E:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=332589&chCm=http%3a//localhost/ch/332589_&end=:EX-YU%20%7C%20ARENA%20SPORT%203%20SRB%20(TCH+)%20%5B5406%5D
+#DESCRIPTION EX-YU | ARENA SPORT 3 SRB (TCH+) [5406]
+#SERVICE 4097:0:1:40:151F:151F:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=332590&chCm=http%3a//localhost/ch/332590_&end=:EX-YU%20%7C%20ARENA%20SPORT%204%20BIH%20(TCH+)%20%5B5407%5D
+#DESCRIPTION EX-YU | ARENA SPORT 4 BIH (TCH+) [5407]
+#SERVICE 4097:0:1:40:1520:1520:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=332591&chCm=http%3a//localhost/ch/332591_&end=:EX-YU%20%7C%20ARENA%20SPORT%204%20SRB%20(TCH+)%20%5B5408%5D
+#DESCRIPTION EX-YU | ARENA SPORT 4 SRB (TCH+) [5408]
+#SERVICE 4097:0:1:40:1521:1521:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=332592&chCm=http%3a//localhost/ch/332592_&end=:EX-YU%20%7C%20ARENA%20SPORT%205%20HR%20(TCH+)%20%5B5409%5D
+#DESCRIPTION EX-YU | ARENA SPORT 5 HR (TCH+) [5409]
+#SERVICE 4097:0:1:40:1522:1522:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=332593&chCm=http%3a//localhost/ch/332593_&end=:EX-YU%20%7C%20ARENA%20SPORT%205%20SRB%20(TCH+)%20%5B5410%5D
+#DESCRIPTION EX-YU | ARENA SPORT 5 SRB (TCH+) [5410]
+#SERVICE 4097:0:1:40:3C4B:3C4B:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153308&chCm=http%3a//localhost/ch/4153308_&end=:EX-YU%20%7C%20ARENA%20SPORT%201%20HR%20%5B0%5D
+#DESCRIPTION EX-YU | ARENA SPORT 1 HR [0]
+#SERVICE 4097:0:1:40:3C4C:3C4C:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153309&chCm=http%3a//localhost/ch/4153309_&end=:EX-YU%20%7C%20ARENA%20SPORT%201%20SRB%20%5B0%5D
+#DESCRIPTION EX-YU | ARENA SPORT 1 SRB [0]
+#SERVICE 4097:0:1:40:3C4D:3C4D:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153310&chCm=http%3a//localhost/ch/4153310_&end=:EX-YU%20%7C%20ARENA%20SPORT%202%20BIH%20%5B0%5D
+#DESCRIPTION EX-YU | ARENA SPORT 2 BIH [0]
+#SERVICE 4097:0:1:40:3C4E:3C4E:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153311&chCm=http%3a//localhost/ch/4153311_&end=:EX-YU%20%7C%20ARENA%20SPORT%202%20SRB%20%5B0%5D
+#DESCRIPTION EX-YU | ARENA SPORT 2 SRB [0]
+#SERVICE 4097:0:1:40:3C4F:3C4F:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153312&chCm=http%3a//localhost/ch/4153312_&end=:EX-YU%20%7C%20ARENA%20SPORT%203%20SRB%20%5B0%5D
+#DESCRIPTION EX-YU | ARENA SPORT 3 SRB [0]
+#SERVICE 4097:0:1:40:3C50:3C50:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153313&chCm=http%3a//localhost/ch/4153313_&end=:EX-YU%20%7C%20ARENA%20SPORT%204%20BIH%20%5B0%5D
+#DESCRIPTION EX-YU | ARENA SPORT 4 BIH [0]
+#SERVICE 4097:0:1:40:3C51:3C51:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153314&chCm=http%3a//localhost/ch/4153314_&end=:EX-YU%20%7C%20ARENA%20SPORT%204%20SRB%20%5B0%5D
+#DESCRIPTION EX-YU | ARENA SPORT 4 SRB [0]
+#SERVICE 4097:0:1:40:3C52:3C52:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153315&chCm=http%3a//localhost/ch/4153315_&end=:EX-YU%20%7C%20ARENA%20SPORT%205%20HR%20%5B0%5D
+#DESCRIPTION EX-YU | ARENA SPORT 5 HR [0]
+#SERVICE 4097:0:1:40:3C53:3C53:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153316&chCm=http%3a//localhost/ch/4153316_&end=:EX-YU%20%7C%20ARENA%20SPORT%205%20SRB%20%5B0%5D
+#DESCRIPTION EX-YU | ARENA SPORT 5 SRB [0]
+#SERVICE 4097:0:1:40:3CFF:3CFF:0:0:0:0:http%3a//vip2102.112421.net%3a2050/00%3a1A%3a79%3a78%3aD1%3a4C/kahiT7bl9j/4153488?play_token=l2Pp4hXFE9&mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153488&chCm=http%3a//localhost/ch/4153488_&end=:EX-YU%20%7C%20SPORT%20KLUB%201%20%5B0%5D
+#DESCRIPTION EX-YU | SPORT KLUB 1 [0]
+#SERVICE 4097:0:1:40:3D00:3D00:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153489&chCm=http%3a//localhost/ch/4153489_&end=:EX-YU%20%7C%20SPORT%20KLUB%202%20%5B0%5D
+#DESCRIPTION EX-YU | SPORT KLUB 2 [0]
+#SERVICE 4097:0:1:40:3D01:3D01:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153490&chCm=http%3a//localhost/ch/4153490_&end=:EX-YU%20%7C%20SPORT%20KLUB%203%20%5B0%5D
+#DESCRIPTION EX-YU | SPORT KLUB 3 [0]
+#SERVICE 4097:0:1:40:3D02:3D02:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153491&chCm=http%3a//localhost/ch/4153491_&end=:EX-YU%20%7C%20SPORT%20KLUB%207%20%5B0%5D
+#DESCRIPTION EX-YU | SPORT KLUB 7 [0]
+#SERVICE 4097:0:1:40:3D03:3D03:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153492&chCm=http%3a//localhost/ch/4153492_&end=:EX-YU%20%7C%20SPORT%20KLUB%208%20%5B0%5D
+#DESCRIPTION EX-YU | SPORT KLUB 8 [0]
+#SERVICE 4097:0:1:40:3D04:3D04:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153493&chCm=http%3a//localhost/ch/4153493_&end=:EX-YU%20%7C%20SPORT%20KLUB%209%20%5B0%5D
+#DESCRIPTION EX-YU | SPORT KLUB 9 [0]
+#SERVICE 4097:0:1:40:3D05:3D05:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153494&chCm=http%3a//localhost/ch/4153494_&end=:EX-YU%20%7C%20SPORT%20KLUB%20GOLF%20%5B0%5D
+#DESCRIPTION EX-YU | SPORT KLUB GOLF [0]
+#SERVICE 4097:0:1:40:3D06:3D06:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153495&chCm=http%3a//localhost/ch/4153495_&end=:EX-YU%20%7C%20SPORT%20TV%201%20%5B0%5D
+#DESCRIPTION EX-YU | SPORT TV 1 [0]
+#SERVICE 4097:0:1:40:3D07:3D07:0:0:0:0:http%3a//vip2102.112421.net%3a2050/j.php?mode=itv&ph1=p&hst=aHR0cDovL3ZpcDIxMDIuMTEyNDIxLm5ldDoyMDUw&chCode=MDA6MUE6Nzk6Nzg6RDE6NEM=&epNum=&epId=&cId=64&sId=4153496&chCm=http%3a//localhost/ch/4153496_&end=:EX-YU%20%7C%20SPORTSKA%20TV%20%5B0%5D
+#DESCRIPTION EX-YU | SPORTSKA TV [0]
+#SERVICE 4097:0:1:53:99D:99D:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=147140&chCm=http%3a//localhost/ch/147140_&end=:(AR)%20beIN%20Sports%20Premium%201%204K+
+#DESCRIPTION (AR) beIN Sports Premium 1 4K+
+#SERVICE 4097:0:1:53:99E:99E:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=147141&chCm=http%3a//localhost/ch/147141_&end=:(AR)%20beIN%20Sports%20Premium%202%204K+
+#DESCRIPTION (AR) beIN Sports Premium 2 4K+
+#SERVICE 4097:0:1:53:99F:99F:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=147142&chCm=http%3a//localhost/ch/147142_&end=:(AR)%20beIN%20Sports%20Premium%203%204K+
+#DESCRIPTION (AR) beIN Sports Premium 3 4K+
+#SERVICE 4097:0:1:53:9A0:9A0:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=147143&chCm=http%3a//localhost/ch/147143_&end=:(AR)%20beIN%20sport%20Max%201%204k+
+#DESCRIPTION (AR) beIN sport Max 1 4k+
+#SERVICE 4097:0:1:53:9A1:9A1:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=147144&chCm=http%3a//localhost/ch/147144_&end=:(AR)%20beIN%20sport%20Max%202%204k+
+#DESCRIPTION (AR) beIN sport Max 2 4k+
+#SERVICE 4097:0:1:53:9A2:9A2:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=41548&chCm=http%3a//localhost/ch/41548_&end=:(AR)%20beIN%20Sport%20News
+#DESCRIPTION (AR) beIN Sport News
+#SERVICE 4097:0:1:53:9A3:9A3:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=41512&chCm=http%3a//localhost/ch/41512_&end=:(AR)%20beIN%20Sports%201%20HD
+#DESCRIPTION (AR) beIN Sports 1 HD
+#SERVICE 4097:0:1:53:9A4:9A4:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=41535&chCm=http%3a//localhost/ch/41535_&end=:(AR)%20beIN%20Sports%202%20HD
+#DESCRIPTION (AR) beIN Sports 2 HD
+#SERVICE 4097:0:1:53:9A5:9A5:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=41534&chCm=http%3a//localhost/ch/41534_&end=:(AR)%20beIN%20Sports%203%20HD
+#DESCRIPTION (AR) beIN Sports 3 HD
+#SERVICE 4097:0:1:53:9A6:9A6:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=47433&chCm=http%3a//localhost/ch/47433_&end=:(AR)%20beIN%20Sports%204%20HD
+#DESCRIPTION (AR) beIN Sports 4 HD
+#SERVICE 4097:0:1:53:9A7:9A7:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=41532&chCm=http%3a//localhost/ch/41532_&end=:(AR)%20beIN%20Sports%205%20HD
+#DESCRIPTION (AR) beIN Sports 5 HD
+#SERVICE 4097:0:1:53:9A8:9A8:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=41531&chCm=http%3a//localhost/ch/41531_&end=:(AR)%20beIN%20Sports%206%20HD
+#DESCRIPTION (AR) beIN Sports 6 HD
+#SERVICE 4097:0:1:53:9A9:9A9:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=41530&chCm=http%3a//localhost/ch/41530_&end=:(AR)%20beIN%20Sports%207%20HD
+#DESCRIPTION (AR) beIN Sports 7 HD
+#SERVICE 4097:0:1:53:9AA:9AA:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=41528&chCm=http%3a//localhost/ch/41528_&end=:(AR)%20beIN%20Sports%209%20HD
+#DESCRIPTION (AR) beIN Sports 9 HD
+#SERVICE 4097:0:1:53:9AB:9AB:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=41527&chCm=http%3a//localhost/ch/41527_&end=:(AR)%20beIN%20Sports%2010%20HD
+#DESCRIPTION (AR) beIN Sports 10 HD
+#SERVICE 4097:0:1:53:9AC:9AC:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=153986&chCm=http%3a//localhost/ch/153986_&end=:(AR)%20SSC%20NEWS%204K
+#DESCRIPTION (AR) SSC NEWS 4K
+#SERVICE 4097:0:1:53:9AD:9AD:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=153985&chCm=http%3a//localhost/ch/153985_&end=:(AR)%20SSC%201%204K
+#DESCRIPTION (AR) SSC 1 4K
+#SERVICE 4097:0:1:53:9AE:9AE:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=153984&chCm=http%3a//localhost/ch/153984_&end=:(AR)%20SSC%202%204K
+#DESCRIPTION (AR) SSC 2 4K
+#SERVICE 4097:0:1:53:9AF:9AF:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=153983&chCm=http%3a//localhost/ch/153983_&end=:(AR)%20SSC%203%204K
+#DESCRIPTION (AR) SSC 3 4K
+#SERVICE 4097:0:1:53:9B0:9B0:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=153982&chCm=http%3a//localhost/ch/153982_&end=:(AR)%20SSC%204%204K
+#DESCRIPTION (AR) SSC 4 4K
+#SERVICE 4097:0:1:53:9B1:9B1:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=153981&chCm=http%3a//localhost/ch/153981_&end=:(AR)%20SSC%205%204K
+#DESCRIPTION (AR) SSC 5 4K
+#SERVICE 4097:0:1:53:9B2:9B2:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=153980&chCm=http%3a//localhost/ch/153980_&end=:(AR)%20SSC%201%20EXTRA%204K
+#DESCRIPTION (AR) SSC 1 EXTRA 4K
+#SERVICE 4097:0:1:53:9B3:9B3:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=153979&chCm=http%3a//localhost/ch/153979_&end=:(AR)%20SSC%202%20EXTRA%204K
+#DESCRIPTION (AR) SSC 2 EXTRA 4K
+#SERVICE 4097:0:1:53:9B4:9B4:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=153978&chCm=http%3a//localhost/ch/153978_&end=:(AR)%20SSC%203%20EXTRA%204K
+#DESCRIPTION (AR) SSC 3 EXTRA 4K
+#SERVICE 4097:0:1:53:9B5:9B5:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=41508&chCm=http%3a//localhost/ch/41508_&end=:(AR)%20Alkass%201%20HD
+#DESCRIPTION (AR) Alkass 1 HD
+#SERVICE 4097:0:1:53:9B6:9B6:0:0:0:0:http%3a//iptv.darktv.nl%3a25461/j.php?mode=itv&ph1=p&hst=aHR0cDovL2lwdHYuZGFya3R2Lm5sOjI1NDYx&chCode=MDA6MUE6Nzk6RjM6MkQ6M0Q=&epNum=&epId=&cId=83&sId=41507&chCm=http%3a//localhost/ch/41507_&end=:(AR)%20Alaraby%20HD
+#DESCRIPTION (AR) Alaraby HD
+#SERVICE 4097:0:1:191:1668:1668:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=230682&chCm=http%3a//localhost/ch/230682&extension=ts_&end=:#####%20SKY%20SPORTS%20HD%20#####
+#DESCRIPTION ##### SKY SPORTS HD #####
+#SERVICE 4097:0:1:191:1669:1669:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79483&chCm=http%3a//localhost/ch/79483&extension=ts_&end=:UK%7C%20TNT%20SPORTS%20ESPN%20HD
+#DESCRIPTION UK| TNT SPORTS ESPN HD
+#SERVICE 4097:0:1:191:166A:166A:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79486&chCm=http%3a//localhost/ch/79486&extension=ts_&end=:UK%7C%20TNT%20SPORTS%201%20HD
+#DESCRIPTION UK| TNT SPORTS 1 HD
+#SERVICE 4097:0:1:191:166B:166B:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1261564&chCm=http%3a//localhost/ch/1261564&extension=ts_&end=:UK%7C%20TNT%20SPORTS%201%20HD%20%E2%97%89
+#DESCRIPTION UK| TNT SPORTS 1 HD ◉
+#SERVICE 4097:0:1:191:166C:166C:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79485&chCm=http%3a//localhost/ch/79485&extension=ts_&end=:UK%7C%20TNT%20SPORTS%202%20HD
+#DESCRIPTION UK| TNT SPORTS 2 HD
+#SERVICE 4097:0:1:191:166D:166D:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79484&chCm=http%3a//localhost/ch/79484&extension=ts_&end=:UK%7C%20TNT%20SPORTS%203%20HD
+#DESCRIPTION UK| TNT SPORTS 3 HD
+#SERVICE 4097:0:1:191:166E:166E:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1002857&chCm=http%3a//localhost/ch/1002857&extension=ts_&end=:UK%7C%20TNT%20SPORTS%204%20HD
+#DESCRIPTION UK| TNT SPORTS 4 HD
+#SERVICE 4097:0:1:191:166F:166F:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1004549&chCm=http%3a//localhost/ch/1004549&extension=ts_&end=:UK%7C%20TNT%20SPORTS%205%20HD
+#DESCRIPTION UK| TNT SPORTS 5 HD
+#SERVICE 4097:0:1:191:1670:1670:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=83450&chCm=http%3a//localhost/ch/83450&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20MAIN%20EVENTS%20HD
+#DESCRIPTION UK| SKY SPORTS MAIN EVENTS HD
+#SERVICE 4097:0:1:191:1671:1671:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1448189&chCm=http%3a//localhost/ch/1448189&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20MAIN%20EVENTS%20HD(BK)
+#DESCRIPTION UK| SKY SPORTS MAIN EVENTS HD(BK)
+#SERVICE 4097:0:1:191:1672:1672:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1641636&chCm=http%3a//localhost/ch/1641636&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20MAIN%20EVENT%20UHD/4K
+#DESCRIPTION UK| SKY SPORTS MAIN EVENT UHD/4K
+#SERVICE 4097:0:1:191:1673:1673:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1641637&chCm=http%3a//localhost/ch/1641637&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20DARTS%20UHD/4K
+#DESCRIPTION UK| SKY SPORTS DARTS UHD/4K
+#SERVICE 4097:0:1:191:1674:1674:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=83447&chCm=http%3a//localhost/ch/83447&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20PL%20HD
+#DESCRIPTION UK| SKY SPORTS PL HD
+#SERVICE 4097:0:1:191:1675:1675:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=83452&chCm=http%3a//localhost/ch/83452&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20FOOTBALL%20HD
+#DESCRIPTION UK| SKY SPORTS FOOTBALL HD
+#SERVICE 4097:0:1:191:1676:1676:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=83448&chCm=http%3a//localhost/ch/83448&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20NEWS%20HD
+#DESCRIPTION UK| SKY SPORTS NEWS HD
+#SERVICE 4097:0:1:191:1677:1677:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=83456&chCm=http%3a//localhost/ch/83456&extension=ts_&end=:UK%7CSKY%20SPORTS%20ACTION%20HD
+#DESCRIPTION UK|SKY SPORTS ACTION HD
+#SERVICE 4097:0:1:191:1678:1678:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=83455&chCm=http%3a//localhost/ch/83455&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20ARENA%20HD
+#DESCRIPTION UK| SKY SPORTS ARENA HD
+#SERVICE 4097:0:1:191:1679:1679:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=83454&chCm=http%3a//localhost/ch/83454&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20CRICKET%20HD
+#DESCRIPTION UK| SKY SPORTS CRICKET HD
+#SERVICE 4097:0:1:191:167A:167A:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=83453&chCm=http%3a//localhost/ch/83453&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20DARTS%20HD
+#DESCRIPTION UK| SKY SPORTS DARTS HD
+#SERVICE 4097:0:1:191:167B:167B:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=83449&chCm=http%3a//localhost/ch/83449&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20MIX%20HD
+#DESCRIPTION UK| SKY SPORTS MIX HD
+#SERVICE 4097:0:1:191:167C:167C:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=83446&chCm=http%3a//localhost/ch/83446&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20RACING%20HD
+#DESCRIPTION UK| SKY SPORTS RACING HD
+#SERVICE 4097:0:1:191:167D:167D:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=83451&chCm=http%3a//localhost/ch/83451&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20GOLF%20HD
+#DESCRIPTION UK| SKY SPORTS GOLF HD
+#SERVICE 4097:0:1:191:167E:167E:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1454231&chCm=http%3a//localhost/ch/1454231&extension=ts_&end=:UK%7C%20SKY%20SPOIRTS%20TENNIS%20HD
+#DESCRIPTION UK| SKY SPOIRTS TENNIS HD
+#SERVICE 4097:0:1:191:167F:167F:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1019934&chCm=http%3a//localhost/ch/1019934&extension=ts_&end=:UK%7C%20BT%20BOX%20OFFICE%20HD
+#DESCRIPTION UK| BT BOX OFFICE HD
+#SERVICE 4097:0:1:191:1680:1680:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1221178&chCm=http%3a//localhost/ch/1221178&extension=ts_&end=:UK%7C%20DAZN%201%20HD
+#DESCRIPTION UK| DAZN 1 HD
+#SERVICE 4097:0:1:191:1681:1681:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=725954&chCm=http%3a//localhost/ch/725954&extension=ts_&end=:UK%7C%20MANCHESTER%20UNITED%20HD
+#DESCRIPTION UK| MANCHESTER UNITED HD
+#SERVICE 4097:0:1:191:1682:1682:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=45327&chCm=http%3a//localhost/ch/45327&extension=ts_&end=:UK%7C%20CHELSEA%20TV%20HD
+#DESCRIPTION UK| CHELSEA TV HD
+#SERVICE 4097:0:1:191:1683:1683:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=910647&chCm=http%3a//localhost/ch/910647&extension=ts_&end=:UK%7C%20LFC%20TV%20FHD
+#DESCRIPTION UK| LFC TV FHD
+#SERVICE 4097:0:1:191:1684:1684:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=45268&chCm=http%3a//localhost/ch/45268&extension=ts_&end=:UK%7C%20LFC%20TV
+#DESCRIPTION UK| LFC TV
+#SERVICE 4097:0:1:191:1685:1685:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=45324&chCm=http%3a//localhost/ch/45324&extension=ts_&end=:UK%7C%20MUTV%20FHD
+#DESCRIPTION UK| MUTV FHD
+#SERVICE 4097:0:1:191:1686:1686:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=547746&chCm=http%3a//localhost/ch/547746&extension=ts_&end=:UK%7C%20EUROSPORT%201%20HD
+#DESCRIPTION UK| EUROSPORT 1 HD
+#SERVICE 4097:0:1:191:1687:1687:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=547747&chCm=http%3a//localhost/ch/547747&extension=ts_&end=:UK%7C%20EUROSPORT%202%20HD
+#DESCRIPTION UK| EUROSPORT 2 HD
+#SERVICE 4097:0:1:191:1688:1688:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=163610&chCm=http%3a//localhost/ch/163610&extension=ts_&end=:UK%7C%20PREMIER%20SPORT%20LALIGA%20TV%20HD
+#DESCRIPTION UK| PREMIER SPORT LALIGA TV HD
+#SERVICE 4097:0:1:191:1689:1689:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=45235&chCm=http%3a//localhost/ch/45235&extension=ts_&end=:UK%7C%20PREMIER%20SPORTS%201%20HD
+#DESCRIPTION UK| PREMIER SPORTS 1 HD
+#SERVICE 4097:0:1:191:168A:168A:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=163608&chCm=http%3a//localhost/ch/163608&extension=ts_&end=:UK%7C%20PREMIER%20SPORT%202%20HD
+#DESCRIPTION UK| PREMIER SPORT 2 HD
+#SERVICE 4097:0:1:191:168B:168B:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=230681&chCm=http%3a//localhost/ch/230681&extension=ts_&end=:#####%20SKY%20SPORTS%20FHD%20#####
+#DESCRIPTION ##### SKY SPORTS FHD #####
+#SERVICE 4097:0:1:191:168C:168C:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1379047&chCm=http%3a//localhost/ch/1379047&extension=ts_&end=:UK%7C%20TNT%20ULTIMATE%204K+%20%5BLIVE-EVENT%5D
+#DESCRIPTION UK| TNT ULTIMATE 4K+ [LIVE-EVENT]
+#SERVICE 4097:0:1:191:168D:168D:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1019933&chCm=http%3a//localhost/ch/1019933&extension=ts_&end=:UK%7C%20TNT%20BOX%20OFFICE%20FHD
+#DESCRIPTION UK| TNT BOX OFFICE FHD
+#SERVICE 4097:0:1:191:168E:168E:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30564&chCm=http%3a//localhost/ch/30564&extension=ts_&end=:UK%7C%20TNT%20SPORTS%20ESPN%20FHD
+#DESCRIPTION UK| TNT SPORTS ESPN FHD
+#SERVICE 4097:0:1:191:168F:168F:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30567&chCm=http%3a//localhost/ch/30567&extension=ts_&end=:UK%7C%20TNT%20SPORTS%201%20FHD
+#DESCRIPTION UK| TNT SPORTS 1 FHD
+#SERVICE 4097:0:1:191:1690:1690:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30566&chCm=http%3a//localhost/ch/30566&extension=ts_&end=:UK%7C%20TNT%20SPORTS%202%20FHD
+#DESCRIPTION UK| TNT SPORTS 2 FHD
+#SERVICE 4097:0:1:191:1691:1691:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30565&chCm=http%3a//localhost/ch/30565&extension=ts_&end=:UK%7C%20TNT%20SPORTS%203%20FHD
+#DESCRIPTION UK| TNT SPORTS 3 FHD
+#SERVICE 4097:0:1:191:1692:1692:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1019935&chCm=http%3a//localhost/ch/1019935&extension=ts_&end=:UK%7C%20TNT%20SPORTS%204%20FHD
+#DESCRIPTION UK| TNT SPORTS 4 FHD
+#SERVICE 4097:0:1:191:1693:1693:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1004548&chCm=http%3a//localhost/ch/1004548&extension=ts_&end=:UK%7C%20TNT%20SPORTS%205%20FHD
+#DESCRIPTION UK| TNT SPORTS 5 FHD
+#SERVICE 4097:0:1:191:1694:1694:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30496&chCm=http%3a//localhost/ch/30496&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20MAIN%20EVENT%20FHD
+#DESCRIPTION UK| SKY SPORTS MAIN EVENT FHD
+#SERVICE 4097:0:1:191:1695:1695:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30493&chCm=http%3a//localhost/ch/30493&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20PL%20FHD
+#DESCRIPTION UK| SKY SPORTS PL FHD
+#SERVICE 4097:0:1:191:1696:1696:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30498&chCm=http%3a//localhost/ch/30498&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20FOOTBALL%20FHD
+#DESCRIPTION UK| SKY SPORTS FOOTBALL FHD
+#SERVICE 4097:0:1:191:1697:1697:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30501&chCm=http%3a//localhost/ch/30501&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20ACTION%20FHD
+#DESCRIPTION UK| SKY SPORTS ACTION FHD
+#SERVICE 4097:0:1:191:1698:1698:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30500&chCm=http%3a//localhost/ch/30500&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20ARENA%20FHD
+#DESCRIPTION UK| SKY SPORTS ARENA FHD
+#SERVICE 4097:0:1:191:1699:1699:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30502&chCm=http%3a//localhost/ch/30502&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20CRICKET%20FHD
+#DESCRIPTION UK| SKY SPORTS CRICKET FHD
+#SERVICE 4097:0:1:191:169A:169A:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30499&chCm=http%3a//localhost/ch/30499&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20DARTS%20FHD
+#DESCRIPTION UK| SKY SPORTS DARTS FHD
+#SERVICE 4097:0:1:191:169B:169B:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30497&chCm=http%3a//localhost/ch/30497&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20GOLF%20FHD
+#DESCRIPTION UK| SKY SPORTS GOLF FHD
+#SERVICE 4097:0:1:191:169C:169C:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30495&chCm=http%3a//localhost/ch/30495&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20MIX%20FHD
+#DESCRIPTION UK| SKY SPORTS MIX FHD
+#SERVICE 4097:0:1:191:169D:169D:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30494&chCm=http%3a//localhost/ch/30494&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20NEWS%20FHD
+#DESCRIPTION UK| SKY SPORTS NEWS FHD
+#SERVICE 4097:0:1:191:169E:169E:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=77373&chCm=http%3a//localhost/ch/77373&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20RACING%20FHD
+#DESCRIPTION UK| SKY SPORTS RACING FHD
+#SERVICE 4097:0:1:191:169F:169F:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=929003&chCm=http%3a//localhost/ch/929003&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20ACTION%20FHD
+#DESCRIPTION UK| SKY SPORTS ACTION FHD
+#SERVICE 4097:0:1:191:16A0:16A0:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1454232&chCm=http%3a//localhost/ch/1454232&extension=ts_&end=:UK%7C%20SKY%20SPOIRTS%20TENNIS%20FHD
+#DESCRIPTION UK| SKY SPOIRTS TENNIS FHD
+#SERVICE 4097:0:1:191:16A1:16A1:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=230683&chCm=http%3a//localhost/ch/230683&extension=ts_&end=:#####%20SKY%20SPORTS%20SD%20#####
+#DESCRIPTION ##### SKY SPORTS SD #####
+#SERVICE 4097:0:1:191:16A2:16A2:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79476&chCm=http%3a//localhost/ch/79476&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20MAIN%20EVENT
+#DESCRIPTION UK| SKY SPORTS MAIN EVENT
+#SERVICE 4097:0:1:191:16A3:16A3:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79473&chCm=http%3a//localhost/ch/79473&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20PREMIER%20LEAGUE%20FHD
+#DESCRIPTION UK| SKY SPORTS PREMIER LEAGUE FHD
+#SERVICE 4097:0:1:191:16A4:16A4:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79482&chCm=http%3a//localhost/ch/79482&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20ACTION
+#DESCRIPTION UK| SKY SPORTS ACTION
+#SERVICE 4097:0:1:191:16A5:16A5:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79481&chCm=http%3a//localhost/ch/79481&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20ARENA
+#DESCRIPTION UK| SKY SPORTS ARENA
+#SERVICE 4097:0:1:191:16A6:16A6:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79480&chCm=http%3a//localhost/ch/79480&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20CRICKET
+#DESCRIPTION UK| SKY SPORTS CRICKET
+#SERVICE 4097:0:1:191:16A7:16A7:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79479&chCm=http%3a//localhost/ch/79479&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20DARTS
+#DESCRIPTION UK| SKY SPORTS DARTS
+#SERVICE 4097:0:1:191:16A8:16A8:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79478&chCm=http%3a//localhost/ch/79478&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20FOOTBALL
+#DESCRIPTION UK| SKY SPORTS FOOTBALL
+#SERVICE 4097:0:1:191:16A9:16A9:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79477&chCm=http%3a//localhost/ch/79477&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20GOLF
+#DESCRIPTION UK| SKY SPORTS GOLF
+#SERVICE 4097:0:1:191:16AA:16AA:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79475&chCm=http%3a//localhost/ch/79475&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20MIX
+#DESCRIPTION UK| SKY SPORTS MIX
+#SERVICE 4097:0:1:191:16AB:16AB:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79474&chCm=http%3a//localhost/ch/79474&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20NEWS
+#DESCRIPTION UK| SKY SPORTS NEWS
+#SERVICE 4097:0:1:191:16AC:16AC:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=79472&chCm=http%3a//localhost/ch/79472&extension=ts_&end=:UK%7C%20SKY%20SPORTS%20RACING
+#DESCRIPTION UK| SKY SPORTS RACING
+#SERVICE 4097:0:1:191:16AD:16AD:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1047260&chCm=http%3a//localhost/ch/1047260&extension=ts_&end=:UK%7C%20TNT%20SPORTS%201%20SD
+#DESCRIPTION UK| TNT SPORTS 1 SD
+#SERVICE 4097:0:1:191:16AE:16AE:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1047261&chCm=http%3a//localhost/ch/1047261&extension=ts_&end=:UK%7C%20TNT%20SPORTS%202%20SD
+#DESCRIPTION UK| TNT SPORTS 2 SD
+#SERVICE 4097:0:1:191:16AF:16AF:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1047262&chCm=http%3a//localhost/ch/1047262&extension=ts_&end=:UK%7C%20TNT%20SPORTS%203%20SD
+#DESCRIPTION UK| TNT SPORTS 3 SD
+#SERVICE 4097:0:1:191:16B0:16B0:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1047263&chCm=http%3a//localhost/ch/1047263&extension=ts_&end=:UK%7C%20TNT%20SPORTS%204%20SD
+#DESCRIPTION UK| TNT SPORTS 4 SD
+#SERVICE 4097:0:1:191:16B1:16B1:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1004550&chCm=http%3a//localhost/ch/1004550&extension=ts_&end=:UK%7C%20TNT%20SPORTS%205
+#DESCRIPTION UK| TNT SPORTS 5
+#SERVICE 4097:0:1:191:16B2:16B2:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1004551&chCm=http%3a//localhost/ch/1004551&extension=ts_&end=:UK%7C%20TNT%20SPORTS%206
+#DESCRIPTION UK| TNT SPORTS 6
+#SERVICE 4097:0:1:191:16B3:16B3:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1004552&chCm=http%3a//localhost/ch/1004552&extension=ts_&end=:UK%7C%20TNT%20SPORTS%207
+#DESCRIPTION UK| TNT SPORTS 7
+#SERVICE 4097:0:1:191:16B4:16B4:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1004553&chCm=http%3a//localhost/ch/1004553&extension=ts_&end=:UK%7C%20TNT%20SPORTS%208
+#DESCRIPTION UK| TNT SPORTS 8
+#SERVICE 4097:0:1:191:16B5:16B5:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1004554&chCm=http%3a//localhost/ch/1004554&extension=ts_&end=:UK%7C%20TNT%20SPORTS%209
+#DESCRIPTION UK| TNT SPORTS 9
+#SERVICE 4097:0:1:191:16B6:16B6:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1004555&chCm=http%3a//localhost/ch/1004555&extension=ts_&end=:UK%7C%20TNT%20SPORTS%2010
+#DESCRIPTION UK| TNT SPORTS 10
+#SERVICE 4097:0:1:191:16B7:16B7:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1014265&chCm=http%3a//localhost/ch/1014265&extension=ts_&end=:UK%7C%20BT%20SPORTS%20EXTRA%206%20HD%20(RAW)
+#DESCRIPTION UK| BT SPORTS EXTRA 6 HD (RAW)
+#SERVICE 4097:0:1:191:16B8:16B8:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1014264&chCm=http%3a//localhost/ch/1014264&extension=ts_&end=:UK%7C%20BT%20SPORTS%20EXTRA%207%20HD%20(RAW)
+#DESCRIPTION UK| BT SPORTS EXTRA 7 HD (RAW)
+#SERVICE 4097:0:1:191:16B9:16B9:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1014263&chCm=http%3a//localhost/ch/1014263&extension=ts_&end=:UK%7C%20BT%20SPORTS%20EXTRA%208%20HD%20(RAW)
+#DESCRIPTION UK| BT SPORTS EXTRA 8 HD (RAW)
+#SERVICE 4097:0:1:191:16BA:16BA:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1014262&chCm=http%3a//localhost/ch/1014262&extension=ts_&end=:UK%7C%20BT%20SPORTS%20EXTRA%209%20HD%20(RAW)
+#DESCRIPTION UK| BT SPORTS EXTRA 9 HD (RAW)
+#SERVICE 4097:0:1:191:16BB:16BB:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30541&chCm=http%3a//localhost/ch/30541&extension=ts_&end=:UK%7C%20EUROSPORT%201%20FHD
+#DESCRIPTION UK| EUROSPORT 1 FHD
+#SERVICE 4097:0:1:191:16BC:16BC:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30540&chCm=http%3a//localhost/ch/30540&extension=ts_&end=:UK%7C%20EUROSPORT%202%20FHD
+#DESCRIPTION UK| EUROSPORT 2 FHD
+#SERVICE 4097:0:1:191:16BD:16BD:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1014260&chCm=http%3a//localhost/ch/1014260&extension=ts_&end=:UK%7C%20VIAPLAY%20XTRA%20HD
+#DESCRIPTION UK| VIAPLAY XTRA HD
+#SERVICE 4097:0:1:191:16BE:16BE:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=163611&chCm=http%3a//localhost/ch/163611&extension=ts_&end=:UK%7C%20PREMIER%20SPORT%20LALIGA%20TV%20FHD
+#DESCRIPTION UK| PREMIER SPORT LALIGA TV FHD
+#SERVICE 4097:0:1:191:16BF:16BF:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=163607&chCm=http%3a//localhost/ch/163607&extension=ts_&end=:UK%7C%20PREMIER%20SPORT%201%20FHD
+#DESCRIPTION UK| PREMIER SPORT 1 FHD
+#SERVICE 4097:0:1:191:16C0:16C0:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=45251&chCm=http%3a//localhost/ch/45251&extension=ts_&end=:UK%7C%20PREMIER%20SPORTS%202%20FHD
+#DESCRIPTION UK| PREMIER SPORTS 2 FHD
+#SERVICE 4097:0:1:191:16C1:16C1:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=30523&chCm=http%3a//localhost/ch/30523&extension=ts_&end=:UK%7C%20RACING%20UK%20FHD
+#DESCRIPTION UK| RACING UK FHD
+#SERVICE 4097:0:1:191:16C2:16C2:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1069214&chCm=http%3a//localhost/ch/1069214&extension=ts_&end=:UK%7C%20RACING%20UK%20%E2%97%89
+#DESCRIPTION UK| RACING UK ◉
+#SERVICE 4097:0:1:191:16C3:16C3:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=164032&chCm=http%3a//localhost/ch/164032&extension=ts_&end=:UK%7C%20WWE%20LIVE%20HD
+#DESCRIPTION UK| WWE LIVE HD
+#SERVICE 4097:0:1:191:16C4:16C4:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1014239&chCm=http%3a//localhost/ch/1014239&extension=ts_&end=:UK%7C%20PDC%20DARTS%20TV%202%20(Event%20Only)
+#DESCRIPTION UK| PDC DARTS TV 2 (Event Only)
+#SERVICE 4097:0:1:191:16C5:16C5:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1014240&chCm=http%3a//localhost/ch/1014240&extension=ts_&end=:UK%7C%20PDC%20DARTS%20TV%201%20(Event%20Only)
+#DESCRIPTION UK| PDC DARTS TV 1 (Event Only)
+#SERVICE 4097:0:1:191:16C6:16C6:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1014266&chCm=http%3a//localhost/ch/1014266&extension=ts_&end=:UK%7C%20EDGE%20SPORT%20FHD
+#DESCRIPTION UK| EDGE SPORT FHD
+#SERVICE 4097:0:1:191:16C7:16C7:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=164076&chCm=http%3a//localhost/ch/164076&extension=ts_&end=:UK%7C%20RMTV
+#DESCRIPTION UK| RMTV
+#SERVICE 4097:0:1:191:16C8:16C8:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=1014267&chCm=http%3a//localhost/ch/1014267&extension=ts_&end=:UK%7C%20UFC%20TV%20(Events2)
+#DESCRIPTION UK| UFC TV (Events2)
+#SERVICE 4097:0:1:191:16C9:16C9:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=825538&chCm=http%3a//localhost/ch/825538&extension=ts_&end=:UK%7C%20UFC%20HD
+#DESCRIPTION UK| UFC HD
+#SERVICE 4097:0:1:191:1CC9:1CC9:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=894377&chCm=http%3a//localhost/ch/894377&extension=ts_&end=:UK%7C%20SPORTYSTUFF%20FHD
+#DESCRIPTION UK| SPORTYSTUFF FHD
+#SERVICE 4097:0:1:191:1CCA:1CCA:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=894378&chCm=http%3a//localhost/ch/894378&extension=ts_&end=:UK%7C%20SPORTYSTUFF%20HD
+#DESCRIPTION UK| SPORTYSTUFF HD
+#SERVICE 4097:0:1:191:1CCB:1CCB:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=894379&chCm=http%3a//localhost/ch/894379&extension=ts_&end=:UK%7C%20SPORTYSTUFF
+#DESCRIPTION UK| SPORTYSTUFF
+#SERVICE 4097:0:1:191:1CCC:1CCC:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=401&sId=894380&chCm=http%3a//localhost/ch/894380&extension=ts_&end=:UK%7C%20WILLIAM%20HILL%20LIVE%201
+#DESCRIPTION UK| WILLIAM HILL LIVE 1
+#SERVICE 4097:0:1:5F3:18BD:18BD:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602972&chCm=http%3a//localhost/ch/1602972&extension=ts_&end=:#######%20DAZN%20PPV%20#######
+#DESCRIPTION ####### DAZN PPV #######
+#SERVICE 4097:0:1:5F3:18BE:18BE:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602973&chCm=http%3a//localhost/ch/1602973&extension=ts_&end=:UK:%20DAZN%20PPV%201%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 1 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18BF:18BF:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602974&chCm=http%3a//localhost/ch/1602974&extension=ts_&end=:UK:%20DAZN%20PPV%202%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 2 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18C0:18C0:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602975&chCm=http%3a//localhost/ch/1602975&extension=ts_&end=:UK:%20DAZN%20PPV%203%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 3 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18C1:18C1:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602976&chCm=http%3a//localhost/ch/1602976&extension=ts_&end=:UK:%20DAZN%20PPV%204%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 4 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18C2:18C2:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602977&chCm=http%3a//localhost/ch/1602977&extension=ts_&end=:UK:%20DAZN%20PPV%205%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 5 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18C3:18C3:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602978&chCm=http%3a//localhost/ch/1602978&extension=ts_&end=:UK:%20DAZN%20PPV%206%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 6 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18C4:18C4:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602979&chCm=http%3a//localhost/ch/1602979&extension=ts_&end=:UK:%20DAZN%20PPV%207%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 7 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18C5:18C5:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602980&chCm=http%3a//localhost/ch/1602980&extension=ts_&end=:UK:%20DAZN%20PPV%208%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 8 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18C6:18C6:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602981&chCm=http%3a//localhost/ch/1602981&extension=ts_&end=:UK:%20DAZN%20PPV%209%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 9 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18C7:18C7:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602982&chCm=http%3a//localhost/ch/1602982&extension=ts_&end=:UK:%20DAZN%20PPV%2010%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 10 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18C8:18C8:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602983&chCm=http%3a//localhost/ch/1602983&extension=ts_&end=:UK:%20DAZN%20PPV%2011%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 11 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18C9:18C9:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602984&chCm=http%3a//localhost/ch/1602984&extension=ts_&end=:UK:%20DAZN%20PPV%2012%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 12 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18CA:18CA:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602985&chCm=http%3a//localhost/ch/1602985&extension=ts_&end=:UK:%20DAZN%20PPV%2013%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 13 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18CB:18CB:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602986&chCm=http%3a//localhost/ch/1602986&extension=ts_&end=:UK:%20DAZN%20PPV%2014%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 14 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18CC:18CC:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602987&chCm=http%3a//localhost/ch/1602987&extension=ts_&end=:UK:%20DAZN%20PPV%2015%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 15 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18CD:18CD:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602988&chCm=http%3a//localhost/ch/1602988&extension=ts_&end=:UK:%20DAZN%20PPV%2016%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 16 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18CE:18CE:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602989&chCm=http%3a//localhost/ch/1602989&extension=ts_&end=:UK:%20DAZN%20PPV%2017%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 17 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18CF:18CF:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602990&chCm=http%3a//localhost/ch/1602990&extension=ts_&end=:UK:%20DAZN%20PPV%2018%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 18 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18D0:18D0:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602991&chCm=http%3a//localhost/ch/1602991&extension=ts_&end=:UK:%20DAZN%20PPV%2019%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 19 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18D1:18D1:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602992&chCm=http%3a//localhost/ch/1602992&extension=ts_&end=:UK:%20DAZN%20PPV%2020%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 20 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18D2:18D2:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602993&chCm=http%3a//localhost/ch/1602993&extension=ts_&end=:UK:%20DAZN%20PPV%2021%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 21 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18D3:18D3:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602994&chCm=http%3a//localhost/ch/1602994&extension=ts_&end=:UK:%20DAZN%20PPV%2022%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 22 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18D4:18D4:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602995&chCm=http%3a//localhost/ch/1602995&extension=ts_&end=:UK:%20DAZN%20PPV%2023%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 23 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18D5:18D5:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602996&chCm=http%3a//localhost/ch/1602996&extension=ts_&end=:UK:%20DAZN%20PPV%2024%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 24 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18D6:18D6:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602997&chCm=http%3a//localhost/ch/1602997&extension=ts_&end=:UK:%20DAZN%20PPV%2025%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 25 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18D7:18D7:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602998&chCm=http%3a//localhost/ch/1602998&extension=ts_&end=:UK:%20DAZN%20PPV%2026%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 26 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18D8:18D8:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1602999&chCm=http%3a//localhost/ch/1602999&extension=ts_&end=:UK:%20DAZN%20PPV%2027%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 27 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18D9:18D9:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1603000&chCm=http%3a//localhost/ch/1603000&extension=ts_&end=:UK:%20DAZN%20PPV%2028%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 28 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18DA:18DA:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1603001&chCm=http%3a//localhost/ch/1603001&extension=ts_&end=:UK:%20DAZN%20PPV%2029%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 29 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:5F3:18DB:18DB:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1523&sId=1603002&chCm=http%3a//localhost/ch/1603002&extension=ts_&end=:UK:%20DAZN%20PPV%2030%20-%20NO%20EVENT%20STREAMING%20-%20%7C%208K%20EXCLUSIVE
+#DESCRIPTION UK: DAZN PPV 30 - NO EVENT STREAMING - | 8K EXCLUSIVE
+#SERVICE 4097:0:1:464:1CA7:1CA7:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763124&chCm=http%3a//localhost/ch/763124&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%201%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 1 FHD
+#SERVICE 4097:0:1:464:1CA8:1CA8:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763123&chCm=http%3a//localhost/ch/763123&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%202%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 2 FHD
+#SERVICE 4097:0:1:464:1CA9:1CA9:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763122&chCm=http%3a//localhost/ch/763122&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%203%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 3 FHD
+#SERVICE 4097:0:1:464:1CAA:1CAA:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763121&chCm=http%3a//localhost/ch/763121&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%204%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 4 FHD
+#SERVICE 4097:0:1:464:1CAB:1CAB:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763120&chCm=http%3a//localhost/ch/763120&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%205%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 5 FHD
+#SERVICE 4097:0:1:464:1CAC:1CAC:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763119&chCm=http%3a//localhost/ch/763119&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%206%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 6 FHD
+#SERVICE 4097:0:1:464:1CAD:1CAD:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763118&chCm=http%3a//localhost/ch/763118&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%207%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 7 FHD
+#SERVICE 4097:0:1:464:1CAE:1CAE:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763117&chCm=http%3a//localhost/ch/763117&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%208%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 8 FHD
+#SERVICE 4097:0:1:464:1CAF:1CAF:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763116&chCm=http%3a//localhost/ch/763116&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%209%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 9 FHD
+#SERVICE 4097:0:1:464:1CB0:1CB0:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763115&chCm=http%3a//localhost/ch/763115&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%2010%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 10 FHD
+#SERVICE 4097:0:1:464:1CB1:1CB1:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763114&chCm=http%3a//localhost/ch/763114&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%2011%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 11 FHD
+#SERVICE 4097:0:1:464:1CB2:1CB2:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763113&chCm=http%3a//localhost/ch/763113&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%2012%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 12 FHD
+#SERVICE 4097:0:1:464:1CB3:1CB3:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763112&chCm=http%3a//localhost/ch/763112&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%2013%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 13 FHD
+#SERVICE 4097:0:1:464:1CB4:1CB4:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763111&chCm=http%3a//localhost/ch/763111&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%2014%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 14 FHD
+#SERVICE 4097:0:1:464:1CB5:1CB5:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763110&chCm=http%3a//localhost/ch/763110&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%2015%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 15 FHD
+#SERVICE 4097:0:1:464:1CB6:1CB6:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1124&sId=763109&chCm=http%3a//localhost/ch/763109&extension=ts_&end=:UK%7C%20EUROSPORT%20XTRA%2016%20FHD
+#DESCRIPTION UK| EUROSPORT XTRA 16 FHD
+#SERVICE 4097:0:1:73B:1C9D:1C9D:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1851&sId=1594809&chCm=http%3a//localhost/ch/1594809&extension=ts_&end=:UK%7C%20EUROSPORT%20UHD/4k
+#DESCRIPTION UK| EUROSPORT UHD/4k
+#SERVICE 4097:0:1:73B:1C9E:1C9E:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1851&sId=1594808&chCm=http%3a//localhost/ch/1594808&extension=ts_&end=:UK%7C%20EUROSPORT
+#DESCRIPTION UK| EUROSPORT
+#SERVICE 4097:0:1:73B:1C9F:1C9F:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1851&sId=1594807&chCm=http%3a//localhost/ch/1594807&extension=ts_&end=:UK%7C%20EUROSPORT%202
+#DESCRIPTION UK| EUROSPORT 2
+#SERVICE 4097:0:1:73B:1CA0:1CA0:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1851&sId=1594806&chCm=http%3a//localhost/ch/1594806&extension=ts_&end=:UK%7C%20EUROSPORT%203
+#DESCRIPTION UK| EUROSPORT 3
+#SERVICE 4097:0:1:73B:1CA1:1CA1:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1851&sId=1594805&chCm=http%3a//localhost/ch/1594805&extension=ts_&end=:UK%7C%20EUROSPORT%204
+#DESCRIPTION UK| EUROSPORT 4
+#SERVICE 4097:0:1:73B:1CA2:1CA2:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1851&sId=1594804&chCm=http%3a//localhost/ch/1594804&extension=ts_&end=:UK%7C%20EUROSPORT%205
+#DESCRIPTION UK| EUROSPORT 5
+#SERVICE 4097:0:1:73B:1CA3:1CA3:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1851&sId=1594803&chCm=http%3a//localhost/ch/1594803&extension=ts_&end=:UK%7C%20EUROSPORT%206
+#DESCRIPTION UK| EUROSPORT 6
+#SERVICE 4097:0:1:73B:1CA4:1CA4:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1851&sId=1594802&chCm=http%3a//localhost/ch/1594802&extension=ts_&end=:UK%7C%20EUROSPORT%207
+#DESCRIPTION UK| EUROSPORT 7
+#SERVICE 4097:0:1:73B:1CA5:1CA5:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1851&sId=1594801&chCm=http%3a//localhost/ch/1594801&extension=ts_&end=:UK%7C%20EUROSPORT%208
+#DESCRIPTION UK| EUROSPORT 8
+#SERVICE 4097:0:1:73B:1CA6:1CA6:0:0:0:0:http%3a//27917-friday.oot-mx.me%3a80/j.php?mode=itv&ph1=p&hst=aHR0cDovLzI3OTE3LWZyaWRheS5vb3QtbXgubWU6ODA=&chCode=MDA6MUE6Nzk6NjQ6NDU6MDA=&epNum=&epId=&cId=1851&sId=1594800&chCm=http%3a//localhost/ch/1594800&extension=ts_&end=:UK%7C%20EUROSPORT%209
+#DESCRIPTION UK| EUROSPORT 9
