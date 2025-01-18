@@ -11,7 +11,7 @@ echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefpsettings_iptv_
 echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefpsettings_iptv_news_music.tv" ORDER BY bouquet' >&9
 echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefpsettings_iptv_mix2.tv" ORDER BY bouquet' >&9
 echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefpsettings_iptv_sport.tv" ORDER BY bouquet' >&9
-cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv
+cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv > /dev/null 2>&1
 wget -O /etc/enigma2/userbouquet.ciefpsettings_iptv_exyu2.tv ${_url}/ot_tune/iptv/userbouquet.ciefpsettings_iptv_exyu2.tv > /dev/null 2>&1
 wget -O /etc/enigma2/userbouquet.ciefpsettings_iptv_mix.tv ${_url}/ot_tune/iptv/userbouquet.ciefpsettings_iptv_mix.tv > /dev/null 2>&1
 wget -O /etc/enigma2/userbouquet.ciefpsettings_iptv_webcam.tv ${_url}/ot_tune/iptv/userbouquet.ciefpsettings_iptv_webcam.tv > /dev/null 2>&1
