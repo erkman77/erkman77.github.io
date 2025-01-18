@@ -1,4 +1,4 @@
-#NAME ASTRA_Full
+#NAME ASTRA Full
 #SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_fta.tv" ORDER BY bouquet
 #SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_hdplus.tv" ORDER BY bouquet
 #SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_skydemovies.tv" ORDER BY bouquet
