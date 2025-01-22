@@ -1,9 +1,14 @@
-   [Unit]
-   Description=Start OSCam
+[Unit]
+After=dev-dvb-adapter0-ca0.device
+After=dev-dvb-adapter0-demux0.device
+After=dev-sci0.device
 
-   [Service]
-   ExecStart=/etc/init.d/softcam.oscam_bin restart
-   Restart=always
+[Service]
+Type=forking
+ExecStart=/usr/bin/oscam_bin -b
+Restart=on-failure
+NotifyAccess=main
+NonBlocking=true
 
-   [Install]
-   WantedBy=multi-user.target
+[Install]
+WantedBy=multi-user.target
