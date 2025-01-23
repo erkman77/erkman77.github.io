@@ -1,4 +1,5 @@
 [Unit]
+Description=OScam by OSCam-Installer
 After=dev-dvb-adapter0-ca0.device
 After=dev-dvb-adapter0-demux0.device
 After=dev-sci0.device
