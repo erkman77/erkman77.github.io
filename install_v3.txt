@@ -495,8 +495,13 @@ replace_oscam_bin() {
         wget -O /usr/softcams/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
         chmod +x /usr/softcams/oscam_bin > /dev/null 2>&1
 	  else
-        wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
-        chmod +x /usr/bin/oscam_bin > /dev/null 2>&1
+	    if [[ $_arch == "aarch64" ]]; then
+			wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version}${_neon}${_emu} 
+			chmod +x /usr/bin/oscam_bin
+		else
+			wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} 
+			chmod +x /usr/bin/oscam_bin 
+		fi
 	  fi
    
       if opkg list-installed | grep  libcrypto-compat > /dev/null 2>&1; then
