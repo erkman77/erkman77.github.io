@@ -505,13 +505,13 @@ replace_initscript() {
     wget -O /usr/ppteam/oscam_bin.pp ${_url}/ot_cams/startfiles/oscam_bin.pp > /dev/null 2>&1
     sed -i "3s/.*/NAME=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/ppteam/oscam_bin.pp > /dev/null 2>&1
     chmod +x /usr/ppteam/oscam_bin.pp > /dev/null 2>&1
-    echo "oscam_bin.pp" > /usr/ppteam/.currcam > /dev/null 2>&1
+    echo "oscam_bin.pp" > /usr/ppteam/.currcam
     _start="/usr/ppteam/oscam_bin.pp start"
 
     if ! grep -qs -i "oscam_bin" /usr/ppteam/.emulist; then
-        sed -i "1i 10\*oscam_bin.pp\* oscam_bin \*" /usr/ppteam/.emulist > /dev/null 2>&1
+        sed -i "1i 10\*oscam_bin.pp\* oscam_bin \*" /usr/ppteam/.emulist
     else
-        echo "10\*oscam_bin.pp\* oscam_bin \*" >/usr/ppteam/.emulist > /dev/null 2>&1
+        echo "10\*oscam_bin.pp\* oscam_bin \*" >/usr/ppteam/.emulist
     fi
 
     if [ -r /etc/tuxbox/config/${_oscambin} ]; then
@@ -525,7 +525,7 @@ replace_initscript() {
 	sed -i "3s/.*/CAMNAME=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/script/bp-script/oscam_bin_em.sh > /dev/null 2>&1
 	sed -i "4s/.*/\#emuname=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/script/bp-script/oscam_bin_em.sh > /dev/null 2>&1
     _start="/usr/script/bp-script/oscam_bin_em.sh restart"
-	echo "oscam_bin" > /usr/bin/emuactive > /dev/null 2>&1
+	echo "oscam_bin" > /usr/bin/emuactive
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
     fi	
@@ -535,7 +535,7 @@ replace_initscript() {
     update-rc.d -f softcam.oscam_bin remove  > /dev/null 2>&1
     rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
 	sed -i "3s/.*/OSD=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/camscript/oscam_bin.sh > /dev/null 2>&1
-	echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/clist.list > /dev/null 2>&1
+	echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/clist.list
 	_start="/usr/camscript/oscam_bin.sh restart"
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config  > /dev/null 2>&1
