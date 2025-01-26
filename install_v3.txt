@@ -73,12 +73,45 @@ if cat /tmp/version | grep -i openBH > /dev/null 2>&1; then
   _my_distribution="OpenBh"
 fi
 
-if [ -r /usr/lib/enigma2/python/Plugins/SystemPlugins/VTIPanel ]; then 
+if [ -r /usr/lib/enigma2/python/Plugins/SystemPlugins/VTIPanel ] > /dev/null 2>&1; then 
   _my_distribution="VTi"
+fi
+if [ -e /etc/apt/sources.list.d/gp4-unstable-all-feed.list ] > /dev/null 2>&1; then
+  _my_distribution="GP4"
+fi
+
+if [ -r /usr/lib/enigma2/python/Plugins/Extensions/AddOnManager ] > /dev/null 2>&1; then
+  _my_distribution="Merlin"
+fi
+
+if [ -r /usr/lib/enigma2/python/DE ] > /dev/null 2>&1; then
+  _my_distribution="Dream-Elite"
+fi
+
+if [ -r /usr/ppteam ] > /dev/null 2>&1; then
+  _my_distribution="Peter Pan"
+fi
+
+if [ -e /etc/apt/sources.list.d/dep-all-feed.list ] > /dev/null 2>&1; then
+  _my_distribution="Dream-Elite"
+fi
+if grep -qs -i "newnigma2" /etc/image-version > /dev/null 2>&1; then
+  _my_distribution="newnigma2"
+fi
+if grep -qs -i "dreamboxupdate" /etc/apt/sources.list.d/all-feed.list && [ ! -f /etc/apt/sources.list.d/dep-all-feed.list ] > /dev/null 2>&1; then
+  _my_distribution="opendreambox"
+fi
+if grep -qs -i "SatLodge" /etc/issue.net > /dev/null 2>&1; then
+  _my_distribution="Sat-Lodge"
 fi
 
 echo ... "running preconfigure for optimal autoinstaller settings"
-wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=15" > /dev/null
+if [ -e /etc/apt/sources.list.d ]; then
+	SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
+	curl -X POST "http://localhost/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20&type=1&timeout=5&sessionid=$SESSIONID" >/dev/null 2>&1
+else
+	wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=15" > /dev/null 2>&1
+fi
 
 long_running_task() {
   echo -e "\nPlease wait...\n" 
@@ -164,8 +197,10 @@ pid=$!
 
 if [ -n "$(uname -m | grep mips)" ]; then
   total_steps=210
-else
+elif [ -n "$(uname -m | grep armv7l)" ]; then
   total_steps=160
+else
+  total_steps=70
 fi
 
 interval=0.1
@@ -277,7 +312,8 @@ replace_initscript() {
   wget -O /etc/init.d/cardserver ${_url}/ot_cams/startfiles/cardserver > /dev/null 2>&1
 
   if [ -e /etc/apt/sources.list.d  ]; then
-	wget -O /etc/init.d/softcam.oscam_bin ${_url}/ot_cams/startfiles/softcam.oscam_bin_aarch > /dev/null 2>&1
+	#wget -O /etc/init.d/softcam.oscam_bin ${_url}/ot_cams/startfiles/softcam.oscam_bin_aarch > /dev/null 2>&1
+	rm /etc/init.d/softcam.oscam_bin
   fi
   
   chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
@@ -340,17 +376,39 @@ replace_initscript() {
 
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  	fi
+  fi
+  
+#gp4
+  if [ -e /etc/apt/sources.list.d/gp4-unstable-all-feed.list ] > /dev/null 2>&1; then
+    update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
+	rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
+	wget -O /lib/systemd/system/oscam_bin.service ${_url}/ot_cams/startfiles/oscam_bin.service > /dev/null 2>&1
+	chmod +x /lib/systemd/system/oscam_bin.service > /dev/null 2>&1
+	sed -i "s/^config\.gcammanager\.currentbinary=.*/config.gcammanager.currentbinary=oscam_bin/" /etc/enigma2/gpsettings > /dev/null 2>&1
+	sed -i "2s/.*/        \"name\": \"OSCam ${_oscam_version}${_neon}${_emu}\",/" /etc/enigma2/camd_oscam_bin.json > /dev/null 2>&1
+	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
 
+#merlin
+  if [ -r /usr/lib/enigma2/python/Plugins/Extensions/AddOnManager ] > /dev/null 2>&1; then
+    update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
+	rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
+    #sed -i "3s/.*/OSD=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/script/cam/${_oscambin}.sh
+	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	fi
+  fi
 #newenigma
-  if [ -f /usr/script/${_oscambin}.emu ]; then
-	wget -O /tmp/oscam_update.sh ${_url}/ot_cams/startfiles/oscam_update.sh
-sed -i "3s/.*/EMUNAME=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /tmp/oscam_update.sh
-	mv -f /tmp/oscam_update.sh /usr/script/${_oscambin}.emu > /dev/null 2>&1
+  if grep -qs -i "newnigma2" /etc/image-version ; then
+    update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
+	rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
+	sed -i "3s/.*/EMUNAME=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/script/oscam_bin.emu > /dev/null 2>&1
+	sed -i "s/^config\.usage\.emu_name=.*/config.usage.emu_name=OSCam ${_oscam_version}${_neon}${_emu}/" /etc/enigma2/settings > /dev/null 2>&1
 	_start="/usr/script/oscam_bin.emu restart"
-	chmod +x /usr/script/${_oscambin}.emu
-
+	chmod +x /usr/script/oscam_bin.emu > /dev/null 2>&1
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	fi
@@ -430,8 +488,59 @@ sed -i "3s/.*/EMUNAME=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /tmp/oscam_up
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	fi
-  fi		
+  fi
+#Dream-Elite
+  if [ -e /etc/apt/sources.list.d/dep-all-feed.list ]; then
+    update-rc.d -f softcam.oscam_bin remove
+	rm /etc/init.d/softcam* /etc/init.d/cardserver*
+	sed -i "2s/.*/        \"name\": \"OSCam ${_oscam_version}${_neon}${_emu}\",/" /etc/enigma2/EliteSoftcam/camd_oscam_bin.json
+	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config 
+	fi
+  fi
+#peterpan
+  if [ -r /usr/ppteam ] > /dev/null 2>&1; then
+    update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
+    rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
+    wget -O /usr/ppteam/oscam_bin.pp ${_url}/ot_cams/startfiles/oscam_bin.pp > /dev/null 2>&1
+    sed -i "3s/.*/NAME=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/ppteam/oscam_bin.pp > /dev/null 2>&1
+    chmod +x /usr/ppteam/oscam_bin.pp > /dev/null 2>&1
+    echo "oscam_bin.pp" > /usr/ppteam/.currcam > /dev/null 2>&1
+    _start="/usr/ppteam/oscam_bin.pp start"
 
+    if ! grep -qs -i "oscam_bin" /usr/ppteam/.emulist; then
+        sed -i "1i 10\*oscam_bin.pp\* oscam_bin \*" /usr/ppteam/.emulist > /dev/null 2>&1
+    else
+        echo "10\*oscam_bin.pp\* oscam_bin \*" >/usr/ppteam/.emulist > /dev/null 2>&1
+    fi
+
+    if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config  > /dev/null 2>&1
+    fi
+  fi
+#opendreambox
+  if grep -qs -i "dreamboxupdate" /etc/apt/sources.list.d/all-feed.list && [ ! -f /etc/apt/sources.list.d/dep-all-feed.list ] > /dev/null 2>&1; then
+    update-rc.d -f softcam.oscam_bin remove  > /dev/null 2>&1
+    rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
+	sed -i "3s/.*/CAMNAME=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/script/bp-script/oscam_bin_em.sh > /dev/null 2>&1
+	sed -i "4s/.*/\#emuname=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/script/bp-script/oscam_bin_em.sh > /dev/null 2>&1
+    _start="/usr/script/bp-script/oscam_bin_em.sh restart"
+	echo "oscam_bin" > /usr/bin/emuactive > /dev/null 2>&1
+	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+    fi	
+  fi
+#satlodge
+  if grep -qs -i "SatLodge" /etc/issue.net > /dev/null 2>&1; then
+    update-rc.d -f softcam.oscam_bin remove  > /dev/null 2>&1
+    rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
+	sed -i "3s/.*/OSD=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/camscript/oscam_bin.sh > /dev/null 2>&1
+	echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/clist.list > /dev/null 2>&1
+	_start="/usr/camscript/oscam_bin.sh restart"
+	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config  > /dev/null 2>&1
+    fi	
+  fi
 #n
   if [ -f /etc/cam.d/${_oscambin}.sh ]; then
 	wget -O /tmp/oscam_update.sh ${_url}/ot_cams/startfiles/oscam_update.sh > /dev/null 2>&1
@@ -461,11 +570,19 @@ sed -i "3s/.*/EMUNAME=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /tmp/oscam_up
 		_start="/etc/init.d/softcam.oscam_bin restart"
   fi
 
-  if [ -e /etc/apt/sources.list.d  ]; then
-    wget -O /etc/systemd/system/oscam_bin.service ${_url}/ot_cams/startfiles/oscam_bin.service > /dev/null 2>&1
-    systemctl daemon-reload > /dev/null 2>&1
-    systemctl enable oscam_bin.service > /dev/null 2>&1
-    systemctl start oscam_bin.service > /dev/null 2>&1
+  if [ -e /etc/apt/sources.list.d  ] > /dev/null 2>&1; then
+    #wget -O /etc/systemd/system/oscam_bin.service ${_url}/ot_cams/startfiles/oscam_bin.service 
+	  if [ -e /etc/apt/sources.list.d/dep-all-feed.list ] > /dev/null 2>&1; then
+		sed -i "2s/.*/Description=OSCam ${_oscam_version}${_neon}${_emu}/" /etc/systemd/system/cam-oscam_bin.service > /dev/null 2>&1
+		systemctl daemon-reload  > /dev/null 2>&1
+		systemctl enable cam_oscam_bin.service  > /dev/null 2>&1
+		systemctl start cam_oscam_bin.service > /dev/null 2>&1
+	  else
+		sed -i "2s/.*/Description=OSCam ${_oscam_version}${_neon}${_emu}/" /lib/systemd/system/oscam_bin.service > /dev/null 2>&1
+		systemctl daemon-reload  > /dev/null 2>&1
+		systemctl enable oscam_bin.service  > /dev/null 2>&1
+		systemctl start oscam_bin.service > /dev/null 2>&1
+	  fi
   fi
 }
 
@@ -490,17 +607,25 @@ replace_oscam_bin() {
   if [ -e /etc/apt/sources.list.d  ]; then
      wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
      chmod +x /usr/bin/oscam_bin > /dev/null 2>&1
+	 if [ -r /usr/lib/enigma2/python/Plugins/Extensions/AddOnManager ] > /dev/null 2>&1; then
+	    if [ ! -r /usr/bin/cam ] > /dev/null 2>&1; then
+			mkdir -p /usr/bin/cam  > /dev/null 2>&1
+		fi
+		wget -O /usr/bin/cam/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
+		mv /usr/bin/oscam_bin /usr/bin/cam/oscam_bin > /dev/null 2>&1
+		chmod +x /usr/bin/cam/oscam_bin > /dev/null 2>&1
+	 fi
   else
       if grep -qs -i "openbh" /etc/issue ; then
         wget -O /usr/softcams/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
         chmod +x /usr/softcams/oscam_bin > /dev/null 2>&1
 	  else
-	    if [[ $_arch == "aarch64" ]]; then
-			wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version}${_neon}${_emu} 
-			chmod +x /usr/bin/oscam_bin
+	    if [[ $_arch == "aarch64" ]] > /dev/null 2>&1; then
+			wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
+			chmod +x /usr/bin/oscam_bin > /dev/null 2>&1
 		else
-			wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} 
-			chmod +x /usr/bin/oscam_bin 
+			wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
+			chmod +x /usr/bin/oscam_bin  > /dev/null 2>&1
 		fi
 	  fi
    
@@ -877,10 +1002,52 @@ install_vti() {
 
 install_nn2() {
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
-  $_exec_cmd install $_libusbvers  > /dev/null 2>&1
-  $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
-  $_exec_cmd install $_libcryptovers  > /dev/null 2>&1
-  $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
+  apt install -y install $_libusbvers  > /dev/null 2>&1
+  apt install -y install $_libatomicvers  > /dev/null 2>&1
+  apt install -y install $_libcryptovers  > /dev/null 2>&1
+  apt install -y install $_libcurlvers4  > /dev/null 2>&1
+  #apt install libusb-1.0-0
+  if [ -e /etc/apt/sources.list.d  ]; then
+    if ! apt list --installed | grep apt-transport-https > /dev/null 2>&1; then
+		apt install -y apt-transport-https > /dev/null 2>&1
+    fi
+    if [ -e /etc/apt/sources.list.d/dep-all-feed.list ] > /dev/null 2>&1; then
+	  if [ -n "$(uname -m | grep armv7l)" ]; then
+		wget -O /data/dream-elite-extra_armhf.deb ${_url}/ot_cams/update/dream/dream-elite-extra_armhf.deb > /dev/null 2>&1
+		apt install -y /data/dream-elite-extra_armhf.deb > /dev/null 2>&1
+	  elif [ -n "$(uname -m | grep aarch64)" ]; then
+		wget -O /data/dream-elite-extra_arm64.deb ${_url}/ot_cams/update/dream/dream-elite-extra_arm64.deb > /dev/null 2>&1
+		apt install -y /data/dream-elite-extra_arm64.deb > /dev/null 2>&1
+	  elif [ -n "$(uname -m | grep mips)" ]; then
+		wget -O /data/dream-elite-extra_mipsel.deb ${_url}/ot_cams/update/dream/dream-elite-extra_mipsel.deb > /dev/null 2>&1
+		apt install -y/data/dream-elite-extra_mispel.deb > /dev/null 2>&1
+	  fi
+    fi
+    if [ -e /etc/apt/sources.list.d/gp4-unstable-all-feed.list ]; then
+      if ! apt list --installed | grep geminicam > /dev/null 2>&1; then
+		apt install -y geminicam > /dev/null 2>&1
+	  fi
+    fi
+    if ! apt list --installed | grep enigma2-plugin-extensions-streamrelay > /dev/null 2>&1; then
+		wget -O /tmp/enigma2-plugin-extensions-streamrelay_4.0-r0.1_all.deb ${_url}/ot_cams/update/dream/enigma2-plugin-extensions-streamrelay_4.0-r0.1_all.deb > /dev/null 2>&1
+		apt install -y /tmp/enigma2-plugin-extensions-streamrelay_4.0-r0.1_all.deb > /dev/null 2>&1
+		rm enigma2-plugin-extensions-streamrelay > /dev/null 2>&1
+    fi
+    if systemctl is-active dccamd.service = "active"; then
+	  systemctl stop dccamd.service > /dev/null 2>&1
+	  systemctl disable dccamd.service > /dev/null 2>&1
+    fi
+    if ! apt list --installed | grep enigma2-plugin-extensions-streamrelay > /dev/null 2>&1; then
+		wget -O /tmp/enigma2-plugin-extensions-streamrelay_4.0-r0.1_all.deb ${_url}/ot_cams/update/dream/enigma2-plugin-extensions-streamrelay_4.0-r0.1_all.deb > /dev/null 2>&1
+		apt install -y /tmp/enigma2-plugin-extensions-streamrelay_4.0-r0.1_all.deb > /dev/null 2>&1
+		rm enigma2-plugin-extensions-streamrelay > /dev/null 2>&1
+    fi
+    wget -O /etc/enigma2/streamrelayconf.json ${_url}/ot_cams/update/dream/streamrelayconf.json > /dev/null 2>&1
+	if grep -qs -i "dreamboxupdate" /etc/apt/sources.list.d/all-feed.list && [ ! -f /etc/apt/sources.list.d/dep-all-feed.list ]; then
+	  wget http://plugins.boxpirates.to/boxpiratespanel-dreamos-installer.sh -O - | /bin/sh > /dev/null 2>&1
+	  apt install -y libusb-1.0-0 > /dev/null 2>&1
+	fi
+  fi
   install_OMT_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
   ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
@@ -1040,14 +1207,23 @@ mainmenu() {
 	  rm /tmp/oscamfile* > /dev/null 2>&1
 	  rm /tmp/oscam.server > /dev/null 2>&1
 	  rm /tmp/oscam_update.sh > /dev/null 2>&1
-      wget -O - -q "127.0.0.1/web/message?text=oscam%20Multitool%20is%20%20now%20stopped...%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
-
+	  if [ -e /etc/apt/sources.list.d ]; then
+		SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
+		curl -X POST "http://localhost/web/message?text=Oscam%20Multitool%20is%20%20now%20stopped...%20:)%20%20&type=1&timeout=5&sessionid=$SESSIONID" >/dev/null 2>&1
+	  else
+		wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20%20now%20stopped...%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null 2>&1
+	  fi
       if [ -n "_enigmasettings" ]; then
       do_enigma_settings
       fi
 
       if [ -n "$_reboot" ]; then
-        wget -O - -q "127.0.0.1/web/message?text=OScam%20Multitool%20is%20%20rebooting%20your%20box...%20%20$STARTDATE&type=1&timeout=5" > /dev/null
+	  if [ -e /etc/apt/sources.list.d ]; then
+		SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
+		curl -X POST "http://localhost/web/message?text=OScam%20Multitool%20is%20%20rebooting%20your%20box...%20%20&type=1&timeout=5&sessionid=$SESSIONID" >/dev/null 2>&1
+	  else
+        wget -O - -q "127.0.0.1/web/message?text=OScam%20Multitool%20is%20%20rebooting%20your%20box...%20%20$STARTDATE&type=1&timeout=5" > /dev/null 2>&1
+	  fi
         do_reboot
       fi
 
@@ -1202,25 +1378,29 @@ update_bin() {
       _oscam_version="11866"
       get_old_oscam
       kill_oscam
-      replace_oscam_bin
+      _neon=""
+	  _emu=""
+	  replace_oscam_bin
       mainmenu
       ;;
 	8)
       _reboot=1
       _oscam_version="11866"
-      _neon="-neon"
       get_old_oscam
       kill_oscam
+	  _neon="-neon"
+	  _emu=""
       replace_oscam_bin
       mainmenu
       ;;
 	9)
       _reboot=1
       _oscam_version="11866"
-	  _emu="-emu"
-      get_old_oscam
+	  get_old_oscam
       kill_oscam
-      replace_oscam_bin
+      _emu="-emu"
+	  _neon=""
+	  replace_oscam_bin
       mainmenu
       ;;  
 	10)
