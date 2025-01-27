@@ -1083,18 +1083,23 @@ install_nn2() {
 	  fi
     fi
     if ! apt list --installed | grep enigma2-plugin-extensions-streamrelay > /dev/null 2>&1; then
-		wget -O /tmp/enigma2-plugin-extensions-streamrelay_4.0-r0.1_all.deb ${_url}/ot_cams/update/dream/enigma2-plugin-extensions-streamrelay_4.0-r0.1_all.deb > /dev/null 2>&1
-		apt install -y /tmp/enigma2-plugin-extensions-streamrelay_4.0-r0.1_all.deb > /dev/null 2>&1
-		rm enigma2-plugin-extensions-streamrelay > /dev/null 2>&1
+	  if [ -n "$(uname -m | grep armv7l)" ]; then
+		wget -O /etc/apt/sources.list.d/g4-nobody-fury-feed2.list ${_url}/ot_cams/update/dream/g4-nobody-fury-feed2.list > /dev/null 2>&1
+	  elif [ -n "$(uname -m | grep aarch64)" ]; then
+		wget -O /etc/apt/sources.list.d/g4-nobody-fury-feed3.list ${_url}/ot_cams/update/dream/g4-nobody-fury-feed3.list > /dev/null 2>&1
+	  elif [ -n "$(uname -m | grep mips)" ]; then
+		wget -O /etc/apt/sources.list.d/g4-nobody-fury-feed1.list ${_url}/ot_cams/update/dream/g4-nobody-fury-feed1.list > /dev/null 2>&1
+	  fi
+	  apt update > /dev/null 2>&1
+	  apt install -y enigma2-plugin-extensions-streamrelay > /dev/null 2>&1
     fi
     if systemctl is-active dccamd.service = "active"; then
 	  systemctl stop dccamd.service > /dev/null 2>&1
 	  systemctl disable dccamd.service > /dev/null 2>&1
     fi
     if ! apt list --installed | grep enigma2-plugin-extensions-streamrelay > /dev/null 2>&1; then
-		wget -O /tmp/enigma2-plugin-extensions-streamrelay_4.0-r0.1_all.deb ${_url}/ot_cams/update/dream/enigma2-plugin-extensions-streamrelay_4.0-r0.1_all.deb > /dev/null 2>&1
-		apt install -y /tmp/enigma2-plugin-extensions-streamrelay_4.0-r0.1_all.deb > /dev/null 2>&1
-		rm enigma2-plugin-extensions-streamrelay > /dev/null 2>&1
+	  apt update > /dev/null 2>&1
+	  apt install -y enigma2-plugin-extensions-streamrelay > /dev/null 2>&1
     fi
     wget -O /etc/enigma2/streamrelayconf.json ${_url}/ot_cams/update/dream/streamrelayconf.json > /dev/null 2>&1
 	if grep -qs -i "dreamboxupdate" /etc/apt/sources.list.d/all-feed.list && [ ! -f /etc/apt/sources.list.d/dep-all-feed.list ]; then
