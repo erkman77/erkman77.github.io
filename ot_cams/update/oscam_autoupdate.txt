@@ -36,14 +36,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 
   #compare oscam version
   wget -O /tmp/version.txt ${_url}/version.txt > /dev/null 2>&1
-  file="/tmp/version.txt"
-  search="version="
-  X=8 
-  content=$(grep "$search" "$file")
-
-  if [ -n "$content" ]; then
-    Version_new=$(echo "$content" | cut -c $((X + 1))-)
-  fi
+  Version_new=$(cat /tmp/version.txt | grep -o '[0-9]\{5\}')
 
   ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscam
   ps xuww | grep -i oscam | grep -vE 'grep|tail' | awk '{for (i=11; i<=26; i++) printf "%s%s", $i, (i<26 ? OFS : ORS)}'|uniq > /tmp/oscam_start
