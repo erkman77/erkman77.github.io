@@ -726,8 +726,14 @@ update_whitelist() {
   curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
   curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
   curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+  if [ -e /etc/apt/sources.list.d ]; then
+	SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+  else
+	curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+	curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+  fi
   echo "...done"
   sleep 2
 }
@@ -760,8 +766,14 @@ install_whitelist() {
   curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
   curl -sk ${_url}/ot_tune/whitelist/astra_wl.txt | bash
   curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+  if [ -e /etc/apt/sources.list.d ]; then
+	SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+  else
+	curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+	curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+  fi
   set_enigma2_settings
   echo "...done"
   sleep 2
@@ -778,21 +790,39 @@ get_bouquets() {
       curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
       curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
       curl -sk ${_url}/${_bouquet} | bash
-      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-      ;;
+	  if [ -e /etc/apt/sources.list.d ]; then
+		SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+	  else
+		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+      fi
+	  ;;
     *)
       curl -sk ${_url}/${_bouquet} | bash
-      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-      ;;
+	  if [ -e /etc/apt/sources.list.d ]; then
+		SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+	  else
+		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+      fi
+	  ;;
   esac
 }
 
 iptv_install() {
       curl -sk ${_url}/iptv.txt | bash
-      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+	  if [ -e /etc/apt/sources.list.d ]; then
+		SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+	  else
+		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+	  fi
 	  echo -e "\e[32m all done ...\e[0m"
 	  sleep 3
 }
@@ -801,8 +831,14 @@ hotbird_install() {
       curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
       curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
       curl -sk ${_url}/hotbird.txt | bash
-      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+	  if [ -e /etc/apt/sources.list.d ]; then
+		SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+	  else
+		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+	  fi
 	  echo -e "\e[32m all done ...\e[0m"
 	  sleep 3
 }
@@ -811,8 +847,14 @@ astra_install() {
       curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
       curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
       curl -sk ${_url}/astra_full.txt | bash
-      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-      curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+	  if [ -e /etc/apt/sources.list.d ]; then
+		SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+	  else
+		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+	  fi
 	  echo -e "\e[32m all done ...\e[0m"
       sleep 3
 }
@@ -821,8 +863,14 @@ replace_bouquets_ip() {
   _fix_streaming=1
   _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -F '/' '{print $1}')
   sed -i "s/127.0.0.1/${_myip}/g" /etc/enigma2/*.tv
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+  if [ -e /etc/apt/sources.list.d ]; then
+	SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+  else
+	curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+	curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+  fi
 }
 
 autoupdate_bouquet_bouquets() {
@@ -922,8 +970,14 @@ replace_bouquets_type() {
   echo "config.plugins.serviceapp.servicemp3.replace=true" >> /etc/enigma2/settings
   touch /etc/enigma2/serviceapp_replaceservicemp3
   sed -i 's/3a17999\/1/3a17999\/5001/g' /etc/enigma2/*.tv
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+  if [ -e /etc/apt/sources.list.d ]; then
+	SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+  else
+	curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+	curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+  fi	
   _fix_sound=true
   _reboot=1
 }
