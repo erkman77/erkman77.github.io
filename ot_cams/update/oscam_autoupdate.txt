@@ -29,7 +29,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
   if [[ "${_script_new}" != "${_scriptversion}" ]]; then
   	echo "Update OSCam autoupdate"
   	sleep 2
-	cp /tmp/oscam_autoupdate /usr/bin/oscam_autoupdate
+	cp -f /tmp/oscam_autoupdate /usr/bin/oscam_autoupdate
 	chmod +x /usr/bin/oscam_autoupdate
 	exec "$0" "$@"
   fi
@@ -156,13 +156,13 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 		sed -i "19s/.*/         \/usr\/bin\/\$binary -b -r 2 -c \/etc\/tuxbox\/config/" /tmp/oscam_update.sh
 		_start="/usr/emu_scripts/EGcam_${_oscambin}.sh restart"
 		mv /tmp/oscam_update.sh /usr/emu_scripts/EGcam_${_oscambin}.sh
-		cp  /usr/emu_scripts/EGcam_${_oscambin}.sh /usr/bin/StartEGCam  > /dev/null 2>&1
+		cp -f /usr/emu_scripts/EGcam_${_oscambin}.sh /usr/bin/StartEGCam  > /dev/null 2>&1
 		chmod +x /usr/emu_scripts/EGcam_${_oscambin}.sh
 		chmod +x /usr/bin/StartEGCam  > /dev/null 2>&1
 		echo "OSCam v$Version_new${_neon}${_emu}" > /etc/CurrentEGCamName	
 	
 		if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+		  cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 		fi
 		sleep 2
 	fi
@@ -181,7 +181,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 		chmod +x /usr/script/${_oscambin}.emu
 
 		if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+		  cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	    fi
 		sleep 2
 	fi
@@ -196,7 +196,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 		ln -sf /usr/script/${_oscambin}_cam.sh /etc/init.d/current_cam.sh > /dev/null 2>&1
 		chmod +x /etc/init.d/current_cam.sh 
 		_start="/usr/script/${_oscambin}_cam.sh restart"
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+		cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 		sleep 2
 	fi
 
@@ -209,7 +209,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 		chmod +x /usr/script/${_oscambin}.sh
 
 		if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+		  cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 		fi
 		sleep 2
 	fi
@@ -220,7 +220,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 		sed -i "s/^config\.gcammanager\.currentbinary=.*/config.gcammanager.currentbinary=oscam_bin/" /etc/enigma2/gpsettings > /dev/null 2>&1
 		sed -i "2s/.*/        \"name\": \"OSCam ${_oscam_version}${_neon}${_emu}\",/" /etc/enigma2/camd_${_oscambin}.json > /dev/null 2>&1
 		if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+		  cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 		fi
     fi
 
@@ -228,7 +228,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 	if [ -r /usr/lib/enigma2/python/Plugins/Extensions/AddOnManager ] > /dev/null 2>&1; then
       #sed -i "3s/.*/OSD=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/script/cam/${_oscambin}.sh
 	  if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-	    cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	    cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	  fi
     fi
 	#newenigma
@@ -238,14 +238,14 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 	  _start="/usr/script/${_oscambin}.emu restart"
 	  chmod +x /usr/script/${_oscambin}.emu > /dev/null 2>&1
 	  if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-	    cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	    cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	  fi
     fi
 	#Dream-Elite
     if [ -e /etc/apt/sources.list.d/dep-all-feed.list ]; then
       sed -i "2s/.*/        \"name\": \"OSCam ${_oscam_version}${_neon}${_emu}\",/" /etc/enigma2/EliteSoftcam/camd_${_oscambin}.json
 	  if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-	    cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config 
+	    cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config 
 	  fi
     fi
 	#peterpan
@@ -262,7 +262,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
         echo "10\*${_oscambin}.pp\* ${_oscambin} \*" >/usr/ppteam/.emulist
       fi
       if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config  > /dev/null 2>&1
+		cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config  > /dev/null 2>&1
       fi
     fi
 	#opendreambox
@@ -272,7 +272,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
       _start="/usr/script/bp-script/${_oscambin}_em.sh restart"
 	  echo "${_oscambin}" > /usr/bin/emuactive
 	  if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+		cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
       fi	
     fi
 	#satlodge
@@ -281,7 +281,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 	  echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/clist.list
 	  _start="/usr/camscript/${_oscambin}.sh restart"
 	  if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config  > /dev/null 2>&1
+		cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config  > /dev/null 2>&1
       fi	
     fi
 	#
@@ -294,7 +294,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 		_start="/usr/script/${_oscambin}.emu restart"
 	
 		if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+		  cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 		fi
 		sleep 2
 	fi
@@ -308,7 +308,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 		chmod +x /usr/emu/start/${_oscambin}.emu
 
 		if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+		  cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 		fi
 		#/usr/script/${_oscambin}.emu start > /dev/null 2>&1
 		_start="/usr/emu/start/${_oscambin}.emu restart"
@@ -325,7 +325,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 		_start="/etc/cam.d/${_oscambin.sh} restart"
 
 		if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-	      cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	      cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 		fi
 		sleep 2
 	fi
