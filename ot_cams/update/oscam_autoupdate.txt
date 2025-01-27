@@ -127,8 +127,13 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 		chmod +x $_myoscambin
 	#	systemctl start ${_oscambin}.service > /dev/null 2>&1
     else
-		wget -O $_myoscambin ${_url}/ot_cams/oscam/oscam-${_arch}-$Version_new${_neon}${_emu} > /dev/null 2>&1
-		chmod +x $_myoscambin
+	    if [[ $_arch == "aarch64" ]] > /dev/null 2>&1; then
+			wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
+			chmod +x /usr/bin/oscam_bin > /dev/null 2>&1
+		else
+			wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
+			chmod +x /usr/bin/oscam_bin  > /dev/null 2>&1
+		fi
     fi
 
 	#bh
@@ -169,21 +174,6 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 
 	if [ -e /etc/apt/sources.list.d  ]; then
       systemctl stop ${_oscambin}.service > /dev/null 2>&1
-	fi
-
-	#newenigma
-	if [ -f /usr/script/${_oscambin}.emu ]; then
-		wget -O /tmp/oscam_update.sh ${_url}/ot_cams/startfiles/oscam_update.sh
-		sed -i "3s/.*/EMUNAME=\"OSCam $Version_new${_neon}${_emu}\"/" /tmp/oscam_update.sh
-		sed -i "4s/.*/binary=\"${_oscambin}\"/" /tmp/oscam_update.sh
-		mv /tmp/oscam_update.sh /usr/script/${_oscambin}.emu
-		_start="/usr/script/${_oscambin}.emu restart"
-		chmod +x /usr/script/${_oscambin}.emu
-
-		if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		  cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
-	    fi
-		sleep 2
 	fi
 
 	#vti
