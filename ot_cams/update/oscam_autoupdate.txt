@@ -125,7 +125,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 		systemctl stop ${_oscambin}.service > /dev/null 2>&1
         wget -O $_myoscambin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-$Version_new${_neon}${_emu} > /dev/null 2>&1
 		chmod +x $_myoscambin
-		systemctl start ${_oscambin}.service > /dev/null 2>&1
+	#	systemctl start ${_oscambin}.service > /dev/null 2>&1
     else
 		wget -O $_myoscambin ${_url}/ot_cams/oscam/oscam-${_arch}-$Version_new${_neon}${_emu} > /dev/null 2>&1
 		chmod +x $_myoscambin
