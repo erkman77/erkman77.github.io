@@ -1190,7 +1190,7 @@ mainmenu() {
   echo -e ""
   echo -e "0) Exit"
   echo -e ""
-  echo -e "\e[33m greetings to the lazy thieves of our work\e[0m"
+  echo -e "\e[33m greetings to the thieves of our work\e[0m"
   echo -e "\e[33m you can't be any lazier\e[0m"
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
