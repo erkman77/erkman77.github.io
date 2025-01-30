@@ -106,6 +106,11 @@ if grep -qs -i "SatLodge" /etc/issue.net > /dev/null 2>&1; then
 fi
 
 echo ... "running preconfigure for optimal autoinstaller settings"
+echo -e ""
+echo -e "\e[33m greetings to the thieves of our work, you can't be any lazier\e[0m"
+echo -e "\e[33m only original with an i.tv in front of the url ;)\e[0m"
+echo -e ""
+
 if [ -e /etc/apt/sources.list.d ]; then
 	SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
 	curl -X POST "http://localhost/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20&type=1&timeout=5&sessionid=$SESSIONID" >/dev/null 2>&1
@@ -1188,9 +1193,6 @@ mainmenu() {
   echo -e "i) Some IPTV Channels                 // install some IPTV Channels by ciefp"
   echo -e "                                         Stand 23.01.2025"
   echo -e "0) Exit"
-  echo -e ""
-  echo -e "\e[33m greetings to the thieves of our work, you can't be any lazier\e[0m"
-  echo -e "\e[33m only original with an i.tv in front of the url ;)\e[0m"
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
   case $main in
