@@ -1155,7 +1155,6 @@ my_header() {
   clear
   echo "for autoinstall use:"
   echo " wget -q -O - ${_url}/install_v3.txt | bash -s -- -t PROTO -S SERVER -P PORT -u USER -p PASS"
-  echo ""
   echo "   ____                               ____           __        ____             "
   echo "  / __ \______________ _____ ___     /  _/___  _____/ /_____ _/ / /__  _____    "
   echo " / / / / ___/ ___/ __ \/ __ \__ \    / // __ \/ ___/ __/ __ \/ / / _ \/ ___/    "
