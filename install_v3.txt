@@ -1191,7 +1191,7 @@ mainmenu() {
   echo -e ""
   echo -e "\e[33m greetings to the thieves of our work\e[0m"
   echo -e "\e[33m you can't be any lazier\e[0m"
-  echo -e "\e[33m only original with an i.tv in front of the url\e[0m"
+  echo -e "\e[33m only original with an i.tv in front of the url ;)\e[0m"
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
   case $main in
