@@ -128,10 +128,10 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 	#	systemctl start ${_oscambin}.service > /dev/null 2>&1
     else
 	    if [[ $_arch == "aarch64" ]] > /dev/null 2>&1; then
-			wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${$Version_new}${_neon}${_emu} > /dev/null 2>&1
+			wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-dream_${_arch}-${Version_new}${_neon}${_emu} > /dev/null 2>&1
 			chmod +x /usr/bin/oscam_bin > /dev/null 2>&1
 		else
-			wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${$Version_new}${_neon}${_emu} > /dev/null 2>&1
+			wget -O /usr/bin/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${Version_new}${_neon}${_emu} > /dev/null 2>&1
 			chmod +x /usr/bin/oscam_bin  > /dev/null 2>&1
 		fi
     fi
