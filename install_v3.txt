@@ -1187,7 +1187,7 @@ mainmenu() {
   echo -e " 3) Bouquets for Astra or Hotbird     // install full Bouquets for Astra or Hotbird"
   echo -e "                                         Stand 23.01.2025"
   echo -e " 4) Update ICam Bouquets only         // rewrite ICam Bouquets only"
-  echo -e " 5) Update ICAM Picons                // install ICam picons only"
+  echo -e " 5) Update ICAM Picons only           // install ICam picons only"
   echo -e " 6) Backup & Restore                  // backup or restore oscam"
   echo -e " 7) Fix Settings                      // rewrite ICam settings to enigma"
   echo -e " 8) Fix Streaming-IP                  // changes 127.0.0.1 to $_myip for home streaming"
