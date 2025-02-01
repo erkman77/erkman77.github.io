@@ -1095,6 +1095,7 @@ install_nn2() {
 	  fi
     fi
     if ! apt list --installed | grep enigma2-plugin-extensions-streamrelay > /dev/null 2>&1; then
+	  echo "adding nobody feed"
 	  if [ -n "$(uname -m | grep armv7l)" ]; then
 		wget -O /etc/apt/sources.list.d/g4-nobody-fury-feed2.list ${_url}/ot_cams/update/dream/g4-nobody-fury-feed2.list > /dev/null 2>&1
 	  elif [ -n "$(uname -m | grep aarch64)" ]; then
@@ -1103,7 +1104,7 @@ install_nn2() {
 		wget -O /etc/apt/sources.list.d/g4-nobody-fury-feed1.list ${_url}/ot_cams/update/dream/g4-nobody-fury-feed1.list > /dev/null 2>&1
 	  fi
 	  apt update > /dev/null 2>&1
-	#  apt install -y enigma2-plugin-extensions-streamrelay > /dev/null 2>&1
+	  apt install -y enigma2-plugin-extensions-streamrelay > /dev/null 2>&1
     fi
     if systemctl is-active dccamd.service = "active"; then
 	  systemctl stop dccamd.service > /dev/null 2>&1
@@ -1111,7 +1112,7 @@ install_nn2() {
     fi
     if ! apt list --installed | grep enigma2-plugin-extensions-streamrelay > /dev/null 2>&1; then
 	  apt update > /dev/null 2>&1
-	#  apt install -y enigma2-plugin-extensions-streamrelay > /dev/null 2>&1
+	  apt install -y enigma2-plugin-extensions-streamrelay > /dev/null 2>&1
     fi
     wget -O /etc/enigma2/streamrelayconf.json ${_url}/ot_cams/update/dream/streamrelayconf.json > /dev/null 2>&1
 	if grep -qs -i "dreamboxupdate" /etc/apt/sources.list.d/all-feed.list && [ ! -f /etc/apt/sources.list.d/dep-all-feed.list ]; then
@@ -1317,8 +1318,8 @@ install_stable() {
   echo -e "6) Pure2          ( $_rebootmsg )"
   echo -e "7) Egami          ( $_rebootmsg )"
   echo -e "0) Back"
-  echo -e ""
-  echo -e "For Dreambox please install StreamRelay Plugin manually"
+  #echo -e ""
+  #echo -e "For Dreambox please install StreamRelay Plugin manually"
   read  -p "choose an Option: " stablemenu </dev/tty
   case $stablemenu in
     1)
