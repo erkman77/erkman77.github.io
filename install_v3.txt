@@ -106,10 +106,10 @@ if grep -qs -i "SatLodge" /etc/issue.net > /dev/null 2>&1; then
 fi
 
 echo ... "running preconfigure for optimal autoinstaller settings"
-echo -e ""
-echo -e "\e[33m greetings to the thieves of our work, you can't be any lazier\e[0m"
-echo -e "\e[33m only original with an i.tv in front of the url ;)\e[0m"
-echo -e ""
+#echo -e ""
+#echo -e "\e[33m greetings to the thieves of our work, you can't be any lazier\e[0m"
+#echo -e "\e[33m only original with an i.tv in front of the url ;)\e[0m"
+#echo -e ""
 
 if [ -e /etc/apt/sources.list.d ]; then
 	SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
