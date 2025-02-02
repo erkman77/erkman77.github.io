@@ -674,7 +674,7 @@ set_enigma2_settings() {
   curl --noproxy '*' --data value="false" "http://127.0.0.1/api/saveconfig?key=config.streaming.descramble_client" > /dev/null 2>&1
   curl --noproxy '*' --data value="expert" "http://127.0.0.1/api/saveconfig?key=config.usage.setup_level" > /dev/null 2>&1
   echo -e "\e[32m all done ...\e[0m"
-  if [ -e /etc/apt/sources.list.d  ] > /dev/null 2>&1; then
+  if ! apt list --installed | grep enigma2-plugin-extensions-streamrelay > /dev/null 2>&1; then
 	wget -O /etc/enigma2/streamrelayconf.json ${_url}/ot_cams/update/dream/streamrelayconf.json > /dev/null 2>&1
   fi
   sleep 3
@@ -735,7 +735,7 @@ update_whitelist() {
   curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
   curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
   if [ -e /etc/apt/sources.list.d ]; then
-    if [ -e /etc/apt/sources.list.d  ] > /dev/null 2>&1; then
+    if ! apt list --installed | grep enigma2-plugin-extensions-streamrelay > /dev/null 2>&1; then
 	  curl -sko /etc/enigma2/icamref.json ${_url}/ot_tune/whitelist/icamref.json > /dev/null 2>&1
 	  rm /etc/enigma2/whitelist_streamrelay > /dev/null 2>&1
     fi
