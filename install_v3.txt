@@ -1186,7 +1186,7 @@ mainmenu() {
   echo -e " 1) Install Icam Oscam stable         // fresh box ... or sledgehammer mode ;)"
   echo -e " 2) Update Oscam Bin only             // updates any running oscam to ICam Oscam"
   echo -e " 3) Bouquets for Astra or Hotbird     // install full Bouquets for Astra or Hotbird"
-  echo -e "                                         Stand 23.01.2025"
+  echo -e "                                         Stand 01.02.2025 fix2"
   echo -e " 4) Update ICam Bouquets only         // rewrite ICam Bouquets only"
   echo -e " 5) Update ICAM Picons only           // install ICam picons only"
   echo -e " 6) Backup & Restore                  // backup or restore oscam"
@@ -1199,7 +1199,7 @@ mainmenu() {
   echo -e "                                         use this after a fresh reboot"
   echo -e "                                         and DONT restart oscam"
   echo -e "i) Some IPTV Channels                 // install some IPTV Channels by ciefp"
-  echo -e "                                         Stand 23.01.2025"
+  echo -e "                                         Stand 01.02.2025 fix2"
   echo -e "0) Exit"
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
