@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-_scriptversion=40
+_scriptversion=41
 
 _url=i.tv-lounge.eu
 _stream=\[streamrelay\]
