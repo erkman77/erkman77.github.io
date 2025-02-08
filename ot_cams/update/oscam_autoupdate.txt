@@ -309,6 +309,7 @@ main() {
 		chmod +x /lib/systemd/system/${_oscambin}.service > /dev/null 2>&1
 		sed -i "s/^config\.gcammanager\.currentbinary=.*/config.gcammanager.currentbinary=oscam_bin/" /etc/enigma2/gpsettings > /dev/null 2>&1
 		sed -i "2s/.*/        \"name\": \"OSCam ${_oscam_version}${_neon}${_emu}\",/" /etc/enigma2/camd_${_oscambin}.json > /dev/null 2>&1
+		systemctl stop ${_oscambin}.service > /dev/null 2>&1
 		if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 		  cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 		fi
@@ -317,6 +318,7 @@ main() {
 	#merlin
 	if [ -r /usr/lib/enigma2/python/Plugins/Extensions/AddOnManager ] > /dev/null 2>&1; then
       #sed -i "3s/.*/OSD=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/script/cam/${_oscambin}.sh
+	  systemctl stop ${_oscambin}.service > /dev/null 2>&1
 	  if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 	    cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	  fi
@@ -334,6 +336,7 @@ main() {
 	#Dream-Elite
     if [ -e /etc/apt/sources.list.d/dep-all-feed.list ]; then
       sed -i "2s/.*/        \"name\": \"OSCam ${_oscam_version}${_neon}${_emu}\",/" /etc/enigma2/EliteSoftcam/camd_${_oscambin}.json
+	  systemctl stop ${_oscambin}.service > /dev/null 2>&1
 	  if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 	    cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config 
 	  fi
@@ -429,7 +432,7 @@ main() {
 	if [ -e /etc/apt/sources.list.d  ]; then
 	  systemctl daemon-reload > /dev/null 2>&1
 	  systemctl stop ${_oscambin}.service > /dev/null 2>&1
-      systemctl start ${_oscambin}.service > /dev/null 2>&1
+      _start="systemctl restart ${_oscambin}.service"
 	fi
 
     #echo "OSCam changed from $Version_old${_neon}${_emu} to $Version_new${_neon}${_emu}"
