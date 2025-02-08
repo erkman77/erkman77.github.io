@@ -95,7 +95,7 @@ main() {
     if [[ "$Version_new" != "$Version_old" ]]; then
 	  if [ -e /etc/apt/sources.list.d ]; then
 			SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
-			curl -X POST "http://localhost/web/message?text=Oscam%20Multitool%20found%20%20new%20Oscam%20\n\nVersion%20%20%20$Version_new%20\n\n\n%20Update%20?%20&type=0&timeout=10&sessionid=$SESSIONID" #>/dev/null 2>&1
+			curl -X POST "http://localhost/web/message?text=Oscam%20Multitool%20found%20%20new%20Oscam%20\n\nVersion%20%20%20$Version_new%20\n\n\n%20Update%20?%20&type=0&timeout=15&sessionid=$SESSIONID" #>/dev/null 2>&1
 			curl -X POST "http://localhost/web/remotecontrol?command=108&sessionid=$SESSIONID" &>/dev/null
 			sleep 11
 			SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #/dev/null 2>&1
