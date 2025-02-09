@@ -17,7 +17,7 @@ update="200 OK"
 update_wrong="if curl -s --head //i.tv-"
 _stream="stream_relay_enabled"
 _rebootmsg="reboot by exiting installer"
-SEARCH_PATH="/usr/tuxbox/config"
+SEARCH_PATH="/etc/tuxbox/config"
 NEW_LINE='if curl -s --head http://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 echo "${_url}" >> /tmp/read
 
