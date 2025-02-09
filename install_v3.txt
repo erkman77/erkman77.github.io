@@ -566,18 +566,6 @@ replace_initscript() {
 	fi
   fi
 
-  find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
-    if ! grep -q "\[streamrelay\]" "$file"; then
-        {
-            echo "[streamrelay]"
-            echo "stream_relay_enabled = 1"
-            echo "stream_relay_ctab = 098D"
-            echo "stream_relay_user = stream"
-            echo "stream_relay_buffer_time = 500"
-        } >> "$file"
-    fi
-  done
-
   if [ -f /etc/init.d/softcam.oscam_bin ]; then
 		_start="/etc/init.d/softcam.oscam_bin restart"
   fi
@@ -596,6 +584,18 @@ replace_initscript() {
 		_start="systemctl restart cam_oscam_bin.service"
 	  fi
   fi
+  
+  find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
+    if ! grep -q "\[streamrelay\]" "$file"; then
+        {
+            echo "[streamrelay]"
+            echo "stream_relay_enabled = 1"
+            echo "stream_relay_ctab = 098D"
+            echo "stream_relay_user = stream"
+            echo "stream_relay_buffer_time = 500"
+        } >> "$file"
+    fi
+  done
 }
 
 replace_oscam_bin() {
