@@ -392,6 +392,8 @@ replace_initscript() {
 	chmod +x /lib/systemd/system/oscam_bin.service > /dev/null 2>&1
 	sed -i "s/^config\.gcammanager\.currentbinary=.*/config.gcammanager.currentbinary=oscam_bin/" /etc/enigma2/gpsettings > /dev/null 2>&1
 	sed -i "2s/.*/        \"name\": \"OSCam ${_oscam_version}${_neon}${_emu}\",/" /etc/enigma2/camd_oscam_bin.json > /dev/null 2>&1
+	systemctl stop ${_oscambin}.service  > /dev/null 2>&1
+	_start="systemctl restart oscam_bin.service"
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	fi
@@ -402,6 +404,8 @@ replace_initscript() {
     update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
 	rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
     #sed -i "3s/.*/OSD=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/script/cam/${_oscambin}.sh
+	systemctl stop ${_oscambin}.service  > /dev/null 2>&1
+	_start="systemctl restart oscam_bin.service"
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
 	fi
@@ -499,6 +503,8 @@ replace_initscript() {
     update-rc.d -f softcam.oscam_bin remove
 	rm /etc/init.d/softcam* /etc/init.d/cardserver*
 	sed -i "2s/.*/        \"name\": \"OSCam ${_oscam_version}${_neon}${_emu}\",/" /etc/enigma2/EliteSoftcam/camd_oscam_bin.json
+	systemctl stop ${_oscambin}.service  > /dev/null 2>&1
+	_start="systemctl restart oscam_bin.service"
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config 
 	fi
@@ -581,12 +587,12 @@ replace_initscript() {
 		sed -i "2s/.*/Description=OSCam ${_oscam_version}${_neon}${_emu}/" /etc/systemd/system/cam-oscam_bin.service > /dev/null 2>&1
 		systemctl daemon-reload  > /dev/null 2>&1
 		systemctl enable cam_oscam_bin.service  > /dev/null 2>&1
-		systemctl start cam_oscam_bin.service > /dev/null 2>&1
+		_start="systemctl restart oscam_bin.service"
 	  else
 		sed -i "2s/.*/Description=OSCam ${_oscam_version}${_neon}${_emu}/" /lib/systemd/system/oscam_bin.service > /dev/null 2>&1
 		systemctl daemon-reload  > /dev/null 2>&1
 		systemctl enable oscam_bin.service  > /dev/null 2>&1
-		systemctl start oscam_bin.service > /dev/null 2>&1
+		_start="systemctl restart cam_oscam_bin.service"
 	  fi
   fi
 }
