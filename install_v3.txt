@@ -248,18 +248,18 @@ wrong_opt() {
 }
 
 install_OMT_ipk() {
-  _current_installs=$( $_listinstalled | grep -E 'softcam|camd'| grep -vE 'camdctrl|crypto|ii' |awk '{print $1}')
-  for _current_install in $_current_installs ; do
-    echo "exit 0" > /var/lib/opkg/info/$_current_install.prerm
-    echo "removing $_current_install"
-    $_exec_cmd remove $_current_install >/dev/null 2>&1
-  done
-  for _current_runscript in `ls /etc/init.d/ | grep -i softcam` ; do
-    rm /etc/init.d/$_current_runscript > /dev/null 2>&1
-  done
-  for _current_binfile in `ls /usr/bin/ | grep -i osca | grep -vE 'bak'` ; do
-    rm /usr/bin/$_current_binfile > /dev/null 2>&1
-  done
+#  _current_installs=$( $_listinstalled | grep -E 'softcam|camd'| grep -vE 'camdctrl|crypto|ii' |awk '{print $1}')
+#  for _current_install in $_current_installs ; do
+#    echo "exit 0" > /var/lib/opkg/info/$_current_install.prerm
+#    echo "removing $_current_install"
+#    $_exec_cmd remove $_current_install >/dev/null 2>&1
+#  done
+#  for _current_runscript in `ls /etc/init.d/ | grep -i softcam` ; do
+#    rm /etc/init.d/$_current_runscript > /dev/null 2>&1
+#  done
+#  for _current_binfile in `ls /usr/bin/ | grep -i osca | grep -vE 'bak'` ; do
+#    rm /usr/bin/$_current_binfile > /dev/null 2>&1
+#  done
   
   if [ -e /etc/apt/sources.list.d  ]; then
     echo "install dummy deb for softcam"
