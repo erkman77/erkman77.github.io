@@ -436,7 +436,7 @@ replace_initscript() {
 	#!/bin/sh
 	/etc/init.d/current_cam.sh start
 	EOF
-	eval $_cammanger > /dev/null 2>&1
+	#eval $_cammanger > /dev/null 2>&1
 	chmod +x /etc/init.d/CamManager > /dev/null 2>&1
 	ln -sf /etc/init.d/CamManager /etc/rcS.d/S98CamManager > /dev/null 2>&1
 	chmod +x /etc/rcS.d/S98CamManager > /dev/null 2>&1
@@ -658,6 +658,9 @@ replace_oscam_bin() {
   if [ -f /usr/bin/*_bak_lou ]; then
       rm -f /usr/bin/*_bak_lou  > /dev/null 2>&1
   fi
+  
+  oscam_startpatch2
+  
 }
 
 do_reboot() {
@@ -1700,6 +1703,18 @@ oscam_startpatch() {
   else
         echo "System runs cool, no patch needed"
 		sleep 2
+  fi
+}
+
+oscam_startpatch2() {
+  _camgrep=$(pgrep oscam)
+  _cams_start=$(wc -l <(echo "$_camgrep") | awk '{print $1}')
+
+  if [ $_cams_start -gt 2 ]; then
+        /etc/init.d/softcam.oscam_bin stop; update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
+        /etc/init.d/softcam stop; update-rc.d -f softcam remove > /dev/null 2>&1
+        update-rc.d softcam defaults; /etc/init.d/softcam start > /dev/null 2>&1
+        _reboot=1
   fi
 }
 
