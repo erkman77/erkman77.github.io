@@ -145,6 +145,7 @@ long_running_task() {
   $_exec_cmd install procps >/dev/null 2>&1
   $_exec_cmd install procps-ps >/dev/null 2>&1
   $_exec_cmd install curl >/dev/null 2>&1
+  $_exec_cmd install wget >/dev/null 2>&1
 
   if [ -e /usr/bin/icam_autoupdate  ]; then
 	if grep -qs -i $old /usr/bin/icam_autoupdate ; then
