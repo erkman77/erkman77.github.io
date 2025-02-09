@@ -354,7 +354,7 @@ replace_initscript() {
 	mv -f /usr/softcams/${_oscambin}_bak_OMT /usr/softcams_old/ > /dev/null 2>&1
 	
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
 
@@ -381,7 +381,7 @@ replace_initscript() {
 	fi
 
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	  	fi
   fi
   
@@ -396,7 +396,7 @@ replace_initscript() {
 	systemctl stop ${_oscambin}.service  > /dev/null 2>&1
 	_start="systemctl restart oscam_bin.service"
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
 
@@ -408,7 +408,7 @@ replace_initscript() {
 	systemctl stop ${_oscambin}.service  > /dev/null 2>&1
 	_start="systemctl restart oscam_bin.service"
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
 #newenigma
@@ -420,7 +420,7 @@ replace_initscript() {
 	_start="/usr/script/oscam_bin.emu restart"
 	chmod +x /usr/script/oscam_bin.emu > /dev/null 2>&1
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
 
@@ -448,7 +448,7 @@ replace_initscript() {
 	_start="/etc/init.d/current_cam.sh restart"
 
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
 	
 	mv -f /tmp/oscam_update.sh /usr/script/oscam_bin_cam.sh  > /dev/null 2>&1
@@ -471,7 +471,7 @@ replace_initscript() {
 	chmod +x /etc/rcS.d/S98CamManager > /dev/null 2>&1
 	
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
 
@@ -484,7 +484,7 @@ replace_initscript() {
 	_start="/usr/script/${_oscambin}.emu restart"
 	
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
 
@@ -496,7 +496,7 @@ replace_initscript() {
 	chmod +x /usr/emu/start/${_oscambin}.emu
 	_start="/usr/emu/start/oscam_bin.emu restart"
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+		cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
 #Dream-Elite
@@ -507,7 +507,7 @@ replace_initscript() {
 	systemctl stop ${_oscambin}.service  > /dev/null 2>&1
 	_start="systemctl restart oscam_bin.service"
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-	  cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config 
+	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config 
 	fi
   fi
 #peterpan
@@ -527,7 +527,7 @@ replace_initscript() {
     fi
 
     if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config  > /dev/null 2>&1
+		cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config  > /dev/null 2>&1
     fi
   fi
 #opendreambox
@@ -539,7 +539,7 @@ replace_initscript() {
     _start="/usr/script/bp-script/oscam_bin_em.sh restart"
 	echo "oscam_bin" > /usr/bin/emuactive
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+		cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
     fi	
   fi
 #satlodge
@@ -550,7 +550,7 @@ replace_initscript() {
 	echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/clist.list
 	_start="/usr/camscript/oscam_bin.sh restart"
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config  > /dev/null 2>&1
+		cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config  > /dev/null 2>&1
     fi	
   fi
 #n
@@ -562,7 +562,7 @@ replace_initscript() {
 	_start="/etc/cam.d/${_oscambin}.sh restart"
 	
 	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
-		cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
+		cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
 
@@ -652,7 +652,7 @@ replace_oscam_bin() {
 
   if [ -r /etc/tuxbox/config/$_oscambin ]; then
      curl -sk -o /etc/tuxbox/config/${_oscambin}/standard.css ${_url}/ot_cams/configs/standard.css > /dev/null 2>&1
-     cp /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config/ > /dev/null 2>&1
+     cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config/ > /dev/null 2>&1
   else
      curl -sk -o /etc/tuxbox/config/standard.css ${_url}/ot_cams/configs/standard.css > /dev/null 2>&1  
   fi
