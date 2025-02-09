@@ -353,7 +353,7 @@ replace_initscript() {
 	mkdir -p /usr/softcams_old > /dev/null 2>&1
 	mv -f /usr/softcams/${_oscambin}_bak_OMT /usr/softcams_old/ > /dev/null 2>&1
 	
-	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
 	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
@@ -380,7 +380,7 @@ replace_initscript() {
 	  rm /usr/bin/${_oscambin} > /dev/null 2>&1
 	fi
 
-	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
 	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	  	fi
   fi
@@ -395,7 +395,7 @@ replace_initscript() {
 	sed -i "2s/.*/        \"name\": \"OSCam ${_oscam_version}${_neon}${_emu}\",/" /etc/enigma2/camd_oscam_bin.json > /dev/null 2>&1
 	systemctl stop ${_oscambin}.service  > /dev/null 2>&1
 	_start="systemctl restart oscam_bin.service"
-	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
 	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
@@ -407,7 +407,7 @@ replace_initscript() {
     #sed -i "3s/.*/OSD=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/script/cam/${_oscambin}.sh
 	systemctl stop ${_oscambin}.service  > /dev/null 2>&1
 	_start="systemctl restart oscam_bin.service"
-	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
 	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
@@ -419,7 +419,7 @@ replace_initscript() {
 	sed -i "s/^config\.usage\.emu_name=.*/config.usage.emu_name=OSCam ${_oscam_version}${_neon}${_emu}/" /etc/enigma2/settings > /dev/null 2>&1
 	_start="/usr/script/oscam_bin.emu restart"
 	chmod +x /usr/script/oscam_bin.emu > /dev/null 2>&1
-	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
 	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
@@ -447,7 +447,7 @@ replace_initscript() {
 	chmod +x /etc/rcS.d/S98CamManager > /dev/null 2>&1
 	_start="/etc/init.d/current_cam.sh restart"
 
-	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
 	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
 	
@@ -470,7 +470,7 @@ replace_initscript() {
 	chmod +x /etc/init.d/CamManager > /dev/null 2>&1
 	chmod +x /etc/rcS.d/S98CamManager > /dev/null 2>&1
 	
-	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
 	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
@@ -483,7 +483,7 @@ replace_initscript() {
 	chmod +x /usr/script/${_oscambin}.emu
 	_start="/usr/script/${_oscambin}.emu restart"
 	
-	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
 	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
@@ -495,7 +495,7 @@ replace_initscript() {
 	mv -f /tmp/oscam_update.sh /usr/emu/start/${_oscambin}.emu
 	chmod +x /usr/emu/start/${_oscambin}.emu
 	_start="/usr/emu/start/oscam_bin.emu restart"
-	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
 		cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
@@ -506,7 +506,7 @@ replace_initscript() {
 	sed -i "2s/.*/        \"name\": \"OSCam ${_oscam_version}${_neon}${_emu}\",/" /etc/enigma2/EliteSoftcam/camd_oscam_bin.json
 	systemctl stop ${_oscambin}.service  > /dev/null 2>&1
 	_start="systemctl restart oscam_bin.service"
-	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
 	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config 
 	fi
   fi
@@ -526,7 +526,7 @@ replace_initscript() {
         echo "10\*oscam_bin.pp\* oscam_bin \*" >/usr/ppteam/.emulist
     fi
 
-    if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+    if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
 		cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config  > /dev/null 2>&1
     fi
   fi
@@ -538,7 +538,7 @@ replace_initscript() {
 	sed -i "4s/.*/\#emuname=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/script/bp-script/oscam_bin_em.sh > /dev/null 2>&1
     _start="/usr/script/bp-script/oscam_bin_em.sh restart"
 	echo "oscam_bin" > /usr/bin/emuactive
-	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
 		cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
     fi	
   fi
@@ -549,7 +549,7 @@ replace_initscript() {
 	sed -i "3s/.*/OSD=\"OSCam ${_oscam_version}${_neon}${_emu}\"/" /usr/camscript/oscam_bin.sh > /dev/null 2>&1
 	echo "OSCam ${_oscam_version}${_neon}${_emu}" > /etc/clist.list
 	_start="/usr/camscript/oscam_bin.sh restart"
-	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
 		cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config  > /dev/null 2>&1
     fi	
   fi
@@ -561,7 +561,7 @@ replace_initscript() {
 	chmod +x /etc/cam.d/${_oscambin}.sh
 	_start="/etc/cam.d/${_oscambin}.sh restart"
 	
-	if [ -r /etc/tuxbox/config/${_oscambin} ]; then
+	if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
 		cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
@@ -650,7 +650,7 @@ replace_oscam_bin() {
 
   replace_initscript
 
-  if [ -r /etc/tuxbox/config/$_oscambin ]; then
+  if [ -r /etc/tuxbox/config/${_oscambin}/oscam.server ]; then
      curl -sk -o /etc/tuxbox/config/${_oscambin}/standard.css ${_url}/ot_cams/configs/standard.css > /dev/null 2>&1
      cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config/ > /dev/null 2>&1
   else
