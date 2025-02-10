@@ -568,6 +568,7 @@ replace_initscript() {
 
   if [ -f /etc/init.d/softcam.oscam_bin ]; then
 		_start="/etc/init.d/softcam.oscam_bin restart"
+		curl --noproxy '*' --data value="${_oscambin}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
   fi
 
   if [ -e /etc/apt/sources.list.d  ] > /dev/null 2>&1; then
