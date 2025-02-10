@@ -425,6 +425,7 @@ main() {
 
 	if [ -f /etc/init.d/softcam.${_oscambin} ]; then
 		_start="/etc/init.d/softcam.${_oscambin} restart"
+		curl --noproxy '*' --data value="${_oscambin}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
 		#$_file start > /dev/null 2>&1
 		sleep 2
 	fi
