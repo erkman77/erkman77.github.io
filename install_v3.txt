@@ -248,6 +248,7 @@ wrong_opt() {
 }
 
 install_OMT_ipk() {
+update-rc.d -f softcam.${_oscambin} remove > /dev/null 2>&1
 #  _current_installs=$( $_listinstalled | grep -E 'softcam|camd'| grep -vE 'camdctrl|crypto|ii' |awk '{print $1}')
 #  for _current_install in $_current_installs ; do
 #    echo "exit 0" > /var/lib/opkg/info/$_current_install.prerm
