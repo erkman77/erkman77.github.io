@@ -311,6 +311,7 @@ kill_oscam() {
 
 replace_initscript() {
   update-rc.d -f softcam.oscam remove > /dev/null 2>&1
+  update-rc.d -f softcam.${_oscambin} remove > /dev/null 2>&1
   #rm /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   wget -O /etc/init.d/softcam ${_url}/ot_cams/startfiles/softcam > /dev/null 2>&1
   wget -O /etc/init.d/softcam.oscam_bin ${_url}/ot_cams/startfiles/softcam.oscam_bin > /dev/null 2>&1
