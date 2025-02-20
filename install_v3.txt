@@ -5,6 +5,8 @@ clear
 _version="4.5"
 _url=http://i.tv-lounge.eu
 _oscam_version=v24
+_oscam_ver=11869
+_ncam_ver="git0d50412"
 _myoscambin2="/usr/bin/oscam_bin"
 _reader1="reader"
 older="/usr/bin/"
@@ -1733,7 +1735,7 @@ oscam_auto_update() {
   wget -O /usr/bin/oscam_autoupdate ${_url}/ot_cams/update/oscam_autoupdate.txt > /dev/null 2>&1
   chmod +x /usr/bin/oscam_autoupdate
   (crontab -l | sed -e '/oscam_autoupdate/d') | crontab -
-  (crontab -l 2>/dev/null; echo "0 5 * * * /usr/bin/oscam_autoupdate ") | crontab -
+  (crontab -l 2>/dev/null; echo "0 * * * * /usr/bin/oscam_autoupdate ") | crontab -
   echo -e "\e[32m all done ...\e[0m"
   sleep 3
 }
