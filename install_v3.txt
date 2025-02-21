@@ -1216,7 +1216,7 @@ mainmenu() {
   echo -e "11) Whitelist Autoupdate              // update whitelist only @ reboot"
   echo -e "12) Oscam Start Patch                 // checks whether oscam starts twice,"
   echo -e "                                         use this after a fresh reboot"
-  echo -e "                                         and DONT restart oscam1"
+  echo -e "                                         and DONT restart oscam"
   echo -e "0) Exit"
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
