@@ -1138,6 +1138,10 @@ install_nn2() {
 	  wget http://plugins.boxpirates.to/boxpiratespanel-dreamos-installer.sh -O - | /bin/sh > /dev/null 2>&1
 	  apt install -y libusb-1.0-0 > /dev/null 2>&1
 	fi
+	if [ -r /usr/lib/enigma2/python/Plugins/Extensions/AddOnManager ]; then
+	  wget http://plugins.boxpirates.to/boxpiratespanel-dreamos-installer.sh -O - | /bin/sh > /dev/null 2>&1
+	  apt install -y libusb-1.0-0 > /dev/null 2>&1
+	fi  
   fi
   install_OMT_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
