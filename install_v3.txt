@@ -5,7 +5,7 @@ clear
 _version="4.5"
 _url=http://i.tv-lounge.eu
 _oscam_version=v24
-_oscam_ver=11869
+_oscam_ver=11870
 _ncam_ver="git1f9bf82"
 _myoscambin2="/usr/bin/oscam_bin"
 _reader1="reader"
@@ -1405,10 +1405,10 @@ update_bin() {
   echo -e " 4) Update Bin Stable  Icam - V23 NEON         ( $_rebootmsg )"
   echo -e " 5) Update Bin Stable  Icam - V24              ( $_rebootmsg )"
   echo -e " 6) Update Bin Stable  Icam - V24 NEON         ( $_rebootmsg )"
-  echo -e " 7) Update Bin Stable  Icam - V11869           ( $_rebootmsg )"
-  echo -e " 8) Update Bin Stable  Icam - V11869 Neon      ( $_rebootmsg )"
-  echo -e " 9) Update Bin Stable  Icam - V11869 EMU       ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Icam - V11869 EMU NEON  ( $_rebootmsg )"
+  echo -e " 7) Update Bin Stable  Icam - V11870           ( $_rebootmsg )"
+  echo -e " 8) Update Bin Stable  Icam - V11870 Neon      ( $_rebootmsg )"
+  echo -e " 9) Update Bin Stable  Icam - V11870 EMU       ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable  Icam - V11870 EMU NEON  ( $_rebootmsg )"
   echo -e " 0) Back"
   echo -e ""
   echo -e "Hit Strg + F5 in OSCam Webif for correct view"
@@ -1469,7 +1469,7 @@ update_bin() {
       ;;
     7)
       _reboot=1
-      _oscam_version="11869"
+      _oscam_version="11870"
       get_old_oscam
       kill_oscam
       _neon=""
@@ -1479,7 +1479,7 @@ update_bin() {
       ;;
 	8)
       _reboot=1
-      _oscam_version="11869"
+      _oscam_version="11870"
       get_old_oscam
       kill_oscam
 	  _neon="-neon"
@@ -1489,7 +1489,7 @@ update_bin() {
       ;;
 	9)
       _reboot=1
-      _oscam_version="11869"
+      _oscam_version="11870"
 	  get_old_oscam
       kill_oscam
       _emu="-emu"
@@ -1499,7 +1499,7 @@ update_bin() {
       ;;  
 	10)
       _reboot=1
-      _oscam_version="11869"
+      _oscam_version="11870"
       _neon="-neon"
       _emu="-emu"
 	  get_old_oscam
