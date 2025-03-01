@@ -415,7 +415,7 @@ main() {
 		sed -i "4s/.*/binary=\"${_oscambin}\"/" /tmp/oscam_update.sh
 		mv /tmp/oscam_update.sh /etc/cam.d/${_oscambin}.sh
 		chmod +x /etc/cam.d/${_oscambin}.sh
-		_start="/etc/cam.d/${_oscambin.sh} restart"
+		_start="/etc/cam.d/${_oscambin}.h restart"
 
 		if [ -r /etc/tuxbox/config/${_oscambin} ]; then
 	      cp -f /etc/tuxbox/config/${_oscambin}/* /etc/tuxbox/config > /dev/null 2>&1
