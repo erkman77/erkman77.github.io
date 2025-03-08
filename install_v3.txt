@@ -46,11 +46,11 @@ while getopts "t:S:P:u:p:" opt; do
       ;;
   esac
 done
-
-if ! opkg list-installed | grep bash > /dev/null 2>&1; then
+if [ -e /etc/opkg ]; then
+  if ! opkg list-installed | grep bash > /dev/null 2>&1; then
     opkg install bash > /dev/null 2>&1
+  fi
 fi
-
 _my_configpath_old=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
 
 if [ -z "$_my_configpath_old" ]; then
@@ -1021,7 +1021,7 @@ install_oatv() {
   $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
   install_OMT_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
-  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  link_libs
   get_old_oscam
   kill_oscam
   get_oscam_configs
@@ -1039,7 +1039,7 @@ install_opli() {
   $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
   install_OMT_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
-  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  link_libs
   get_old_oscam
   kill_oscam
   get_oscam_configs
@@ -1057,7 +1057,7 @@ install_onfr() {
   $_exec_cmd install $_libcurlvers4  > /dev/null 2>&1
   install_OMT_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
-  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  link_libs
   get_old_oscam
   kill_oscam
   get_oscam_configs
@@ -1145,7 +1145,7 @@ install_nn2() {
   fi
   install_OMT_ipk
   rm /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
-  ln -s `find /usr/lib/ -name 'libcrypto.so.1*' -type f | head -n 1`  /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1
+  link_libs
   get_old_oscam
   kill_oscam
   get_oscam_configs
@@ -1814,5 +1814,83 @@ astra_hotbird() {
     ;;
     esac
 	}
+link_libs() {
+  if [ -s /usr/lib/libcrypto.so.3 ]; then
+	ln -s /usr/lib/libcrypto.so.3 /usr/lib/libcrypto.so.1.0.2 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.3 /lib/libcrypto.so.1.0.2 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.3 /usr/lib/libcrypto.so.1.0.0 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.3 /lib/libcrypto.so.1.0.0 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.3 /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.3 /lib/libcrypto.so.0.9.8 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.3 /usr/lib/libcrypto.so.0.9.7 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.3 /lib/libcrypto.so.0.9.7 > /dev/null 2>&1;
+  elif [ -s /usr/lib/libcrypto.so.1.1 ]; then
+	ln -s /usr/lib/libcrypto.so.1.1 /usr/lib/libcrypto.so.1.0.2 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.1 /lib/libcrypto.so.1.0.2 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.1 /usr/lib/libcrypto.so.1.0.0 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.1 /lib/libcrypto.so.1.0.0 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.1 /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.1 /lib/libcrypto.so.0.9.8 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.1 /usr/lib/libcrypto.so.0.9.7 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.1 /lib/libcrypto.so.0.9.7 > /dev/null 2>&1;
+  elif [ -s /usr/lib/libcrypto.so.1.0.2 ]; then
+	ln -s /usr/lib/libcrypto.so.1.0.2 /usr/lib/libcrypto.so.1.0.0 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.0.2 /lib/libcrypto.so.1.0.0 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.0.2 /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.0.2 /lib/libcrypto.so.0.9.8 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.0.2 /usr/lib/libcrypto.so.0.9.7 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.0.2 /lib/libcrypto.so.0.9.7 > /dev/null 2>&1;
+  elif [ -s /usr/lib/libcrypto.so.1.0.0 ]; then
+	ln -s /usr/lib/libcrypto.so.1.0.0 /usr/lib/libcrypto.so.1.0.2 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.0.0 /lib/libcrypto.so.1.0.2 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.0.0 /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.0.0 /lib/libcrypto.so.0.9.8 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.0.0 /usr/lib/libcrypto.so.0.9.7 > /dev/null 2>&1;
+	ln -s /usr/lib/libcrypto.so.1.0.0 /lib/libcrypto.so.0.9.7 > /dev/null 2>&1;
+  elif [ -s /usr/lib/libcrypto.so.0.9.8 ]; then
+    ln -s /usr/lib/libcrypto.so.0.9.8 /usr/lib/libcrypto.so.1.0.2 > /dev/null 2>&1;
+    ln -s /usr/lib/libcrypto.so.0.9.8 /lib/libcrypto.so.1.0.2 > /dev/null 2>&1;
+    ln -s /usr/lib/libcrypto.so.0.9.8 /usr/lib/libcrypto.so.1.0.0 > /dev/null 2>&1;
+    ln -s /usr/lib/libcrypto.so.0.9.8 /lib/libcrypto.so.1.0.0 > /dev/null 2>&1;
+    ln -s /usr/lib/libcrypto.so.0.9.8 /usr/lib/libcrypto.so.0.9.7 > /dev/null 2>&1;
+    ln -s /usr/lib/libcrypto.so.0.9.8 /lib/libcrypto.so.0.9.7 > /dev/null 2>&1;
+  fi
+
+  if [ -s /usr/lib/libssl.so.3 ]; then
+    ln -s /usr/lib/libssl.so.3 /usr/lib/libssl.so.1.1 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.3 /lib/libssl.so.1.1 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.3 /usr/lib/libssl.so.1.0.2 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.3 /lib/libssl.so.1.0.2 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.3 /usr/lib/libssl.so.1.0.0 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.3 /lib/libssl.so.1.0.0 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.3 /usr/lib/libssl.so.0.9.8 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.3 /lib/libssl.so.0.9.8 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.3 /usr/lib/libssl.so.0.9.7 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.3 /lib/libssl.so.0.9.7 > /dev/null 2>&1;
+  elif [ -s /usr/lib/libssl.so.1.1 ]; then
+    ln -s /usr/lib/libssl.so.1.1 /usr/lib/libssl.so.1.0.2 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.1 /lib/libssl.so.1.0.2 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.1 /usr/lib/libssl.so.1.0.0 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.1 /lib/libssl.so.1.0.0 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.1 /usr/lib/libssl.so.0.9.8 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.1 /lib/libssl.so.0.9.8 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.1 /usr/lib/libssl.so.0.9.7 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.1 /lib/libssl.so.0.9.7 > /dev/null 2>&1;
+  elif [ -s /usr/lib/libssl.so.1.0.2 ]; then
+    ln -s /usr/lib/libssl.so.1.0.2 /usr/lib/libssl.so.1.0.0 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.0.2 /lib/libssl.so.1.0.0 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.0.2 /usr/lib/libssl.so.0.9.8 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.0.2 /lib/libssl.so.0.9.8 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.0.2 /usr/lib/libssl.so.0.9.7 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.0.2 /lib/libssl.so.0.9.7 > /dev/null 2>&1;
+  elif [ -s /usr/lib/libssl.so.1.0.0 ]; then
+    ln -s /usr/lib/libssl.so.1.0.0 /usr/lib/libssl.so.1.0.2 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.0.0 /lib/libssl.so.1.0.2 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.0.0 /usr/lib/libssl.so.0.9.8 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.0.0 /lib/libssl.so.0.9.8 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.0.0 /usr/lib/libssl.so.0.9.7 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.0.0 /lib/libssl.so.0.9.7 > /dev/null 2>&1;
+  fi
+}
  
 mainmenu
