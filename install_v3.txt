@@ -1714,7 +1714,7 @@ oscam_startpatch() {
 		sleep 2
         /etc/init.d/softcam.oscam_bin stop; update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
         /etc/init.d/softcam stop; update-rc.d -f softcam remove > /dev/null 2>&1
-        update-rc.d softcam defaults; /etc/init.d/softcam start > /dev/null 2>&1
+        update-rc.d softcam.oscam_bin defaults; /etc/init.d/softcam.oscam_bin start > /dev/null 2>&1
         _reboot=1
   else
         echo "System runs cool, no patch needed"
@@ -1729,7 +1729,7 @@ oscam_startpatch2() {
   if [ $_cams_start -gt 2 ]; then
         /etc/init.d/softcam.oscam_bin stop; update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
         /etc/init.d/softcam stop; update-rc.d -f softcam remove > /dev/null 2>&1
-        update-rc.d softcam defaults; /etc/init.d/softcam start > /dev/null 2>&1
+        update-rc.d softcam.oscam_bin defaults; /etc/init.d/softcam.oscam_bin start > /dev/null 2>&1
         _reboot=1
   fi
 }
