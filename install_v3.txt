@@ -1216,7 +1216,7 @@ mainmenu() {
   echo -e "                                         use this after a fresh reboot"
   echo -e "                                         and DONT restart oscam"
   echo -e "13) Install Service App               // install service app on open images,"
-  echo -e "                                         if problems with video playback"
+  echo -e "                                         for problems with video playback"
   echo -e "0) Exit"
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
