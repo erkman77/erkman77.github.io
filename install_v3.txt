@@ -991,9 +991,9 @@ disable_autoupdate_bouquets() {
 
 
 replace_bouquets_type() {
-  $_exec_cmd install exteplayer3
-  $_exec_cmd install gstplayer
-  $_exec_cmd install enigma2-plugin-systemplugins-serviceapp
+  opkg install exteplayer3
+  opkg install gstplayer
+  opkg install enigma2-plugin-systemplugins-serviceapp
   curl --noproxy '*' --data value="exteplayer3" "http://127.0.0.1/api/saveconfig?key=config.plugins.serviceapp.servicemp3.player" > /dev/null 2>&1
   curl --noproxy '*' --data value="true" "http://127.0.0.1/api/saveconfig?key=config.plugins.serviceapp.servicemp3.replace" > /dev/null 2>&1
   sed -i '/config.plugins.serviceapp.servicemp3/d' /etc/enigma2/settings
