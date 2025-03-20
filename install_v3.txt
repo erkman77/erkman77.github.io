@@ -1001,14 +1001,8 @@ replace_bouquets_type() {
   echo "config.plugins.serviceapp.servicemp3.replace=true" >> /etc/enigma2/settings
   touch /etc/enigma2/serviceapp_replaceservicemp3
   sed -i 's/3a17999\/1/3a17999\/5001/g' /etc/enigma2/*.tv
-  if [ -e /etc/apt/sources.list.d ]; then
-	SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
-	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-  else
-	curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-	curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-  fi	
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
   _fix_sound=true
   _reboot=1
 }
@@ -1221,6 +1215,8 @@ mainmenu() {
   echo -e "12) Oscam Start Patch                 // checks whether oscam starts twice,"
   echo -e "                                         use this after a fresh reboot"
   echo -e "                                         and DONT restart oscam"
+  echo -e "13) Install Service App               // install service app on open images,"
+  echo -e "                                         if problems with video playback"
   echo -e "0) Exit"
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
@@ -1273,6 +1269,10 @@ mainmenu() {
       ;;
 	12)
       oscam_startpatch
+      mainmenu
+      ;;
+	13)
+      replace_bouquets_type
       mainmenu
       ;;
 	p)
