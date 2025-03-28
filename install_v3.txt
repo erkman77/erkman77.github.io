@@ -991,6 +991,7 @@ disable_autoupdate_bouquets() {
 
 
 replace_bouquets_type() {
+  echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
   opkg install exteplayer3 > /dev/null 2>&1
   opkg install gstplayer > /dev/null 2>&1
   opkg install enigma2-plugin-systemplugins-serviceapp > /dev/null 2>&1
@@ -1003,6 +1004,7 @@ replace_bouquets_type() {
   sed -i 's/3a17999\/1/3a17999\/5001/g' /etc/enigma2/*.tv
   curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
   curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
+  echo ""; echo -e "\e[32m ... Well, fancy! were done ;)\e[0m";
   _fix_sound=true
   _reboot=1
 }
