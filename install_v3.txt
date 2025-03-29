@@ -1167,6 +1167,22 @@ install_picons() {
   sleep 2
 }
 
+install_picons_all() {
+  wget -O /tmp/picons.tar ${_url}/ot_picons/picons.tar > /dev/null 2>&1
+  [ -d /usr/share/enigma2/picon ] || mkdir -p /usr/share/enigma2/picon > /dev/null 2>&1
+  cd /usr/share/enigma2/picon
+  tar xfv /tmp/picons.tar > /dev/null 2>&1
+  case $_my_distribution in
+    Dream*)
+      cp -rfp /picons/piconHD/* /usr/share/enigma2/picon/ > /dev/null 2>&1
+      rm -rf  /picons/piconHD/  > /dev/null 2>&1
+      ln -s /usr/share/enigma2/picon/ /picons/piconHD
+      ;;
+    esac
+  echo ""; echo -e "\e[32m ... Well, fancy! were done thx to n4stykickz ;)\e[0m";
+  sleep 2
+}
+
 install_picons_pyur() {
   wget -O /tmp/picon_pyur.tar ${_url}/ot_picons/picon_pyur.tar > /dev/null 2>&1
   [ -d /usr/share/enigma2/picon ] || mkdir -p /usr/share/enigma2/picon > /dev/null 2>&1
@@ -1279,6 +1295,10 @@ mainmenu() {
       ;;
 	p)
 	  install_picons_pyur
+	  mainmenu
+      ;;
+	pa)
+	  install_picons_all
 	  mainmenu
       ;;
 	i)
