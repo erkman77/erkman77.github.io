@@ -4,7 +4,7 @@ clear
 
 _version="4.5"
 _url=http://i.tv-lounge.eu
-_oscam_version=v24
+_oscam_version=11866
 _oscam_ver=11882
 _ncam_ver="gitfbb33b0"
 _myoscambin2="/usr/bin/oscam_bin"
@@ -663,7 +663,7 @@ replace_oscam_bin() {
   fi
 
   eval $_start > /dev/null 2>&1
-  _oscam_version=v24
+  _oscam_version=11866
   unset _neon
   unset _emu
 
