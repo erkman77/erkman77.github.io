@@ -1010,6 +1010,7 @@ replace_bouquets_type() {
 }
 
 install_oatv() {
+  wget -O - -q http://updates.mynonpublic.com/oea/feed | bash  > /dev/null 2>&1
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
   $_exec_cmd install $_libusbvers  > /dev/null 2>&1
   $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
@@ -1025,6 +1026,10 @@ install_oatv() {
   set_enigma2_settings
   echo ""; echo -e "\e[32m ... Well, fancy! were done ;)\e[0m";
   sleep 2 
+}
+
+install_team_blue() {
+  #opkg install  > /dev/null 2>&1
 }
 
 install_opli() {
@@ -1357,9 +1362,10 @@ install_stable() {
   echo -e "2) Openpli        ( $_rebootmsg )"
   echo -e "3) VTI/OpenBh     ( $_rebootmsg )"
   echo -e "4) openNFR/HDF    ( $_rebootmsg )"
-  echo -e "5) Dreambox        ( $_rebootmsg )"
+  echo -e "5) Dreambox       ( $_rebootmsg )"
   echo -e "6) Pure2          ( $_rebootmsg )"
   echo -e "7) Egami          ( $_rebootmsg )"
+  echo -e "8) teamBlue       ( $_rebootmsg )"
   echo -e "0) Back"
   #echo -e ""
   #echo -e "For Dreambox please install StreamRelay Plugin manually"
@@ -1406,7 +1412,14 @@ install_stable() {
       _reboot=1
       install_opli
       install_bouquets
-      ;;  
+	  ;;
+    8)
+	  install_team_blue
+      _flag=stable
+      _reboot=1
+      install_opli
+      install_bouquets
+      ;;     
     0)
       clear
       mainmenu
