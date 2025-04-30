@@ -1030,6 +1030,7 @@ install_oatv() {
 
 install_team_blue() {
   #opkg install  > /dev/null 2>&1
+  :
 }
 
 install_opli() {
