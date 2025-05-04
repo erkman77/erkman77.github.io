@@ -1,9 +1,10 @@
 #!/bin/bash
 
 
-_scriptversion=42
+_scriptversion=43
 
 _url=i.tv-lounge.eu
+_override=$1
 _stream=\[streamrelay\]
 SEARCH_PATH="/usr/tuxbox/config"
 _start=""
@@ -93,6 +94,11 @@ main() {
   autoupdate=$(cat /etc/autoupdate)  > /dev/null 2>&1
   if [[ $autoupdate == "1" ]]; then
     if [[ "$Version_new" != "$Version_old" ]]; then
+	 if [[ "$_override" == "yes" ]]; then
+	  	echo "1" > /etc/autoupdate
+		oscam_autoupdater
+	 fi
+					
 	  if [ -e /etc/apt/sources.list.d ]; then
 			SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
 			curl -X POST "http://localhost/web/message?text=Oscam%20Multitool%20found%20%20new%20Oscam%20\n\nVersion%20%20%20$Version_new%20\n\n\n%20Update%20?%20&type=0&timeout=15&sessionid=$SESSIONID"  &>/dev/null
@@ -459,6 +465,7 @@ main() {
   rm /tmp/oscam_* > /dev/null 2>&1
   unset _emu
   unset _neon
+  unset _override
   }
   
   main
