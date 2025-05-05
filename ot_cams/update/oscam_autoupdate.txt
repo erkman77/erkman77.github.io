@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-_scriptversion=43
+_scriptversion=44
 
 _url=i.tv-lounge.eu
 _override=$1
@@ -97,7 +97,7 @@ main() {
 	 if [[ "$_override" == "yes" ]]; then
 	  	echo "1" > /etc/autoupdate
 		oscam_autoupdater
-	 fi
+	 else
 					
 	  if [ -e /etc/apt/sources.list.d ]; then
 			SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
@@ -168,6 +168,7 @@ main() {
 				;;
 			esac
 	  fi
+	 fi 
 	fi
   else	
 	Version_no=$(cat /etc/oscam_version.txt | grep -o '[0-9]\{5\}')
