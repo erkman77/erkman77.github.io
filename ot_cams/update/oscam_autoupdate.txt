@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-_scriptversion=44
+_scriptversion=45
 
 _url=i.tv-lounge.eu
 _override=$1
@@ -20,6 +20,7 @@ elif [ -e /etc/apt/sources.list.d ]; then
 fi
 
 $_exec_cmd install curl > /dev/null 2>&1
+$_exec_cmd install stat > /dev/null 2>&1
 cron_job="0 * * * * /usr/bin/oscam_autoupdate"
 
 if crontab -l | grep -q "$cron_job"; then
