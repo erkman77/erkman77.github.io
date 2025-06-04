@@ -1852,16 +1852,7 @@ astra_hotbird() {
     esac
 	}
 link_libs() {
-  if [ -s /usr/lib/libcrypto.so.3 ]; then
-	ln -s /usr/lib/libcrypto.so.3 /usr/lib/libcrypto.so.1.0.2 > /dev/null 2>&1;
-	ln -s /usr/lib/libcrypto.so.3 /lib/libcrypto.so.1.0.2 > /dev/null 2>&1;
-	ln -s /usr/lib/libcrypto.so.3 /usr/lib/libcrypto.so.1.0.0 > /dev/null 2>&1;
-	ln -s /usr/lib/libcrypto.so.3 /lib/libcrypto.so.1.0.0 > /dev/null 2>&1;
-	ln -s /usr/lib/libcrypto.so.3 /usr/lib/libcrypto.so.0.9.8 > /dev/null 2>&1;
-	ln -s /usr/lib/libcrypto.so.3 /lib/libcrypto.so.0.9.8 > /dev/null 2>&1;
-	ln -s /usr/lib/libcrypto.so.3 /usr/lib/libcrypto.so.0.9.7 > /dev/null 2>&1;
-	ln -s /usr/lib/libcrypto.so.3 /lib/libcrypto.so.0.9.7 > /dev/null 2>&1;
-  elif [ -s /usr/lib/libcrypto.so.1.1 ]; then
+  if [ -s /usr/lib/libcrypto.so.1.1 ]; then
 	ln -s /usr/lib/libcrypto.so.1.1 /usr/lib/libcrypto.so.1.0.2 > /dev/null 2>&1;
 	ln -s /usr/lib/libcrypto.so.1.1 /lib/libcrypto.so.1.0.2 > /dev/null 2>&1;
 	ln -s /usr/lib/libcrypto.so.1.1 /usr/lib/libcrypto.so.1.0.0 > /dev/null 2>&1;
@@ -1893,18 +1884,7 @@ link_libs() {
     ln -s /usr/lib/libcrypto.so.0.9.8 /lib/libcrypto.so.0.9.7 > /dev/null 2>&1;
   fi
 
-  if [ -s /usr/lib/libssl.so.3 ]; then
-    ln -s /usr/lib/libssl.so.3 /usr/lib/libssl.so.1.1 > /dev/null 2>&1;
-    ln -s /usr/lib/libssl.so.3 /lib/libssl.so.1.1 > /dev/null 2>&1;
-    ln -s /usr/lib/libssl.so.3 /usr/lib/libssl.so.1.0.2 > /dev/null 2>&1;
-    ln -s /usr/lib/libssl.so.3 /lib/libssl.so.1.0.2 > /dev/null 2>&1;
-    ln -s /usr/lib/libssl.so.3 /usr/lib/libssl.so.1.0.0 > /dev/null 2>&1;
-    ln -s /usr/lib/libssl.so.3 /lib/libssl.so.1.0.0 > /dev/null 2>&1;
-    ln -s /usr/lib/libssl.so.3 /usr/lib/libssl.so.0.9.8 > /dev/null 2>&1;
-    ln -s /usr/lib/libssl.so.3 /lib/libssl.so.0.9.8 > /dev/null 2>&1;
-    ln -s /usr/lib/libssl.so.3 /usr/lib/libssl.so.0.9.7 > /dev/null 2>&1;
-    ln -s /usr/lib/libssl.so.3 /lib/libssl.so.0.9.7 > /dev/null 2>&1;
-  elif [ -s /usr/lib/libssl.so.1.1 ]; then
+  if [ -s /usr/lib/libssl.so.1.1 ]; then
     ln -s /usr/lib/libssl.so.1.1 /usr/lib/libssl.so.1.0.2 > /dev/null 2>&1;
     ln -s /usr/lib/libssl.so.1.1 /lib/libssl.so.1.0.2 > /dev/null 2>&1;
     ln -s /usr/lib/libssl.so.1.1 /usr/lib/libssl.so.1.0.0 > /dev/null 2>&1;
