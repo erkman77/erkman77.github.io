@@ -11,3 +11,37 @@ ident                         = 0500:000000,007400,007800,021110,023800;0604:000
 group                         = 1
 emmcache                      = 2,1,2,1
 emu_auproviders               = 0604:010200;0E00:000000;1010:000000;2610:000000
+
+[reader]
+label                         = lower_card
+enable                        = 0
+protocol                      = internal
+device                        = /dev/sci0
+caid                          = 
+detect                        = cd
+mhz                           = 450
+cardmhz                       = 2700
+group                         = 1,2,3
+emmcache                      = 1,1,2,0
+
+[reader]
+label                         = upper_card
+enable                        = 0
+protocol                      = internal
+device                        = /dev/sci1
+caid                          = 
+detect                        = cd
+mhz                           = 450
+cardmhz                       = 2700
+group                         = 1
+emmcache                      = 1,1,2,0
+
+[reader]
+label                         = easymouse
+enable                        = 0
+protocol                      = mouse
+device                        = /dev/ttyUSB0
+caid                          = 
+detect                        = cd
+group                         = 1
+emmcache                      = 1,1,2,0
