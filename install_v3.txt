@@ -733,6 +733,7 @@ get_oscam_configs() {
     echo "## auto install settings"                          >> $_readerfile
     echo "[reader]"                                          >> $_readerfile
     echo "label             = oscamtool"                     >> $_readerfile
+	echo "enable            = 0"                             >> $_readerfile
     echo "protocol          = cccam"                         >> $_readerfile
     echo "device            = DUMMY,1337    "                >> $_readerfile
     echo "user              = DUMMY"                         >> $_readerfile
