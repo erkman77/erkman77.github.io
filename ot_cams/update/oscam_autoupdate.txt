@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-_scriptversion=45
+_scriptversion=46
 
 _url=i.tv-lounge.eu
 _override=$1
@@ -73,6 +73,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
   _find_extra="/tmp/version2.txt"
   _neon_is_set="ARM NEON (SIMD/MPE) support:             yes"
   _emu_is_set="Emulator support:                        yes"
+  _card_is_set="Cardlist support:                        yes"
 
   if grep -q "$_neon_is_set" "$_find_extra" 2>/dev/null; then
 	_neon="-neon"
@@ -80,6 +81,10 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
 
   if grep -q "$_emu_is_set" "$_find_extra" 2>/dev/null; then
 	_emu="-emu"
+  fi
+
+  if grep -q "$_card_is_set" "$_find_extra" 2>/dev/null; then
+	exit 0
   fi
   
   B="Keine"
