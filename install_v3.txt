@@ -330,8 +330,9 @@ replace_initscript() {
   
   chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   ln -s /etc/init.d/softcam.oscam_bin /etc/init.d/softcam > /dev/null 2>&1;
-  #update-rc.d -f softcam defaults > /dev/null 2>&1
-  
+  update-rc.d -f softcam defaults > /dev/null 2>&1
+  /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
+
 #bh
   if [[ $_my_distribution == "OpenBh" ]]; then
 	_stop="/usr/camscript/Ncam_${_oscambin}.sh stop"
