@@ -279,7 +279,7 @@ update-rc.d -f softcam.${_oscambin} remove > /dev/null 2>&1
       $_exec_cmd install libcrypto-compat > /dev/null 2>&1
     fi
   fi
-  ln -s /etc/init.d/softcam.oscam_bin /etc/init.d/softcam > /dev/null 2>&1;
+  ln -sf /etc/init.d/softcam.oscam_bin /etc/init.d/softcam > /dev/null 2>&1;
   update-rc.d -f softcam defaults > /dev/null 2>&1
   replace_initscript
   
@@ -329,7 +329,7 @@ replace_initscript() {
   fi
   
   chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
-  ln -s /etc/init.d/softcam.oscam_bin /etc/init.d/softcam > /dev/null 2>&1;
+  ln -sf /etc/init.d/softcam.oscam_bin /etc/init.d/softcam > /dev/null 2>&1;
   update-rc.d -f softcam defaults > /dev/null 2>&1
   /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
 
