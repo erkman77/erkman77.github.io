@@ -136,7 +136,7 @@ fi
 shopt -s nocasematch
 case "$_boxname" in
   *ultimo*|*uno*|*solo*|*duo*|*zero*)
-    _boxname="VU $_boxname"
+    _boxname="VU+ $_boxname"
     ;;
   *trio*|*ue*|*quad*)
     _boxname="Gigablue $_boxname"
