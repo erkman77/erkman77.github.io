@@ -72,6 +72,10 @@ if cat /tmp/version | grep -i openatv > /dev/null 2>&1; then
   _my_distribution="openATV"
 fi
 
+if cat /tmp/version | grep -i openpli > /dev/null 2>&1; then 
+  _my_distribution="OpenPLi"
+fi
+
 if cat /tmp/version | grep -i egami > /dev/null 2>&1; then 
   _my_distribution="Egami"
 fi
