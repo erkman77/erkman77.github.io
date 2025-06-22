@@ -117,12 +117,10 @@ echo ... "running preconfigure for optimal autoinstaller settings"
 #echo -e "\e[33m only original with an i.tv in front of the url ;)\e[0m"
 #echo -e ""
 
-#if [ -e /etc/apt/sources.list.d ]; then
-	SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
-	curl -X POST "http://localhost/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20&type=1&timeout=5&sessionid=$SESSIONID" >/dev/null 2>&1
-#else
-#	wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=15" > /dev/null 2>&1
-#fi
+
+SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
+curl -X POST "http://localhost/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20&type=1&timeout=5&sessionid=$SESSIONID" >/dev/null 2>&1
+
 
 long_running_task() {
   echo -e "\nPlease wait...\n" 
@@ -772,18 +770,13 @@ update_whitelist() {
   curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
   curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
   curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
-  if [ -e /etc/apt/sources.list.d ]; then
-    if ! apt list --installed | grep enigma2-plugin-extensions-streamrelay > /dev/null 2>&1; then
+  if ! apt list --installed | grep enigma2-plugin-extensions-streamrelay > /dev/null 2>&1; then
 	  curl -sko /etc/enigma2/icamref.json ${_url}/ot_tune/whitelist/icamref.json > /dev/null 2>&1
 	  rm /etc/enigma2/whitelist_streamrelay > /dev/null 2>&1
-    fi
-	SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
-	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-  else
-	curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
-	curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
   fi
+  SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
   echo "...done"
   sleep 2
 }
@@ -816,14 +809,9 @@ install_whitelist() {
   curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
   curl -sk ${_url}/ot_tune/whitelist/astra_wl.txt | bash
   curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
-  if [ -e /etc/apt/sources.list.d ]; then
-	SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
-	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-  else
-	curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
-	curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
-  fi
+  SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
   set_enigma2_settings
   echo "...done"
   sleep 2
@@ -840,39 +828,24 @@ get_bouquets() {
       curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
       curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
       curl -sk ${_url}/${_bouquet} | bash
-	  if [ -e /etc/apt/sources.list.d ]; then
-		SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
-		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-	  else
-		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-      fi
+      SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+	  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+	  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
 	  ;;
     *)
       curl -sk ${_url}/${_bouquet} | bash
-	  if [ -e /etc/apt/sources.list.d ]; then
-		SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
-		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-	  else
-		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-      fi
+	  SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+	  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+	  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
 	  ;;
   esac
 }
 
 iptv_install() {
       curl -sk ${_url}/iptv.txt | bash
-	  if [ -e /etc/apt/sources.list.d ]; then
-		SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
-		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-	  else
-		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-	  fi
+	  SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+	  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+	  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
 	  echo -e "\e[32m all done ...\e[0m"
 	  sleep 3
 }
@@ -881,14 +854,9 @@ hotbird_install() {
       curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
       curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
       curl -sk ${_url}/hotbird.txt | bash
-	  if [ -e /etc/apt/sources.list.d ]; then
-		SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
-		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-	  else
-		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-	  fi
+	  SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+	  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+	  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
 	  echo -e "\e[32m all done ...\e[0m"
 	  sleep 3
 }
@@ -897,14 +865,9 @@ astra_install() {
       curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
       curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
       curl -sk ${_url}/astra_full.txt | bash
-	  if [ -e /etc/apt/sources.list.d ]; then
-		SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
-		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-		curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-	  else
-		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-		curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-	  fi
+	  SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+	  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+	  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
 	  echo -e "\e[32m all done ...\e[0m"
       sleep 3
 }
@@ -913,14 +876,9 @@ replace_bouquets_ip() {
   _fix_streaming=1
   _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -F '/' '{print $1}')
   sed -i "s/127.0.0.1/${_myip}/g" /etc/enigma2/*.tv
-  if [ -e /etc/apt/sources.list.d ]; then
-	SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
-	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-	curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
-  else
-	curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-	curl -s 'http://127.0.0.1/web/servicelistreload?mode=0' > /dev/null 2>&1
-  fi
+  SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
+  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
+  curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
 }
 
 autoupdate_bouquet_bouquets() {
@@ -1347,23 +1305,15 @@ mainmenu() {
 	  rm /tmp/oscamfile* > /dev/null 2>&1
 	  rm /tmp/oscam.server > /dev/null 2>&1
 	  rm /tmp/oscam_update.sh > /dev/null 2>&1
-	  if [ -e /etc/apt/sources.list.d ]; then
-		SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
-		curl -X POST "http://localhost/web/message?text=Oscam%20Multitool%20is%20%20now%20stopped...%20:)%20%20&type=1&timeout=5&sessionid=$SESSIONID" >/dev/null 2>&1
-	  else
-		wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20%20now%20stopped...%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null 2>&1
-	  fi
+	  SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
+	  curl -X POST "http://localhost/web/message?text=Oscam%20Multitool%20is%20%20now%20stopped...%20:)%20%20&type=1&timeout=5&sessionid=$SESSIONID" >/dev/null 2>&1
       if [ -n "_enigmasettings" ]; then
       do_enigma_settings
       fi
 
       if [ -n "$_reboot" ]; then
-	  if [ -e /etc/apt/sources.list.d ]; then
-		SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
-		curl -X POST "http://localhost/web/message?text=OScam%20Multitool%20is%20%20rebooting%20your%20box...%20%20&type=1&timeout=5&sessionid=$SESSIONID" >/dev/null 2>&1
-	  else
-        wget -O - -q "127.0.0.1/web/message?text=OScam%20Multitool%20is%20%20rebooting%20your%20box...%20%20$STARTDATE&type=1&timeout=5" > /dev/null 2>&1
-	  fi
+	    SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
+	    curl -X POST "http://localhost/web/message?text=OScam%20Multitool%20is%20%20rebooting%20your%20box...%20%20&type=1&timeout=5&sessionid=$SESSIONID" >/dev/null 2>&1
         do_reboot
       fi
 
