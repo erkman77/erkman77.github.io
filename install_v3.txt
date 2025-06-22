@@ -118,7 +118,7 @@ fi
 
 SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"`
 _boxname=`curl -s -X POST "http://localhost/web/deviceinfo?&sessionid=$SESSIONID" |grep -o -E "<e2devicename>(.*)</e2devicename>" |sed "s|.*<e2devicename>\(.*\)</e2devicename>.*|\\1|"` 
-
+unicode_char=$(printf "\u207A")
 if [[ "$_boxname" == *UHD* ]]; then
   _boxname="${_boxname//UHD/}"
 fi
@@ -136,7 +136,7 @@ fi
 shopt -s nocasematch
 case "$_boxname" in
   *ultimo*|*uno*|*solo*|*duo*|*zero*)
-    _boxname="VU+ $_boxname"
+    _boxname="VU$unicode_char $_boxname"
     ;;
   *trio*|*ue*|*quad*)
     _boxname="Gigablue $_boxname"
