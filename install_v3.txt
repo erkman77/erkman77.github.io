@@ -68,6 +68,10 @@ fi
 _my_distribution=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g" | awk '{print $1}')
 echo "$_my_distribution" | awk '{print $1}' > /tmp/version
 
+if cat /tmp/version | grep -i openatv > /dev/null 2>&1; then 
+  _my_distribution="openATV"
+fi
+
 if cat /tmp/version | grep -i egami > /dev/null 2>&1; then 
   _my_distribution="Egami"
 fi
