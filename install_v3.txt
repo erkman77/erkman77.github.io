@@ -214,7 +214,7 @@ long_running_task &
 pid=$!
 
 if [ -n "$(uname -m | grep mips)" ]; then
-  total_steps=230
+  total_steps=250
 elif [ -n "$(uname -m | grep armv7l)" ]; then
   total_steps=170
 else
