@@ -119,26 +119,26 @@ fi
 SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"`
 _boxname=`curl -s -X POST "http://localhost/web/deviceinfo?&sessionid=$SESSIONID" |grep -o -E "<e2devicename>(.*)</e2devicename>" |sed "s|.*<e2devicename>\(.*\)</e2devicename>.*|\\1|"` 
 
-if [[ "$boxname" == *UHD* ]]; then
-  boxname="${boxname//UHD/}"
+if [[ "$_boxname" == *UHD* ]]; then
+  boxname="${_boxname//UHD/}"
 fi
 
-if [[ $boxname == "one" ]]; then
-	boxname="Dreambox ONE"
-elif [[ $boxname == "two" ]]; then
-	boxname="Dreambox TWO"
+if [[ $_boxname == "one" ]]; then
+	_boxname="Dreambox ONE"
+elif [[ $_boxname == "two" ]]; then
+	_boxname="Dreambox TWO"
 fi
 
 shopt -s nocasematch
-case "$boxname" in
+case "$_boxname" in
   *ultimo*|*uno*|*solo*|*duo*|*zero*)
-    boxname="VU $boxname"
+    _boxname="VU $_boxname"
     ;;
   *trio*|*ue*|*quad*)
-    boxname="Gigablue $boxname"
+    _boxname="Gigablue $_boxname"
     ;;
   *sf8*|*sx8*|*sf4*)
-    boxname="Octagon $boxname"
+    _boxname="Octagon $_boxname"
     ;;
 esac
 shopt -u nocasematch
