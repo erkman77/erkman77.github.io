@@ -118,7 +118,11 @@ fi
 
 SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"`
 _boxname=`curl -s -X POST "http://localhost/web/deviceinfo?&sessionid=$SESSIONID" |grep -o -E "<e2devicename>(.*)</e2devicename>" |sed "s|.*<e2devicename>\(.*\)</e2devicename>.*|\\1|"` 
-
+if [[ $_boxname == "one" ]]; then
+	_boxname="Dreambox ONE"
+elif [[ $_boxname == "two" ]]; then
+	_boxname="Dreambox TWO"
+fi
 echo ... "running preconfigure for optimal autoinstaller settings"
 #echo -e ""
 #echo -e "\e[33m greetings to the thieves of our work, you can't be any lazier\e[0m"
