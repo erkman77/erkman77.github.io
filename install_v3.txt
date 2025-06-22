@@ -120,7 +120,7 @@ SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessio
 _boxname=`curl -s -X POST "http://localhost/web/deviceinfo?&sessionid=$SESSIONID" |grep -o -E "<e2devicename>(.*)</e2devicename>" |sed "s|.*<e2devicename>\(.*\)</e2devicename>.*|\\1|"` 
 
 if [[ "$_boxname" == *UHD* ]]; then
-  boxname="${_boxname//UHD/}"
+  _boxname="${_boxname//UHD/}"
 fi
 
 if [[ $_boxname == "one" ]]; then
