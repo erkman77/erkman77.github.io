@@ -123,6 +123,10 @@ if [[ "$_boxname" == *UHD* ]]; then
   _boxname="${_boxname//UHD/}"
 fi
 
+if [[ "$_boxname" == " "* ]]; then
+  _boxname="${_boxname#" "}"
+fi
+
 if [[ $_boxname == "one" ]]; then
 	_boxname="Dreambox ONE"
 elif [[ $_boxname == "two" ]]; then
