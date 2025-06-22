@@ -188,7 +188,7 @@ long_running_task() {
 	fi
     
 	if [ -e /etc/init.d/bouquet_autoupdate  ]; then
-	    if grep -qs -i "\\" /etc/init.d/bouquet_autoupdate ; then
+	    if grep -qs -i "\\\\" /etc/init.d/bouquet_autoupdate ; then
 	    	sed -i 's/\\\$/\$/g' /etc/init.d/bouquet_autoupdate
 	    fi
     fi
