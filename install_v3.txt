@@ -64,6 +64,7 @@ fi
 	 ;;
   esac
 
+
 _my_distribution=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g" | awk '{print $1}')
 echo "$_my_distribution" | awk '{print $1}' > /tmp/version
 
@@ -107,18 +108,21 @@ if grep -qs -i "SatLodge" /etc/issue.net > /dev/null 2>&1; then
   _my_distribution="Sat-Lodge"
 fi
 
+SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"`
+_boxname=`curl -s -X POST "http://localhost/web/deviceinfo?&sessionid=$SESSIONID" |grep -o -E "<e2devicename>(.*)</e2devicename>" |sed "s|.*<e2devicename>\(.*\)</e2devicename>.*|\\1|"` 
+
 echo ... "running preconfigure for optimal autoinstaller settings"
 #echo -e ""
 #echo -e "\e[33m greetings to the thieves of our work, you can't be any lazier\e[0m"
 #echo -e "\e[33m only original with an i.tv in front of the url ;)\e[0m"
 #echo -e ""
 
-if [ -e /etc/apt/sources.list.d ]; then
+#if [ -e /etc/apt/sources.list.d ]; then
 	SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
 	curl -X POST "http://localhost/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20&type=1&timeout=5&sessionid=$SESSIONID" >/dev/null 2>&1
-else
-	wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=15" > /dev/null 2>&1
-fi
+#else
+#	wget -O - -q "127.0.0.1/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=15" > /dev/null 2>&1
+#fi
 
 long_running_task() {
   echo -e "\nPlease wait...\n" 
@@ -1238,7 +1242,7 @@ my_header() {
 
 mainmenu() {
   my_header
-  echo -e "\e[34m Fine! it looks you are running $_my_distribution\e[0m" 
+  echo -e "\e[34m Fine! it looks you are running $_my_distribution on $_boxname\e[0m" 
   echo -e "\e[33m ######*** Main Menu ***######\e[0m"
   echo -e " 1) Install Icam Oscam stable         // fresh box ... or sledgehammer mode ;)"
   echo -e " 2) Update Oscam Bin only             // updates any running oscam to ICam Oscam"
