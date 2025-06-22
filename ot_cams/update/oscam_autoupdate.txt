@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-_scriptversion=46
+_scriptversion=47
 
 _url=i.tv-lounge.eu
 _override=$1
@@ -105,7 +105,7 @@ main() {
 		oscam_autoupdater
 	 else
 					
-	  if [ -e /etc/apt/sources.list.d ]; then
+#	  if [ -e /etc/apt/sources.list.d ]; then
 			SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
 			curl -X POST "http://localhost/web/message?text=Oscam%20Multitool%20found%20%20new%20Oscam%20\n\nVersion%20%20%20$Version_new%20\n\n\n%20Update%20?%20&type=0&timeout=15&sessionid=$SESSIONID"  &>/dev/null
 			curl -X POST "http://localhost/web/remotecontrol?command=108&sessionid=$SESSIONID" &>/dev/null
@@ -142,38 +142,38 @@ main() {
 				cp /tmp/version.txt /etc/oscam_version.txt > /dev/null 2>&1
 			;;
 			esac
-	  else
-			wget -qO- "http://localhost/web/message?text=Oscam%20Multitool%20found%20%20new%20Oscam%20\n\nVersion%20%20%20$Version_new%20\n\n\n%20Update%20?%20&type=0&timeout=15" &>/dev/null
-			wget -qO- "http://localhost/web/remotecontrol?command=108" &>/dev/null
-			sleep 16
-			ANSWER=$(wget -qO- "http://localhost/web/messageanswer?getanswer=now"|grep e2statetext|sed 's/e2statetext>\|<\|\/\|^[ \t]*//g')
+#	  else
+#			wget -qO- "http://localhost/web/message?text=Oscam%20Multitool%20found%20%20new%20Oscam%20\n\nVersion%20%20%20$Version_new%20\n\n\n%20Update%20?%20&type=0&timeout=15" &>/dev/null
+#			wget -qO- "http://localhost/web/remotecontrol?command=108" &>/dev/null
+#			sleep 16
+#			ANSWER=$(wget -qO- "http://localhost/web/messageanswer?getanswer=now"|grep e2statetext|sed 's/e2statetext>\|<\|\/\|^[ \t]*//g')
 			#echo $ANSWER
-			if [[ "$ANSWER" == *"$B"* ]] || [[ "$ANSWER" == "$E" ]] || [[ "$ANSWER" == *"$H"* ]] ; then
-				CHOICE="0"
-			elif [[ "$ANSWER" == *"$C"* ]] || [[ "$ANSWER" == "$F" ]] || [[ "$ANSWER" == *"$I"* ]] ; then
-				CHOICE="1"
-			elif [[ "$ANSWER" == *"$D"* ]] || [[ "$ANSWER" == "$G" ]] || [[ "$ANSWER" == *"$J"* ]] ; then
-				CHOICE="2"
-			fi
-			case $CHOICE in
-				0)
-					# send EXIT command
-					wget -qO- "http://localhost/web/remotecontrol?command=174" &>/dev/null
-					ANSWER='Answer is NO!'
-                                #echo $ANSWER
-				;;
-				1) #echo yes
-					wget -O - -q "localhost/web/message?text=Updating%20to%20Version:%20$Version_new${_neon}${_emu}%20%20$STARTDATE&type=1&timeout=10" > /dev/null 2>&1
-					echo "1" > /etc/autoupdate
-					oscam_autoupdater
-				;;
-				2) #echo no
-					wget -O - -q "localhost/web/message?text=Update%20wird%20nicht%20installiert%20\n\nDie%20Meldung%20wird%20für%202%20Tage%20unterdrückt%20$STARTDATE&type=1&timeout=5" > /dev/null 2>&1
-					echo "0" > /etc/autoupdate
-					cp /tmp/version.txt /etc/oscam-version > /dev/null 2>&1
-				;;
-			esac
-	  fi
+#			if [[ "$ANSWER" == *"$B"* ]] || [[ "$ANSWER" == "$E" ]] || [[ "$ANSWER" == *"$H"* ]] ; then
+#				CHOICE="0"
+#			elif [[ "$ANSWER" == *"$C"* ]] || [[ "$ANSWER" == "$F" ]] || [[ "$ANSWER" == *"$I"* ]] ; then
+#				CHOICE="1"
+#			elif [[ "$ANSWER" == *"$D"* ]] || [[ "$ANSWER" == "$G" ]] || [[ "$ANSWER" == *"$J"* ]] ; then
+#				CHOICE="2"
+#			fi
+#			case $CHOICE in
+#				0)
+#					# send EXIT command
+#					wget -qO- "http://localhost/web/remotecontrol?command=174" &>/dev/null
+#					ANSWER='Answer is NO!'
+#                               #echo $ANSWER
+#				;;
+#				1) #echo yes
+#					wget -O - -q "localhost/web/message?text=Updating%20to%20Version:%20$Version_new${_neon}${_emu}%20%20$STARTDATE&type=1&timeout=10" > /dev/null 2>&1
+#					echo "1" > /etc/autoupdate
+#					oscam_autoupdater
+#				;;
+#				2) #echo no
+#					wget -O - -q "localhost/web/message?text=Update%20wird%20nicht%20installiert%20\n\nDie%20Meldung%20wird%20für%202%20Tage%20unterdrückt%20$STARTDATE&type=1&timeout=5" > /dev/null 2>&1
+#					echo "0" > /etc/autoupdate
+#					cp /tmp/version.txt /etc/oscam-version > /dev/null 2>&1
+#				;;
+#			esac
+#	  fi
 	 fi 
 	fi
   else	
