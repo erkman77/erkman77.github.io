@@ -141,6 +141,9 @@ case "$_boxname" in
   *trio*|*ue*|*quad*)
     _boxname="Gigablue $_boxname"
     ;;
+  *dm7*|*dm8*|*dm9*)
+    _boxname="Dreambox $_boxname"
+    ;;	
   *sf8*|*sx8*|*sf4*)
     _boxname="Octagon $_boxname"
     ;;
