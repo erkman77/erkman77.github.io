@@ -22,12 +22,21 @@ SEARCH_PATH="/etc/tuxbox/config"
 NEW_LINE='if curl -s --head http://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 echo "${_url}" >> /tmp/read
 
-if [ -e /etc/opkg ]; then
-  if ! opkg list-installed | grep bash > /dev/null 2>&1; then
-    opkg install bash > /dev/null 2>&1
-  fi
+if [ -d /etc/opkg ]; then
+    for pkg in bash curl; do
+        if ! opkg list-installed | grep -w "$pkg" > /dev/null 2>&1; then
+            opkg install "$pkg" > /dev/null 2>&1
+        fi
+    done
 fi
 
+if [ -d /etc/apt/sources.list.d ]; then
+    for pkg in bash curl; do
+        if ! dpkg -l | grep -w "$pkg" > /dev/null 2>&1; then
+			apt install -y "$pkg"
+        fi
+    done
+fi
 set +x
 
 ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscamfile
@@ -197,7 +206,6 @@ long_running_task() {
 
   $_exec_cmd install procps >/dev/null 2>&1
   $_exec_cmd install procps-ps >/dev/null 2>&1
-  $_exec_cmd install curl >/dev/null 2>&1
   $_exec_cmd install wget >/dev/null 2>&1
 
   if [ -e /usr/bin/icam_autoupdate  ]; then
