@@ -22,7 +22,6 @@ mhz                           = 450
 cardmhz                       = 2700
 group                         = 1
 
-
 [reader]
 label                         = upper_card
 enable                        = 0
