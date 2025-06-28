@@ -1,5 +1,4 @@
-#!/bin/bash +x
-set +x
+#!/bin/bash
 clear
 
 _version="4.5"
@@ -22,6 +21,14 @@ _rebootmsg="reboot by exiting installer"
 SEARCH_PATH="/etc/tuxbox/config"
 NEW_LINE='if curl -s --head http://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 echo "${_url}" >> /tmp/read
+
+if [ -e /etc/opkg ]; then
+  if ! opkg list-installed | grep bash > /dev/null 2>&1; then
+    opkg install bash > /dev/null 2>&1
+  fi
+fi
+
+set +x
 
 ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscamfile
 _myoscambinfile=$(head -n 1 /tmp/oscamfile)
@@ -46,11 +53,6 @@ while getopts "t:S:P:u:p:" opt; do
       ;;
   esac
 done
-if [ -e /etc/opkg ]; then
-  if ! opkg list-installed | grep bash > /dev/null 2>&1; then
-    opkg install bash > /dev/null 2>&1
-  fi
-fi
 _my_configpath_old=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')
 
 if [ -z "$_my_configpath_old" ]; then
