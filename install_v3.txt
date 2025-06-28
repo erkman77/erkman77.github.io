@@ -1115,11 +1115,20 @@ install_vti() {
 
 install_nn2() {
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
-  apt install -y  $_libusbvers  > /dev/null 2>&1
-  apt install -y  $_libatomicvers  > /dev/null 2>&1
-  apt install -y  $_libcryptovers  > /dev/null 2>&1
-  apt install -y  $_libcurlvers4  > /dev/null 2>&1
-  apt install -y curl  > /dev/null 2>&1
+  if [ -e /etc/apt/sources.list.d  ]; then
+    apt install -y  $_libusbvers  > /dev/null 2>&1
+    apt install -y  $_libatomicvers  > /dev/null 2>&1
+    apt install -y  $_libcryptovers  > /dev/null 2>&1
+    apt install -y  $_libcurlvers4  > /dev/null 2>&1
+    apt install -y curl  > /dev/null 2>&1
+  else
+    opkg install -y  $_libusbvers  > /dev/null 2>&1
+    opkg install -y  $_libatomicvers  > /dev/null 2>&1
+    opkg install -y  $_libcryptovers  > /dev/null 2>&1
+    opkg install -y  $_libcurlvers4  > /dev/null 2>&1
+    opkg install -y curl  > /dev/null 2>&1
+  fi
+  
   #apt install libusb-1.0-0
   if [ -e /etc/apt/sources.list.d  ]; then
     if ! apt list --installed | grep apt-transport-https > /dev/null 2>&1; then
