@@ -76,6 +76,14 @@ if cat /tmp/version | grep -i openpli > /dev/null 2>&1; then
   _my_distribution="OpenPLi"
 fi
 
+if cat /tmp/version | grep -i openHDF > /dev/null 2>&1; then 
+  _my_distribution="OpenHDF"
+fi
+
+if cat /tmp/version | grep -i teamBlue > /dev/null 2>&1; then 
+  _my_distribution="teamBlue"
+fi
+
 if cat /tmp/version | grep -i egami > /dev/null 2>&1; then 
   _my_distribution="Egami"
 fi
@@ -1241,7 +1249,7 @@ mainmenu() {
   my_header
   echo -e "\e[34m Fine! it looks you are running $_my_distribution on $_boxname\e[0m" 
   echo -e "\e[33m ######*** Main Menu ***######\e[0m"
-  echo -e " 1) Install Icam Oscam stable         // fresh box ... or sledgehammer mode ;)"
+  echo -e " 1) Install Icam Oscam stable         // fresh box ... or sledgehammer mode ;) OSCam v11866"
   echo -e " 2) Update Oscam Bin only             // updates any running oscam to ICam Oscam"
   echo -e " 3) Bouquets for Astra or Hotbird     // install full Bouquets for Astra or Hotbird"
   echo -e "                                         Stand settings"
