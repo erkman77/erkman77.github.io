@@ -1121,12 +1121,6 @@ install_nn2() {
     apt install -y  $_libcryptovers  > /dev/null 2>&1
     apt install -y  $_libcurlvers4  > /dev/null 2>&1
     apt install -y curl  > /dev/null 2>&1
-  else
-    opkg install -y  $_libusbvers  > /dev/null 2>&1
-    opkg install -y  $_libatomicvers  > /dev/null 2>&1
-    opkg install -y  $_libcryptovers  > /dev/null 2>&1
-    opkg install -y  $_libcurlvers4  > /dev/null 2>&1
-    opkg install -y curl  > /dev/null 2>&1
   fi
   
   #apt install libusb-1.0-0
