@@ -817,10 +817,12 @@ update_whitelist() {
   curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
   curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
   curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
-  if ! apt list --installed | grep enigma2-plugin-extensions-streamrelay > /dev/null 2>&1; then
+  if [ -e /etc/apt/sources.list.d  ]; then
+    if ! apt list --installed | grep enigma2-plugin-extensions-streamrelay > /dev/null 2>&1; then
 	  curl -sko /etc/enigma2/icamref.json ${_url}/ot_tune/whitelist/icamref.json > /dev/null 2>&1
 	  rm /etc/enigma2/whitelist_streamrelay > /dev/null 2>&1
-  fi
+    fi
+  fi	
   SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
   curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
   curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
