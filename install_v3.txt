@@ -1263,7 +1263,7 @@ my_header() {
 mainmenu() {
   _myip=$(ip a s | grep "scope global" | grep eth |awk '/inet /{print $2}' | awk -F '/' '{print $1}')
   my_header
-  echo -e "\e[34m Fine! it looks you are running $_my_distribution on $_boxname\e[0m" 
+  echo -e "\e[94m Fine! it looks you are running $_my_distribution on $_boxname\e[0m" 
   echo -e "\e[33m ######*** Main Menu ***######\e[0m"
   echo -e " 1) Install Icam Oscam stable         // fresh box ... or sledgehammer mode ;) OSCam v11866"
   echo -e " 2) Update Oscam Bin only             // updates any running oscam to ICam Oscam"
