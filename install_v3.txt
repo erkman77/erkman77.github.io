@@ -707,6 +707,7 @@ replace_oscam_bin() {
 	 fi
   else
       if grep -qs -i "openbh" /etc/issue ; then
+	    mkdir /usr/softcams/
         wget -O /usr/softcams/oscam_bin ${_url}/ot_cams/oscam/oscam-${_arch}-${_oscam_version}${_neon}${_emu} > /dev/null 2>&1
         chmod +x /usr/softcams/oscam_bin > /dev/null 2>&1
 	  else
