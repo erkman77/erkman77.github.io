@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-_scriptversion=47
+_scriptversion=48
 
 _url=i.tv-lounge.eu
 _override=$1
@@ -69,7 +69,7 @@ if curl -s --head ${_url}/ot_tune/settings/satellites.xml | grep 200 > /dev/null
   fi
 
   $_myoscambin -V > /tmp/version2.txt
-  Version_old=$(  $_myoscambin --build-info | grep -i 'version:' | grep -o '[0-9]\{5\}'   )  
+  Version_old=$(  $_myoscambin --build-info | grep -i 'version:' | grep -o '[0-9]\{5\}' | head -n 1  )  
   _find_extra="/tmp/version2.txt"
   _neon_is_set="ARM NEON (SIMD/MPE) support:             yes"
   _emu_is_set="Emulator support:                        yes"
