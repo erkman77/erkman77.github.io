@@ -179,13 +179,13 @@ cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /usr/share/enigma2/picon/1_0_19_82_6_85_
 cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /usr/share/enigma2/picon/1_0_19_82_6_85_21_0_0_0.png
 cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /usr/share/enigma2/picon/1_0_19_82_6_85_FFFF0000_0_0_0.png
 
-if [ ! -d "/media/usb/picon" ]; then
+if [ -d "/media/usb/picon" ]; then
 cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/usb/picon/1_0_19_82_6_85_C00000_0_0_0.png
 cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/usb/picon/1_0_19_82_6_85_21_0_0_0.png
 cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/usb/picon/1_0_19_82_6_85_FFFF0000_0_0_0.png
 fi
 
-if [ ! -d "/media/hdd/picon" ]; then
+if [ -d "/media/hdd/picon" ]; then
 cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/hdd/picon/1_0_19_82_6_85_C00000_0_0_0.png
 cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/hdd/picon/1_0_19_82_6_85_21_0_0_0.png
 cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/hdd/picon/1_0_19_82_6_85_FFFF0000_0_0_0.png
