@@ -1285,7 +1285,7 @@ mainmenu() {
   echo -e "                                         for problems with video playback"
   echo -e "0) Exit"
   echo -e ""
-  echo -e "\e[31m s) Fix Sky Changes 01.07.2025         // fixes channellist, streamrelay, icam, picons\e[0m" 
+  echo -e "\e[31ms) Fix Sky Changes 01.07.2025         // fixes channellist, streamrelay, icam, picons\e[0m" 
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
   case $main in
