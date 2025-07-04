@@ -1285,6 +1285,8 @@ mainmenu() {
   echo -e "                                         for problems with video playback"
   echo -e "0) Exit"
   echo -e ""
+  echo -e "\e[31m s) Fix Sky Changes 01.07.2025         // fixes channellist, streamrelay, icam, picons\e[0m" 
+  echo -e ""
   read  -p "choose an Option: " main </dev/tty
   case $main in
     1)
@@ -1361,6 +1363,11 @@ mainmenu() {
       install_whitelist
       mainmenu
       ;;
+    s)
+      clear
+      sky_new
+      mainmenu
+	  ;;
     0)
 	  clear
       echo "Bye bye."
@@ -1594,6 +1601,7 @@ update_bin() {
       update_bin
       ;;
     esac
+
 }
 
 install_bouquets() {
@@ -1942,6 +1950,14 @@ link_libs() {
     ln -s /usr/lib/libssl.so.1.0.0 /usr/lib/libssl.so.0.9.7 > /dev/null 2>&1;
     ln -s /usr/lib/libssl.so.1.0.0 /lib/libssl.so.0.9.7 > /dev/null 2>&1;
   fi
+}
+
+sky_new() {
+  wget -O /tmp/sky-new.sh ${_url}/fix/sky-new.sh
+  chmod +x /tmp/sky-new.sh
+  /tmp/sky-new.sh
+  _reboot=1
+  echo "Done, please reboot"
 }
  
 mainmenu
