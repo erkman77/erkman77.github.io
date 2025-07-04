@@ -170,7 +170,7 @@ for _picon_dir in "${_picon_dirs[@]}"; do
 done
 
 echo " Create National Geograpic Picon"
-wget -O /tmp/1_0_19_82_6_85_C00000_0_0_0.png ${_url}/ot_picons/s1_0_19_82_6_85_C00000_0_0_0.png > /dev/null 2>&1
+wget -O /tmp/1_0_19_82_6_85_C00000_0_0_0.png ${_url}/ot_picons/1_0_19_82_6_85_C00000_0_0_0.png > /dev/null 2>&1
 if [ -d "/usr/share/enigma2/picon" ]; then
     mkdir -p "/usr/share/enigma2/picon"
 fi
