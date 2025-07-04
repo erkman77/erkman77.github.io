@@ -178,7 +178,7 @@ cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /usr/share/enigma2/picon/1_0_19_82_6_85_
 cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /usr/share/enigma2/picon/1_0_19_82_6_85_21_0_0_0.png
 cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /usr/share/enigma2/picon/1_0_19_82_6_85_FFFF0000_0_0_0.png
 
-SESSIONID=`curl -s -X POST "http://localhost/web/session" /ggrep -o -E "<e2sessionid>(.*)</e2sessionid>" /gsed "s/g.*<e2sessionid>\(.*\)</e2sessionid>.*/g\\1/g"` #>/dev/null 2>&1
+SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" /gsed "s/g.*<e2sessionid>\(.*\)</e2sessionid>.*/g\\1/g"` #>/dev/null 2>&1
 curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
 curl -s -X POST 'http://127.0.0.1/web/servicelistreload?mode=0&sessionid=$SESSIONID' > /dev/null 2>&1
 
