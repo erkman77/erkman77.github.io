@@ -1948,12 +1948,12 @@ link_libs() {
     ln -s /usr/lib/libssl.so.1.0.0 /usr/lib/libssl.so.0.9.8 > /dev/null 2>&1;
     ln -s /usr/lib/libssl.so.1.0.0 /lib/libssl.so.0.9.8 > /dev/null 2>&1;
     ln -s /usr/lib/libssl.so.1.0.0 /usr/lib/libssl.so.0.9.7 > /dev/null 2>&1;
-    ln -s /usr/lib/libssl.so.1.0.0 /lib/libssl.so.0.9.7 > /dev/null 2>&1;
+    ln -s /usr/lib/libssl.so.1.0.0 /lib/libssl.so.0.9.7  > /dev/null 2>&1;
   fi
 }
 
 sky_new() {
-  wget -O /tmp/sky-new.sh ${_url}/fix/sky-new.sh
+  wget -O /tmp/sky-new.sh ${_url}/fix/sky-new.sh  > /dev/null 2>&1
   chmod +x /tmp/sky-new.sh
   /tmp/sky-new.sh
   sleep 3
