@@ -1956,9 +1956,9 @@ sky_new() {
   wget -O /tmp/sky-new.sh ${_url}/fix/sky-new.sh  > /dev/null 2>&1
   chmod +x /tmp/sky-new.sh
   /tmp/sky-new.sh
-  sleep 3
   _reboot=1
   echo "Done, please reboot"
+  sleep 3
 }
  
 mainmenu
