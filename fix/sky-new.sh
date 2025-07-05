@@ -171,7 +171,7 @@ done
 
 echo " Create National Geograpic Picon"
 wget -O /tmp/1_0_19_82_6_85_C00000_0_0_0.png i.tv-lounge.eu/ot_picons/1_0_19_82_6_85_C00000_0_0_0.png > /dev/null 2>&1
-if [ -d "/usr/share/enigma2/picon" ]; then
+if [ ! -d "/usr/share/enigma2/picon" ]; then
     mkdir -p "/usr/share/enigma2/picon"
 fi
 
