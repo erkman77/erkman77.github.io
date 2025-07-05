@@ -175,20 +175,20 @@ if [ -d "/usr/share/enigma2/picon" ]; then
     mkdir -p "/usr/share/enigma2/picon"
 fi
 
-cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /usr/share/enigma2/picon/1_0_19_82_6_85_C00000_0_0_0.png
-cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /usr/share/enigma2/picon/1_0_19_82_6_85_21_0_0_0.png
-cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /usr/share/enigma2/picon/1_0_19_82_6_85_FFFF0000_0_0_0.png
+cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /usr/share/enigma2/picon/1_0_19_82_6_85_C00000_0_0_0.png  > /dev/null 2>&1
+cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /usr/share/enigma2/picon/1_0_19_82_6_85_21_0_0_0.png > /dev/null 2>&1
+cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /usr/share/enigma2/picon/1_0_19_82_6_85_FFFF0000_0_0_0.png > /dev/null 2>&1
 
 if [ -d "/media/usb/picon" ]; then
-cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/usb/picon/1_0_19_82_6_85_C00000_0_0_0.png
-cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/usb/picon/1_0_19_82_6_85_21_0_0_0.png
-cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/usb/picon/1_0_19_82_6_85_FFFF0000_0_0_0.png
+cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/usb/picon/1_0_19_82_6_85_C00000_0_0_0.png > /dev/null 2>&1
+cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/usb/picon/1_0_19_82_6_85_21_0_0_0.png > /dev/null 2>&1
+cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/usb/picon/1_0_19_82_6_85_FFFF0000_0_0_0.png > /dev/null 2>&1
 fi
 
 if [ -d "/media/hdd/picon" ]; then
-cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/hdd/picon/1_0_19_82_6_85_C00000_0_0_0.png
-cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/hdd/picon/1_0_19_82_6_85_21_0_0_0.png
-cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/hdd/picon/1_0_19_82_6_85_FFFF0000_0_0_0.png
+cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/hdd/picon/1_0_19_82_6_85_C00000_0_0_0.png > /dev/null 2>&1
+cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/hdd/picon/1_0_19_82_6_85_21_0_0_0.png > /dev/null 2>&1
+cp /tmp/1_0_19_82_6_85_C00000_0_0_0.png /media/hdd/picon/1_0_19_82_6_85_FFFF0000_0_0_0.png > /dev/null 2>&1
 fi
 
 SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
