@@ -1286,7 +1286,7 @@ mainmenu() {
   echo -e "0) Exit"
   echo -e ""
   echo -e "\e[31ms) Fix Sky Changes 01.07.2025         // fixes channellist, streamrelay, icam, picons" 
-  echo -e "                                         for (N/A) in channellist switch short to channel\e[0m"
+  echo -e "                                         for (N/A) in chanlist switch short to chan\e[0m"
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
   case $main in
