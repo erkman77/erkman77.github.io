@@ -782,7 +782,7 @@ get_oscam_configs() {
   if [ ! -f /etc/tuxbox/config/oscam.server ]; then
   curl -sk -o /etc/tuxbox/config/oscam.server ${_url}/ot_cams/configs/oscam.server > /dev/null 2>&1
   fi
-  mkdir /etc/tuxbox/config/scripts/ -p > /dev/null 2>&1
+  mkdir -p /etc/tuxbox/config/scripts/ > /dev/null 2>&1
   curl -sk -o /etc/tuxbox/config/oscam.conf ${_url}/ot_cams/configs/oscam.conf > /dev/null 2>&1
   curl -sk -o /etc/tuxbox/config/oscam.user ${_url}/ot_cams/configs/oscam.user > /dev/null 2>&1
   curl -sk -o /etc/tuxbox/config/SoftCam.Key ${_url}/ot_cams/configs/SoftCam.Key > /dev/null 2>&1
@@ -1274,7 +1274,7 @@ mainmenu() {
   echo -e " 5) Update ICAM Picons only           // install ICam picons only"
   echo -e " 6) Backup & Restore                  // backup or restore oscam"
   echo -e " 7) Fix Settings                      // rewrite ICam settings to enigma"
-  echo -e " 8) Fix Streaming-IP                  // changes 127.0.0.1 to $_myip for home streaming"
+  echo -e " 8) Fix Streaming-IP                  // change 127.0.0.1 to $_myip for home streaming"
   echo -e " 9) Bouquet Autoupdate                // updates bouquets @ reboot"
   echo -e "10) Whitelist Streamrelay/icamref     // install/update whitelist_streamrelay/icamref"
   echo -e "11) Whitelist Autoupdate              // update whitelist only @ reboot"
@@ -1286,7 +1286,7 @@ mainmenu() {
   echo -e "0) Exit"
   echo -e ""
   echo -e "\e[31ms) Fix Sky Changes 01.07.2025         // fixes channellist, streamrelay, icam, picons" 
-  echo -e "                                         for (N/A) in chanlist switch short to chan\e[0m"
+  echo -e "                                         for (N/A) in chanlist, switch short to chan\e[0m"
   echo -e ""
   read  -p "choose an Option: " main </dev/tty
   case $main in
@@ -1402,8 +1402,8 @@ install_stable() {
   my_header
   echo -e "\e[33m ######*** Stable  Menu ***######\e[0m"
   echo -e "1) openATV        ( $_rebootmsg )"
-  echo -e "2) Openpli        ( $_rebootmsg )"
-  echo -e "3) VTI/OpenBh     ( $_rebootmsg )"
+  echo -e "2) OpenPLi        ( $_rebootmsg )"
+  echo -e "3) VTi/OpenBh     ( $_rebootmsg )"
   echo -e "4) openNFR/HDF    ( $_rebootmsg )"
   echo -e "5) Dreambox       ( $_rebootmsg )"
   echo -e "6) Pure2          ( $_rebootmsg )"
