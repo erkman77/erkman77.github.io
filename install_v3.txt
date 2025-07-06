@@ -779,10 +779,10 @@ do_enigma_settings() {
 
 get_oscam_configs() {
   _readerfile="/etc/tuxbox/config/oscam.server"
+  mkdir -p /etc/tuxbox/config/scripts/ > /dev/null 2>&1
   if [ ! -f /etc/tuxbox/config/oscam.server ]; then
   curl -sk -o /etc/tuxbox/config/oscam.server ${_url}/ot_cams/configs/oscam.server > /dev/null 2>&1
   fi
-  mkdir -p /etc/tuxbox/config/scripts/ > /dev/null 2>&1
   curl -sk -o /etc/tuxbox/config/oscam.conf ${_url}/ot_cams/configs/oscam.conf > /dev/null 2>&1
   curl -sk -o /etc/tuxbox/config/oscam.user ${_url}/ot_cams/configs/oscam.user > /dev/null 2>&1
   curl -sk -o /etc/tuxbox/config/SoftCam.Key ${_url}/ot_cams/configs/SoftCam.Key > /dev/null 2>&1
