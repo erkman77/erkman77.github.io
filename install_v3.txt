@@ -23,19 +23,13 @@ NEW_LINE='if curl -s --head http://i.tv-lounge.eu/ot_tune/settings/satellites.xm
 echo "${_url}" >> /tmp/read
 
 if [ -e /etc/opkg ]; then
-    for pkg in bash curl; do
-        if ! opkg list-installed | grep -w "$pkg" > /dev/null 2>&1; then
-            opkg install "$pkg" > /dev/null 2>&1
-        fi
-    done
+    opkg install curl > /dev/null 2>&1
+	opkg install bash > /dev/null 2>&1
 fi
 
 if [ -e /etc/apt/sources.list.d ]; then
-    for pkg in bash curl; do
-        if ! dpkg -l | grep -w "$pkg" > /dev/null 2>&1; then
-			apt install -y "$pkg"
-        fi
-    done
+			apt install -y curl > /dev/null 2>&1
+			apt install -y bash  > /dev/null 2>&1
 fi
 set +x  2>/dev/null
 
