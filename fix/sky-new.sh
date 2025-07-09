@@ -1,5 +1,18 @@
 #!/bin/bash
 
+if [ -e /etc/opkg ]; then
+    opkg install curl > /dev/null 2>&1
+	opkg install bash > /dev/null 2>&1
+fi
+
+if [ -e /etc/apt/sources.list.d ]; then
+			apt install -y curl > /dev/null 2>&1
+			apt install -y bash  > /dev/null 2>&1
+fi
+
+SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
+curl -X POST "http://localhost/web/message?text=Edit%20Sky%20Settings...%20please%20stand%20by%20:)%20%20&type=1&timeout=5&sessionid=$SESSIONID" >/dev/null 2>&1
+
 _dir="/etc/enigma2"
 
 old1='1%3a0%3a19%3a84%3a9%3a85'
