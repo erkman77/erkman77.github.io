@@ -1270,7 +1270,7 @@ mainmenu() {
   echo -e " 6) Backup & Restore                  // backup or restore oscam"
   echo -e " 7) Fix Settings                      // rewrite ICam settings to enigma"
   echo -e " 8) Fix Streaming-IP                  // change 127.0.0.1 to $_myip for home streaming"
-  echo -e " 9) Bouquet Autoupdate                // updates bouquets @ reboot"
+  echo -e " 9) Bouquet Autoupdate                // updates bouquets @reboot"
   echo -e "10) Whitelist Streamrelay/icamref     // install/update whitelist_streamrelay/icamref"
   echo -e "11) Whitelist Autoupdate              // update whitelist only @ reboot"
   echo -e "12) Oscam Start Patch                 // checks whether oscam starts twice,"
@@ -1282,7 +1282,8 @@ mainmenu() {
   echo -e ""
   echo -e "\e[31ms) Fix Sky Changes 13.07.2025         // fixes channellist, streamrelay, icam, picons" 
   echo -e "                                         for (N/A) in chanlist, switch short to chan\e[0m"
-  echo -e ""
+  echo -e "                                         or make a chan search"
+  echo -e ""  
   read  -p "choose an Option: " main </dev/tty
   case $main in
     1)
@@ -1956,7 +1957,7 @@ sky_new() {
   /tmp/sky-new.sh
   _reboot=1
   echo "Done, please reboot"
-  sleep 3
+  sleep 5
 }
  
 mainmenu
