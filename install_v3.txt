@@ -506,7 +506,7 @@ replace_initscript() {
 	chmod +x /etc/init.d/current_cam.sh  > /dev/null 2>&1
 	cat <<-EOF > /etc/init.d/CamManager
 	#!/bin/sh
-	sleep 15 > /dev/null 2>&1
+	sleep 10 > /dev/null 2>&1
 	/etc/init.d/current_cam.sh start
 	EOF
 	#eval $_cammanger > /dev/null 2>&1
