@@ -129,8 +129,8 @@ if grep -qs -i "SatLodge" /etc/issue.net > /dev/null 2>&1; then
   _my_distribution="Sat-Lodge"
 fi
 
-SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"`
-_boxname=`curl -s -X POST "http://localhost/web/deviceinfo?&sessionid=$SESSIONID" |grep -o -E "<e2devicename>(.*)</e2devicename>" |sed "s|.*<e2devicename>\(.*\)</e2devicename>.*|\\1|"` 
+SESSIONID=`curl -s -X POST "http://localhost/web/session" | grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"`
+_boxname=`curl -s -X POST "http://localhost/web/deviceinfo?&sessionid=$SESSIONID" | grep -o -E "<e2devicename>(.*)</e2devicename>" |sed "s|.*<e2devicename>\(.*\)</e2devicename>.*|\\1|"` 
 
 if [[ "$_boxname" == *UHD* ]]; then
   _boxname="${_boxname//UHD/}"
@@ -170,7 +170,7 @@ echo ... "running preconfigure for optimal autoinstaller settings"
 #echo -e ""
 
 
-SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
+SESSIONID=`curl -s -X POST "http://localhost/web/session" | grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
 curl -X POST "http://localhost/web/message?text=Oscam%20Multitool%20is%20running...%20please%20stand%20by%20:)%20%20&type=1&timeout=5&sessionid=$SESSIONID" >/dev/null 2>&1
 
 
