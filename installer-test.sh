@@ -29,11 +29,12 @@ sleep 3
   if [ -e /etc/opkg ]; then
     opkg install curl #> /dev/null 2>&1
 	opkg install bash #> /dev/null 2>&1
+	
   fi
 
   if [ -e /etc/apt/sources.list.d ]; then
-			apt install -y curl > /dev/null 2>&1
-			apt install -y bash  > /dev/null 2>&1
+			apt install -y curl #> /dev/null 2>&1
+			apt install -y bash  #> /dev/null 2>&1
   fi
   sleep 10
   touch "$MARKER_FILE"
@@ -46,6 +47,7 @@ sleep 3
 #set +x  2>/dev/null
 
 ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscamfile #2>/dev/null
+echo "1.ps"
 _myoscambinfile=$(head -n 1 /tmp/oscamfile)
 _oscambin=$(basename "$_myoscambinfile")
 
@@ -69,14 +71,16 @@ while getopts "t:S:P:u:p:" opt; do
   esac
 done
 _my_configpath_old=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')# 2>/dev/null
-
+echo "2.ps"
 if [ -z "$_my_configpath_old" ]; then
     _my_configpath_old=$(ps xuww | grep -i oscam | awk -F '-bc' '{print $2}' |uniq|sed -e 's/ //g') #2>/dev/null
+	echo "2.5ps"
 fi
 
   case $_my_configpath_old in
     onfig-dir*)
        _my_configpath_old=$(ps axuww | grep oscam | awk -F 'config-dir ' '{print $2}'|grep '\S' |uniq|awk '{print $1}'|sed -e 's/ //g') #2>/dev/null
+	   echo "3.ps"
   cp $_my_configpath_old/oscam.server /tmp/oscam.server #> /dev/null 2>&1
 	 ;;
   esac
