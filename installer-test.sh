@@ -35,7 +35,7 @@ sleep 3
 			apt install -y curl > /dev/null 2>&1
 			apt install -y bash  > /dev/null 2>&1
   fi
-  
+  sleep 10
   touch "$MARKER_FILE"
   wget -q -O - i.tv-lounge.eu/installer-test.sh | bash
 exec "$0"
