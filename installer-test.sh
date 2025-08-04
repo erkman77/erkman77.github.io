@@ -43,7 +43,7 @@ exec "$0"
 else
 echo "marker da"
 sleep 3
-#set +x  #2>/dev/null
+#set +x  2>/dev/null
 
 ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscamfile #2>/dev/null
 _myoscambinfile=$(head -n 1 /tmp/oscamfile)
@@ -68,7 +68,7 @@ while getopts "t:S:P:u:p:" opt; do
       ;;
   esac
 done
-_my_configpath_old=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g') #2>/dev/null
+_my_configpath_old=$(ps axuww | grep oscam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g')# 2>/dev/null
 
 if [ -z "$_my_configpath_old" ]; then
     _my_configpath_old=$(ps xuww | grep -i oscam | awk -F '-bc' '{print $2}' |uniq|sed -e 's/ //g') #2>/dev/null
@@ -77,7 +77,7 @@ fi
   case $_my_configpath_old in
     onfig-dir*)
        _my_configpath_old=$(ps axuww | grep oscam | awk -F 'config-dir ' '{print $2}'|grep '\S' |uniq|awk '{print $1}'|sed -e 's/ //g') #2>/dev/null
-  cp $_my_configpath_old/oscam.server /tmp/oscam.server > /dev/null 2>&1
+  cp $_my_configpath_old/oscam.server /tmp/oscam.server #> /dev/null 2>&1
 	 ;;
   esac
 
@@ -141,8 +141,8 @@ if grep -qs -i "SatLodge" /etc/issue.net > /dev/null 2>&1; then
   _my_distribution="Sat-Lodge"
 fi
 
-SESSIONID=`curl -s -X POST "http://localhost/web/session" | grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"`
-_boxname=`curl -s -X POST "http://localhost/web/deviceinfo?&sessionid=$SESSIONID" | grep -o -E "<e2devicename>(.*)</e2devicename>" |sed "s|.*<e2devicename>\(.*\)</e2devicename>.*|\\1|"` 
+SESSIONID=`curl -s -X POST "http://localhost/web/session" | grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` >/dev/null 2>&1
+_boxname=`curl -s -X POST "http://localhost/web/deviceinfo?&sessionid=$SESSIONID" | grep -o -E "<e2devicename>(.*)</e2devicename>" |sed "s|.*<e2devicename>\(.*\)</e2devicename>.*|\\1|"`  >/dev/null 2>&1
 
 if [[ "$_boxname" == *UHD* ]]; then
   _boxname="${_boxname//UHD/}"
@@ -191,7 +191,7 @@ long_running_task() {
 
   if [ -e /etc/opkg ]; then
 	_exec_cmd="opkg"
-    $_exec_cmd update > /dev/null 2>&1
+    $_exec_cmd update#> /dev/null 2>&1
     _listinstalled="$_exec_cmd list-installed"
     _libusbvers=`opkg list |grep libusb-1. | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
     _libatomicvers=`opkg list |grep libatomic | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
@@ -199,7 +199,7 @@ long_running_task() {
     _libcurlvers4=`opkg list |grep libcurl4 |grep -vE 'PycU'|awk '{print $1}'`
   elif [ -e /etc/apt/sources.list.d ]; then
     _exec_cmd="apt -y"
-	$_exec_cmd update > /dev/null 2>&1    
+	$_exec_cmd update # > /dev/null 2>&1    
 	_listinstalled="dpkg-query -l"
     _libusbvers=`apt-cache search libusb-1. | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
     _libatomicvers=`apt-cache search libatomic | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
@@ -210,9 +210,9 @@ long_running_task() {
     exit 0
   fi
 
-  $_exec_cmd install procps >/dev/null 2>&1
-  $_exec_cmd install procps-ps >/dev/null 2>&1
-  $_exec_cmd install wget >/dev/null 2>&1
+  $_exec_cmd install procps # >/dev/null 2>&1
+  $_exec_cmd install procps-ps # >/dev/null 2>&1
+  $_exec_cmd install wget #>/dev/null 2>&1
 
   if [ -e /usr/bin/icam_autoupdate  ]; then
 	if grep -qs -i $old /usr/bin/icam_autoupdate ; then
@@ -262,7 +262,7 @@ fi
 echo "" >> /usr/bin/icam_multitool
 chmod +x /usr/bin/icam_multitool
 
-curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt >/dev/null 2>&1
+curl -sA "INFO: $_my_distribution" ${_url}/my_version.txt #>/dev/null 2>&1
 }
 
 long_running_task &
@@ -359,15 +359,15 @@ get_ipk_oscam() {
 }
 
 get_old_oscam() {
-  _myoscambin=$(ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq) #2>/dev/null
-  _my_configpath=$(ps axuww | grep cam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g') #2>/dev/null
+  _myoscambin=$(ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq) 2>/dev/null
+  _my_configpath=$(ps axuww | grep cam | awk -F '-c' '{print $2}'|awk '{print $1}'|grep '\S' |uniq|sed -e 's/ //g') 2>/dev/null
   if [ -z "$_my_configpath" ]; then
-     _my_configpath=$(ps xuww | grep -i cam | awk -F '-bc' '{print $2}' |uniq|sed -e 's/ //g') #2>/dev/null
+     _my_configpath=$(ps xuww | grep -i cam | awk -F '-bc' '{print $2}' |uniq|sed -e 's/ //g') 2>/dev/null
   fi
 
   case $_my_configpath in
     onfig-dir*)
-       _my_configpath=$(ps axuww | grep -i cam | awk -F 'config-dir ' '{print $2}'|grep '\S' |uniq|awk '{print $1}'|sed -e 's/ //g') #2>/dev/null
+       _my_configpath=$(ps axuww | grep -i cam | awk -F 'config-dir ' '{print $2}'|grep '\S' |uniq|awk '{print $1}'|sed -e 's/ //g') 2>/dev/null
       ;;
   esac
 }
@@ -670,7 +670,7 @@ replace_initscript() {
 	  fi
   fi
   
-  find "$SEARCH_PATH" -name "oscam.conf" #2>/dev/null | while read -r file; do
+  find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
     if ! grep -q "\[streamrelay\]" "$file"; then
         {
             echo "[streamrelay]"
@@ -854,7 +854,7 @@ whitelist_auto_install() {
   curl -sko /usr/bin/icam_whitelist_update ${_url}/ot_tune/whitelist/whitelist_autoupdate.txt  > /dev/null 2>&1
   chmod +x /usr/bin/icam_whitelist_update > /dev/null 2>&1
   (crontab -l | sed -e '/icam_whitelist_update/d') | crontab -
-  (crontab -l #2>/dev/null; echo "@reboot /usr/bin/icam_whitelist_update ") | crontab -
+  (crontab -l 2>/dev/null; echo "@reboot /usr/bin/icam_whitelist_update ") | crontab -
   echo "...done"
   sleep 2
 }
@@ -1020,7 +1020,7 @@ autoupdate_bouquet_bouquets() {
     fi
   else
     (crontab -l | sed -e '/icam_autoupdate/d') | crontab -
-    (crontab -l #2>/dev/null; echo "@reboot /usr/bin/icam_autoupdate ") | crontab -
+    (crontab -l 2>/dev/null; echo "@reboot /usr/bin/icam_autoupdate ") | crontab -
   fi
 
   echo -e "\e[32m all done ...\e[0m"
@@ -1829,7 +1829,7 @@ oscam_auto_update() {
   wget -O /usr/bin/oscam_autoupdate ${_url}/ot_cams/update/oscam_autoupdate.txt > /dev/null 2>&1
   chmod +x /usr/bin/oscam_autoupdate
   (crontab -l | sed -e '/oscam_autoupdate/d') | crontab -
-  (crontab -l #2>/dev/null; echo "0 * * * * /usr/bin/oscam_autoupdate ") | crontab -
+  (crontab -l 2>/dev/null; echo "0 * * * * /usr/bin/oscam_autoupdate ") | crontab -
   echo -e "\e[32m all done ...\e[0m"
   sleep 3
 }
