@@ -24,7 +24,7 @@ NEW_LINE='if curl -s --head http://i.tv-lounge.eu/ot_tune/settings/satellites.xm
 echo "${_url}" >> /tmp/read
 
 if [ ! -f "$MARKER_FILE" ]; then
-echo "First run init..."
+echo "First run... init..."
 echo "Please wait..."
   if [ -e /etc/opkg ]; then
     opkg install curl > /dev/null 2>&1
