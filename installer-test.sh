@@ -31,7 +31,7 @@ echo "Please wait..."
     opkg install curl #> /dev/null 2>&1
 	opkg install bash #> /dev/null 2>&1
 	opkg install procps #> /dev/null 2>&1
-	opkg installprocps-ps #> /dev/null 2>&1
+	opkg install procps-ps #> /dev/null 2>&1
 	opkg install wget #> /dev/null 2>&1
 	#opkg install bash #> /dev/null 2>&1
 	sleep 5
