@@ -24,6 +24,8 @@ NEW_LINE='if curl -s --head http://i.tv-lounge.eu/ot_tune/settings/satellites.xm
 echo "${_url}" >> /tmp/read
 
 if [ ! -f "$MARKER_FILE" ]; then
+echo "marker nicht da"
+sleep 3
   if [ -e /etc/opkg ]; then
     opkg install curl #> /dev/null 2>&1
 	opkg install bash #> /dev/null 2>&1
