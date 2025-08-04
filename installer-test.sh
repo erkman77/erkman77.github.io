@@ -28,9 +28,13 @@ echo "marker nicht da"
 sleep 3
 echo "Please wait..."
   if [ -e /etc/opkg ]; then
-    opkg install curl bash procps procps-ps wget #> /dev/null 2>&1
+    opkg install curl #> /dev/null 2>&1
+	opkg install bash #> /dev/null 2>&1
+	opkg install procps #> /dev/null 2>&1
+	opkg installprocps-ps #> /dev/null 2>&1
+	opkg install wget #> /dev/null 2>&1
 	#opkg install bash #> /dev/null 2>&1
-	
+	sleep 5
   fi
 
   if [ -e /etc/apt/sources.list.d ]; then
