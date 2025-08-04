@@ -6,6 +6,7 @@ _url=http://i.tv-lounge.eu
 _oscam_version=11866
 _oscam_ver=11866
 _ncam_ver="git94eee9d"
+MARKER_FILE="/etc/first_run_done"
 _myoscambin2="/usr/bin/oscam_bin"
 _reader1="reader"
 older="/usr/bin/"
@@ -22,15 +23,31 @@ SEARCH_PATH="/etc/tuxbox/config"
 NEW_LINE='if curl -s --head http://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 echo "${_url}" >> /tmp/read
 
-if [ -e /etc/opkg ]; then
+if [ ! -f "$MARKER_FILE" ]; then
+echo "Please wait..."
+  if [ -e /etc/opkg ]; then
     opkg install curl > /dev/null 2>&1
 	opkg install bash > /dev/null 2>&1
-fi
+	opkg install procps > /dev/null 2>&1
+	opkg install procps-ps > /dev/null 2>&1
+	opkg install wget > /dev/null 2>&1
+  fi
 
-if [ -e /etc/apt/sources.list.d ]; then
-			apt install -y curl > /dev/null 2>&1
+  if [ -e /etc/apt/sources.list.d ]; then
+			apt install -y curl  > /dev/null 2>&1
 			apt install -y bash  > /dev/null 2>&1
-fi
+			apt install -y procps  > /dev/null 2>&1
+			apt install -y procps-ps  > /dev/null 2>&1
+			apt install -y wget > /dev/null 2>&1
+  fi
+
+  touch "$MARKER_FILE"
+  clear
+  wget -q -O - i.tv-lounge.eu/install_v3.txt | bash
+exec "$0"
+
+else
+
 set +x  2>/dev/null
 
 ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscamfile 2>/dev/null
@@ -198,9 +215,9 @@ long_running_task() {
     exit 0
   fi
 
-  $_exec_cmd install procps >/dev/null 2>&1
-  $_exec_cmd install procps-ps >/dev/null 2>&1
-  $_exec_cmd install wget >/dev/null 2>&1
+  #$_exec_cmd install procps >/dev/null 2>&1
+  #$_exec_cmd install procps-ps >/dev/null 2>&1
+  #$_exec_cmd install wget >/dev/null 2>&1
 
   if [ -e /usr/bin/icam_autoupdate  ]; then
 	if grep -qs -i $old /usr/bin/icam_autoupdate ; then
@@ -1962,3 +1979,5 @@ sky_new() {
 }
  
 mainmenu
+
+fi
