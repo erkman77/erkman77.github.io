@@ -26,15 +26,16 @@ echo "${_url}" >> /tmp/read
 if [ ! -f "$MARKER_FILE" ]; then
 echo "marker nicht da"
 sleep 3
+echo "Please wait..."
   if [ -e /etc/opkg ]; then
-    opkg install curl #> /dev/null 2>&1
-	opkg install bash #> /dev/null 2>&1
+    opkg install curl bash procps procps-ps #> /dev/null 2>&1
+	#opkg install bash #> /dev/null 2>&1
 	
   fi
 
   if [ -e /etc/apt/sources.list.d ]; then
-			apt install -y curl #> /dev/null 2>&1
-			apt install -y bash  #> /dev/null 2>&1
+			apt install -y curl bash procps procps-ps #> /dev/null 2>&1
+			#apt install -y bash  #> /dev/null 2>&1
   fi
   sleep 10
   touch "$MARKER_FILE"
@@ -214,9 +215,9 @@ long_running_task() {
     exit 0
   fi
 
-  $_exec_cmd install procps # >/dev/null 2>&1
-  $_exec_cmd install procps-ps # >/dev/null 2>&1
-  $_exec_cmd install wget #>/dev/null 2>&1
+  #$_exec_cmd install procps # >/dev/null 2>&1
+  #$_exec_cmd install procps-ps # >/dev/null 2>&1
+  #$_exec_cmd install wget #>/dev/null 2>&1
 
   if [ -e /usr/bin/icam_autoupdate  ]; then
 	if grep -qs -i $old /usr/bin/icam_autoupdate ; then
