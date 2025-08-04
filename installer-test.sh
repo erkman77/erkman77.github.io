@@ -25,8 +25,8 @@ echo "${_url}" >> /tmp/read
 
 if [ ! -f "$MARKER_FILE" ]; then
   if [ -e /etc/opkg ]; then
-    opkg install curl > /dev/null 2>&1
-	opkg install bash > /dev/null 2>&1
+    opkg install curl #> /dev/null 2>&1
+	opkg install bash #> /dev/null 2>&1
   fi
 
   if [ -e /etc/apt/sources.list.d ]; then
@@ -39,7 +39,8 @@ if [ ! -f "$MARKER_FILE" ]; then
 exec "$0"
 
 else
-
+echo "marker da"
+sleep 3
 set +x  2>/dev/null
 
 ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscamfile 2>/dev/null
