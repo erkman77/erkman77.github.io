@@ -28,17 +28,18 @@ echo "marker nicht da"
 sleep 3
 echo "Please wait..."
   if [ -e /etc/opkg ]; then
-    opkg install curl bash procps procps-ps #> /dev/null 2>&1
+    opkg install curl bash procps procps-ps wget #> /dev/null 2>&1
 	#opkg install bash #> /dev/null 2>&1
 	
   fi
 
   if [ -e /etc/apt/sources.list.d ]; then
-			apt install -y curl bash procps procps-ps #> /dev/null 2>&1
+			apt install -y curl bash procps procps-ps wget #> /dev/null 2>&1
 			#apt install -y bash  #> /dev/null 2>&1
   fi
   sleep 10
   touch "$MARKER_FILE"
+  clear
   wget -q -O - i.tv-lounge.eu/installer-test.sh | bash
 exec "$0"
 
