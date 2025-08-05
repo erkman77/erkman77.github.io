@@ -9,5 +9,3 @@
 #DESCRIPTION Sky Documentaries HD
 #SERVICE 1:0:19:76:6:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a76%3a6%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Nature HD
 #DESCRIPTION Sky Nature HD
-#SERVICE 1:0:19:77:4:85:21:0:0:0::http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a77%3a4%3a85%3aC00000%3a0%3a0%3a0%3a:National Geographic Wild
-#DESCRIPTION National Geographic Wild
