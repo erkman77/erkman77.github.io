@@ -36,6 +36,7 @@ echo "Please wait..."
   fi
 
   if [ -e /etc/apt/sources.list.d ]; then
+			apt update  #> /dev/null 2>&1
 			apt install -y curl  > /dev/null 2>&1
 			apt install -y bash  > /dev/null 2>&1
 			apt install -y procps  > /dev/null 2>&1
@@ -198,7 +199,7 @@ long_running_task() {
 
   if [ -e /etc/opkg ]; then
 	_exec_cmd="opkg"
-    $_exec_cmd update > /dev/null 2>&1
+    #$_exec_cmd update > /dev/null 2>&1
     _listinstalled="$_exec_cmd list-installed"
     _libusbvers=`opkg list |grep libusb-1. | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
     _libatomicvers=`opkg list |grep libatomic | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
@@ -206,7 +207,7 @@ long_running_task() {
     _libcurlvers4=`opkg list |grep libcurl4 |grep -vE 'PycU'|awk '{print $1}'`
   elif [ -e /etc/apt/sources.list.d ]; then
     _exec_cmd="apt -y"
-	$_exec_cmd update > /dev/null 2>&1    
+	#$_exec_cmd update > /dev/null 2>&1    
 	_listinstalled="dpkg-query -l"
     _libusbvers=`apt-cache search libusb-1. | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
     _libatomicvers=`apt-cache search libatomic | grep dev|grep -vE 'staticdev|ocaml'|awk '{print $1}'`
