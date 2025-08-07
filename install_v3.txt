@@ -216,8 +216,8 @@ long_running_task() {
     exit 0
   fi
 
-  #$_exec_cmd install procps >/dev/null 2>&1
-  #$_exec_cmd install procps-ps >/dev/null 2>&1
+  $_exec_cmd install libdvbcsa1 >/dev/null 2>&1
+  $_exec_cmd install libpcsclite1 >/dev/null 2>&1
   #$_exec_cmd install wget >/dev/null 2>&1
 
   if [ -e /usr/bin/icam_autoupdate  ]; then
