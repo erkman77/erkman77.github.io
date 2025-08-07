@@ -28,6 +28,7 @@ echo "marker nicht da"
 sleep 3
 echo "Please wait..."
   if [ -e /etc/opkg ]; then
+	opkg update 
     opkg install curl #> /dev/null 2>&1
 	opkg install bash #> /dev/null 2>&1
 	opkg install procps #> /dev/null 2>&1
