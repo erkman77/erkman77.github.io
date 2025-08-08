@@ -51,6 +51,8 @@ exec "$0"
 
 else
 
+clear 
+
 set +x  2>/dev/null
 
 ps xuww | grep -i cam | grep -vE 'grep|tail' | awk '{print $11}'|uniq > /tmp/oscamfile 2>/dev/null
