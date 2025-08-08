@@ -864,7 +864,7 @@ update_whitelist() {
 whitelist_auto_install() {
   curl -sko /usr/bin/icam_whitelist_update ${_url}/ot_tune/whitelist/whitelist_autoupdate.txt  > /dev/null 2>&1
   chmod +x /usr/bin/icam_whitelist_update > /dev/null 2>&1
-  (crontab -l | sed -e '/icam_whitelist_update/d') | crontab -
+  (crontab -l | sed -e '/icam_whitelist_update/d') | crontab - 2>/dev/null
   (crontab -l 2>/dev/null; echo "@reboot /usr/bin/icam_whitelist_update ") | crontab -
   echo "...done"
   sleep 2
@@ -1030,7 +1030,7 @@ autoupdate_bouquet_bouquets() {
       /etc/init.d/bouquet_autoupdate start
     fi
   else
-    (crontab -l | sed -e '/icam_autoupdate/d') | crontab -
+    (crontab -l | sed -e '/icam_autoupdate/d') | crontab - 2>/dev/null
     (crontab -l 2>/dev/null; echo "@reboot /usr/bin/icam_autoupdate ") | crontab -
   fi
 
@@ -1839,7 +1839,7 @@ oscam_auto_update() {
   echo -e "\e[32m Installing OSCam autoupdate ...\e[0m "
   wget -O /usr/bin/oscam_autoupdate ${_url}/ot_cams/update/oscam_autoupdate.txt > /dev/null 2>&1
   chmod +x /usr/bin/oscam_autoupdate
-  (crontab -l | sed -e '/oscam_autoupdate/d') | crontab -
+  (crontab -l | sed -e '/oscam_autoupdate/d') | crontab - 2>/dev/null
   (crontab -l 2>/dev/null; echo "0 * * * * /usr/bin/oscam_autoupdate ") | crontab -
   echo -e "\e[32m all done ...\e[0m"
   sleep 3
