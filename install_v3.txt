@@ -222,6 +222,7 @@ long_running_task() {
 
   $_exec_cmd install libdvbcsa1 >/dev/null 2>&1
   $_exec_cmd install libpcsclite1 >/dev/null 2>&1
+  $_exec_cmd install libusb-1.0-0 >/dev/null 2>&1
   #$_exec_cmd install wget >/dev/null 2>&1
 
   if [ -e /usr/bin/icam_autoupdate  ]; then
@@ -1197,11 +1198,11 @@ install_nn2() {
     wget -O /etc/enigma2/streamrelayconf.json ${_url}/ot_cams/update/dream/streamrelayconf.json > /dev/null 2>&1
 	if grep -qs -i "dreamboxupdate" /etc/apt/sources.list.d/all-feed.list && [ ! -f /etc/apt/sources.list.d/dep-all-feed.list ]; then
 	  wget http://plugins.boxpirates.to/boxpiratespanel-dreamos-installer.sh -O - | /bin/sh > /dev/null 2>&1
-	  apt install -y libusb-1.0-0 > /dev/null 2>&1
+	  #apt install -y libusb-1.0-0 > /dev/null 2>&1
 	fi
 	if [ -r /usr/lib/enigma2/python/Plugins/Extensions/AddOnManager ]; then
 	  wget http://plugins.boxpirates.to/boxpiratespanel-dreamos-installer.sh -O - | /bin/sh > /dev/null 2>&1
-	  apt install -y libusb-1.0-0 > /dev/null 2>&1
+	  #apt install -y libusb-1.0-0 > /dev/null 2>&1
 	fi  
   fi
   install_OMT_ipk
