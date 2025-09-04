@@ -5,7 +5,7 @@ _version="4.5"
 _url=http://i.tv-lounge.eu
 _oscam_version=11866
 _oscam_ver=11866
-_ncam_ver="gitb25a5ac"
+_ncam_ver="git59c130b"
 MARKER_FILE="/etc/first_run_done"
 _myoscambin2="/usr/bin/oscam_bin"
 _reader1="reader"
@@ -1290,7 +1290,7 @@ mainmenu() {
   echo -e " 1) Install Icam Oscam stable         // fresh box ... or sledgehammer mode ;) OSCam v11866"
   echo -e " 2) Update Oscam Bin only             // updates any running oscam to ICam Oscam"
   echo -e " 3) Bouquets for Astra or Hotbird     // install full Bouquets for Astra or Hotbird"
-  echo -e "                                         Stand 03.08.2025 settings"
+  echo -e "                                         Stand 31.08.2025 settings"
   echo -e " 4) Update ICam Bouquets only         // rewrite ICam Bouquets only"
   echo -e " 5) Update ICAM Picons only           // install ICam picons only"
   echo -e " 6) Backup & Restore                  // backup or restore oscam"
@@ -1306,7 +1306,7 @@ mainmenu() {
   echo -e "                                         for problems with video playback"
   echo -e "0) Exit"
   echo -e ""
-  echo -e "\e[31ms) Fix Sky Changes 03.08.2025         // fixes channellist, streamrelay, icam, picons" 
+  echo -e "\e[31ms) Fix Sky Changes 31.08.2025         // fixes channellist, streamrelay, icam, picons" 
   echo -e "                                         for (N/A) in chanlist, switch short to chan"
   echo -e "                                         or make a chan search\e[0m"
   echo -e ""  
