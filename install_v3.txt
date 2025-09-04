@@ -843,9 +843,9 @@ get_oscam_configs() {
 }
 
 update_whitelist() {
-  curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
-  curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
-  curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
+  #curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
+  #curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
+  #curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
   curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
   if [ -e /etc/apt/sources.list.d  ]; then
     if ! apt list --installed | grep enigma2-plugin-extensions-streamrelay > /dev/null 2>&1; then
