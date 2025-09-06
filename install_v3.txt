@@ -1306,7 +1306,7 @@ mainmenu() {
   echo -e "                                         for problems with video playback"
   echo -e "0) Exit"
   echo -e ""
-  echo -e "\e[31ms) Fix Sky Changes 31.08.2025         // fixes channellist, streamrelay, icam, picons" 
+  echo -e "\e[31ms) Fix Sky Changes 04.08.2025         // fixes channellist, streamrelay, icam, picons" 
   echo -e "                                         for (N/A) in chanlist, switch short to chan"
   echo -e "                                         or make a chan search\e[0m"
   echo -e ""  
