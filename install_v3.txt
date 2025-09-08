@@ -780,6 +780,7 @@ set_enigma2_settings() {
   curl --noproxy '*' --data value="true" "http://127.0.0.1/api/saveconfig?key=config.streaming.descramble" > /dev/null 2>&1
   curl --noproxy '*' --data value="false" "http://127.0.0.1/api/saveconfig?key=config.streaming.descramble_client" > /dev/null 2>&1
   curl --noproxy '*' --data value="expert" "http://127.0.0.1/api/saveconfig?key=config.usage.setup_level" > /dev/null 2>&1
+  curl --noproxy '*' --data value="500" "http://127.0.0.1/api/saveconfig?key=config.misc.softcam_streamrelay_delay" > /dev/null 2>&1
   echo -e "\e[32m all done ...\e[0m"
   curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
   if [ -e /etc/apt/sources.list.d ]; then
