@@ -882,12 +882,12 @@ whitelist_auto_remove() {
 }
 
 install_whitelist() {
-  rm /etc/enigma2/*.tv > /dev/null 2>&1
-  rm /etc/enigma2/*.radio > /dev/null 2>&1
-  rm /etc/enigma2/*.del > /dev/null 2>&1
-  curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
-  curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
-  curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
+  #rm /etc/enigma2/*.tv > /dev/null 2>&1
+  #rm /etc/enigma2/*.radio > /dev/null 2>&1
+  #rm /etc/enigma2/*.del > /dev/null 2>&1
+  #curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
+  #curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
+  #curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
   curl -sk ${_url}/ot_tune/whitelist/astra_wl.txt | bash
   curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
   SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
