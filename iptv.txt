@@ -1,0 +1,17 @@
+#!/bin/sh
+_url=http://i.tv-lounge.eu
+
+cat /etc/enigma2/bouquets.tv | grep -v 'userbouquet.ciefp_iptv*' > /tmp/bouquets.tv
+ echo -e  "\e[33m  Install some IPTV channels...\e[0m"
+exec 9>> /tmp/bouquets.tv
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefp_iptv.tv" ORDER BY bouquet' >&9
+cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.ciefp_iptv.tv ${_url}/ot_tune/iptv/userbouquet.ciefp_iptv.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefpsettings_iptv_exyu2.tv ${_url}/ot_tune/iptv/userbouquet.ciefpsettings_iptv_exyu2.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefpsettings_iptv_mix.tv ${_url}/ot_tune/iptv/userbouquet.ciefpsettings_iptv_mix.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefpsettings_iptv_webcam.tv ${_url}/ot_tune/iptv/userbouquet.ciefpsettings_iptv_webcam.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefpsettings_iptv_exyu.tv ${_url}/ot_tune/iptv/userbouquet.ciefpsettings_iptv_exyu.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefpsettings_iptv_news_music.tv ${_url}/ot_tune/iptv/userbouquet.ciefpsettings_iptv_news_music.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefpsettings_iptv_mix2.tv ${_url}/ot_tune/iptv/userbouquet.ciefpsettings_iptv_mix2.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefpsettings_iptv_sport.tv ${_url}/ot_tune/iptv/userbouquet.ciefpsettings_iptv_sport.tv > /dev/null 2>&1
+rm /tmp/bouquets.tv > /dev/null 2>&1

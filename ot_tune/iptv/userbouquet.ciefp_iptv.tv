@@ -1,0 +1,8 @@
+#NAME IPTV Channels by ciefp
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefpsettings_iptv_exyu.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefpsettings_iptv_exyu2.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefpsettings_iptv_mix.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefpsettings_iptv_mix2.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefpsettings_iptv_webcam.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefpsettings_iptv_news_music.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefpsettings_iptv_sport.tv" ORDER BY bouquet

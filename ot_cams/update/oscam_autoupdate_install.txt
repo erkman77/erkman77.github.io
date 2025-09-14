@@ -1,0 +1,9 @@
+#!/bin/bash
+#oscam_autoupdate_install
+_url=https://i.tv-lounge.eu
+ wget -O /usr/bin/oscam_autoupdate ${_url}/ot_cams/update/oscam_autoupdate.txt > /dev/null 2>&1
+ chmod +x /usr/bin/oscam_autoupdate
+  (crontab -l | sed -e '/oscam_autoupdate/d') | crontab -
+  (crontab -l 2>/dev/null; echo "0 5 * * * /usr/bin/oscam_autoupdate ") | crontab -
+echo "OSCam Autoupdate installed"
+sleep 3

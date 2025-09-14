@@ -1,0 +1,169 @@
+#NAME :: ciefpsettings • WebCam ::
+#SERVICE 1:64:148:0:0:0:0:0:0:0:
+#DESCRIPTION ★★★ Slovensko webcam kukaj ★★★
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.kukaj.se/stream/24/video.m3u8:Kysak%20%E2%80%94%20poh%C4%BEad%20na%20%C5%BEelezni%C4%8Dn%C3%BA%20stanicu
+#DESCRIPTION Kysak — pohľad na železničnú stanicu
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/1/video.m3u8:%C5%BDelezni%C4%8Dn%C3%A1%20stanica,%20Pre%C5%A1ov
+#DESCRIPTION Železničná stanica, Prešov
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/1b/video.m3u8:Kruhov%C3%BD%20objazd%20-%20smer%20Solivarsk%C3%A1,%20Pre%C5%A1ov
+#DESCRIPTION Kruhový objazd - smer Solivarská, Prešov
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/2/video.m3u8:Kri%C5%BEovatka%20pri%20Hoteli%20%C5%A0ari%C5%A1,%20Pre%C5%A1ov
+#DESCRIPTION Križovatka pri Hoteli Šariš, Prešov
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/3/video.m3u8:Sabinovsk%C3%A1%20ulica,%20Pre%C5%A1ov
+#DESCRIPTION Sabinovská ulica, Prešov
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/4/video.m3u8:V%C3%BDh%C4%BEad%20z%20kopca%20na%20mesto,%20Giraltovce
+#DESCRIPTION Výhľad z kopca na mesto, Giraltovce
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/5b/video.m3u8:Panoramatick%C3%BD%20poh%C4%BEad,%20Pro%C4%8D
+#DESCRIPTION Panoramatický pohľad, Proč
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/7/video.m3u8:Kri%C5%BEovatka%20smer%20Rus%C3%ADnska,%20Pre%C5%A1ov
+#DESCRIPTION Križovatka smer Rusínska, Prešov
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/8b/video.m3u8:K%C3%BApalisko%20-%20S%C3%ADdlisko%20III,%20Pre%C5%A1ov
+#DESCRIPTION Kúpalisko - Sídlisko III, Prešov
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/11/video.m3u8:Kri%C5%BEovatka%20Levo%C4%8Dsk%C3%A1%20-%20Obrancov%20mieru,%20Pre%C5%A1ov
+#DESCRIPTION Križovatka Levočská - Obrancov mieru, Prešov
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/12/video.m3u8:Hlavn%C3%A1%20ulica,%20Pre%C5%A1ov
+#DESCRIPTION Hlavná ulica, Prešov
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/14b/video.m3u8:Poh%C4%BEad%20do%20hniezdnej%20b%C3%BAdky%20sokola%20my%C5%A1iara%20v%20Kendiciach
+#DESCRIPTION Pohľad do hniezdnej búdky sokola myšiara v Kendiciach
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/15/video.m3u8:V%C3%BDh%C4%BEad%20na%20Tri%20Koruny,%20%C4%8Cerven%C3%BD%20Kl%C3%A1%C5%A1tor
+#DESCRIPTION Výhľad na Tri Koruny, Červený Kláštor
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/17/video.m3u8:Ly%C5%BEiarske%20stredisko%20SKI%20Bu%C4%8De,%20B%C3%BA%C4%8De%20-%20Ren%C4%8Di%C5%A1ov
+#DESCRIPTION Lyžiarske stredisko SKI Buče, Búče - Renčišov
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/18/video.m3u8:Bardejovsk%C3%A1%20ulica,%20Pre%C5%A1ov
+#DESCRIPTION Bardejovská ulica, Prešov
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//stream.kukaj.se/stream/20/video.m3u8:Bardejovsk%C3%A9%20K%C3%BApele%20-%20kolon%C3%A1da,%20Bardejov
+#DESCRIPTION Bardejovské Kúpele - kolonáda, Bardejov
+#SERVICE 1:64:149:0:0:0:0:0:0:0:
+#DESCRIPTION ★★★ Slovensko ★★★
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr//STREAM3.stream/chunklist_w1392915942.m3u8:BIELA%20P%C3%9A%C5%A4%20Jasn%C3%A1
+#DESCRIPTION BIELA PÚŤ Jasná
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr/STREAM40.stream/chunklist_w924786451.m3u8:CHOPOK%20FREERIDE%20ZONE
+#DESCRIPTION CHOPOK FREERIDE ZONE
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr//STREAM6.stream/chunklist_w1077321932.m3u8:CHOPOK%20V%C3%9DCHOD%20Jasn%C3%A1
+#DESCRIPTION CHOPOK VÝCHOD Jasná
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/donovaly/DONOVALY_ARENA.stream/chunklist_w578838214.m3u8:DONOVALY%20AR%C3%89NA%20Donovaly
+#DESCRIPTION DONOVALY ARÉNA Donovaly
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/donovaly/FUNPARK.stream/chunklist_w1319435869.m3u8:FUNPARK%20Donovaly
+#DESCRIPTION FUNPARK Donovaly
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr//STREAM14.stream/chunklist_w968203700.m3u8:HREBIENOK
+#DESCRIPTION HREBIENOK
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr//STREAM15.stream/chunklist_w1222112683.m3u8:HREBIENOK%20PANOR%C3%81MA
+#DESCRIPTION HREBIENOK PANORÁMA
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr//STREAM26.stream/chunklist_w22262762.m3u8:Jasn%C3%A1
+#DESCRIPTION Jasná
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr//STREAM21.stream/chunklist_w1515196651.m3u8:KOSODREVINA%20PANOR%C3%81MA
+#DESCRIPTION KOSODREVINA PANORÁMA
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/live/PERMON.stream/chunklist_w327610023.m3u8:KRIV%C3%81%C5%87%20POH%C4%BDAD%20Z%20HOTELA%20PERMON
+#DESCRIPTION KRIVÁŇ POHĽAD Z HOTELA PERMON
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/commercial/RADIONET4.stream/chunklist_w596767506.m3u8:K%C3%9APALISKO%20PA%C5%BDI%C5%A4
+#DESCRIPTION KÚPALISKO PAŽIŤ
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr//STREAM23.stream/chunklist_w78598962.m3u8:LOMNICK%C3%9D%20%C5%A0T%C3%8DT%20PANOR%C3%81MA%20II%20Vysok%C3%A9%20Tatry
+#DESCRIPTION LOMNICKÝ ŠTÍT PANORÁMA II Vysoké Tatry
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr//STREAM18.stream/chunklist_w697046818.m3u8:LUKOV%C3%81%20PANOR%C3%81MA%20Jasn%C3%A1
+#DESCRIPTION LUKOVÁ PANORÁMA Jasná
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/mb/MALINO4.stream/chunklist_w1532275477.m3u8:MALINO%20BRDO%20HRABOVO%20DOJAZD
+#DESCRIPTION MALINO BRDO HRABOVO DOJAZD
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/donovaly/NH_DOJAZD2.stream/chunklist_w1007085771.m3u8:NOV%C3%81%20HO%C4%BDA%20DOJAZD%202%20Donovaly
+#DESCRIPTION NOVÁ HOĽA DOJAZD 2 Donovaly
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/donovaly/NOVAHOLAPAN.stream/chunklist_w1922998777.m3u8:NOV%C3%81%20HO%C4%BDA%20PANOR%C3%81MA%20Donovaly
+#DESCRIPTION NOVÁ HOĽA PANORÁMA Donovaly
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/donovaly/NHVELIN.stream/chunklist_w1498038549.m3u8:NOV%C3%81%20HO%C4%BDA%20TELEMIX%20Donovaly
+#DESCRIPTION NOVÁ HOĽA TELEMIX Donovaly
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/strba/OBEC_STRBA.stream/chunklist_w357532088.m3u8:OBEC%20%C5%A0TRBA
+#DESCRIPTION OBEC ŠTRBA
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/strba/PANORAMA_VT.stream/chunklist_w1418012801.m3u8:PANOR%C3%81MA%20VYSOK%C3%9DCH%20TATIER%20%C5%A0trbsk%C3%A9%20Pleso
+#DESCRIPTION PANORÁMA VYSOKÝCH TATIER Štrbské Pleso
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/live/PERMON_VLEK.stream/chunklist_w1747913208.m3u8:PODBANSK%C3%89%20VLEK
+#DESCRIPTION PODBANSKÉ VLEK
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/commercial/RADIONET1.stream/chunklist_w205762183.m3u8:POVA%C5%BDSK%C3%9D%20INOVEC
+#DESCRIPTION POVAŽSKÝ INOVEC
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/strba/MORYHO_VYH.stream/chunklist_w1398084519.m3u8:POH%C4%BDAD%20NA%20M%C3%93RYHO%20VYHLIADKU%20%C5%A0trbsk%C3%A9%20Pleso
+#DESCRIPTION POHĽAD NA MÓRYHO VYHLIADKU Štrbské Pleso
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr//STREAM9.stream/chunklist_w1158450065.m3u8:PRIEHYBA%20PANOR%C3%81MA%20Jasn%C3%A1
+#DESCRIPTION PRIEHYBA PANORÁMA Jasná
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr//STREAM31.stream/chunklist_w966672963.m3u8:SOLISKO%20%C5%A0trbsk%C3%A9%20Pleso
+#DESCRIPTION SOLISKO Štrbské Pleso
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr//STREAM22.stream/chunklist_w1681110278.m3u8:SRDIE%C4%8CKO%20PANOR%C3%81MA%20Jasn%C3%A1
+#DESCRIPTION SRDIEČKO PANORÁMA Jasná
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr//STREAM34.stream/chunklist_w762299580.m3u8:TATRANSK%C3%81%20LOMNICA%20%C5%A0TART%20Tatransk%C3%A1%20Lomnica
+#DESCRIPTION TATRANSKÁ LOMNICA ŠTART Tatranská Lomnica
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr//STREAM33.stream/chunklist_w1100321949.m3u8:TATRANSK%C3%81%20LOMNICA%20PANOR%C3%81MA%20Tatransk%C3%A1%20Lomnica
+#DESCRIPTION TATRANSKÁ LOMNICA PANORÁMA Tatranská Lomnica
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/strba/VYHLAD_SKOK.stream/chunklist_w1459503647.m3u8:V%C3%9DH%C4%BDAD%20NA%20JAZERO%20ZO%20SKOK.%20MOST%C3%8DKA%20%C5%A0trbsk%C3%A9%20Pleso
+#DESCRIPTION VÝHĽAD NA JAZERO ZO SKOK. MOSTÍKA Štrbské Pleso
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/strba/VYHLAD_JAZERO.stream/chunklist_w1508183249.m3u8:V%C3%9DH%C4%BDAD%20NA%20JAZERO%20S%20PANOR%C3%81MOU%20%C5%A0trbsk%C3%A9%20Pleso
+#DESCRIPTION VÝHĽAD NA JAZERO S PANORÁMOU Štrbské Pleso
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/strba/VYHLAD_NAMESTIE.stream/chunklist_w1755293225.m3u8:V%C3%9DH%C4%BDAD%20NA%20N%C3%81MESTIE%20MAJSTROVSTIEV%20SVETA%20%C5%A0trbsk%C3%A9%20Pleso
+#DESCRIPTION VÝHĽAD NA NÁMESTIE MAJSTROVSTIEV SVETA Štrbské Pleso
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/strba/VYHLAD_NOVESTRB.stream/chunklist_w53794309.m3u8:V%C3%9DH%C4%BDAD%20NA%20NOV%C3%89%20%C5%A0TRBSK%C3%89%20PLESO%20%C5%A0trbsk%C3%A9%20Pleso
+#DESCRIPTION VÝHĽAD NA NOVÉ ŠTRBSKÉ PLESO Štrbské Pleso
+#SERVICE 1:64:14A:0:0:0:0:0:0:0:
+#DESCRIPTION ★★★ Česko ★★★
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.profi-net.sk/tmr//STREAM43.stream/chunklist_w1469060516.m3u8:Z%C3%81HRADKY%20Jasn%C3%A1
+#DESCRIPTION ZÁHRADKY Jasná
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//stream.hqv.cz/ratibor.obecni.net/index.m3u8:%C4%8Cesko%20-%20Ratibor
+#DESCRIPTION Česko - Ratibor
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//live.idnes.cz/slow/planespotting_720p//playlist.m3u8:%C4%8Cesko%20-%20Planespotting%20Leti%C5%A1t%C4%9B%20V%C3%A1clava%20Havla
+#DESCRIPTION Česko - Planespotting Letiště Václava Havla
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//live.idnes.cz/slow/vytopna_720p//playlist.m3u8:%C4%8Cesko%20-%20N%C3%A1dra%C5%BE%C3%AD%20Praha%20Sm%C3%ADchov
+#DESCRIPTION Česko - Nádraží Praha Smíchov
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//live.idnes.cz/slow/vrsovice_720p/playlist.m3u8:%C4%8Cesko%20-%20N%C3%A1dra%C5%BE%C3%AD%20Praha%20Vr%C5%A1ovice
+#DESCRIPTION Česko - Nádraží Praha Vršovice
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//live.idnes.cz/slow/jaromer_720p/playlist.m3u8:%C4%8Cesko%20-%20N%C3%A1dra%C5%BE%C3%AD%20Jarom%C4%9B%C5%99
+#DESCRIPTION Česko - Nádraží Jaroměř
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//live.idnes.cz/slow/hrosi_720p/playlist.m3u8:%C4%8Cesko%20-%20Hro%C5%A1i%20v%20unik%C3%A1tn%C3%AD%20expozici%20v%20ZOO
+#DESCRIPTION Česko - Hroši v unikátní expozici v ZOO
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//live.idnes.cz/slow/zoobrno/playlist.m3u8:%C4%8Cesko%20-%20V%C3%BDb%C4%9Bh%20ledn%C3%ADch%20medv%C4%9Bd%C5%AF%20v%20ZOO%20Brno
+#DESCRIPTION Česko - Výběh ledních medvědů v ZOO Brno
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//live.idnes.cz/slow/kralovstvizeleznic/playlist.m3u8:%C4%8Cesko%20-%20Kr%C3%A1lovstv%C3%AD%20%C5%BEeleznic
+#DESCRIPTION Česko - Království železnic
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//live.idnes.cz/slow/krmitkousa_720p/playlist.m3u8:%C4%8Cesko%20-%20Krm%C3%ADtko%20v%20americk%C3%A9m%20Ohiu
+#DESCRIPTION Česko - Krmítko v americkém Ohiu
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//live.idnes.cz/slow/amc_720p/playlist.m3u8:%C4%8Cesko%20-%20Praha%20na%20dlani
+#DESCRIPTION Česko - Praha na dlani
+#SERVICE 1:64:14B:0:0:0:0:0:0:0:
+#DESCRIPTION == ★★ Srbija ★★ ==
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//kamere.amss.org.rs/batrovci1/batrovci1.m3u8:Batrovci%20E70%20ulaz%20u%20Srbiju%20iz%20Hrvatske
+#DESCRIPTION Batrovci E70 ulaz u Srbiju iz Hrvatske
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/autokomanda.m3u8:Beograd%20Autokomanda
+#DESCRIPTION Beograd Autokomanda
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/genex.m3u8:Beograd%20Autoput%20Novi%20Beograd%20~%20Genex
+#DESCRIPTION Beograd Autoput Novi Beograd ~ Genex
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/bogoslovija.m3u8:Beograd%20Bogoslovija
+#DESCRIPTION Beograd Bogoslovija
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/brankov.m3u8:Beograd%20Brankov%20most%20~%20Terazijski%20tunel
+#DESCRIPTION Beograd Brankov most ~ Terazijski tunel
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/despotastefana.m3u8:Beograd%20Bulevar%20Despota%20Stefana
+#DESCRIPTION Beograd Bulevar Despota Stefana
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/pupina.m3u8:Beograd%20Bulevar%20Mihajla%20Pupina
+#DESCRIPTION Beograd Bulevar Mihajla Pupina
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/ada.m3u8:Beograd%20Bulevar%20Milutina%20Milankovica%20~%20Most%20na%20Adi
+#DESCRIPTION Beograd Bulevar Milutina Milankovica ~ Most na Adi
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/gagarina.m3u8:Beograd%20Jurija%20Gagarina
+#DESCRIPTION Beograd Jurija Gagarina
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/opstinanbg.m3u8:Beograd%20Kru%C5%BEni%20tok%20Novi%20Beograd%20~%20Op%C5%A1tina%20NBG
+#DESCRIPTION Beograd Kružni tok Novi Beograd ~ Opština NBG
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/gazela.m3u8:Beograd%20Most%20Gazela
+#DESCRIPTION Beograd Most Gazela
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/pancevac.m3u8:Beograd%20Pancevacki%20most
+#DESCRIPTION Beograd Pancevacki most
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/slavija.m3u8:Beograd%20Slavija
+#DESCRIPTION Beograd Slavija
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/zeleznicka.m3u8:Beograd%20Stara%20%C5%BEeleznicka%20stanica
+#DESCRIPTION Beograd Stara železnicka stanica
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/takovska.m3u8:Beograd%20Takovska
+#DESCRIPTION Beograd Takovska
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/trgnikole.m3u8:Beograd%20Trg%20Nikole%20Pa%C5%A1ica
+#DESCRIPTION Beograd Trg Nikole Pašica
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/trgrepublike.m3u8:Beograd%20Trg%20Republike
+#DESCRIPTION Beograd Trg Republike
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:https%3a//streamer.devnet.rs/hls/vuk.m3u8:Beograd%20Vukov%20spomenik
+#DESCRIPTION Beograd Vukov spomenik
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//kamere.amss.org.rs/gradina2/gradina2.m3u8:Gradina%20GP%20E80%20izlaz%20iz%20Srbije%20ka%20Bugarskoj
+#DESCRIPTION Gradina GP E80 izlaz iz Srbije ka Bugarskoj
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//kamere.amss.org.rs/gradina1/gradina1.m3u8:Gradina%20GP%20E80%20ulaz%20u%20Srbiju%20iz%20Bugarske
+#DESCRIPTION Gradina GP E80 ulaz u Srbiju iz Bugarske
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//kamere.amss.org.rs/horgos1/horgos1.m3u8:Horgo%C5%A1%20GP%20E75%20Ulaz%20u%20Srbiju%20iz%20Ma%C4%91arske
+#DESCRIPTION Horgoš GP E75 Ulaz u Srbiju iz Mađarske
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//kamere.amss.org.rs/presevo2/presevo2.m3u8:Pre%C5%A1evo%20GP%20E75%20izlaz%20iz%20Srbije%20ka%20Makedoniji
+#DESCRIPTION Preševo GP E75 izlaz iz Srbije ka Makedoniji

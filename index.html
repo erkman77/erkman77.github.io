@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>In memorys</title>
+  <link rel="stylesheet" href="/assets/main.css">
+  
+<script src="/assets/clipboard.min.js"></script>
+  <link rel="shortcut icon" type="image/png" href="/favicon.png">
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+	
+        .input-group {
+            display: flex;
+            align-items: center;
+			justify-content: center;
+        }
+        .input-group-button {
+            margin-left: 5px;
+        }
+        .btn {
+            background-color: grey;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+			font-family: Arial, Helvetica, sans-serif;
+        }
+        .btn:hover {
+            background-color: lightgrey;
+        }
+      
+        #foo {
+            background-color: lightgrey; 
+            border: 1px solid #ccc; 
+            padding: 5px; 
+            border-radius: 4px; 
+			font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+
+<p><br></p>
+<p><br></p>
+ <script>
+      var clipboard = new ClipboardJS('.btn');
+
+
+    </script>
+<div style="text-align: center; "><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 24px;'><font color="grey">We all know who created this...</span></strong></div>
+<p style="text-align: center;"><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 24px;'><font color="grey">greetings goes out...</span></strong></p>
+<p style="text-align: center;"><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 16px;'><font color="grey">but it goes on</span></strong></p>
+<p style="text-align: center;"><strong><span style='font-family: "Arial Black", Gadget, sans-serif; font-size: 16px;'><font color="grey">still available at</span></strong></p>
+<br>
+<body style="background-color:#1e1e1e;">
+ 
+</div>
+
+<div class="input-group">
+    <input id="foo" type="text" value="wget -q -O - i.tv-lounge.eu/install_v3.txt | bash" readonly size="36">
+    <span class="input-group-button">
+        <button class="btn" type="button" onclick="copyToClipboard()">
+            <img class="clippy" src="/assets/clippy.svg" width="13" alt="Copy to clipboard">
+        </button>
+    </span>
+</div>
+
+<script>
+function copyToClipboard() {
+    const input = document.getElementById('foo');
+
+    
+    input.select();
+    input.setSelectionRange(0, 99999); 
+
+
+    document.execCommand('copy');
+
+    
+    alert('Copied to Clipboard!');
+}
+</script>
+
+</body>
+</html>
+
+
+
+

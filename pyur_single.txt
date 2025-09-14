@@ -1,0 +1,9 @@
+#!/bin/sh
+_url=http://i.tv-lounge.eu
+
+cat /etc/enigma2/bouquets.tv | grep -v 'userbouquet.*_pyur' > /tmp/bouquets.tv
+exec 9>> /tmp/bouquets.tv
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skyicam_single_pyur.tv" ORDER BY bouquet' >&9
+cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.skyicam_single_pyur.tv ${_url}/ot_tune/pyur/single/userbouquet.skyicam_single_pyur.tv > /dev/null 2>&1
+rm /tmp/bouquets.tv > /dev/null 2>&1

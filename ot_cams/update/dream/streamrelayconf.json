@@ -1,0 +1,10 @@
+{
+  "eventupdateonshow": true, 
+  "switchrecording": true, 
+  "recordstate": true, 
+  "icamref": true, 
+  "noresourcescolor": 3, 
+  "requestfilter": 3, 
+  "stopstreamtostream": 300, 
+  "stopstreamtotv": 300
+}

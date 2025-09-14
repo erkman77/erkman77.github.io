@@ -1,0 +1,10 @@
+#!/bin/bash
+# whitelist autoupdate by OSCam-Installer
+
+  _url=https://i.tv-lounge.eu
+  curl -sko /tmp/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
+  if [ -s /tmp/whitelist_streamrelay]; then 
+  cp /tmp/whitelist_streamrelay /etc/enigma2/whitelist_streamrelay  > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+  curl -s 'http://127.0.0.1/web/servicelistreload?mode=2' > /dev/null 2>&1
+  fi

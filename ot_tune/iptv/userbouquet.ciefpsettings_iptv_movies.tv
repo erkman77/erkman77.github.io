@@ -1,0 +1,1329 @@
+#NAME :: ciefpsettings • IPTV Movies ::
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/66407:24/7%20FRIENDS
+#DESCRIPTION 24/7 FRIENDS
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/66302:24/7%20RICK%20AND%20MORTY
+#DESCRIPTION 24/7 RICK AND MORTY
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/79572:24/7%20DRAGON%20BALL%20Z
+#DESCRIPTION 24/7 DRAGON BALL Z
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/66269:24/7%20FULL%20HOUSE
+#DESCRIPTION 24/7 FULL HOUSE
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/66317:24/7%20FAMILY%20GUY
+#DESCRIPTION 24/7 FAMILY GUY
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/66318:Game%20Of%20Thrones
+#DESCRIPTION Game Of Thrones
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/66403:24/7%20KEEPING%20UP%20WITH%20THE%20KARDASHIANS
+#DESCRIPTION 24/7 KEEPING UP WITH THE KARDASHIANS
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/79559:24/7%20FRESH%20PRINCE%20OF%20BEL-AIR
+#DESCRIPTION 24/7 FRESH PRINCE OF BEL-AIR
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/66393:24/7%20THE%20FIRST%2048HRS
+#DESCRIPTION 24/7 THE FIRST 48HRS
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/66397:24/7%20RIDICULOUSNESS
+#DESCRIPTION 24/7 RIDICULOUSNESS
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/66344:24/7%20SAVED%20BY%20THE%20BELL
+#DESCRIPTION 24/7 SAVED BY THE BELL
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/66303:24/7%20SEINFELD
+#DESCRIPTION 24/7 SEINFELD
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/66401:South%20Park*
+#DESCRIPTION South Park*
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/66311:24/7%20PAW%20PATROL
+#DESCRIPTION 24/7 PAW PATROL
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/79567:The%20KING%20OF%20QUEENS
+#DESCRIPTION The KING OF QUEENS
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/83700:Knight%20Rider*
+#DESCRIPTION Knight Rider*
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119420:CINEBOX:%20ANIMATION
+#DESCRIPTION CINEBOX: ANIMATION
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119421:CINEBOX:%20BLOCKBUSTERS
+#DESCRIPTION CINEBOX: BLOCKBUSTERS
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119422:CINEBOX:%20CLASSIC
+#DESCRIPTION CINEBOX: CLASSIC
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119423:CINEBOX:%20COMEDY
+#DESCRIPTION CINEBOX: COMEDY
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119424:CINEBOX:%20CULT
+#DESCRIPTION CINEBOX: CULT
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119425:CINEBOX:%20FAMILY
+#DESCRIPTION CINEBOX: FAMILY
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119426:CINEBOX:%20GREATS
+#DESCRIPTION CINEBOX: GREATS
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119427:CINEBOX:%20GREATS%20TWO
+#DESCRIPTION CINEBOX: GREATS TWO
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119428:CINEBOX:%20HISTORICAL
+#DESCRIPTION CINEBOX: HISTORICAL
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119429:24/7%20Horror%20Movies
+#DESCRIPTION 24/7 Horror Movies
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119430:CINEBOX:%20MUSICAL
+#DESCRIPTION CINEBOX: MUSICAL
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119431:CINEBOX:%20MYSTERY
+#DESCRIPTION CINEBOX: MYSTERY
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119432:CINEBOX:%20PREMIERE
+#DESCRIPTION CINEBOX: PREMIERE
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119433:CINEBOX:%20ROMANCE
+#DESCRIPTION CINEBOX: ROMANCE
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119434:CINEBOX:%20SCI-FI
+#DESCRIPTION CINEBOX: SCI-FI
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119435:CINEBOX:%20WESTERN
+#DESCRIPTION CINEBOX: WESTERN
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119436:CINEBOX:%20HITS
+#DESCRIPTION CINEBOX: HITS
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119437:CINEBOX:%20THRILLER
+#DESCRIPTION CINEBOX: THRILLER
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119438:DOCUBOX:%207NEWS%20SPOTLIGHT
+#DESCRIPTION DOCUBOX: 7NEWS SPOTLIGHT
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119439:DOCUBOX:%20ALL%20DOCUMENTERY
+#DESCRIPTION DOCUBOX: ALL DOCUMENTERY
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119440:DOCUBOX:%20DISCOVERY
+#DESCRIPTION DOCUBOX: DISCOVERY
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119441:DOCUBOX:%20DW%20DOCUMENTERY
+#DESCRIPTION DOCUBOX: DW DOCUMENTERY
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119442:DOCUBOX:%20FREE%20DOCUMENTERY
+#DESCRIPTION DOCUBOX: FREE DOCUMENTERY
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119443:DOCUBOX:%20FREE%20DOCUMENTERY%20ANILAMS
+#DESCRIPTION DOCUBOX: FREE DOCUMENTERY ANILAMS
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119444:DOCUBOX:%20FRONTLINE%20PBS
+#DESCRIPTION DOCUBOX: FRONTLINE PBS
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119447:DOCUBOX:%20NAT%20GEO%20WILD
+#DESCRIPTION DOCUBOX: NAT GEO WILD
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119448:DOCUBOX:%20NETFLIX
+#DESCRIPTION DOCUBOX: NETFLIX
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119449:DOCUBOX:%20REAL%20CRIME
+#DESCRIPTION DOCUBOX: REAL CRIME
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/119451:DOCUBOX:%20REAL%20WILD
+#DESCRIPTION DOCUBOX: REAL WILD
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/120948:24/7%20THE%20GOLDEN%20GIRLS
+#DESCRIPTION 24/7 THE GOLDEN GIRLS
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/120949:24/7%20THE%20FLINTSTONES
+#DESCRIPTION 24/7 THE FLINTSTONES
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/121096:24/7%20COMEDY%20MOVIES
+#DESCRIPTION 24/7 COMEDY MOVIES
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/121115:24/7%20STAR%20TREK
+#DESCRIPTION 24/7 STAR TREK
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/125634:24/7%20FAMILY%20MATTERS
+#DESCRIPTION 24/7 FAMILY MATTERS
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/125635:24/7%20TOM%20AND%20JERRY
+#DESCRIPTION 24/7 TOM AND JERRY
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/125636:24/7%20DUCK%20TALES
+#DESCRIPTION 24/7 DUCK TALES
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/125637:24/7%20TEEN%20TITANS%20GO!
+#DESCRIPTION 24/7 TEEN TITANS GO!
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/125638:24/7%20LOONEY%20TUNES
+#DESCRIPTION 24/7 LOONEY TUNES
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/125971:24/7%20THE%20SOPRANOS
+#DESCRIPTION 24/7 THE SOPRANOS
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/125972:24/7%20SEX%20IN%20THE%20CITY
+#DESCRIPTION 24/7 SEX IN THE CITY
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/140069:24/7%20GUNSMOKE
+#DESCRIPTION 24/7 GUNSMOKE
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/178879:24/7%20Adventure%20Time
+#DESCRIPTION 24/7 Adventure Time
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/178876:24/7%20American%20Crime%20Story
+#DESCRIPTION 24/7 American Crime Story
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/178865:24/7%20Bar%20Rescue
+#DESCRIPTION 24/7 Bar Rescue
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/178860:24/7%20Biography:%20WWE%20Legends
+#DESCRIPTION 24/7 Biography: WWE Legends
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/178845:24/7%20Chuck
+#DESCRIPTION 24/7 Chuck
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215269:M4:%20Action
+#DESCRIPTION M4: Action
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215270:M4:%20Adventure
+#DESCRIPTION M4: Adventure
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215271:M4:%20Alien
+#DESCRIPTION M4: Alien
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215272:M4:%20Animation
+#DESCRIPTION M4: Animation
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215273:M4:%20Avengers
+#DESCRIPTION M4: Avengers
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215274:M4:%20Batman
+#DESCRIPTION M4: Batman
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215275:M4:%20Biography
+#DESCRIPTION M4: Biography
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215276:M4:%20Blade
+#DESCRIPTION M4: Blade
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215277:M4:%20Blade%20Runner
+#DESCRIPTION M4: Blade Runner
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215278:M4:%20Comedy
+#DESCRIPTION M4: Comedy
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215279:M4:%20Creature
+#DESCRIPTION M4: Creature
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215280:M4:%20Crime
+#DESCRIPTION M4: Crime
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215281:M4:%20Deadpool
+#DESCRIPTION M4: Deadpool
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215282:M4:%20Die%20Hard
+#DESCRIPTION M4: Die Hard
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215283:M4:%20Drama
+#DESCRIPTION M4: Drama
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215284:M4:%20Epic
+#DESCRIPTION M4: Epic
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215285:M4:%20Family
+#DESCRIPTION M4: Family
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215286:M4:%20Fantasy
+#DESCRIPTION M4: Fantasy
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215287:M4:%20Fast%20and%20the%20Furious
+#DESCRIPTION M4: Fast and the Furious
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215288:M4:%20Final%20Destination
+#DESCRIPTION M4: Final Destination
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215289:M4:%20Ghostbusters
+#DESCRIPTION M4: Ghostbusters
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215290:M4:%20Hangover
+#DESCRIPTION M4: Hangover
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215291:M4:%20Harry%20Potter
+#DESCRIPTION M4: Harry Potter
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215292:M4:%20History
+#DESCRIPTION M4: History
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215293:M4:%20Horror
+#DESCRIPTION M4: Horror
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215294:M4:%20Ice%20Age
+#DESCRIPTION M4: Ice Age
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215295:M4:%20Indiana%20Jones
+#DESCRIPTION M4: Indiana Jones
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215296:M4:%20James%20Bond%20(007)
+#DESCRIPTION M4: James Bond (007)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215297:M4:%20John%20Wick
+#DESCRIPTION M4: John Wick
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215298:M4:%20Jurassic%20Park
+#DESCRIPTION M4: Jurassic Park
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215299:M4:%20Kingsman
+#DESCRIPTION M4: Kingsman
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215300:M4:%20Legendary
+#DESCRIPTION M4: Legendary
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215301:M4:%20Mad%20Max
+#DESCRIPTION M4: Mad Max
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215302:M4:%20Maze%20Runner
+#DESCRIPTION M4: Maze Runner
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215303:M4:%20Men%20in%20Black
+#DESCRIPTION M4: Men in Black
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215304:M4:%20Mission%20Impossible
+#DESCRIPTION M4: Mission Impossible
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215305:M4:%20Musical
+#DESCRIPTION M4: Musical
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215306:M4:%20Mystery
+#DESCRIPTION M4: Mystery
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215307:M4:%20Mythological
+#DESCRIPTION M4: Mythological
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215308:M4:%20Oceans%20Eleven
+#DESCRIPTION M4: Oceans Eleven
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215309:M4:%20Pirates%20of%20the%20Caribbean
+#DESCRIPTION M4: Pirates of the Caribbean
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215310:M4:%20Planet%20of%20Apes
+#DESCRIPTION M4: Planet of Apes
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215311:M4:%20Post-Apocalyptic
+#DESCRIPTION M4: Post-Apocalyptic
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215312:M4:%20Resident%20Evil
+#DESCRIPTION M4: Resident Evil
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215313:M4:%20Robot
+#DESCRIPTION M4: Robot
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215314:M4:%20Rocky
+#DESCRIPTION M4: Rocky
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215315:M4:%20Romantic
+#DESCRIPTION M4: Romantic
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215316:M4:%20Saw
+#DESCRIPTION M4: Saw
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215317:M4:%20Science%20Fiction
+#DESCRIPTION M4: Science Fiction
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215318:M4:%20Sherlock%20Holmes
+#DESCRIPTION M4: Sherlock Holmes
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215319:M4:%20Shrek
+#DESCRIPTION M4: Shrek
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215320:M4:%20Space
+#DESCRIPTION M4: Space
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215321:M4:%20Spiderman
+#DESCRIPTION M4: Spiderman
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215322:M4:%20Sports
+#DESCRIPTION M4: Sports
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215323:M4:%20Spy
+#DESCRIPTION M4: Spy
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215324:M4:%20Star%20Wars
+#DESCRIPTION M4: Star Wars
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215325:M4:%20Superhero
+#DESCRIPTION M4: Superhero
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215326:M4:%20Survival
+#DESCRIPTION M4: Survival
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215327:M4:%20The%20Bourne
+#DESCRIPTION M4: The Bourne
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215328:M4:%20The%20Conjuring
+#DESCRIPTION M4: The Conjuring
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215329:M4:%20The%20Expendables
+#DESCRIPTION M4: The Expendables
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215330:M4:%20The%20Godfather
+#DESCRIPTION M4: The Godfather
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215331:M4:%20The%20Hobbit
+#DESCRIPTION M4: The Hobbit
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215332:M4:%20The%20Hunger%20Games
+#DESCRIPTION M4: The Hunger Games
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215333:M4:%20The%20Karete%20Kid
+#DESCRIPTION M4: The Karete Kid
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215334:M4:%20The%20Lord%20of%20The%20Rings
+#DESCRIPTION M4: The Lord of The Rings
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215335:M4:%20The%20Matrix
+#DESCRIPTION M4: The Matrix
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215336:M4:%20The%20Mummy
+#DESCRIPTION M4: The Mummy
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215337:M4:%20The%20Purge
+#DESCRIPTION M4: The Purge
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215338:M4:%20The%20Terminator
+#DESCRIPTION M4: The Terminator
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215339:M4:%20Three%20Flavours%20Cornetto
+#DESCRIPTION M4: Three Flavours Cornetto
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215340:M4:%20Thriller
+#DESCRIPTION M4: Thriller
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215341:M4:%20Toy%20Story
+#DESCRIPTION M4: Toy Story
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215342:M4:%20Transformers
+#DESCRIPTION M4: Transformers
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215343:M4:%20Transporter
+#DESCRIPTION M4: Transporter
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215344:M4:%20Twilight%20Saga
+#DESCRIPTION M4: Twilight Saga
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215345:M4:%20War
+#DESCRIPTION M4: War
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215346:M4:%20Western
+#DESCRIPTION M4: Western
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215347:M4:%20X-Men
+#DESCRIPTION M4: X-Men
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215348:M4:%20Zombie
+#DESCRIPTION M4: Zombie
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215349:M4:%20Benedict%20Cumberbatch
+#DESCRIPTION M4: Benedict Cumberbatch
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215350:M4:%20Bradley%20Cooper
+#DESCRIPTION M4: Bradley Cooper
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215351:M4:%20Christian%20Bale
+#DESCRIPTION M4: Christian Bale
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215352:M4:%20Cillian%20Murphy
+#DESCRIPTION M4: Cillian Murphy
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215353:M4:%20Edward%20Norton
+#DESCRIPTION M4: Edward Norton
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215354:M4:%20Hugh%20Jackman
+#DESCRIPTION M4: Hugh Jackman
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215355:M4:%20Jack%20Nicholson
+#DESCRIPTION M4: Jack Nicholson
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215356:M4:%20Jake%20Gyllenhaal
+#DESCRIPTION M4: Jake Gyllenhaal
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215357:M4:%20Jamie%20Foxx
+#DESCRIPTION M4: Jamie Foxx
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215358:M4:%20Jeff%20Bridges
+#DESCRIPTION M4: Jeff Bridges
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215359:M4:%20Jim%20Carrey
+#DESCRIPTION M4: Jim Carrey
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215360:M4:%20Johnny%20Depp
+#DESCRIPTION M4: Johnny Depp
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215361:M4:%20Keanu%20Reeves
+#DESCRIPTION M4: Keanu Reeves
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215362:M4:%20Liam%20Neeson
+#DESCRIPTION M4: Liam Neeson
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215363:M4:%20Mark%20Wahlberg
+#DESCRIPTION M4: Mark Wahlberg
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215364:M4:%20Matt%20Damon
+#DESCRIPTION M4: Matt Damon
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215365:M4:%20Micheal%20Caine
+#DESCRIPTION M4: Micheal Caine
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215366:M4:%20Morgan%20Freeman
+#DESCRIPTION M4: Morgan Freeman
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215367:M4:%20Russell%20Crowe
+#DESCRIPTION M4: Russell Crowe
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215368:M4:%20Ryan%20Reynolds
+#DESCRIPTION M4: Ryan Reynolds
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215369:M4:%20Samuel%20L.%20Jakson
+#DESCRIPTION M4: Samuel L. Jakson
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215370:M4:%20Tom%20Cruise
+#DESCRIPTION M4: Tom Cruise
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215371:M4:%20Tom%20Hanks
+#DESCRIPTION M4: Tom Hanks
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215372:M4:%20Will%20Smith
+#DESCRIPTION M4: Will Smith
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215373:M4:%20Adam%20Sandler
+#DESCRIPTION M4: Adam Sandler
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215374:M4:%20Arnold%20Schwarzenegger
+#DESCRIPTION M4: Arnold Schwarzenegger
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215375:M4:%20Daniel%20Craig
+#DESCRIPTION M4: Daniel Craig
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215376:M4:%20Dwayne%20Johnson
+#DESCRIPTION M4: Dwayne Johnson
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215377:M4:%20Gerard%20Butler
+#DESCRIPTION M4: Gerard Butler
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215378:M4:%20Jackie%20Chan
+#DESCRIPTION M4: Jackie Chan
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215379:M4:%20Jason%20Statham
+#DESCRIPTION M4: Jason Statham
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215380:M4:%20Kevin%20Hart
+#DESCRIPTION M4: Kevin Hart
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215381:M4:%20Orlando%20Bloom
+#DESCRIPTION M4: Orlando Bloom
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215382:M4:%20Sylvester%20Stallone
+#DESCRIPTION M4: Sylvester Stallone
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215383:M4:%20Tom%20Hardy
+#DESCRIPTION M4: Tom Hardy
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215384:M4:%20Amy%20Adams
+#DESCRIPTION M4: Amy Adams
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215385:M4:%20Anne%20Hathaway
+#DESCRIPTION M4: Anne Hathaway
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215386:M4:%20Brie%20Larson
+#DESCRIPTION M4: Brie Larson
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215387:M4:%20Cate%20Blanchett
+#DESCRIPTION M4: Cate Blanchett
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215388:M4:%20Charlize%20Theron
+#DESCRIPTION M4: Charlize Theron
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215389:M4:%20Halle%20Berry
+#DESCRIPTION M4: Halle Berry
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215390:M4:%20Helen%20Mirren
+#DESCRIPTION M4: Helen Mirren
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215391:M4:%20Brad%20Pitt
+#DESCRIPTION M4: Brad Pitt
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215392:M4:%20Al%20Pacino
+#DESCRIPTION M4: Al Pacino
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215393:M4:%20Denzel%20Washington
+#DESCRIPTION M4: Denzel Washington
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215394:M4:%20Vin%20Diesel
+#DESCRIPTION M4: Vin Diesel
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215395:M4:%20Bruce%20Willis
+#DESCRIPTION M4: Bruce Willis
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215396:M4:%20Robert%20Downey%20Jr
+#DESCRIPTION M4: Robert Downey Jr
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215397:M4:%20Leonardo%20DiCaprio
+#DESCRIPTION M4: Leonardo DiCaprio
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215398:M4:%20Angelina%20Jolie
+#DESCRIPTION M4: Angelina Jolie
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215399:M4:%20Alicia%20Vikander
+#DESCRIPTION M4: Alicia Vikander
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215400:M4:%20Emma%20Stone
+#DESCRIPTION M4: Emma Stone
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215401:M4:%20Emma%20Watson
+#DESCRIPTION M4: Emma Watson
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215402:M4:%20Jennifer%20Lawrence
+#DESCRIPTION M4: Jennifer Lawrence
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215403:M4:%20Julia%20Roberts
+#DESCRIPTION M4: Julia Roberts
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215404:M4:%20Julianne%20Moore
+#DESCRIPTION M4: Julianne Moore
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215405:M4:%20Kate%20Winslet
+#DESCRIPTION M4: Kate Winslet
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215406:M4:%20Keira%20Knightley
+#DESCRIPTION M4: Keira Knightley
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215407:M4:%20Kristen%20Stewart
+#DESCRIPTION M4: Kristen Stewart
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215408:M4:%20Lupita%20Nyong%60%20o
+#DESCRIPTION M4: Lupita Nyong` o
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215409:M4:%20Margot%20Robbie
+#DESCRIPTION M4: Margot Robbie
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215410:M4:%20Meryl%20Streep
+#DESCRIPTION M4: Meryl Streep
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215411:M4:%20Michelle%20Pfeiffer
+#DESCRIPTION M4: Michelle Pfeiffer
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215412:M4:%20Natalie%20Portman
+#DESCRIPTION M4: Natalie Portman
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215413:M4:%20Nicole%20Kidman
+#DESCRIPTION M4: Nicole Kidman
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215414:M4:%20Rachel%20McAdams
+#DESCRIPTION M4: Rachel McAdams
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215415:M4:%20Reese%20Witherspoon
+#DESCRIPTION M4: Reese Witherspoon
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215416:M4:%20Salma%20Hayek
+#DESCRIPTION M4: Salma Hayek
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215417:M4:%20Sandra%20Bullock
+#DESCRIPTION M4: Sandra Bullock
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215418:M4:%20Saoirse%20Ronan
+#DESCRIPTION M4: Saoirse Ronan
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215419:M4:%20Scarlett%20Johansson
+#DESCRIPTION M4: Scarlett Johansson
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215420:M4:%20Viola%20Davis
+#DESCRIPTION M4: Viola Davis
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215421:M4:%20Cameron%20Diaz
+#DESCRIPTION M4: Cameron Diaz
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215422:M4:%20Catherine%20Zeta-Jones
+#DESCRIPTION M4: Catherine Zeta-Jones
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215423:M4:%20Drew%20Barrymore
+#DESCRIPTION M4: Drew Barrymore
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215424:M4:%20Eva%20Green
+#DESCRIPTION M4: Eva Green
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215425:M4:%20Jennifer%20Aniston
+#DESCRIPTION M4: Jennifer Aniston
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215426:M4:%20Jessica%20Alba
+#DESCRIPTION M4: Jessica Alba
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215427:M4:%20Lucy%20Liu
+#DESCRIPTION M4: Lucy Liu
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215428:M4:%20Megan%20Fox
+#DESCRIPTION M4: Megan Fox
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215429:M4:%20Melissa%20McCarthy
+#DESCRIPTION M4: Melissa McCarthy
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215430:M4:%20Mila%20Kunis
+#DESCRIPTION M4: Mila Kunis
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215431:M4:%20Penope%20Cruz
+#DESCRIPTION M4: Penope Cruz
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215432:M4:%20Sigourney%20Weaver
+#DESCRIPTION M4: Sigourney Weaver
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/Rfsummerville@aol.com/5713739901/215433:M4:%20Zoe%20Saldana
+#DESCRIPTION M4: Zoe Saldana
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183097.avi:Caravan%20of%20Courage%20-%20An%20Ewok%20Adventure%20(1984)
+#DESCRIPTION Caravan of Courage - An Ewok Adventure (1984)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183098.avi:Ewoks:%20The%20Battle%20for%20Endor%20(1985)
+#DESCRIPTION Ewoks: The Battle for Endor (1985)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183099.mkv:Rogue%20One:%20A%20Star%20Wars%20Story%20(2016)
+#DESCRIPTION Rogue One: A Star Wars Story (2016)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183100.avi:Star%20Wars:%20The%20Clone%20Wars%20(2008)
+#DESCRIPTION Star Wars: The Clone Wars (2008)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183101.mkv:Star%20Wars:%20Episode%20I%20-%20The%20Phantom%20Menace%20(1999)
+#DESCRIPTION Star Wars: Episode I - The Phantom Menace (1999)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183102.mkv:Star%20Wars:%20Episode%20II%20-%20Attack%20of%20the%20Clones%20(2002)
+#DESCRIPTION Star Wars: Episode II - Attack of the Clones (2002)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183103.mkv:Star%20Wars:%20Episode%20III%20-%20Revenge%20of%20the%20Sith%20(2005)
+#DESCRIPTION Star Wars: Episode III - Revenge of the Sith (2005)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183104.mkv:Star%20Wars%20Episode%20IV%20-%20A%20New%20Hope%20(1977)
+#DESCRIPTION Star Wars Episode IV - A New Hope (1977)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183105.mkv:Star%20Wars%20Episode%20V%20-%20The%20Empire%20Strikes%20Back%20(1980)
+#DESCRIPTION Star Wars Episode V - The Empire Strikes Back (1980)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183106.mkv:Star%20Wars%20Episode%20VI%20-%20Return%20Of%20The%20Jedi%20(1983)
+#DESCRIPTION Star Wars Episode VI - Return Of The Jedi (1983)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183107.mkv:Star%20Wars%20Episode%20VII%20-%20The%20Force%20Awakens%20(2015)
+#DESCRIPTION Star Wars Episode VII - The Force Awakens (2015)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183065.mkv:Star%20Trek%20(2009)
+#DESCRIPTION Star Trek (2009)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183066.mkv:Star%20Trek%20Beyond%20(2016)
+#DESCRIPTION Star Trek Beyond (2016)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183067.mkv:Star%20Trek:%20First%20Contact%20(1996)
+#DESCRIPTION Star Trek: First Contact (1996)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183068.mkv:Star%20Trek:%20Generations%20(1994)
+#DESCRIPTION Star Trek: Generations (1994)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183069.mkv:Star%20Trek%20III:%20The%20Search%20for%20Spock%20(1984)
+#DESCRIPTION Star Trek III: The Search for Spock (1984)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183070.mkv:Star%20Trek%20II:%20The%20Wrath%20of%20Khan%20(1982)
+#DESCRIPTION Star Trek II: The Wrath of Khan (1982)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183071.mkv:Star%20Trek:%20Insurrection%20(1998)
+#DESCRIPTION Star Trek: Insurrection (1998)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183072.mkv:Star%20Trek%20Into%20Darkness%20(2013)
+#DESCRIPTION Star Trek Into Darkness (2013)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183073.mkv:Star%20Trek%20IV:%20The%20Voyage%20Home%20(1986)
+#DESCRIPTION Star Trek IV: The Voyage Home (1986)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183074.mkv:Star%20Trek:%20Nemesis%20(2002)
+#DESCRIPTION Star Trek: Nemesis (2002)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183075.mkv:Star%20Trek:%20The%20Motion%20Picture%20(1979)
+#DESCRIPTION Star Trek: The Motion Picture (1979)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183076.mkv:Star%20Trek%20VI:%20The%20Undiscovered%20Country%20(1991)
+#DESCRIPTION Star Trek VI: The Undiscovered Country (1991)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183077.mkv:Star%20Trek%20V:%20The%20Final%20Frontier%20(1989)
+#DESCRIPTION Star Trek V: The Final Frontier (1989)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183038.mp4:Starship%20Troopers%20(1997)
+#DESCRIPTION Starship Troopers (1997)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183039.mp4:Starship%20Troopers%202:%20Hero%20of%20the%20Federation%20(2004)
+#DESCRIPTION Starship Troopers 2: Hero of the Federation (2004)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183040.mp4:Starship%20Troopers%203:%20Marauder%20(2008)
+#DESCRIPTION Starship Troopers 3: Marauder (2008)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183041.mp4:Starship%20Troopers:%20Invasion%20(2012)
+#DESCRIPTION Starship Troopers: Invasion (2012)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183042.mp4:Starship%20Troopers:%20Traitor%20of%20Mars%20(2017)
+#DESCRIPTION Starship Troopers: Traitor of Mars (2017)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183108.mkv:Superman%20and%20the%20Mole-Men%20(1951)
+#DESCRIPTION Superman and the Mole-Men (1951)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183109.mkv:Superman%20(1978)
+#DESCRIPTION Superman (1978)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183110.mkv:Superman%20II%20(1980)
+#DESCRIPTION Superman II (1980)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183111.mkv:Superman%20III%20(1983)
+#DESCRIPTION Superman III (1983)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183112.mkv:Superman%20IV:%20The%20Quest%20for%20Peace%20(1987)
+#DESCRIPTION Superman IV: The Quest for Peace (1987)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183113.mkv:Superman%20Returns%20(2006)
+#DESCRIPTION Superman Returns (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183114.mkv:Man%20of%20Steel%20(2013)
+#DESCRIPTION Man of Steel (2013)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183115.mkv:Batman%20v%20Superman:%20Dawn%20of%20Justice%20(2016)
+#DESCRIPTION Batman v Superman: Dawn of Justice (2016)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183006.mkv:Rocky%20(1976)
+#DESCRIPTION Rocky (1976)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183007.mkv:Rocky%20Balboa%20(2006)
+#DESCRIPTION Rocky Balboa (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183008.mkv:Rocky%20II%20(1979)
+#DESCRIPTION Rocky II (1979)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183009.mkv:Rocky%20III%20(1982)
+#DESCRIPTION Rocky III (1982)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183010.mkv:Rocky%20IV%20(1985)
+#DESCRIPTION Rocky IV (1985)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183011.mkv:Rocky%20V%20(1990)
+#DESCRIPTION Rocky V (1990)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182975.mp4:Mission:%20Impossible%20(1996)
+#DESCRIPTION Mission: Impossible (1996)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182976.mp4:Mission:%20Impossible%20-%20Ghost%20Protocol%20(2011)
+#DESCRIPTION Mission: Impossible - Ghost Protocol (2011)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182977.mp4:Mission:%20Impossible%20-%20Rogue%20Nation%20(2015)
+#DESCRIPTION Mission: Impossible - Rogue Nation (2015)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182978.mp4:Mission:%20Impossible%20II%20(2000)
+#DESCRIPTION Mission: Impossible II (2000)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182979.mp4:Mission:%20Impossible%20III%20(2006)
+#DESCRIPTION Mission: Impossible III (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182833.mp4:Batman%20(1966)
+#DESCRIPTION Batman (1966)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182834.mp4:Batman%20(1989)
+#DESCRIPTION Batman (1989)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182835.mp4:Batman%20Returns%20(1992)
+#DESCRIPTION Batman Returns (1992)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182836.mp4:Batman%20Forever%20(1995)
+#DESCRIPTION Batman Forever (1995)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182837.mp4:Batman%20&%20Robin%20(1997)
+#DESCRIPTION Batman & Robin (1997)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182838.mp4:Batman%20Begins%20(2005)
+#DESCRIPTION Batman Begins (2005)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182839.mp4:The%20Dark%20Knight%20(2008)
+#DESCRIPTION The Dark Knight (2008)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182840.avi:Part%201%20(2012)%22%20tvg-logo=%22https://image.tmdb.org/t/p/w600_and_h900_bestv2/kkjTbwV1Xnj8wBL52PjOcXzTbnb
+#DESCRIPTION Part 1 (2012)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/kkjTbwV1Xnj8wBL52PjOcXzTbnb
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182841.avi:Part%202%20(2013)%22%20tvg-logo=%22https://image.tmdb.org/t/p/w600_and_h900_bestv2/arEZYd6uMOFTILne9Ux0A8qctMe
+#DESCRIPTION Part 2 (2013)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/arEZYd6uMOFTILne9Ux0A8qctMe
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182842.avi:The%20Dark%20Knight%20Rises%20(2012)
+#DESCRIPTION The Dark Knight Rises (2012)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182242.mp4:Alien%20(1979)
+#DESCRIPTION Alien (1979)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182243.mp4:Aliens%20(1986)
+#DESCRIPTION Aliens (1986)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182244.mp4:Alien%C2%B3%20(1992)
+#DESCRIPTION Alien³ (1992)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182245.mp4:Alien%20Resurrection%20(1997)
+#DESCRIPTION Alien Resurrection (1997)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182246.mp4:AVP:%20Alien%20vs.%20Predator%20(2004)
+#DESCRIPTION AVP: Alien vs. Predator (2004)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182247.mp4:Aliens%20vs%20Predator:%20Requiem%20(2007)
+#DESCRIPTION Aliens vs Predator: Requiem (2007)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182248.mp4:Prometheus%20(2012)
+#DESCRIPTION Prometheus (2012)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182249.mp4:Prometheus%20(2012)%20Prometheus%20Extended%20Fan%20Cut
+#DESCRIPTION Prometheus (2012) Prometheus Extended Fan Cut
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182250.mp4:Alien:%20Covenant%20(2017)
+#DESCRIPTION Alien: Covenant (2017)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183141.mp4:The%20Transporter%20(2002)
+#DESCRIPTION The Transporter (2002)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183142.mp4:Transporter%202%20(2005)
+#DESCRIPTION Transporter 2 (2005)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183143.mp4:Transporter%203%20(2008)
+#DESCRIPTION Transporter 3 (2008)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183144.mp4:The%20Transporter%20Refueled%20(2015)
+#DESCRIPTION The Transporter Refueled (2015)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183127.mp4:The%20Terminator%20(1984)
+#DESCRIPTION The Terminator (1984)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183128.mp4:Terminator%202:%20Judgment%20Day%20(1991)
+#DESCRIPTION Terminator 2: Judgment Day (1991)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183129.mp4:Terminator%203:%20Rise%20of%20the%20Machines%20(2003)
+#DESCRIPTION Terminator 3: Rise of the Machines (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183130.mp4:Terminator%20Salvation%20(2009)
+#DESCRIPTION Terminator Salvation (2009)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183131.mp4:Terminator%20Genisys%20(2015)
+#DESCRIPTION Terminator Genisys (2015)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183116.mp4:The%20Avengers%20(2012)
+#DESCRIPTION The Avengers (2012)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183117.mp4:Avengers:%20Age%20of%20Ultron%20(2015)
+#DESCRIPTION Avengers: Age of Ultron (2015)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183118.mp4:Avengers:%20Infinity%20War%20(2018)
+#DESCRIPTION Avengers: Infinity War (2018)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183119.mp4:Avengers:%20Endgame%20(2019)
+#DESCRIPTION Avengers: Endgame (2019)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183012.mp4:Scary%20Movie%20(2000)
+#DESCRIPTION Scary Movie (2000)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183013.mp4:Scary%20Movie%202%20(2001)
+#DESCRIPTION Scary Movie 2 (2001)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183014.mp4:Scary%20Movie%203%20(2003)
+#DESCRIPTION Scary Movie 3 (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183015.mp4:Scary%20Movie%204%20(2006)
+#DESCRIPTION Scary Movie 4 (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183016.mp4:Scary%20Movie%205%20(2013)
+#DESCRIPTION Scary Movie 5 (2013)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182999.mkv:Resident%20Evil:%20Apocalypse%20(2004)
+#DESCRIPTION Resident Evil: Apocalypse (2004)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183000.mkv:Resident%20Evil:%20Extinction%20(2007)
+#DESCRIPTION Resident Evil: Extinction (2007)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183001.mkv:Resident%20Evil:%20Afterlife%20(2010)
+#DESCRIPTION Resident Evil: Afterlife (2010)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183002.mkv:Resident%20Evil:%20Retribution%20(2012)
+#DESCRIPTION Resident Evil: Retribution (2012)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183003.mkv:Resident%20Evil:%20The%20Final%20Chapter%20(2016)
+#DESCRIPTION Resident Evil: The Final Chapter (2016)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183004.mkv:Resident%20Evil%20(2002)
+#DESCRIPTION Resident Evil (2002)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182980.mp4:Battle%20for%20the%20Planet%20of%20the%20Apes%20(1973)
+#DESCRIPTION Battle for the Planet of the Apes (1973)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182981.mp4:Beneath%20the%20Planet%20of%20the%20Apes%20(1970)
+#DESCRIPTION Beneath the Planet of the Apes (1970)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182982.mp4:Conquest%20of%20the%20Planet%20of%20the%20Apes%20(1972)
+#DESCRIPTION Conquest of the Planet of the Apes (1972)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182983.mp4:Conquest%20of%20the%20Planet%20of%20the%20Apes%20-%20Alternate%20Ending%20(1972)
+#DESCRIPTION Conquest of the Planet of the Apes - Alternate Ending (1972)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182984.mp4:Escape%20from%20the%20Planet%20of%20the%20Apes%20(1971)
+#DESCRIPTION Escape from the Planet of the Apes (1971)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182985.mp4:Planet%20of%20the%20Apes%20(1968)
+#DESCRIPTION Planet of the Apes (1968)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182959.mkv:Avengers%20Confidential:%20Black%20Widow%20&%20Punisher%20(2014)
+#DESCRIPTION Avengers Confidential: Black Widow & Punisher (2014)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182960.mp4:Dr%20Strange%20The%20Sorcerer%20Supreme
+#DESCRIPTION Dr Strange The Sorcerer Supreme
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182961.mkv:Hulk%20vs.%20Thor%20(2009)
+#DESCRIPTION Hulk vs. Thor (2009)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182962.mkv:Hulk%20vs.%20Wolverine%20(2009)
+#DESCRIPTION Hulk vs. Wolverine (2009)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182963.avi:Hulk:%20Where%20Monsters%20Dwell%20(2016)
+#DESCRIPTION Hulk: Where Monsters Dwell (2016)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182964.mp4:Iron%20Man%20&%20Captain%20America:%20Heroes%20United%20(2014)
+#DESCRIPTION Iron Man & Captain America: Heroes United (2014)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182965.mp4:Iron%20Man%20&%20Hulk:%20Heroes%20United%20(2013)
+#DESCRIPTION Iron Man & Hulk: Heroes United (2013)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182966.mp4:Iron%20Man:%20Rise%20of%20Technovore%20(2013)
+#DESCRIPTION Iron Man: Rise of Technovore (2013)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182967.avi:Marvel%20Rising:%20Secret%20Warriors%20(2018)
+#DESCRIPTION Marvel Rising: Secret Warriors (2018)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182968.mkv:Marvel%20Super%20Hero%20Adventures:%20Frost%20Fight!%20(2015)
+#DESCRIPTION Marvel Super Hero Adventures: Frost Fight! (2015)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182969.mp4:Next%20Avengers:%20Heroes%20of%20Tomorrow%20(2008)
+#DESCRIPTION Next Avengers: Heroes of Tomorrow (2008)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182970.mp4:Planet%20Hulk%20(2010)
+#DESCRIPTION Planet Hulk (2010)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182971.mp4:The%20Invincible%20Iron%20Man%20(2007)
+#DESCRIPTION The Invincible Iron Man (2007)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182972.mp4:Thor:%20Tales%20of%20Asgard%20(2011)
+#DESCRIPTION Thor: Tales of Asgard (2011)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182973.mkv:Ultimate%20Avengers:%20The%20Movie%20(2006)
+#DESCRIPTION Ultimate Avengers: The Movie (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182974.avi:Ultimate%20Avengers%202:%20Rise%20of%20the%20Panther%20(2006)
+#DESCRIPTION Ultimate Avengers 2: Rise of the Panther (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182847.mp4:Absolute%20Power%20(1997)
+#DESCRIPTION Absolute Power (1997)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182848.mp4:A%20Fistful%20of%20Dollars%20(1964)
+#DESCRIPTION A Fistful of Dollars (1964)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182849.mp4:American%20Sniper%20(2014)
+#DESCRIPTION American Sniper (2014)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182850.mp4:Any%20Which%20Way%20You%20Can%20(1980)
+#DESCRIPTION Any Which Way You Can (1980)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182851.mp4:A%20Perfect%20World%20(1993)
+#DESCRIPTION A Perfect World (1993)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182852.mp4:Back%20to%20the%20Future%20Part%20II%20(1989)
+#DESCRIPTION Back to the Future Part II (1989)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182853.mp4:Blood%20Work%20(2002)
+#DESCRIPTION Blood Work (2002)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182854.mp4:Bronco%20Billy%20(1980)
+#DESCRIPTION Bronco Billy (1980)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182855.mp4:Casper%20(1995)
+#DESCRIPTION Casper (1995)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182856.mkv:Changeling%20(2008)
+#DESCRIPTION Changeling (2008)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182857.mkv:SAMPLE_Changeling(2008)720p.x264
+#DESCRIPTION SAMPLE_Changeling(2008)720p.x264
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182858.mp4:City%20Heat%20(1984)
+#DESCRIPTION City Heat (1984)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182859.mp4:Coogan%27s%20Bluff%20(1968)
+#DESCRIPTION Coogan's Bluff (1968)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182860.mp4:Dirty%20Harry%20(1971)
+#DESCRIPTION Dirty Harry (1971)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182861.mp4:Dirty.Harry.Dead.Pool.1988.1080p.BRrip.x264.YIFY
+#DESCRIPTION Dirty.Harry.Dead.Pool.1988.1080p.BRrip.x264.YIFY
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182862.mp4:Magnum%20Force%20(1973)
+#DESCRIPTION Magnum Force (1973)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182863.mp4:Sudden%20Impact%20(1983)
+#DESCRIPTION Sudden Impact (1983)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182864.mp4:The%20Enforcer%20(1976)
+#DESCRIPTION The Enforcer (1976)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182865.mp4:Escape%20from%20Alcatraz%20(1979)
+#DESCRIPTION Escape from Alcatraz (1979)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182866.mp4:Every%20Which%20Way%20but%20Loose%20(1978)
+#DESCRIPTION Every Which Way but Loose (1978)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182867.mp4:Firefox%20(1982)
+#DESCRIPTION Firefox (1982)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182868.mp4:Flags%20of%20Our%20Fathers%20(2006)
+#DESCRIPTION Flags of Our Fathers (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182869.mp4:For%20a%20Few%20Dollars%20More%20(1965)
+#DESCRIPTION For a Few Dollars More (1965)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182870.mp4:Gran%20Torino%20(2008)
+#DESCRIPTION Gran Torino (2008)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182871.mp4:Heartbreak%20Ridge%20(1986)
+#DESCRIPTION Heartbreak Ridge (1986)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182872.mp4:Hereafter%20(2010)
+#DESCRIPTION Hereafter (2010)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182873.mp4:High%20Plains%20Drifter%20(1973)
+#DESCRIPTION High Plains Drifter (1973)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182874.mp4:In.The.Line.Of.Fire.1993.1080p.BluRay.x264-%5BYTS.AG%5D
+#DESCRIPTION In.The.Line.Of.Fire.1993.1080p.BluRay.x264-[YTS.AG]
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182875.mp4:Invictus%20(2009)
+#DESCRIPTION Invictus (2009)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182876.mp4:J.%20Edgar%20(2011)
+#DESCRIPTION J. Edgar (2011)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182877.mp4:Jersey%20Boys%20(2014)
+#DESCRIPTION Jersey Boys (2014)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182878.mp4:Joe%20Kidd%20(1972)
+#DESCRIPTION Joe Kidd (1972)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182879.mp4:Kelly%27s%20Heroes%20(1970)
+#DESCRIPTION Kelly's Heroes (1970)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182880.mp4:Letters%20from%20Iwo%20Jima%20(2006)
+#DESCRIPTION Letters from Iwo Jima (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182881.mp4:Midnight%20in%20the%20Garden%20of%20Good%20and%20Evil%20(1997)
+#DESCRIPTION Midnight in the Garden of Good and Evil (1997)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182882.mkv:Million%20Dollar%20Baby%20(2004)
+#DESCRIPTION Million Dollar Baby (2004)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182883.mp4:Mystic%20River%20(2003)
+#DESCRIPTION Mystic River (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182884.mp4:Pale%20Rider%20(1985)
+#DESCRIPTION Pale Rider (1985)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182885.mp4:Revenge%20of%20the%20Creature%20(1955)
+#DESCRIPTION Revenge of the Creature (1955)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182886.mp4:Space%20Cowboys%20(2000)
+#DESCRIPTION Space Cowboys (2000)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182887.mp4:Sully%20(2016)
+#DESCRIPTION Sully (2016)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182888.mp4:Tarantula%20(1955)
+#DESCRIPTION Tarantula (1955)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182889.mp4:The%2015:17%20to%20Paris%20(2018)
+#DESCRIPTION The 15:17 to Paris (2018)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182890.mp4:The%20Beguiled%20(1971)
+#DESCRIPTION The Beguiled (1971)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182891.mp4:The%20Bridges%20of%20Madison%20County%20(1995)
+#DESCRIPTION The Bridges of Madison County (1995)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182892.mp4:The%20Eiger%20Sanction%20(1975)
+#DESCRIPTION The Eiger Sanction (1975)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182893.mp4:the%20Bad%20and%20the%20Ugly%20(1966)%22%20tvg-logo=%22https://image.tmdb.org/t/p/w600_and_h900_bestv2/bX2xnavhMYjWD
+#DESCRIPTION the Bad and the Ugly (1966)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bX2xnavhMYjWD
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182894.mp4:The%20Mule%20(2018)
+#DESCRIPTION The Mule (2018)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182895.mp4:The%20Outlaw%20Josey%20Wales%20(1976)
+#DESCRIPTION The Outlaw Josey Wales (1976)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182896.mp4:The%20Rookie%20(1990)
+#DESCRIPTION The Rookie (1990)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182897.mp4:The%20Witches%20(1967)
+#DESCRIPTION The Witches (1967)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182898.mp4:Thunderbolt%20and%20Lightfoot%20(1974)
+#DESCRIPTION Thunderbolt and Lightfoot (1974)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182899.mp4:Tightrope%20(1984)
+#DESCRIPTION Tightrope (1984)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182900.mp4:Trouble%20with%20the%20Curve%20(2012)
+#DESCRIPTION Trouble with the Curve (2012)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182901.mp4:True%20Crime%20(1999)
+#DESCRIPTION True Crime (1999)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182902.mp4:Two%20Mules%20for%20Sister%20Sara%20(1970)
+#DESCRIPTION Two Mules for Sister Sara (1970)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182903.mp4:Unforgiven%20(1992)
+#DESCRIPTION Unforgiven (1992)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182904.mp4:Where%20Eagles%20Dare%20(1968)
+#DESCRIPTION Where Eagles Dare (1968)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182843.mp4:2
+#DESCRIPTION 2
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182844.mp4:2
+#DESCRIPTION 2
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182845.mp4:2
+#DESCRIPTION 2
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182846.mp4:2
+#DESCRIPTION 2
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182905.mp4:Friday%20the%2013th%20(1980)
+#DESCRIPTION Friday the 13th (1980)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182906.mp4:Friday%20the%2013th%20Part%202%20(1981)
+#DESCRIPTION Friday the 13th Part 2 (1981)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182907.mp4:Friday%20the%2013th%20Part%20III%20(1982)
+#DESCRIPTION Friday the 13th Part III (1982)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182908.mp4:Friday%20the%2013th:%20The%20Final%20Chapter%20(1984)
+#DESCRIPTION Friday the 13th: The Final Chapter (1984)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182909.mp4:Friday%20the%2013th:%20A%20New%20Beginning%20(1985)
+#DESCRIPTION Friday the 13th: A New Beginning (1985)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182910.mp4:Jason%20Lives_%20Friday%20the%2013th%20Part%20VI%20(720p)
+#DESCRIPTION Jason Lives_ Friday the 13th Part VI (720p)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182911.mp4:Friday%20the%2013th%20Part%20VII:%20The%20New%20Blood%20(1988)
+#DESCRIPTION Friday the 13th Part VII: The New Blood (1988)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182912.mp4:Friday%20the%2013th%20Part%20VIII:%20Jason%20Takes%20Manhattan%20(1989)
+#DESCRIPTION Friday the 13th Part VIII: Jason Takes Manhattan (1989)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182913.mp4:Jason%20Goes%20to%20Hell:%20The%20Final%20Friday%20(1993)
+#DESCRIPTION Jason Goes to Hell: The Final Friday (1993)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182914.mp4:Jason%20X%20(2001)
+#DESCRIPTION Jason X (2001)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182915.mp4:Freddy%20vs.%20Jason%20(2003)
+#DESCRIPTION Freddy vs. Jason (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182916.mp4:Friday%20the%2013th%20(1980)
+#DESCRIPTION Friday the 13th (1980)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182925.avi:Thunderbolt%20(1995)
+#DESCRIPTION Thunderbolt (1995)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182927.avi:Police%20Story%204:%20First%20Strike%20(1996)
+#DESCRIPTION Police Story 4: First Strike (1996)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182928.avi:Mr.%20Nice%20Guy%20(1997)
+#DESCRIPTION Mr. Nice Guy (1997)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182929.avi:Dragons%20Forever%20(1988)
+#DESCRIPTION Dragons Forever (1988)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182930.avi:Jackie%20Chan:%20My%20Story%20(1998)
+#DESCRIPTION Jackie Chan: My Story (1998)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182931.avi:Police%20Story%202%20(1988)
+#DESCRIPTION Police Story 2 (1988)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182933.avi:Rush%20Hour%20(1998)
+#DESCRIPTION Rush Hour (1998)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182934.avi:Rush%20Hour%20(1998)
+#DESCRIPTION Rush Hour (1998)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182935.avi:Who%20Am%20I?%20(1998)
+#DESCRIPTION Who Am I? (1998)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182937.avi:Gen-X%20Cops%20(1999)
+#DESCRIPTION Gen-X Cops (1999)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182938.avi:Gorgeous%20(1999)
+#DESCRIPTION Gorgeous (1999)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182939.avi:Jackie%20Chan:%20My%20Stunts%20(1999)
+#DESCRIPTION Jackie Chan: My Stunts (1999)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182940.avi:Shanghai%20Noon%20(2000)
+#DESCRIPTION Shanghai Noon (2000)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182942.avi:Rush%20Hour%202%20(2001)
+#DESCRIPTION Rush Hour 2 (2001)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182943.avi:Rush%20Hour%202%20(2001)
+#DESCRIPTION Rush Hour 2 (2001)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182944.avi:The%20Accidental%20Spy%20(2001)
+#DESCRIPTION The Accidental Spy (2001)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182945.avi:Funny%20and%20Furious%20(2002)%22%20tvg-logo=%22https://image.tmdb.org/t/p/w600_and_h900_bestv2/2oKBsQ3SdjGuBDDh
+#DESCRIPTION Funny and Furious (2002)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/2oKBsQ3SdjGuBDDh
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182946.avi:The%20Tuxedo%20(2002)
+#DESCRIPTION The Tuxedo (2002)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182947.avi:Shanghai%20Knights%20(2003)
+#DESCRIPTION Shanghai Knights (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182948.avi:The%20Medallion%20(2003)
+#DESCRIPTION The Medallion (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182949.avi:The%20Twins%20Effect%20(2003)
+#DESCRIPTION The Twins Effect (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182950.avi:Around%20the%20World%20in%2080%20Days%20(2004)
+#DESCRIPTION Around the World in 80 Days (2004)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182952.avi:Enter%20the%20Phoenix%20(2004)
+#DESCRIPTION Enter the Phoenix (2004)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182953.avi:New%20Police%20Story%20(2004)
+#DESCRIPTION New Police Story (2004)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182955.avi:The%20Twins%20Effect%20II%20(2004)
+#DESCRIPTION The Twins Effect II (2004)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182956.avi:The%20Myth%20(2005)
+#DESCRIPTION The Myth (2005)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182957.avi:Robin-B-Hood%20(2006)
+#DESCRIPTION Robin-B-Hood (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182986.avi:Pok%C3%A9mon:%20The%20First%20Movie%20(1998)
+#DESCRIPTION Pokémon: The First Movie (1998)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182987.avi:Pok%C3%A9mon%202%20The%20Power%20of%20One%20(1999)
+#DESCRIPTION Pokémon 2 The Power of One (1999)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182988.avi:Pok%C3%A9mon%203%20Spell%20of%20the%20Unknown%20(2000)
+#DESCRIPTION Pokémon 3 Spell of the Unknown (2000)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182989.avi:Pok%C3%A9mon%204%20Celebi%20Voice%20of%20the%20Forest%20(2001)
+#DESCRIPTION Pokémon 4 Celebi Voice of the Forest (2001)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182990.avi:Pok%C3%A9mon%205%20Heroes%20Latios%20and%20Latias%20(2002)
+#DESCRIPTION Pokémon 5 Heroes Latios and Latias (2002)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182991.avi:Pok%C3%A9mon:%20Jirachi%20-%20Wish%20Maker%20(2003)
+#DESCRIPTION Pokémon: Jirachi - Wish Maker (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182992.avi:Pok%C3%A9mon:%20Destiny%20Deoxys%20(2004)
+#DESCRIPTION Pokémon: Destiny Deoxys (2004)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182993.avi:Pok%C3%A9mon:%20Lucario%20and%20the%20Mystery%20of%20Mew%20(2005)
+#DESCRIPTION Pokémon: Lucario and the Mystery of Mew (2005)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182994.avi:Pok%C3%A9mon%20Ranger%20and%20the%20Temple%20of%20the%20Sea%20(2006)
+#DESCRIPTION Pokémon Ranger and the Temple of the Sea (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182995.avi:Pok%C3%A9mon:%20The%20Rise%20of%20Darkrai%20(2007)
+#DESCRIPTION Pokémon: The Rise of Darkrai (2007)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182996.avi:Pok%C3%A9mon:%20Giratina%20and%20the%20Sky%20Warrior%20(2008)
+#DESCRIPTION Pokémon: Giratina and the Sky Warrior (2008)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182997.avi:Pok%C3%A9mon:%20Arceus%20and%20the%20Jewel%20of%20Life%20(2009)
+#DESCRIPTION Pokémon: Arceus and the Jewel of Life (2009)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/182998.avi:Pok%C3%A9mon:%20Mewtwo%20Returns%20(2001)
+#DESCRIPTION Pokémon: Mewtwo Returns (2001)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183120.avi:2%20Fast%202%20Furious%20(2003)
+#DESCRIPTION 2 Fast 2 Furious (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183121.avi:Fast%20&%20Furious%20(2009)
+#DESCRIPTION Fast & Furious (2009)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183122.avi:Fast%205%20(2011).avi
+#DESCRIPTION Fast 5 (2011).avi
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183123.avi:Fast%20&%20Furious%206%20(2013)
+#DESCRIPTION Fast & Furious 6 (2013)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183124.mkv:Fast%20and%20Furious%207%202015%20HDRip.x264-MenaceIISociety
+#DESCRIPTION Fast and Furious 7 2015 HDRip.x264-MenaceIISociety
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183125.avi:The%20Fast%20and%20the%20Furious%20(2001)
+#DESCRIPTION The Fast and the Furious (2001)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183126.avi:The%20Fast%20and%20the%20Furious:%20Tokyo%20Drift%20(2006)
+#DESCRIPTION The Fast and the Furious: Tokyo Drift (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183132.mp4:The%20Texas%20Chain%20Saw%20Massacre%20(1974)
+#DESCRIPTION The Texas Chain Saw Massacre (1974)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183133.mp4:The%20Texas%20Chainsaw%20Massacre%202%20(1986)
+#DESCRIPTION The Texas Chainsaw Massacre 2 (1986)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183134.mp4:Leatherface:%20The%20Texas%20Chainsaw%20Massacre%20III%20(1990)
+#DESCRIPTION Leatherface: The Texas Chainsaw Massacre III (1990)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183135.mp4:The%20Return%20of%20the%20Texas%20Chainsaw%20Massacre%20(1995)
+#DESCRIPTION The Return of the Texas Chainsaw Massacre (1995)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183137.mp4:The%20Texas%20Chainsaw%20Massacre%20(2003)
+#DESCRIPTION The Texas Chainsaw Massacre (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183139.mp4:The%20Texas%20Chainsaw%20Massacre:%20The%20Beginning%20(2006)
+#DESCRIPTION The Texas Chainsaw Massacre: The Beginning (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183140.mp4:Texas%20Chainsaw%203D%20(2013)
+#DESCRIPTION Texas Chainsaw 3D (2013)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183148.avi:12%20Angry%20Men%20(1957)
+#DESCRIPTION 12 Angry Men (1957)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183149.avi:Twelve%20Monkeys%20(1995)
+#DESCRIPTION Twelve Monkeys (1995)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183150.avi:The%20Wizard%20of%20Oz%20(1939)
+#DESCRIPTION The Wizard of Oz (1939)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183152.avi:A%20Streetcar%20Named%20Desire%20(1951)
+#DESCRIPTION A Streetcar Named Desire (1951)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183153.avi:A%20Clockwork%20Orange%20(1971)
+#DESCRIPTION A Clockwork Orange (1971)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183156.avi:Alien%20(1979)
+#DESCRIPTION Alien (1979)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183157.avi:All%20About%20Eve%20(1950)
+#DESCRIPTION All About Eve (1950)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183158.avi:Amadeus%20(1984)
+#DESCRIPTION Amadeus (1984)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183159.avi:Am%C3%A9lie%20(2001)
+#DESCRIPTION Amélie (2001)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183160.avi:American%20Beauty%20(1999)
+#DESCRIPTION American Beauty (1999)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183161.avi:American%20History%20X%20(1998)
+#DESCRIPTION American History X (1998)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183162.avi:Amores%20Perros%20(2000)
+#DESCRIPTION Amores Perros (2000)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183163.avi:Annie%20Hall%20(1977)
+#DESCRIPTION Annie Hall (1977)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183164.avi:Apocalypse%20Now%20(1979)
+#DESCRIPTION Apocalypse Now (1979)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183165.avi:Avatar%20(2009)
+#DESCRIPTION Avatar (2009)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183166.avi:Back%20to%20the%20Future%20(1985)
+#DESCRIPTION Back to the Future (1985)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183167.avi:Barry%20Lyndon%20(1975)
+#DESCRIPTION Barry Lyndon (1975)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183168.avi:Batman%20Begins%20(2005)
+#DESCRIPTION Batman Begins (2005)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183169.avi:Part%201%20(2012)%22%20tvg-logo=%22https://image.tmdb.org/t/p/w600_and_h900_bestv2/kkjTbwV1Xnj8wBL52PjOcXzTbnb
+#DESCRIPTION Part 1 (2012)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/kkjTbwV1Xnj8wBL52PjOcXzTbnb
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183170.avi:The%20Battle%20of%20Algiers%20(1966)
+#DESCRIPTION The Battle of Algiers (1966)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183171.avi:Beauty%20and%20the%20Beast%20(1991)
+#DESCRIPTION Beauty and the Beast (1991)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183172.avi:Big%20Fish%20(2003)
+#DESCRIPTION Big Fish (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183173.avi:Black%20Swan%20(2010)
+#DESCRIPTION Black Swan (2010)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183174.avi:Blade%20Runner%20(1982)
+#DESCRIPTION Blade Runner (1982)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183175.avi:Braveheart%20(1995)
+#DESCRIPTION Braveheart (1995)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183176.avi:Butch%20Cassidy%20and%20the%20Sundance%20Kid%20(1969)
+#DESCRIPTION Butch Cassidy and the Sundance Kid (1969)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183177.avi:Cary%20Grant%20-%201944%20-%20Arsenic%20And%20Old%20Lace
+#DESCRIPTION Cary Grant - 1944 - Arsenic And Old Lace
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183178.avi:Casablanca%20(1942)
+#DESCRIPTION Casablanca (1942)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183179.avi:Casino%20(1995)
+#DESCRIPTION Casino (1995)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183180.avi:Castle%20in%20the%20Sky%20(1986)
+#DESCRIPTION Castle in the Sky (1986)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183181.avi:Modern%20Times%20(1936)
+#DESCRIPTION Modern Times (1936)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183182.avi:Children%20of%20Men%20(2006)
+#DESCRIPTION Children of Men (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183183.mp4:Cinema%20Paradiso%20(1988)
+#DESCRIPTION Cinema Paradiso (1988)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183184.avi:Citizen%20Kane%20(1941)
+#DESCRIPTION Citizen Kane (1941)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183185.avi:City%20Lights%20(1931)
+#DESCRIPTION City Lights (1931)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183186.avi:City%20of%20God%20(2002)
+#DESCRIPTION City of God (2002)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183187.avi:Cool%20Hand%20Luke%20(1967)
+#DESCRIPTION Cool Hand Luke (1967)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183189.avi:Diabolique%20(1996)
+#DESCRIPTION Diabolique (1996)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183190.avi:Dial%20M%20for%20Murder%20(1954)
+#DESCRIPTION Dial M for Murder (1954)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183191.avi:Die%20Hard%20(1988)
+#DESCRIPTION Die Hard (1988)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183192.avi:District%209%20(2009)
+#DESCRIPTION District 9 (2009)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183193.avi:Dog%20Day%20Afternoon%20(1975)
+#DESCRIPTION Dog Day Afternoon (1975)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183194.avi:Donnie%20Darko%20(2001)
+#DESCRIPTION Donnie Darko (2001)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183195.avi:Double%20Indemnity%20(1944)
+#DESCRIPTION Double Indemnity (1944)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183196.avi:Downfall%20(2004)
+#DESCRIPTION Downfall (2004)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183197.avi:Dr.%20Strangelove%20or:%20How%20I%20Learned%20to%20Stop%20Worrying%20and%20Love%20the%20Bomb%20(1964)
+#DESCRIPTION Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183198.avi:Ed%20Wood%20(1994)
+#DESCRIPTION Ed Wood (1994)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183199.avi:The%20Elephant%20Man%20(1980)
+#DESCRIPTION The Elephant Man (1980)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183200.avi:Eternal%20Sunshine%20of%20the%20Spotless%20Mind%20(2004)
+#DESCRIPTION Eternal Sunshine of the Spotless Mind (2004)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183201.avi:Festen%20(2013)
+#DESCRIPTION Festen (2013)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183202.avi:Fight%20Club%20(1999)
+#DESCRIPTION Fight Club (1999)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183203.avi:Finding%20Nemo%20(2003)
+#DESCRIPTION Finding Nemo (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183204.avi:For%20a%20Few%20Dollars%20More%20(1965)
+#DESCRIPTION For a Few Dollars More (1965)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183205.avi:Forrest%20Gump%20(1994)
+#DESCRIPTION Forrest Gump (1994)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183206.avi:Full%20Metal%20Jacket%20(1987)
+#DESCRIPTION Full Metal Jacket (1987)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183207.avi:Gandhi%20(1982)
+#DESCRIPTION Gandhi (1982)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183208.avi:Gladiator%20(2000)
+#DESCRIPTION Gladiator (2000)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183209.avi:GoodFellas%20(1990)
+#DESCRIPTION GoodFellas (1990)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183210.avi:Good%20Will%20Hunting%20(1997)
+#DESCRIPTION Good Will Hunting (1997)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183211.avi:Gran%20Torino%20(2008)
+#DESCRIPTION Gran Torino (2008)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183212.avi:Grave%20of%20the%20Fireflies%20(2005)
+#DESCRIPTION Grave of the Fireflies (2005)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183213.avi:Great%20Escape%20(1962)
+#DESCRIPTION Great Escape (1962)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183215.avi:Heat%20(1995)
+#DESCRIPTION Heat (1995)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183216.avi:High%20Noon%20(1952)
+#DESCRIPTION High Noon (1952)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183217.avi:His%20Girl%20Friday%20(1940)
+#DESCRIPTION His Girl Friday (1940)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183218.avi:Hotel%20Rwanda%20(2004)
+#DESCRIPTION Hotel Rwanda (2004)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183219.avi:How%20to%20Train%20a%20Dog%20(1936)
+#DESCRIPTION How to Train a Dog (1936)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183221.avi:In%20Bruges%20(2008)
+#DESCRIPTION In Bruges (2008)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183222.avi:Inception%20(2010)
+#DESCRIPTION Inception (2010)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183223.avi:Indiana%20Jones%20and%20the%20Last%20Crusade%20(1989)
+#DESCRIPTION Indiana Jones and the Last Crusade (1989)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183225.avi:Inglourious%20Basterds%20(2009)
+#DESCRIPTION Inglourious Basterds (2009)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183226.avi:Into%20the%20Wild%20(2007)
+#DESCRIPTION Into the Wild (2007)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183228.avi:Jaws%201.1975.DVDRip-aXXo
+#DESCRIPTION Jaws 1.1975.DVDRip-aXXo
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183229.avi:killbill1.divx.vice
+#DESCRIPTION killbill1.divx.vice
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183230.avi:killbill2.divx.vice
+#DESCRIPTION killbill2.divx.vice
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183231.avi:Kind%20Hearts%20and%20Coronets%20(1949)
+#DESCRIPTION Kind Hearts and Coronets (1949)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183232.avi:L.A.%20Confidential%20(1997)
+#DESCRIPTION L.A. Confidential (1997)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183233.avi:Ladri%20di%20biciclette
+#DESCRIPTION Ladri di biciclette
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183234.avi:Lawrence%20of%20Arabia%20(1962)
+#DESCRIPTION Lawrence of Arabia (1962)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183235.avi:L%C3%A9on:%20The%20Professional%20(1994)
+#DESCRIPTION Léon: The Professional (1994)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183236.avi:Let%20the%20Right%20One%20In%20(2008)
+#DESCRIPTION Let the Right One In (2008)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183237.avi:Letters%20From%20Iwo%20Jima%20KLAXXON
+#DESCRIPTION Letters From Iwo Jima KLAXXON
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183239.avi:The%20Lion%20King%20(1994)
+#DESCRIPTION The Lion King (1994)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183240.avi:The%20Lord%20of%20the%20Rings:%20The%20Fellowship%20of%20the%20Ring%20(2001)
+#DESCRIPTION The Lord of the Rings: The Fellowship of the Ring (2001)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183241.avi:The%20Lord%20of%20the%20Rings:%20The%20Return%20of%20the%20King%20(2003)
+#DESCRIPTION The Lord of the Rings: The Return of the King (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183242.avi:The%20Lord%20of%20the%20Rings:%20The%20Two%20Towers%20(2002)
+#DESCRIPTION The Lord of the Rings: The Two Towers (2002)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183245.avi:Manhattan%20(1979)
+#DESCRIPTION Manhattan (1979)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183246.avi:Marx%20Brothers%20-%20Duck%20Soup%20(1933)
+#DESCRIPTION Marx Brothers - Duck Soup (1933)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183247.avi:Mary%20and%20Max%20(2009)
+#DESCRIPTION Mary and Max (2009)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183249.avi:Metropolis%20(1927)
+#DESCRIPTION Metropolis (1927)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183250.avi:Million%20Dollar%20Baby%20(2004)
+#DESCRIPTION Million Dollar Baby (2004)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183251.avi:Inc.%20(2001)%22%20tvg-logo=%22https://image.tmdb.org/t/p/w600_and_h900_bestv2/sgheSKxZkttIe8ONsf2sWXPgip3.j
+#DESCRIPTION Inc. (2001)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/sgheSKxZkttIe8ONsf2sWXPgip3.j
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183252.avi:My%20Neighbour%20Totoro%20(twin%20audio)
+#DESCRIPTION My Neighbour Totoro (twin audio)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183253.avi:Mystic%20River%20(2003)
+#DESCRIPTION Mystic River (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183254.avi:Network%20(1976)
+#DESCRIPTION Network (1976)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183255.mkv:Nights%20of%20Cabiria%20(1957)
+#DESCRIPTION Nights of Cabiria (1957)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183256.avi:No%20Country%20for%20Old%20Men%20(2007)
+#DESCRIPTION No Country for Old Men (2007)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183257.avi:North%20by%20Northwest%20(1959)
+#DESCRIPTION North by Northwest (1959)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183258.avi:Notorious%20(1946)
+#DESCRIPTION Notorious (1946)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183259.avi:Oldboy%20(2003)
+#DESCRIPTION Oldboy (2003)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183260.avi:On%20the%20Waterfront%20(1954)
+#DESCRIPTION On the Waterfront (1954)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183261.avi:Once%20Upon%20a%20Time%20in%20America%20(1984)
+#DESCRIPTION Once Upon a Time in America (1984)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183262.avi:Once%20Upon%20a%20Time%20in%20the%20West%20(1968)
+#DESCRIPTION Once Upon a Time in the West (1968)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183263.avi:One%20Flew%20Over%20the%20Cuckoo%27s%20Nest%20(1975)
+#DESCRIPTION One Flew Over the Cuckoo's Nest (1975)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183264.avi:Pan%27s%20Labyrinth%20(2006)
+#DESCRIPTION Pan's Labyrinth (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183265.avi:Paths%20of%20Glory%20(1957)
+#DESCRIPTION Paths of Glory (1957)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183266.avi:Patton%20(1970)
+#DESCRIPTION Patton (1970)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183268.avi:Platoon%20(1986)
+#DESCRIPTION Platoon (1986)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183269.avi:Princess%20Mononoke%20(1997)
+#DESCRIPTION Princess Mononoke (1997)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183270.avi:Psycho%20(1960)
+#DESCRIPTION Psycho (1960)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183271.avi:Pulp%20Fiction%20(1994)
+#DESCRIPTION Pulp Fiction (1994)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183272.avi:Raging%20Bull%20(1980)
+#DESCRIPTION Raging Bull (1980)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183273.avi:Rain%20Man%20(1988)
+#DESCRIPTION Rain Man (1988)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183274.mkv:Ran%20(1985)
+#DESCRIPTION Ran (1985)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183275.avi:Ratatouille%20(2007)
+#DESCRIPTION Ratatouille (2007)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183276.avi:Rebecca%20(1940)
+#DESCRIPTION Rebecca (1940)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183277.avi:Requiem%20for%20a%20Dream%20(2000)
+#DESCRIPTION Requiem for a Dream (2000)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183278.avi:Reservoir%20Dogs%20(1992)
+#DESCRIPTION Reservoir Dogs (1992)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183279.avi:Rocky%20(1976)
+#DESCRIPTION Rocky (1976)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183280.avi:Roman%20Holiday%20(1953)
+#DESCRIPTION Roman Holiday (1953)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183281.avi:Rope%20(1948)
+#DESCRIPTION Rope (1948)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183282.avi:Rosemary%27s%20Baby%20(1968)
+#DESCRIPTION Rosemary's Baby (1968)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183283.avi:Saving%20Private%20Ryan%20(1998)
+#DESCRIPTION Saving Private Ryan (1998)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183284.avi:Scarface%20(1983)
+#DESCRIPTION Scarface (1983)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183285.avi:Schindler%27s%20List%20(1993)
+#DESCRIPTION Schindler's List (1993)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183287.avi:Seven%20Samurai%20(1954)
+#DESCRIPTION Seven Samurai (1954)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183289.avi:Shutter%20Island%20(2010)
+#DESCRIPTION Shutter Island (2010)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183290.avi:Sin%20City%20(2005)
+#DESCRIPTION Sin City (2005)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183291.avi:Singin%27%20in%20the%20Rain%20(1952)
+#DESCRIPTION Singin' in the Rain (1952)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183292.avi:Sleuth%20(1972)
+#DESCRIPTION Sleuth (1972)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183293.avi:Slumdog%20Millionaire%20(2008)
+#DESCRIPTION Slumdog Millionaire (2008)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183295.avi:Snatch%20(2000)
+#DESCRIPTION Snatch (2000)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183296.avi:Some%20Like%20It%20Hot%20(1959)
+#DESCRIPTION Some Like It Hot (1959)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183298.avi:Summer
+#DESCRIPTION Summer
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183299.avi:Stalag%2017%20(1953)
+#DESCRIPTION Stalag 17 (1953)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183300.avi:Stand%20by%20Me%20(1986)
+#DESCRIPTION Stand by Me (1986)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183301.avi:Star%20Trek%20(2009)
+#DESCRIPTION Star Trek (2009)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183303.avi:The%20Empire%20Strikes%20Back%20(1980)
+#DESCRIPTION The Empire Strikes Back (1980)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183304.avi:Strangers%20on%20a%20Train%20(1951)
+#DESCRIPTION Strangers on a Train (1951)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183305.avi:Sunrise:%20A%20Song%20of%20Two%20Humans%20(1927)
+#DESCRIPTION Sunrise: A Song of Two Humans (1927)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183306.avi:Sunset%20Boulevard%20(1950)
+#DESCRIPTION Sunset Boulevard (1950)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183309.avi:The%20Godfather%20Part%20II%20(1974)
+#DESCRIPTION The Godfather Part II (1974)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183310.avi:The%20Big%20Lebowski%20(1998)
+#DESCRIPTION The Big Lebowski (1998)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183311.avi:The%20Bourne%20Ultimatum%20(2007)
+#DESCRIPTION The Bourne Ultimatum (2007)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183312.avi:The%20Bridge%20on%20the%20River%20Kwai%20(1957)
+#DESCRIPTION The Bridge on the River Kwai (1957)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183313.avi:The%20Departed%20(2006)
+#DESCRIPTION The Departed (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183314.mp4:The%20Godfather%20Part%20II%20(1974)
+#DESCRIPTION The Godfather Part II (1974)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183316.avi:the%20Bad%20and%20the%20Ugly%20(1966)%22%20tvg-logo=%22https://image.tmdb.org/t/p/w600_and_h900_bestv2/bX2xnavhMYjWD
+#DESCRIPTION the Bad and the Ugly (1966)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bX2xnavhMYjWD
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183317.avi:The%20Grapes%20of%20Wrath%20(1940)
+#DESCRIPTION The Grapes of Wrath (1940)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183318.avi:The%20Incredibles%20(2004)
+#DESCRIPTION The Incredibles (2004)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183320.avi:The%20Night%20of%20the%20Hunter%20(1955)
+#DESCRIPTION The Night of the Hunter (1955)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183321.avi:The%20Prestige%20(2006)
+#DESCRIPTION The Prestige (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183322.avi:The%20Sixth%20Sense%20(1999)
+#DESCRIPTION The Sixth Sense (1999)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183323.avi:The%20Social%20Network%20(2010)
+#DESCRIPTION The Social Network (2010)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183324.avi:The%20Terminator%20(1984)
+#DESCRIPTION The Terminator (1984)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183325.avi:The%20Third%20Man%20(1949)
+#DESCRIPTION The Third Man (1949)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183326.avi:The%20Treasure%20of%20the%20Sierra%20Madre%20(1948)
+#DESCRIPTION The Treasure of the Sierra Madre (1948)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183327.avi:The%20400%20Blows%20(1959)
+#DESCRIPTION The 400 Blows (1959)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183328.avi:The%20Apartment%20(1960)
+#DESCRIPTION The Apartment (1960)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183329.avi:The%20Best%20Years%20of%20Our%20Lives%20(1946)
+#DESCRIPTION The Best Years of Our Lives (1946)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183330.avi:The%20Deer%20Hunter%20(1978)
+#DESCRIPTION The Deer Hunter (1978)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183331.avi:The%20Diving%20Bell%20and%20the%20Butterfly%20(2007)
+#DESCRIPTION The Diving Bell and the Butterfly (2007)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183333.avi:The%20General%20(1926)
+#DESCRIPTION The General (1926)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183334.avi:The%20Graduate%20(1967)
+#DESCRIPTION The Graduate (1967)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183335.avi:The%20Great%20Dictator%20(1940)
+#DESCRIPTION The Great Dictator (1940)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183338.avi:The%20Killing%20(1956)
+#DESCRIPTION The Killing (1956)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183339.avi:The%20King%27s%20Speech%20(2010)
+#DESCRIPTION The King's Speech (2010)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183340.avi:The%20Maltese%20Falcon%20(1941)
+#DESCRIPTION The Maltese Falcon (1941)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183341.avi:The%20Manchurian%20Candidate%20(1962)
+#DESCRIPTION The Manchurian Candidate (1962)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183342.avi:The%20Matrix%20(1999)
+#DESCRIPTION The Matrix (1999)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183343.avi:The%20Passion%20of%20Joan%20of%20Arc%20(1928)
+#DESCRIPTION The Passion of Joan of Arc (1928)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183344.avi:The%20Pianist%20(2002)
+#DESCRIPTION The Pianist (2002)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183345.avi:The%20Princess%20Bride%20(Widescreen)
+#DESCRIPTION The Princess Bride (Widescreen)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183346.avi:There%20Will%20Be%20Blood%20(2007)
+#DESCRIPTION There Will Be Blood (2007)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183347.avi:The%20Secret%20in%20Their%20Eyes%20(2009)
+#DESCRIPTION The Secret in Their Eyes (2009)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183348.avi:The%20Seventh%20Seal%20(1957)
+#DESCRIPTION The Seventh Seal (1957)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183349.avi:The%20Shawshank%20Redemption%20(1994)
+#DESCRIPTION The Shawshank Redemption (1994)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183350.avi:The%20Shining%20(1980)
+#DESCRIPTION The Shining (1980)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183351.avi:The%20Silence%20of%20the%20Lambs%20(1991)
+#DESCRIPTION The Silence of the Lambs (1991)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183352.avi:The%20Sting%20(1973)
+#DESCRIPTION The Sting (1973)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183353.avi:The%20Thing%20(1982)
+#DESCRIPTION The Thing (1982)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183354.avi:The%20Truman%20Show%20(1998)
+#DESCRIPTION The Truman Show (1998)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183355.avi:The%20Usual%20Suspects%20(1995)
+#DESCRIPTION The Usual Suspects (1995)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183356.avi:The%20Wild%20Bunch%20(1969)
+#DESCRIPTION The Wild Bunch (1969)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183357.avi:The%20Wrestler%20(2008)
+#DESCRIPTION The Wrestler (2008)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183358.avi:To%20Kill%20a%20Mockingbird%20(1962)
+#DESCRIPTION To Kill a Mockingbird (1962)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183359.avi:Touch%20of%20Evil%20(1958)
+#DESCRIPTION Touch of Evil (1958)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183360.avi:Toy%20Story%20(1995)
+#DESCRIPTION Toy Story (1995)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183361.avi:Toy%20Story%203%20(2010)
+#DESCRIPTION Toy Story 3 (2010)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183362.avi:Trainspotting%20(1996)
+#DESCRIPTION Trainspotting (1996)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183364.avi:Unforgiven%20(1992)
+#DESCRIPTION Unforgiven (1992)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183366.avi:X-Men:%20First%20Class%20(2011)
+#DESCRIPTION X-Men: First Class (2011)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183367.avi:Vertigo%20(1958)
+#DESCRIPTION Vertigo (1958)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183368.avi:V%20for%20Vendetta%20(2006)
+#DESCRIPTION V for Vendetta (2006)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183369.avi:Wall%20(2017)
+#DESCRIPTION Wall (2017)
+#SERVICE 4097:0:1:0:0:0:0:0:0:0:http%3a//panelguys.top%3a8080/movie/Rfsummerville@aol.com/5713739901/183370.avi:Witness%20for%20the%20Prosecution%20(1957)
+#DESCRIPTION Witness for the Prosecution (1957)

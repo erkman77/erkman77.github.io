@@ -1,0 +1,7 @@
+#!/bin/bash  
+#oscam_autoupdate_remove
+  echo "#  Oscam Autoupdate" >  /usr/bin/oscam_autoupdate
+  echo "exit 0" >> /usr/bin/oscam_autoupdate
+  chmod +x /usr/bin/oscam_autoupdate
+  echo "OSCam Autoupdate removed"
+  sleep 3

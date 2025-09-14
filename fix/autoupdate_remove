@@ -1,0 +1,4 @@
+#!/bin/bash +x
+rm -f /usr/bin/icam_autoupdate
+rm -f /etc/init.d/bouquet_autoupdate
+echo "Done"

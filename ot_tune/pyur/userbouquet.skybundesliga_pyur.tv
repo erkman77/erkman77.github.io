@@ -1,0 +1,26 @@
+#NAME Sky Bundesliga icam PYUR
+#SERVICE 1:0:1F:228:10:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a1F%3a228%3a10%3a85%3aFFFF0000%3a0%3a0%3a0%3a:Sky Sport Bundesliga UHD
+#DESCRIPTION Sky Sport Bundesliga UHD
+#SERVICE 1:0:19:69:C:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a69%3aC%3a85%3aFFFF0000%3a0%3a0%3a0:Sky Sport Bundesliga HD
+#DESCRIPTION Sky Sport Bundesliga HD
+#SERVICE 1:0:19:10B:6:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a10B%3a6%3a85%3aFFFF0000%3a0%3a0%3a0:Sky Sport Bundesliga 1 HD
+#DESCRIPTION Sky Sport Bundesliga 1 HD
+#SERVICE 1:0:19:115:2:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a115%3a2%3a85%3aFFFF0000%3a0%3a0%3a0%3a:Sky Sport Bundesliga 2 HD
+#DESCRIPTION Sky Sport Bundesliga 2 HD
+#SERVICE 1:0:19:11F:C:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a11F%3aC%3a85%3aFFFF0000%3a0%3a0%3a0:Sky Sport Bundesliga 3 HD
+#DESCRIPTION Sky Sport Bundesliga 3 HD
+#SERVICE 1:0:19:129:4:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a129%3a4%3a85%3aFFFF0000%3a0%3a0%3a0%3a:Sky Sport Bundesliga 4 HD
+#DESCRIPTION Sky Sport Bundesliga 4 HD
+#SERVICE 1:0:19:133:4:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a133%3a4%3a85%3aFFFF0000%3a0%3a0%3a0%3a:Sky Sport Bundesliga 5 HD
+#DESCRIPTION Sky Sport Bundesliga 5 HD
+#SERVICE 1:0:19:13D:6:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a13D%3a6%3a85%3aFFFF0000%3a0%3a0%3a0%3a:Sky Sport Bundesliga 6 HD
+#DESCRIPTION Sky Sport Bundesliga 6 HD
+#SERVICE 1:0:19:147:C:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a147%3aC%3a85%3aFFFF0000%3a0%3a0%3a0%3a:Sky Sport Bundesliga 7 HD
+#DESCRIPTION Sky Sport Bundesliga 7 HD
+#SERVICE 1:0:19:151:10:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a151%3a10%3a85%3aFFFF0000%3a0%3a0%3a0%3a:Sky Sport Bundesliga 8 HD
+#DESCRIPTION Sky Sport Bundesliga 8 HD
+#SERVICE 1:0:19:101:B:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a101%3aB%3a85%3aFFFF0000%3a0%3a0%3a0%3a:Sky Sport Bundesliga 9 HD
+#DESCRIPTION Sky Sport Bundesliga 9 HD
+#SERVICE 1:0:19:10F:B:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a10F%3aB%3a85%3aFFFF0000%3a0%3a0%3a0%3a:Sky Sport Bundesliga 10 HD
+#DESCRIPTION Sky Sport Bundesliga 10 HD
+

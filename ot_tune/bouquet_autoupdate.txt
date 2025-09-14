@@ -1,0 +1,27 @@
+#!/bin/sh
+VNAME="Icam Bouquet Autoupdater"
+VINFO="V1"
+BINARY="icam_autoupdate"
+case "$1" in
+    start)
+	wget -O - -q "127.0.0.1/web/message?text=looking%20for%20bouquet%20updates...%20please%20stand%20by%20:)%20%20$STARTDATE&type=1&timeout=5" > /dev/null
+        "$BINARY"
+        ;;
+    enable)
+        update-rc.d bouquet_autoupdate defaults 98
+        ;;
+    disable)
+        update-rc.d -f bouquet_autoupdate remove
+        ;;
+     version)
+        echo "$VINFO"
+        ;;
+     info)
+        echo "$VNAME"
+        ;;
+    *) 
+        echo "usage: $0 start|enable|disable|version|info" >&2
+       exit 1
+       ;;
+esac
+exit 0

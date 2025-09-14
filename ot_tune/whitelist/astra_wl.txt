@@ -1,0 +1,59 @@
+#!/bin/sh
+_url=$(sed -n '1p' /tmp/read)
+_urlsub=$(sed -n '2p' /tmp/read)
+
+## define funtions
+
+insert_enima2_settings () {
+
+cp -pr /etc/enigma2/bouquets.tv /tmp/
+sleep 3
+
+exec 9>> /tmp/bouquets.tv
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.hdplus_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.dazn_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skybundesliga_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skydoku_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skyerotic_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skyfilm_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skykinder_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skymusik_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skyserien_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skysport_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skysportaustria_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skysportextra_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.private-sd_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.oeffentl-rechtl_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.dritte-regional_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.austriasat_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.hdplus_astra.tv" ORDER BY bouquet' >&9
+
+cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv
+
+sleep 3
+
+wget --quiet -O /etc/enigma2/userbouquet.hdplus_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.hdplus_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.dazn_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.dazn_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.skybundesliga_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.skybundesliga_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.skydoku_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.skydoku_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.skyerotic_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.skyerotic_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.skyfilm_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.skyfilm_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.skykinder_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.skykinder_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.skymusik_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.skymusik_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.skyserien_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.skyserien_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.skysport_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.skysport_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.skysportaustria_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.skysportaustria_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.skysportextra_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.skysportextra_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.private-sd_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.private-sd_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.oeffentl-rechtl_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.oeffentl-rechtl_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.dritte-regional_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.dritte-regional_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.austriasat_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.austriasat_astra.tv
+wget --quiet -O /etc/enigma2/userbouquet.hdplus_astra.tv ${_url}/ot_tune/astra/astra_wl/userbouquet.hdplus_astra.tv
+
+  rm /tmp/bouquets.tv
+  echo "... done" 
+}
+
+## run functions
+
+insert_enima2_settings

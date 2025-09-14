@@ -1,0 +1,30 @@
+#!/bin/sh
+_url=http://i.tv-lounge.eu
+
+cat /etc/enigma2/bouquets.tv | grep -v 'userbouquet.*_pyur' > /tmp/bouquets.tv
+echo -e  "\e[33m  install Multibouqet for Pyur...\e[0m"
+exec 9>> /tmp/bouquets.tv
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.dazn_pyur.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skybundesliga_pyur.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skydoku_pyur.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skyeurosport_pyur.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skyfilm_pyur.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skykinder_pyur.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skymusik_pyur.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skyserien_pyur.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skysport_pyur.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skysportaustria_pyur.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skysportextra_pyur.tv" ORDER BY bouquet' >&9
+cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.dazn_pyur.tv ${_url}/ot_tune/pyur/userbouquet.dazn_pyur.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.skybundesliga_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skybundesliga_pyur.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.skydoku_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skydoku_pyur.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.skyeurosport_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skyeurosport_pyur.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.skyfilm_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skyfilm_pyur.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.skykinder_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skykinder_pyur.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.skymusik_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skymusik_pyur.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.skyserien_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skyserien_pyur.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.skysport_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skysport_pyur.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.skysportaustria_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skysportaustria_pyur.tv > /dev/null 2>&1
+wget -O /etc/enigma2/userbouquet.skysportextra_pyur.tv ${_url}/ot_tune/pyur/userbouquet.skysportextra_pyur.tv > /dev/null 2>&1
+rm /tmp/bouquets.tv > /dev/null 2>&1

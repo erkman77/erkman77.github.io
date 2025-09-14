@@ -1,0 +1,14 @@
+#NAME ASTRA Full
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_fta.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_hdplus.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_skydemovies.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_skydedocu.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_skydesport.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_ORF.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_canaldigitaal.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_movistarmovies.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_movistarsport.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_movistardocu.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_canalsat.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_astra.tv" ORDER BY bouquet
+#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "subbouquet.ciefp_19e_skyde_icam.tv" ORDER BY bouquet

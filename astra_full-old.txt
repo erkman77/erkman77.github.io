@@ -1,0 +1,52 @@
+#!/bin/sh
+_url=http://i.tv-lounge.eu
+
+cat /etc/enigma2/bouquets.tv | grep -v 'userbouquet.ciefp_19e*' > /tmp/bouquets.tv
+ echo -e  "\e[33m  Install Full Astra...\e[0m"
+exec 9>> /tmp/bouquets.tv
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.astra_full.tv" ORDER BY bouquet' >&9
+
+cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv > /dev/null 2>&1
+
+wget -O /etc/enigma2/userbouquet.astra_full.tv ${_url}/ot_tune/astra_full/userbouquet.astra_full.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefp_19e_astra.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_astra.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefp_19e_movistardocu.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_movistardocu.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefp_19e_skyde_icam.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_skyde_icam.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefp_19e_canaldigitaal.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_canaldigitaal.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefp_19e_movistarmovies.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_movistarmovies.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefp_19e_skydemovies.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_skydemovies.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefp_19e_canalsat.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_canalsat.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefp_19e_movistarsport.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_movistarsport.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefp_19e_skydesport.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_skydesport.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefp_19e_fta.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_fta.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefp_19e_ORF.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_ORF.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefp_19e_hdplus.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_hdplus.tv > /dev/null 2>&1
+wget -O /etc/enigma2/subbouquet.ciefp_19e_skydedocu.tv ${_url}/ot_tune/astra_full/userbouquet.ciefp_19e_skydedocu.tv > /dev/null 2>&1
+rm /tmp/bouquets.tv > /dev/null 2>&1
+
+
+
+cat /etc/enigma2/bouquets.tv | grep -v 'userbouquet.*_astra' > /tmp/bouquets.tv 
+ echo -e  "\e[33m  install Multibouqet for Astra...\e[0m"
+sleep 1
+exec 9>> /tmp/bouquets.tv
+#echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.oeffentl-rechtl_astra.tv" ORDER BY bouquet' >&9
+#echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.dritte-regional_astra.tv" ORDER BY bouquet' >&9
+#echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.hdplus_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefp_19e_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefp_19e_movistardocu.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefp_19e_skyde_icam.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefp_19e_canaldigitaal.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefp_19e_movistarmovies.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefp_19e_skydemovies.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefp_19e_canalsat.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.ciefp_19e_movistarsport.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skysportextra_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skymusik_astra.tv" ORDER BY bouquet' >&9
+echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.skyerotic_astra.tv" ORDER BY bouquet' >&9
+#echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.private-sd_astra.tv" ORDER BY bouquet' >&9
+#echo '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.austriasat_astra.tv" ORDER BY bouquet' >&9
+
+cp -pr /tmp/bouquets.tv /etc/enigma2/bouquets.tv > /dev/null 2>&1
+ 
+sleep 1
