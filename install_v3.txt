@@ -681,17 +681,36 @@ replace_initscript() {
 	  fi
   fi
   
-  find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
-    if ! grep -q "\[streamrelay\]" "$file"; then
+ find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
+
+  if grep -qE '^[[:space:]]*stream_relay_enabled[[:space:]]*=[[:space:]]*0[[:space:]]*$' "$file"; then
+    sed -i.bak -E 's/^[[:space:]]*stream_relay_enabled[[:space:]]*=[[:space:]]*0[[:space:]]*$/stream_relay_enabled 		  = 1/' "$file"
+  fi
+
+  if grep -qE '^[[:space:]]*\[streamrelay[[:space:]]*\]$' "$file"; then
+
+    if ! grep -qE '^[[:space:]]*stream_relay_enabled[[:space:]]*=' "$file"; then
+      awk '
         {
-            echo "[streamrelay]"
-            echo "stream_relay_enabled = 1"
-            echo "stream_relay_ctab = 098D"
-            echo "stream_relay_user = stream"
-            echo "stream_relay_buffer_time = 500"
-        } >> "$file"
+          print
+          if ($0 ~ /^[[:space:]]*\[streamrelay[[:space:]]*\]$/ && !inserted) {
+            inserted = 1
+            print "stream_relay_enabled 		  = 1"
+          }
+        }
+      ' "$file" > "$file.tmp" && mv "$file.tmp" "$file"
     fi
-  done
+  else
+    {
+      echo ""
+      echo "[streamrelay]"
+      echo "stream_relay_enabled 		  = 1"
+	  echo "stream_relay_ctab 			  = 098D,09CD,098C"
+      echo "stream_relay_user 			  = stream"
+      echo "stream_relay_buffer_time 	  = 500"
+    } >> "$file"
+  fi
+ done
 }
 
 replace_oscam_bin() {
