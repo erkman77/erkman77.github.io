@@ -700,17 +700,37 @@ replace_initscript() {
         }
       ' "$file" > "$file.tmp" && mv "$file.tmp" "$file"
     fi
-  else
-    {
+else
+    tmp="$(mktemp)"
+    inserted=0
+    awk '
+      {
+        if (!inserted && $0 ~ /^[[:space:]]*\[dvbapi[[:space:]]*\]$/) {
+			print "[streamrelay]"
+			print "stream_relay_enabled 		  = 1"
+			print "stream_relay_ctab 			  = 098D,09CD,098C"
+			print "stream_relay_user 			  = stream"
+			print "stream_relay_buffer_time 	  = 500"
+			print ""
+          inserted = 1
+        }
+        print
+      }
+    ' "$file" > "$tmp" && mv "$tmp" "$file"
+
+    if ! grep -qE '^[[:space:]]*\[dvbapi[[:space:]]*\]$' "$file" && ! grep -qE '^[[:space:]]*stream_relay_enabled[[:space:]]*=' "$file"; then
+      {
       echo ""
       echo "[streamrelay]"
       echo "stream_relay_enabled 		  = 1"
 	  echo "stream_relay_ctab 			  = 098D,09CD,098C"
       echo "stream_relay_user 			  = stream"
       echo "stream_relay_buffer_time 	  = 500"
-    } >> "$file"
+	  echo ""
+      } >> "$file"
+    fi
   fi
- done
+done
 }
 
 replace_oscam_bin() {
