@@ -423,6 +423,7 @@ replace_initscript() {
 #  curl --noproxy '*' --data value="$_oscam_data" "http://127.0.0.1/api/saveconfig?key=config.softcammanager.softcams_autostart" > /dev/null 2>&1
   sed -i 's#/usr/bin#/usr/softcams#g' /etc/init.d/softcam.${_oscambin} > /dev/null 2>&1;
   ln -sf /etc/init.d/softcam.${_oscambin} /etc/init.d/softcam > /dev/null 2>&1
+  mv /usr/softcams/oscam_bin_bak_OMT /usr/bin/oscam_bin_bak_OMT > /dev/null 2>&1
   /etc/init.d/softcam start
   fi
   
