@@ -99,6 +99,10 @@ if cat /tmp/version | grep -i openatv > /dev/null 2>&1; then
   _my_distribution="openATV"
 fi
 
+if cat /tmp/version | grep -i openvix > /dev/null 2>&1; then 
+  _my_distribution="OpenViX"
+fi
+
 if cat /tmp/version | grep -i openpli > /dev/null 2>&1; then 
   _my_distribution="OpenPLi"
 fi
@@ -407,8 +411,21 @@ replace_initscript() {
   chmod +x /etc/init.d/softcam* /etc/init.d/cardserver* > /dev/null 2>&1
   ln -sf /etc/init.d/softcam.oscam_bin /etc/init.d/softcam > /dev/null 2>&1;
   update-rc.d -f softcam defaults > /dev/null 2>&1
-  /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1
+  /etc/init.d/softcam.oscam_bin restart > /dev/null 2>&1 
 
+#openvix
+  if [[ $_my_distribution == "OpenViX" ]]; then
+  /etc/init.d/softcam stop
+  mv /usr/bin/${_oscambin} /usr/softcams/${_oscambin}  > /dev/null 2>&1;
+  chmod +x /usr/softcams/${_oscambin}  > /dev/null 2>&1
+  curl --noproxy '*' --data value="${_oscambin}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
+#  _oscam_data="['/usr/softcams/oscam_bin']"
+#  curl --noproxy '*' --data value="$_oscam_data" "http://127.0.0.1/api/saveconfig?key=config.softcammanager.softcams_autostart" > /dev/null 2>&1
+  sed -i 's#/usr/bin#/usr/softcams#g' /etc/init.d/softcam.${_oscambin} > /dev/null 2>&1;
+  ln -sf /etc/init.d/softcam.${_oscambin} /etc/init.d/softcam > /dev/null 2>&1
+  /etc/init.d/softcam start
+  fi
+  
 #bh
   if [[ $_my_distribution == "OpenBh" ]]; then
 	_stop="/usr/camscript/Ncam_${_oscambin}.sh stop"
@@ -486,6 +503,8 @@ replace_initscript() {
 	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
+  
+
 
 #merlin
   if [ -r /usr/lib/enigma2/python/Plugins/Extensions/AddOnManager ] > /dev/null 2>&1; then
@@ -1108,7 +1127,7 @@ replace_bouquets_type() {
 }
 
 install_oatv() {
-  wget -O - -q http://updates.mynonpublic.com/oea/feed | bash  > /dev/null 2>&1
+  #wget -O - -q http://updates.mynonpublic.com/oea/feed | bash  > /dev/null 2>&1
   echo ""; echo -e "\e[34m Hocus Pocus ...\e[0m" ; echo ""
   $_exec_cmd install $_libusbvers  > /dev/null 2>&1
   $_exec_cmd install $_libatomicvers  > /dev/null 2>&1
@@ -1463,14 +1482,14 @@ mainmenu() {
 install_stable() {
   my_header
   echo -e "\e[33m ######*** Stable  Menu ***######\e[0m"
-  echo -e "1) openATV        ( $_rebootmsg )"
-  echo -e "2) OpenPLi        ( $_rebootmsg )"
-  echo -e "3) VTi/OpenBh     ( $_rebootmsg )"
-  echo -e "4) openNFR/HDF    ( $_rebootmsg )"
-  echo -e "5) Dreambox       ( $_rebootmsg )"
-  echo -e "6) Pure2          ( $_rebootmsg )"
-  echo -e "7) Egami          ( $_rebootmsg )"
-  echo -e "8) teamBlue       ( $_rebootmsg )"
+  echo -e "1) openATV             ( $_rebootmsg )"
+  echo -e "2) OpenPLi/OpenVix     ( $_rebootmsg )"
+  echo -e "3) VTi/OpenBh          ( $_rebootmsg )"
+  echo -e "4) openNFR/HDF         ( $_rebootmsg )"
+  echo -e "5) Dreambox            ( $_rebootmsg )"
+  echo -e "6) Pure2               ( $_rebootmsg )"
+  echo -e "7) Egami               ( $_rebootmsg )"
+  echo -e "8) teamBlue            ( $_rebootmsg )"
   echo -e "0) Back"
   #echo -e ""
   #echo -e "For Dreambox please install StreamRelay Plugin manually"
