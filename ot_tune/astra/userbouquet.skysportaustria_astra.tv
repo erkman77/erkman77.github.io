@@ -1,17 +1,17 @@
 #NAME Austria Sport Astra
-#SERVICE 1:0:19:8F:4:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a8F%3a4%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 1 HD
-#DESCRIPTION Sky Sport Austria 1 HD
-#SERVICE 1:0:19:149:D:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a149%3aD%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 2 HD
-#DESCRIPTION Sky Sport Austria 2 HD
-#SERVICE 1:0:19:153:2:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a153%3a2%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 3 HD
-#DESCRIPTION Sky Sport Austria 3 HD
-#SERVICE 1:0:19:103:B:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a103%3aB%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 4 HD
-#DESCRIPTION Sky Sport Austria 4 HD
-#SERVICE 1:0:19:146:B:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a146%3aB%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 5 HD
-#DESCRIPTION Sky Sport Austria 5 HD
-#SERVICE 1:0:19:156:10:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a156%3a10%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 6 HD
-#DESCRIPTION Sky Sport Austria 6 HD
-#SERVICE 1:0:19:105:C:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a105%3aC%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 7 HD
-#DESCRIPTION Sky Sport Austria 7 HD
-#SERVICE 1:0:19:106:6:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a106%3a6%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 8 HD
-#DESCRIPTION Sky Sport Austria 8 HD
+#SERVICE 1:0:19:8F:4:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a8F%3a4%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 1
+#DESCRIPTION Sky Sport Austria 1
+#SERVICE 1:0:19:149:D:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a149%3aD%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 2
+#DESCRIPTION Sky Sport Austria 2
+#SERVICE 1:0:19:153:2:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a153%3a2%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 3
+#DESCRIPTION Sky Sport Austria 3
+#SERVICE 1:0:19:103:B:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a103%3aB%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 4
+#DESCRIPTION Sky Sport Austria 4
+#SERVICE 1:0:19:146:B:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a146%3aB%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 5
+#DESCRIPTION Sky Sport Austria 5
+#SERVICE 1:0:19:156:10:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a156%3a10%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 6
+#DESCRIPTION Sky Sport Austria 6
+#SERVICE 1:0:19:105:C:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a105%3aC%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 7
+#DESCRIPTION Sky Sport Austria 7
+#SERVICE 1:0:19:106:6:85:21:0:0:0:http%3a//127.0.0.1%3a17999/1%3a0%3a19%3a106%3a6%3a85%3aC00000%3a0%3a0%3a0%3a:Sky Sport Austria 8
+#DESCRIPTION Sky Sport Austria 8
