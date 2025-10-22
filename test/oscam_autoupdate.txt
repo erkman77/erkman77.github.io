@@ -1,12 +1,13 @@
 #!/bin/bash
 
 
-_scriptversion=49
+_scriptversion=50
 
 _url=i.tv-lounge.eu
 _override=$1
 _stream=\[streamrelay\]
 SEARCH_PATH="/usr/tuxbox/config"
+REQUIRED=("098D" "09CD" "098C")
 _start=""
 clear
 
@@ -455,27 +456,28 @@ main() {
     curl --noproxy '*' --data value="OSCam-Installer v${Version_new}" "http://127.0.0.1/api/saveconfig?key=config.misc.softcams" > /dev/null 2>&1
 
 
- find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
+find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
 
   if grep -qE '^[[:space:]]*stream_relay_enabled[[:space:]]*=[[:space:]]*0[[:space:]]*$' "$file"; then
-    sed -i.bak -E 's/^[[:space:]]*stream_relay_enabled[[:space:]]*=[[:space:]]*0[[:space:]]*$/stream_relay_enabled 		  = 1/' "$file"
+    sed -i.bak -E 's/^[[:space:]]*stream_relay_enabled[[:space:]]*=[[:space:]]*0[[:space:]]*$/stream_relay_enabled = 1/' "$file"
   fi
 
   if grep -qE '^[[:space:]]*\[streamrelay[[:space:]]*\]$' "$file"; then
-
     if ! grep -qE '^[[:space:]]*stream_relay_enabled[[:space:]]*=' "$file"; then
-      awk '
-        {
-          print
-          if ($0 ~ /^[[:space:]]*\[streamrelay[[:space:]]*\]$/ && !inserted) {
-            inserted = 1
-            print "stream_relay_enabled 		  = 1"
-          }
+
+      awk '{
+        if ($0 ~ /^[[:space:]]*\[streamrelay[[:space:]]*\]$/ && !inserted) {
+          inserted = 1
+          print $0
+          print "stream_relay_enabled 		  = 1"
+          next
         }
-      ' "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+        print
+      }' "$file" > "$file.tmp" && mv "$file.tmp" "$file"
     fi
-else
-    tmp="$(mktemp)"
+  else
+
+       tmp="$(mktemp)"
     inserted=0
     awk '
       {
@@ -491,19 +493,23 @@ else
         print
       }
     ' "$file" > "$tmp" && mv "$tmp" "$file"
+   
+  fi
 
-    if ! grep -qE '^[[:space:]]*\[dvbapi[[:space:]]*\]$' "$file" && ! grep -qE '^[[:space:]]*stream_relay_enabled[[:space:]]*=' "$file"; then
-      {
+  if ! grep -qE '^[[:space:]]*\[dvbapi[[:space:]]*\]$' "$file" && ! grep -qE '^[[:space:]]*stream_relay_enabled[[:space:]]*=' "$file"; then
+    {
       echo ""
       echo "[streamrelay]"
       echo "stream_relay_enabled 		  = 1"
-	  echo "stream_relay_ctab 			  = 098D,09CD,098C"
-      echo "stream_relay_user 			  = stream"
-      echo "stream_relay_buffer_time 	  = 500"
-	  echo ""
-      } >> "$file"
-    fi
+      echo "stream_relay_ctab = 098D,09CD,098C"
+      echo "stream_relay_user = stream"
+      echo "stream_relay_buffer_time = 500"
+      echo ""
+    } >> "$file"
   fi
+  
+update_ctab "$file"
+  
 done
 
   rm /tmp/version* > /dev/null 2>&1
@@ -513,6 +519,60 @@ done
   unset _neon
   unset _override
   }
+
+update_ctab() {
+  local file="$1"
+  local current_line
+  current_line=$(grep -E '^[[:space:]]*stream_relay_ctab[[:space:]]*=' "$file" | head -n 1)
+
+  if [[ -z "$current_line" ]]; then
+    NEW_LINE="stream_relay_ctab = ${REQUIRED[*]// /,}"
+    echo "$NEW_LINE" >> "$file"
+    return
+  fi
+
+  CURRENT_VALUES=$(echo "$current_line" | awk -F'=' '{print $2}' | tr -d '[:space:]')
+  IFS=',' read -r -a EXISTING <<< "$CURRENT_VALUES"
+
+  contains() {
+    local val
+    for val in "${EXISTING[@]}"; do
+      if [[ "$val" == "$1" ]]; then
+        return 0
+      fi
+    done
+    return 1
+  }
+
+  UPDATED=()
+  for val in "${REQUIRED[@]}"; do
+    if ! contains "$val"; then
+      UPDATED+=("$val")
+    fi
+  done
+
+  if [[ ${#UPDATED[@]} -eq 0 ]]; then
+    return
+  fi
+
+  NEW_VALUES="$CURRENT_VALUES"
+  for v in "${UPDATED[@]}"; do
+    NEW_VALUES="$NEW_VALUES,$v"
+  done
+
+  NEW_LINE=$(echo "$current_line" | sed -E "s/=.*/= ${NEW_VALUES}/")
+
+  TMP_FILE="$(mktemp)"
+  awk -v new_line="$NEW_LINE" '
+    BEGIN { replaced=0 }
+    /^[[:space:]]*stream_relay_ctab[[:space:]]*=/ && !replaced {
+      print new_line
+      replaced=1
+      next
+    }
+    { print }
+  ' "$file" > "$TMP_FILE" && mv "$TMP_FILE" "$file"
+}
   
   main
 else
