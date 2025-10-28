@@ -92,11 +92,16 @@ fi
 	 ;;
   esac
 
-
 _my_distribution=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g" | awk '{print $1}' | head -n 1)
 echo "$_my_distribution" > /tmp/version
 
-for _dist in "openATV OpenViX OpenPLi OpenHDF teamBlue OpenBh Egami" ; do if cat /tmp/version | grep -i $_dist > /dev/null 2>&1; then _my_distribution="$_dist" ; fi ; done;
+_dist_list=( "openATV" "OpenViX" "OpenPLi" "OpenHDF" "teamBlue" "OpenBh" "Egami" )
+for _dist in "${_dist_list[@]}"; do
+  if grep -qi "$_dist" /tmp/version; then
+    _my_distribution="$_dist"
+    break
+  fi
+done
 
 if [ -r /usr/lib/enigma2/python/Plugins/SystemPlugins/VTIPanel ] > /dev/null 2>&1; then 
   _my_distribution="VTi"
