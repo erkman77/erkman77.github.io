@@ -20,6 +20,7 @@ update_wrong="if curl -s --head //i.tv-"
 _stream="stream_relay_enabled"
 _rebootmsg="reboot by exiting installer"
 SEARCH_PATH="/etc/tuxbox/config"
+REQUIRED=("098D" "09CD" "098C")
 NEW_LINE='if curl -s --head http://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 echo "${_url}" >> /tmp/read
 
@@ -92,36 +93,10 @@ fi
   esac
 
 
-_my_distribution=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g" | awk '{print $1}')
-echo "$_my_distribution" | awk '{print $1}' > /tmp/version
+_my_distribution=$(cat /etc/issue |grep "\S"|sed -e "s/[Ww]elcome to //g" | awk '{print $1}' | head -n 1)
+echo "$_my_distribution" > /tmp/version
 
-if cat /tmp/version | grep -i openatv > /dev/null 2>&1; then 
-  _my_distribution="openATV"
-fi
-
-if cat /tmp/version | grep -i openvix > /dev/null 2>&1; then 
-  _my_distribution="OpenViX"
-fi
-
-if cat /tmp/version | grep -i openpli > /dev/null 2>&1; then 
-  _my_distribution="OpenPLi"
-fi
-
-if cat /tmp/version | grep -i openHDF > /dev/null 2>&1; then 
-  _my_distribution="OpenHDF"
-fi
-
-if cat /tmp/version | grep -i teamBlue > /dev/null 2>&1; then 
-  _my_distribution="teamBlue"
-fi
-
-if cat /tmp/version | grep -i egami > /dev/null 2>&1; then 
-  _my_distribution="Egami"
-fi
-
-if cat /tmp/version | grep -i openBH > /dev/null 2>&1; then 
-  _my_distribution="OpenBh"
-fi
+for _dist in "openATV OpenViX OpenPLi OpenHDF teamBlue OpenBh Egami" ; do if cat /tmp/version | grep -i $_dist > /dev/null 2>&1; then _my_distribution="$_dist" ; fi ; done;
 
 if [ -r /usr/lib/enigma2/python/Plugins/SystemPlugins/VTIPanel ] > /dev/null 2>&1; then 
   _my_distribution="VTi"
@@ -750,7 +725,62 @@ else
       } >> "$file"
     fi
   fi
+  update_ctab "$file"
 done
+}
+
+update_ctab() {
+  local file="$1"
+  local current_line
+  current_line=$(grep -E '^[[:space:]]*stream_relay_ctab[[:space:]]*=' "$file" | head -n 1)
+
+  if [[ -z "$current_line" ]]; then
+    NEW_LINE="stream_relay_ctab = ${REQUIRED[*]// /,}"
+    echo "$NEW_LINE" >> "$file"
+    return
+  fi
+
+  CURRENT_VALUES=$(echo "$current_line" | awk -F'=' '{print $2}' | tr -d '[:space:]')
+  IFS=',' read -r -a EXISTING <<< "$CURRENT_VALUES"
+
+  contains() {
+    local val
+    for val in "${EXISTING[@]}"; do
+      if [[ "$val" == "$1" ]]; then
+        return 0
+      fi
+    done
+    return 1
+  }
+
+  UPDATED=()
+  for val in "${REQUIRED[@]}"; do
+    if ! contains "$val"; then
+      UPDATED+=("$val")
+    fi
+  done
+
+  if [[ ${#UPDATED[@]} -eq 0 ]]; then
+    return
+  fi
+
+  NEW_VALUES="$CURRENT_VALUES"
+  for v in "${UPDATED[@]}"; do
+    NEW_VALUES="$NEW_VALUES,$v"
+  done
+
+  NEW_LINE=$(echo "$current_line" | sed -E "s/=.*/= ${NEW_VALUES}/")
+
+  TMP_FILE="$(mktemp)"
+  awk -v new_line="$NEW_LINE" '
+    BEGIN { replaced=0 }
+    /^[[:space:]]*stream_relay_ctab[[:space:]]*=/ && !replaced {
+      print new_line
+      replaced=1
+      next
+    }
+    { print }
+  ' "$file" > "$TMP_FILE" && mv "$TMP_FILE" "$file"
 }
 
 replace_oscam_bin() {
