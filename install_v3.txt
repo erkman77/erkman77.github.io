@@ -21,6 +21,7 @@ _stream="stream_relay_enabled"
 _rebootmsg="reboot by exiting installer"
 SEARCH_PATH="/etc/tuxbox/config"
 REQUIRED=("098D" "09CD" "098C")
+_no_stream="stream"
 NEW_LINE='if curl -s --head http://i.tv-lounge.eu/ot_tune/settings/satellites.xml | grep "200 OK" > /dev/null; then'
 echo "${_url}" >> /tmp/read
 
@@ -681,11 +682,12 @@ replace_initscript() {
 	  fi
   fi
   
- find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
+if [[ "$_no_stream" != "no_stream" ]]; then
+  find "$SEARCH_PATH" -name "oscam.conf" 2>/dev/null | while read -r file; do
 
-  if grep -qE '^[[:space:]]*stream_relay_enabled[[:space:]]*=[[:space:]]*0[[:space:]]*$' "$file"; then
-    sed -i.bak -E 's/^[[:space:]]*stream_relay_enabled[[:space:]]*=[[:space:]]*0[[:space:]]*$/stream_relay_enabled 		  = 1/' "$file"
-  fi
+	if grep -qE '^[[:space:]]*stream_relay_enabled[[:space:]]*=[[:space:]]*0[[:space:]]*$' "$file"; then
+      sed -i.bak -E 's/^[[:space:]]*stream_relay_enabled[[:space:]]*=[[:space:]]*0[[:space:]]*$/stream_relay_enabled 		  = 1/' "$file"
+    fi
 
   if grep -qE '^[[:space:]]*\[streamrelay[[:space:]]*\]$' "$file"; then
 
@@ -732,6 +734,7 @@ else
   fi
   update_ctab "$file"
 done
+fi
 }
 
 update_ctab() {
@@ -798,7 +801,9 @@ replace_oscam_bin() {
     _arch=aarch64
   elif [ -n "$(uname -m | grep mips)" ]; then
     _arch=mipsel
-	unset _neon
+	if [[ "$_no_stream" != "no_stream" ]]; then
+	  unset _neon
+	fi
   else
       echo -e "\e[31m Sorry, your device does not have the proper Emu \e[0m"
       exit 1
@@ -1594,16 +1599,18 @@ install_stable() {
 update_bin() {
   my_header
   echo -e "\e[33m ######*** Update Bin only ***######\e[0m"
-  echo -e " 1) Update Bin Stable  Icam - V9               ( $_rebootmsg )"
-  echo -e " 2) Update Bin Stable  Icam - V9 NEON          ( $_rebootmsg )"
-  echo -e " 3) Update Bin Stable  Icam - V23              ( $_rebootmsg )"
-  echo -e " 4) Update Bin Stable  Icam - V23 NEON         ( $_rebootmsg )"
-  echo -e " 5) Update Bin Stable  Icam - V24              ( $_rebootmsg )"
-  echo -e " 6) Update Bin Stable  Icam - V24 NEON         ( $_rebootmsg )"
-  echo -e " 7) Update Bin Stable  Icam - V11902           ( $_rebootmsg )"
-  echo -e " 8) Update Bin Stable  Icam - V11902 Neon      ( $_rebootmsg )"
-  echo -e " 9) Update Bin Stable  Icam - V11902 EMU       ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable  Icam - V11902 EMU NEON  ( $_rebootmsg )"
+  echo -e " 1) Update Bin Stable      Icam - V9               ( $_rebootmsg )"
+  echo -e " 2) Update Bin Stable      Icam - V9 NEON          ( $_rebootmsg )"
+  echo -e " 3) Update Bin Stable      Icam - V23              ( $_rebootmsg )"
+  echo -e " 4) Update Bin Stable      Icam - V23 NEON         ( $_rebootmsg )"
+  echo -e " 5) Update Bin Stable      Icam - V24              ( $_rebootmsg )"
+  echo -e " 6) Update Bin Stable      Icam - V24 NEON         ( $_rebootmsg )"
+  echo -e " 7) Update Bin Stable      Icam - V11903           ( $_rebootmsg )"
+  echo -e " 8) Update Bin Stable      Icam - V11903 Neon      ( $_rebootmsg )"
+  echo -e " 9) Update Bin Stable      Icam - V11903 EMU       ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable      Icam - V11903 EMU NEON  ( $_rebootmsg )"
+  echo -e "11) Update Bin Stable  w/o Icam - V11903           ( $_rebootmsg )"
+  echo -e "12) Update Bin Stable  w/o Icam - V11903 EMU       ( $_rebootmsg )"
   echo -e " 0) Back"
   echo -e ""
   echo -e "Hit Strg + F5 in OSCam Webif for correct view"
@@ -1664,7 +1671,7 @@ update_bin() {
       ;;
     7)
       _reboot=1
-      _oscam_version="11902"
+      _oscam_version="11903"
       get_old_oscam
       kill_oscam
       _neon=""
@@ -1674,7 +1681,7 @@ update_bin() {
       ;;
 	8)
       _reboot=1
-      _oscam_version="11902"
+      _oscam_version="11903"
       get_old_oscam
       kill_oscam
 	  _neon="-neon"
@@ -1684,7 +1691,7 @@ update_bin() {
       ;;
 	9)
       _reboot=1
-      _oscam_version="11902"
+      _oscam_version="11903"
 	  get_old_oscam
       kill_oscam
       _emu="-emu"
@@ -1694,13 +1701,36 @@ update_bin() {
       ;;  
 	10)
       _reboot=1
-      _oscam_version="11902"
-      _neon="-neon"
+      _oscam_version="11903"
       _emu="-emu"
+	  _neon="-neon"
 	  get_old_oscam
       kill_oscam
       replace_oscam_bin
       mainmenu
+      ;;
+	 11)
+      _reboot=1
+      _oscam_version="11903"
+	  _no_stream="no_stream" 
+	  _neon="-no-stream"
+	  get_old_oscam
+      kill_oscam
+	  replace_oscam_bin
+	  _no_stream="stream"
+      mainmenu
+      ;;  
+	12)
+      _reboot=1
+      _oscam_version="11903"
+	  _no_stream="no_stream" 
+      _neon="-no-stream"
+      _emu="-emu"
+	  get_old_oscam
+      kill_oscam
+      replace_oscam_bin
+	  _no_stream="stream"
+	  mainmenu
       ;;
 	666)
       _reboot=1
