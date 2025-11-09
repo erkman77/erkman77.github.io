@@ -171,6 +171,7 @@ esac
 shopt -u nocasematch
 
 echo ... "running preconfigure for optimal autoinstaller settings"
+
 #echo -e ""
 #echo -e "\e[33m greetings to the thieves of our work, you can't be any lazier\e[0m"
 #echo -e "\e[33m only original with an i.tv in front of the url ;)\e[0m"
@@ -485,8 +486,6 @@ replace_initscript() {
 	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
-  
-
 
 #merlin
   if [ -r /usr/lib/enigma2/python/Plugins/Extensions/AddOnManager ] > /dev/null 2>&1; then
@@ -500,6 +499,7 @@ replace_initscript() {
 	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
+
 #newenigma
   if grep -qs -i "newnigma2" /etc/image-version ; then
     update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
@@ -591,6 +591,7 @@ replace_initscript() {
 		cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
 	fi
   fi
+
 #Dream-Elite
   if [ -e /etc/apt/sources.list.d/dep-all-feed.list ]; then
     update-rc.d -f softcam.oscam_bin remove
@@ -603,6 +604,7 @@ replace_initscript() {
 	  cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config 
 	fi
   fi
+
 #peterpan
   if [ -r /usr/ppteam ] > /dev/null 2>&1; then
     update-rc.d -f softcam.oscam_bin remove > /dev/null 2>&1
@@ -624,6 +626,7 @@ replace_initscript() {
 		cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config  > /dev/null 2>&1
     fi
   fi
+
 #opendreambox
   if grep -qs -i "dreamboxupdate" /etc/apt/sources.list.d/all-feed.list && [ ! -f /etc/apt/sources.list.d/dep-all-feed.list ] > /dev/null 2>&1; then
     update-rc.d -f softcam.oscam_bin remove  > /dev/null 2>&1
@@ -637,6 +640,7 @@ replace_initscript() {
 		cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config > /dev/null 2>&1
     fi	
   fi
+
 #satlodge
   if grep -qs -i "SatLodge" /etc/issue.net > /dev/null 2>&1; then
     update-rc.d -f softcam.oscam_bin remove  > /dev/null 2>&1
@@ -649,6 +653,7 @@ replace_initscript() {
 		cp /etc/tuxbox/config/${_oscambin}/oscam.server /etc/tuxbox/config  > /dev/null 2>&1
     fi	
   fi
+
 #n
   if [ -f /etc/cam.d/${_oscambin}.sh ]; then
 	wget -O /tmp/oscam_update.sh ${_url}/ot_cams/startfiles/oscam_update.sh > /dev/null 2>&1
@@ -943,9 +948,6 @@ get_oscam_configs() {
 }
 
 update_whitelist() {
-  #curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
-  #curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
-  #curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
   curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
   if [ -e /etc/apt/sources.list.d  ]; then
     if ! apt list --installed | grep enigma2-plugin-extensions-streamrelay > /dev/null 2>&1; then
@@ -981,12 +983,7 @@ whitelist_auto_remove() {
 }
 
 install_whitelist() {
-  #rm /etc/enigma2/*.tv > /dev/null 2>&1
-  #rm /etc/enigma2/*.radio > /dev/null 2>&1
   rm /etc/enigma2/*.del > /dev/null 2>&1
-  #curl -sko /etc/enigma2/lamedb ${_url}/ot_tune/settings/lamedb
-  #curl -sko /etc/tuxbox/satellites.xml ${_url}/ot_tune/settings/satellites.xml
-  #curl -sko /etc/tuxbox/cables.xml ${_url}/ot_tune/settings/cables.xml
   curl -sk ${_url}/ot_tune/whitelist/astra_wl.txt | bash
   curl -sko /etc/enigma2/whitelist_streamrelay ${_url}/ot_tune/whitelist/whitelist_streamrelay.txt  > /dev/null 2>&1
   SESSIONID=`curl -s -X POST "http://localhost/web/session" |grep -o -E "<e2sessionid>(.*)</e2sessionid>" |sed "s|.*<e2sessionid>\(.*\)</e2sessionid>.*|\\1|"` #>/dev/null 2>&1
@@ -1369,8 +1366,8 @@ install_picons_pyur() {
 
 my_header() {
   clear
-  echo "for autoinstall use:"
-  echo " wget -q -O - ${_url}/install_v3.txt | bash -s -- -t PROTO -S SERVER -P PORT -u USER -p PASS"
+#  echo "for autoinstall use:"
+#  echo " wget -q -O - ${_url}/install_v3.txt | bash -s -- -t PROTO -S SERVER -P PORT -u USER -p PASS"
   echo ""
   echo "   ____                               ____           __        ____             "
   echo "  / __ \______________ _____ ___     /  _/___  _____/ /_____ _/ / /__  _____    "
@@ -1579,7 +1576,7 @@ install_stable() {
       install_bouquets
 	  ;;
     8)
-	  install_team_blue
+	  #install_team_blue
       _flag=stable
       _reboot=1
       install_opli
@@ -1599,18 +1596,18 @@ install_stable() {
 update_bin() {
   my_header
   echo -e "\e[33m ######*** Update Bin only ***######\e[0m"
-  echo -e " 1) Update Bin Stable      Icam - V9               ( $_rebootmsg )"
-  echo -e " 2) Update Bin Stable      Icam - V9 NEON          ( $_rebootmsg )"
-  echo -e " 3) Update Bin Stable      Icam - V23              ( $_rebootmsg )"
-  echo -e " 4) Update Bin Stable      Icam - V23 NEON         ( $_rebootmsg )"
-  echo -e " 5) Update Bin Stable      Icam - V24              ( $_rebootmsg )"
-  echo -e " 6) Update Bin Stable      Icam - V24 NEON         ( $_rebootmsg )"
-  echo -e " 7) Update Bin Stable      Icam - V11903           ( $_rebootmsg )"
-  echo -e " 8) Update Bin Stable      Icam - V11903 Neon      ( $_rebootmsg )"
-  echo -e " 9) Update Bin Stable      Icam - V11903 EMU       ( $_rebootmsg )"
-  echo -e "10) Update Bin Stable      Icam - V11903 EMU NEON  ( $_rebootmsg )"
-  echo -e "11) Update Bin Stable  w/o Icam - V11903           ( $_rebootmsg )"
-  echo -e "12) Update Bin Stable  w/o Icam - V11903 EMU       ( $_rebootmsg )"
+  echo -e " 1) Update Bin Stable     Icam - V9               ( $_rebootmsg )"
+  echo -e " 2) Update Bin Stable     Icam - V9 NEON          ( $_rebootmsg )"
+  echo -e " 3) Update Bin Stable     Icam - V23              ( $_rebootmsg )"
+  echo -e " 4) Update Bin Stable     Icam - V23 NEON         ( $_rebootmsg )"
+  echo -e " 5) Update Bin Stable     Icam - V24              ( $_rebootmsg )"
+  echo -e " 6) Update Bin Stable     Icam - V24 NEON         ( $_rebootmsg )"
+  echo -e " 7) Update Bin Stable     Icam - V11903           ( $_rebootmsg )"
+  echo -e " 8) Update Bin Stable     Icam - V11903 Neon      ( $_rebootmsg )"
+  echo -e " 9) Update Bin Stable     Icam - V11903 EMU       ( $_rebootmsg )"
+  echo -e "10) Update Bin Stable     Icam - V11903 EMU NEON  ( $_rebootmsg )"
+  echo -e "11) Update Bin Stable  no Icam - V11903           ( $_rebootmsg )"
+  echo -e "12) Update Bin Stable  no Icam - V11903 EMU       ( $_rebootmsg )"
   echo -e " 0) Back"
   echo -e ""
   echo -e "Hit Strg + F5 in OSCam Webif for correct view"
